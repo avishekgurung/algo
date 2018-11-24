@@ -3,7 +3,7 @@ package linkedlist.problems;
 import linkedlist.util.LinkedList.LinkedListUtil;
 import linkedlist.util.LinkedList.Node;
 
-public class ReverseEveryK {
+public class Problem026 {
 
   public static Node reverse(Node head) {
     Node prev = null;

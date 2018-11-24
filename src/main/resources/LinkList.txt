@@ -113,3 +113,61 @@ list.
     For example, if the three linked lists are 12->6->29, 23->5->8 and
     90->20->59, and the given number is 101, the output should be triplet
      “6 5 90”.
+
+21. Find the length of a largest palindrome in a linked list without using
+    any extra space.
+    Input  : List = 2->3->7->3->2->12->24
+    Output : 5
+    The longest palindrome list is 2->3->7->3->2
+
+    Input  : List = 12->4->4->3->14
+    Output : 2
+    The longest palindrome list is 4->4
+
+22. Subtract two numbers represented by two different linked list, giving
+    an output as another linked list.
+
+23. Add two numbers represented by two different linked list, giving an
+    out as another linked list.
+
+24. Sort linked list which is already sorted on absolute values.
+    Input :  1 -> -10
+    output: -10 -> 1
+
+    Input : 1 -> -2 -> -3 -> 4 -> -5
+    output: -5 -> -3 -> -2 -> 1 -> 4
+
+    Input : -5 -> -10
+    Output: -10 -> -5
+
+    Input : 5 -> 10
+    output: 5 -> 10
+
+    The inputs are sorted without considering - sign. But we need to sort them considering - sign.
+
+25. Count the number of rotations in Rotated Linked List. We assume that the linked list was first
+    sorted and then made k rotations. We need to find the value of k.
+
+    Eg: Original list: 5-8-11-12-15-18
+    After 2 rotations: 15-18-5-8-11-12
+    The input give will be 15-18-5-8-11-12, we need to give the output as 2.
+
+26. Reverse every K elements of a linked list.
+    Input: 1-2-3-4-5-6-7-8-9 k=3
+    Output: 3-2-1-6-5-4-9-8-7
+
+    Input: 1-2-3-4-5-6-7-8
+    Output:3-2-1-6-5-4-7-8
+
+27. Reverse a Linked List.
+
+28. Merge two linked lists that are sorted to give a final linked list that is also sorted.
+
+29. Merge two linked lists that are sorted to give a final linked list that is in descending order.
+
+30. Alternately reverse a linked list.
+    Input: 1-2-3-4-5-6
+    Output: 2-1-4-3-6-5
+
+    Input: 1-2-3-4-5
+    Output: 2-1-4-3-5

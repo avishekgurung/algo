@@ -3,7 +3,7 @@ package linkedlist.problems;
 import linkedlist.util.LinkedList.LinkedListUtil;
 import linkedlist.util.LinkedList.Node;
 
-public class MergeReverseOrder {
+public class Problem029 {
 
   public static Node merge(Node x, Node y) {
     Node prev = null;

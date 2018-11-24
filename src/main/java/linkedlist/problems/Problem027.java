@@ -3,7 +3,7 @@ package linkedlist.problems;
 import linkedlist.util.LinkedList.LinkedListUtil;
 import linkedlist.util.LinkedList.Node;
 
-public class ReverseLinkedList {
+public class Problem027 {
 
   public static void main(String[] args) {
 
