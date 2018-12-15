@@ -108,3 +108,16 @@ public class Problem019 {
   }
 
 }
+
+/**
+ * Assuming that the size of linked list is n horizontally and vertically.
+ * Merge takes O(n + n = 2n = n)
+ * And the pointer iterates for n. Hence O(n2).
+ *
+ * How to improve the time complexity:
+ *
+ * 1. Pull all the head in an array and merge them like Prob 015.
+ *  Time  = (nlogn) and Space = O(n)
+ *
+ *
+ */

@@ -8,8 +8,7 @@ public class Problem003 {
   public static boolean searchRecursion(Node node, int element) {
     if(node == null) return false;
     if(node.data == element) return true;
-    boolean result = searchRecursion(node.next, element);
-    return result;
+    return searchRecursion(node.next, element);
   }
 
   public static void main(String[] args) {

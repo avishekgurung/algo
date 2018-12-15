@@ -7,8 +7,7 @@ public class Problem002 {
 
   public static int getLengthRecursion(Node node) {
     if(node == null) return 0;
-    int length = getLengthRecursion(node.next);
-    return length + 1;
+    return getLengthRecursion(node.next) + 1;
   }
 
   public static void main(String[] args) {

@@ -13,6 +13,10 @@ public class Problem012 {
     Node evenHead = even;
     boolean flag = true;
 
+    /**
+     * A smarter logic to separate the linked list into odd and even nodes can be referred
+     * from Problem006 (cloning a LL with random pointer)
+     */
     while(pointer != null) {
       if(flag) {
         odd.next = pointer;

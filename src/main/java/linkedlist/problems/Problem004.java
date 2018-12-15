@@ -12,14 +12,11 @@ public class Problem004 {
     Node pointer = node;
 
     while(pointer.next != null) {
-      if(pointer.data < pointer.next.data) {
-        pointer = pointer.next;
-        prev.next = pointer;
-      }
-      else {
+      if(pointer.data < pointer.next.data)
+        prev.next = pointer.next;
+      else
         prev = pointer;
-        pointer = pointer.next;
-      }
+      pointer = pointer.next;
     }
 
     if(deleteFirstNode) {

@@ -28,7 +28,7 @@ public class Problem029 {
 
   public static void main(String[] args) {
     Node x = LinkedListUtil.customBulkInsert(new int[] {1,4,6,7});
-    Node y = LinkedListUtil.customBulkInsert(new int[] {9});
+    Node y = LinkedListUtil.customBulkInsert(new int[] {3,9});
     Node res = merge(x, y);
     LinkedListUtil.display(res);
   }

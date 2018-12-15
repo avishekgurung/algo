@@ -7,31 +7,34 @@ public class Problem009 {
 
   public static Node arrange(Node head) {
     Node mid = getMid(head);
-    Node pointer = head;
-    while (pointer.next != mid) {
-      pointer = pointer.next;
-    }
-    pointer.next = null;
-    Node y = reverse(mid);
+    Node midNext = mid.next;
+    mid.next = null;
+    Node y = reverse(midNext);
     Node x = head;
 
-    boolean flag = true;
-    pointer = head;
-    while(x != null && y != null) {
-      if(flag) {
-        Node temp = x.next;
-        pointer.next = y;
-        x = temp;
-      }
-      else {
-        Node temp = y.next;
-        pointer.next = x;
-        y = temp;
-      }
-      pointer = pointer.next;
-      flag = !flag;
+    //This merge can also be done by using recursion as shown below which is shorter.
+    while (x != null && y != null) {
+      Node nextX = x.next;
+      Node nextY = y.next;
+      x.next = y;
+      y.next = nextX;
+      x = nextX;
+      y = nextY;
     }
     return head;
+  }
+
+  /**
+   * Merging two linked list
+   * @param x
+   * @param y
+   * @return
+   */
+  private static Node merge(Node x, Node y) {
+    if(x == null) return y;
+    if(y == null) return x;
+    x.next = merge(y, x.next);
+    return x;
   }
 
   private static Node reverse(Node node) {

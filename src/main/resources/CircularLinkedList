@@ -1,0 +1,4 @@
+1. Delete the odd and even nodes of CLL.
+
+2. Josephus Circle: N people arrange themselves in circle. They eliminate every Mth people.
+The last one standing is the leader. Find the leader. (Display every step of elimination)

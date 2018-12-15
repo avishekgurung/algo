@@ -1,0 +1,29 @@
+Linked list has variety of questions but there are few things to know by heart so that it comes handy
+while solving the problems.
+
+1. REVERSE
+    Its important to know how to reverse a Linked List and also there are many problems that uses
+    the concept of reversing a linked list to solve a problem. I have come across several problems
+    which can be solved by reversing a linked list.
+
+    Eg. Remove a last occurring node of a linked list. Here, if we reverse a linked list then we
+    just need to remove the first occurring node.
+
+    Eg. Point a random pointer of a node to the highest element. This problem cannot be solved
+    without using reverse.
+
+2. SORTING
+    This algorithm is also very important and can be used to solve many problems. Merge Sort is one
+    algorithm that is very important. The merge part is more important as it is used in many problems.
+
+    Eg: Merge two linked list that are sorted.
+
+    And many problems are also solved by first sorting them.
+
+    Eg: Find the union and intersection of two linked list without using extra space. We can solve
+    this problem only if we sort the linked lists first.
+
+3. PREV
+    The concept of previous. There are many problems where we need to maintain a prevous node. If we
+    keep the head a previous and start the pointer from head.next then the problem becomes pretty
+    simple to solve.

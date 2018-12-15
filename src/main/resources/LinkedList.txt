@@ -1,4 +1,4 @@
-1. Given a liked list and a key to be deleted. Delete last occurrence of key from linked.
+1. Given a linked list and a key to be deleted. Delete last occurrence of key from list.
 The list may have duplicates.
 
 Input:   1->2->3->5->2->10, key = 2
@@ -13,7 +13,7 @@ Output:  1->2->3->5->10
     10->20->30->40->50->60->NULL should be changed to 60->NULL
     60->50->40->30->20->10->NULL should not be changed.
 
-5. Sort linkedlist of 0s,1s and 2s.
+5. Sort linked list of 0s,1s and 2s.
 
 6. Clone a LinkedList which has an extra pointer that points to any random node.
 
@@ -22,14 +22,14 @@ Where k is a given positive integer. For example, if the given linked list is
 10->20->30->40->50->60 and k is 4, the list should be modified to 50->60->10->20->30->40.
 Try using minimum pointer too.
 
-8. Sort a LinkedList (MergeSort method)
+8.* Sort a LinkedList (MergeSort method)
 
 9. Rearrange the linked list such that
     1-2-3-4-5 is 1-5-2-4-3
     1-2-3-4 is 1-4-2-3
 
 10. We have a linked list with two pointers. One of the pointer is a random pointer
-which points to NULL. We need to point this random pointer to highest element to its
+which points to NULL. We need to point this random pointer to HIGHEST element to its
 right.
     Eg. 5 -> 10 -> 2 -> 3
     5's rand should point to 10
@@ -37,7 +37,7 @@ right.
     2's rand should point to 3
     3's rand should point to Null
 
-11. We have a linked list with two pointers. One of the pointer is a random pointer
+11*. We have a linked list with two pointers. One of the pointer is a random pointer
     which points to NULL. We need to point this random pointer to NEXT highest element to its
     right.
     Eg. 5 -> 10 -> 2 -> 3
@@ -64,7 +64,7 @@ list.
     Eg: Input: 9 -> 4 -> 6 and 8 -> 4
         Output: 79464
 
-15. Merge K sorted list. We are given k number of linked list, we need to sort them
+15*. Merge K sorted list. We are given k number of linked list, we need to sort them
     and merge them into one.
     eg:
         Input: k = 3, n =  4
@@ -84,7 +84,8 @@ list.
        Union List: 2->8->20->4->15->10]
 
 17. Find pair for given sum in a sorted singly linked without extra space
-    Given a sorted singly linked list and a value x, the task is to find pair whose sum is equal to x. We are not allowed to use any extra space and expected time complexity is O(n).
+    Given a sorted singly linked list and a value x, the task is to find pair whose sum is equal
+    to x. We are not allowed to use any extra space and expected time complexity is O(n).
 
     Examples:
 
@@ -114,7 +115,7 @@ list.
     90->20->59, and the given number is 101, the output should be triplet
      “6 5 90”.
 
-21. Find the length of a largest palindrome in a linked list without using
+21*. Find the length of a largest palindrome in a linked list without using
     any extra space.
     Input  : List = 2->3->7->3->2->12->24
     Output : 5
@@ -124,10 +125,10 @@ list.
     Output : 2
     The longest palindrome list is 4->4
 
-22. Subtract two numbers represented by two different linked list, giving
+22*. Subtract two numbers represented by two different linked list, giving
     an output as another linked list.
 
-23. Add two numbers represented by two different linked list, giving an
+23*. Add two numbers represented by two different linked list, giving an
     out as another linked list.
 
 24. Sort linked list which is already sorted on absolute values.
@@ -159,7 +160,7 @@ list.
     Input: 1-2-3-4-5-6-7-8
     Output:3-2-1-6-5-4-7-8
 
-27. Reverse a Linked List.
+27. Reverse a Linked List (Recursion and Iteration).
 
 28. Merge two linked lists that are sorted to give a final linked list that is also sorted.
 

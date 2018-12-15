@@ -44,29 +44,15 @@ public class Problem011 {
     stack.push(head);
     Node pointer = head.next;
     while(pointer != null) {
-      Node top = stack.pop();
-      while(top.data < pointer.data) {
-        top.rand = pointer;
-        if(stack.empty()) break;
-        top = stack.pop();
+      while(!stack.empty() && stack.peek().data < pointer.data) {
+        stack.pop().rand = pointer;
       }
-      if(top.data > pointer.data) stack.push(top);
       stack.push(pointer);
       pointer = pointer.next;
     }
     return head;
   }
 
-  private Problem011.Node reverse(Problem011.Node node) {
-    Problem011.Node prev = null;
-    while(node != null) {
-      Problem011.Node next = node.next;
-      node.next = prev;
-      prev = node;
-      node = next;
-    }
-    return prev;
-  }
 
   public static void main(String[] args) {
     Problem011 obj = new Problem011();

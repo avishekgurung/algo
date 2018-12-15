@@ -74,37 +74,31 @@ public class Problem006 {
   public static Node cloneWithoutExtraSpace(Node head) {
     Node pointer = head;
     while(pointer != null) {
-      Node node = new Node(pointer.data, null, null);
-      node.next = pointer.next;
-      pointer.next = node;
-      pointer = node.next;
+      Node temp = new Node(pointer.data, pointer.next, null);
+      pointer.next = temp;
+      pointer = temp.next;
     }
 
-    Node x = head;
-    Node y = head.next;
-    Node cloneHead = y;
-    while(x != null) {
-      System.out.println(x.data);
-      Node xNext = x.next.next;
-      if(y.next == null) break;
-      Node yNext = y.next.next;
-      y.next = x.next.next;
-      y.rand = x.rand.next;
-      x = xNext;
-      y = yNext;
+    pointer = head;
+    Node tempPointer = head.next;
+    while(pointer != null) {
+      tempPointer.rand = pointer.rand.next;
+      pointer = tempPointer.next;
+      if(pointer != null) tempPointer = pointer.next;
     }
 
-    //Separating the list into two
-    x = head;
-    y = head.next;
-    while(x != null) {
-      Node xNext = x.next.next;
-      if(y.next == null) break;
-      Node yNext = y.next.next;
-      x.next = xNext;
-      y.next = yNext;
-      x = xNext;
-      y = yNext;
+    pointer = head;
+    tempPointer = head.next;
+    Node cloneHead = tempPointer;
+
+    //Logic to separate a linked list
+    while(pointer != null) {
+      pointer.next = tempPointer.next;
+      pointer = tempPointer.next;
+      if(pointer != null) {
+        tempPointer.next = pointer.next;
+        tempPointer = pointer.next;
+      }
     }
     return cloneHead;
   }
@@ -129,9 +123,5 @@ public class Problem006 {
     head.next.next = null;
     display(head);
     display(cloneHead);
-
-
   }
-
-
 }

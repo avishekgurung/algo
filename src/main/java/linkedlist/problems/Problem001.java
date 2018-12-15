@@ -19,9 +19,7 @@ public class Problem001 {
       prev.next = prev.next.next;
     }
     if(head.data == element && prev == null) {
-      Node temp = head.next;
-      head.next = null;
-      head = temp;
+      head = head.next;
     }
     return head;
   }
@@ -30,9 +28,17 @@ public class Problem001 {
 
     Node head = LinkedListUtil.customBulkInsert(new int[] {2,3,5,1,3});
     LinkedListUtil.display(head);
-    head = deleteLastOccurrenceOfItem(head, 10);
+    head = deleteLastOccurrenceOfItem(head, 2);
     LinkedListUtil.display(head);
 
   }
 
 }
+
+/**
+ * Approaches:
+ *  1. The naive approach is also to find the position of the element by counting/indexing and
+ *  then in the next iteration, go to the element before the index and remove the next element.
+ *
+ *  2. We can reverse the LL and delete the first occurrence of an element.
+ */

@@ -6,44 +6,55 @@ import linkedlist.util.LinkedList.Node;
 public class Problem005 {
 
   public static Node sort012(Node head) {
-    Node tail = head;
-    Node pointer = head;
-    int i=0;
-    int len = 1;
 
-    Node twoAtHead = null;
-    if(head.data == 2) twoAtHead = head;
+    if(head == null || head.next == null) return head;
+
+    Node tail = head;
+    Node pointer = head.next;
+    Node prev = head;
+
+    Node twoAtHead = head.data == 2 ? head : null;
 
     while(tail.next != null) {
       tail = tail.next;
-      len++;
     }
     Node end = tail;
 
-
-    while(pointer != null && pointer.next != null && pointer != end) {
-      if(pointer.next.data == 0) {
-        Node temp = pointer.next;
-        pointer.next = pointer.next.next;
+    while(pointer != end) {
+      if(pointer.data == 0) {
+        Node temp = pointer;
+        prev.next = pointer.next;
+        pointer = pointer.next;
         temp.next = head;
         head = temp;
       }
-      else if(pointer.next.data == 2) {
-        Node temp = pointer.next;
-        pointer.next = pointer.next.next;
+      else if(pointer.data == 2) {
+        Node temp = pointer;
+        prev.next = pointer.next;
+        pointer = pointer.next;
         tail.next = temp;
-        temp.next = null;
         tail = temp;
+        tail.next = null;
       }
       else {
+        prev = pointer;
         pointer = pointer.next;
       }
-      if(i > len) break; //if LL has end=0 or 1 then it can run forever
-      i++;
+    }
+
+    //Handling a case if 0 is at the 'end'
+    if(pointer.data == 0) {
+      Node temp = pointer;
+      prev.next = pointer.next;
+      temp.next = head;
+      head = temp;
     }
 
     //Handling the case if 2 is at the beginning of LL.
-    if(twoAtHead != null) {
+    /**
+     * The condition twoAtHead != head is a special for a case when all the elements are 2
+     */
+    if(twoAtHead != null && twoAtHead != head) {
       pointer = head;
       while(pointer.next != twoAtHead) {
         pointer = pointer.next;
@@ -54,6 +65,7 @@ public class Problem005 {
     }
 
     return head;
+
   }
 
   /**
@@ -95,9 +107,24 @@ public class Problem005 {
     LinkedListUtil.display(head);
 
     head = LinkedListUtil.customBulkInsert(new int[]{2,0,2,1,2,0});
-    head = sort234Smart(head);
+    head = sort012(head);
     LinkedListUtil.display(head);
 
+    head = LinkedListUtil.customBulkInsert(new int[]{2,0,2,1,2,2});
+    head = sort012(head);
+    LinkedListUtil.display(head);
+
+    head = LinkedListUtil.customBulkInsert(new int[]{0,0,0,0,0,0,0});
+    head = sort012(head);
+    LinkedListUtil.display(head);
+
+    head = LinkedListUtil.customBulkInsert(new int[]{1,1,1,1,1,1});
+    head = sort012(head);
+    LinkedListUtil.display(head);
+
+    head = LinkedListUtil.customBulkInsert(new int[]{2,2,2,2,2,2});
+    head = sort012(head);
+    LinkedListUtil.display(head);
   }
 
 }
