@@ -42,7 +42,7 @@ expression is valid or not.
 
 12. Find the max area in a histogram.
 
-13. Sort a stack. (Both recursion and iteration)
+13*. Sort a stack. (Both recursion and iteration)
 
 14. How to implement a stack which will support following operations in O(1) time complexity?
     1) push() which adds an element to the top of stack.
@@ -127,4 +127,8 @@ expression is valid or not.
      else false.
 
     NOTE: A celebrity might not be present as well.
+
+23. Convert postfix to infix.
+
+24. Convert infix to prefix.
 
