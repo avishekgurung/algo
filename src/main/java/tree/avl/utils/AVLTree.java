@@ -3,7 +3,7 @@ package tree.avl.utils;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class AvlTree {
+public class AVLTree {
 
   public static Node insert(Node node, int data) {
     if(node == null) {
@@ -116,7 +116,7 @@ public class AvlTree {
 
   public static void main(String[] args) {
     //Node node = getTree();
-    Node node = createCustomTree(new int[]{4,2,6,1,3,5,7});
+    Node node = createCustomTree(new int[]{4,2,6,1,3,5,745});
     display(node);
     preOrder(node);
   }

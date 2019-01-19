@@ -1,6 +1,6 @@
 package tree.avl.problems;
 
-import tree.avl.utils.AvlTree;
+import tree.avl.utils.AVLTree;
 import tree.avl.utils.Node;
 
 public class Problem005 {
@@ -18,7 +18,7 @@ public class Problem005 {
 
   public static void main(String[] args) {
     Node node = createAVLTree(3);
-    AvlTree.display(node);
+    AVLTree.display(node);
   }
 
 }

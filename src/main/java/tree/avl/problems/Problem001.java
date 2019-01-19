@@ -1,6 +1,6 @@
 package tree.avl.problems;
 
-import tree.avl.utils.AvlTree;
+import tree.avl.utils.AVLTree;
 import tree.avl.utils.Node;
 
 /**
@@ -28,6 +28,6 @@ public class Problem001 {
   public static void main(String[] args) {
     int height = 1;
     Node node = createBST(height);
-    AvlTree.display(node);
+    AVLTree.display(node);
   }
 }
