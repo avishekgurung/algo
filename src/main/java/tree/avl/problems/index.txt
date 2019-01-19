@@ -1,0 +1,12 @@
+1.  Given a height h, create a HB(0).
+
+2.  Construct a minimum AVL Trees of height 0,1,2,3,4 and 5. What is the number of nodes in a
+    minimal AVL tree of height 6?
+
+3.  How many AVL trees of different shapes can be generated for a height 6?
+
+4. Given a Binary Tree, check whether its an AVL tree or not.
+
+5. Given a height h, create a minimal AVL tree.
+
+
