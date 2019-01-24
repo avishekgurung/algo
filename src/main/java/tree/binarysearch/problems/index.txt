@@ -32,3 +32,7 @@
     Alt: Given a root of a BST, trim the tree so that all the elements are in the range x and y.
 
 17. Check if two given BSTs has same elements (same content and same size).
+
+18. Given a pre-order traversal, create a BST.
+
+19. Give a pre-order traversal, create a post order traversal.

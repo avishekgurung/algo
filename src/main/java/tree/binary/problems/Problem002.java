@@ -29,12 +29,35 @@ public class Problem002 {
     System.out.println();
   }
 
+  public static void levelOrderByRecursion(Node node) {
+    int height = getHeight(node);
+    for(int i=0; i < height; i++) {
+      printLevel(node, i);
+      System.out.println();
+    }
+  }
+
+  private static void printLevel(Node node, int height) {
+    if(height == 0) {
+      System.out.print(node.data + " ");
+      return;
+    }
+    printLevel(node.left, height - 1);
+    printLevel(node.right, height - 1);
+  }
+
+  private static int getHeight(Node node) {
+    if(node == null) return 0;
+    return Math.max(getHeight(node.left), getHeight(node.right)) + 1;
+  }
+
+
   public static void main(String[] args) {
     Node root = BinaryTree.getTree();
-    BinaryTree.display(root);
-
     System.out.println();
     breadthFirstTraversal(root);
+    System.out.println();
+    levelOrderByRecursion(root);
   }
 
 }
