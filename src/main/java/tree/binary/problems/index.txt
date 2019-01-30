@@ -106,8 +106,52 @@ Standard Binary Tree
 35. Reverse alternate levels of a perfect binary tree.
     https://www.geeksforgeeks.org/reverse-alternate-levels-binary-tree/
 
-36. Perform iterate post order traversal using only one stack.
+36. Perform post order traversal using only one stack.
 
 37. Given a Binary Tree, print all diagonal elements in a binary tree belonging to
     same line.
     https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
+
+38. Print the boundary of a tree. For our standard tree, the output should be
+    1,2,4,5,6,7,3
+
+39. Given a Binary Tree, find density of it by doing one traversal of it.
+    Density of Binary Tree = Size / Height
+
+40. Given a pre-order traversal of a full binary tree where 0 denotes leaf and 1
+    denotes node. Find the height.
+    Eg: 10100 = 2 and 1011000 = 3
+
+41. Given a binary tree. Modify it in such a way that after modification you can
+    have a preorder traversal of it using only the right pointers. During
+    modification, you can use right pointer as well as left pointers.
+
+42. Given an array of elements, construct a binary tree in level order fashion.
+    Eg, arr[] = 1,2,3,4,5,6 then BT should be constructed such that its level
+    order is also the same.
+
+43. Create a Full Tree from preorder and postorder traversal.
+
+44. Create Full Tree from pre-order traversal of a tree and pre-order traversal of a mirror of the
+    tree.
+
+45. Construct a tree from ancestor matrix.
+    Given matrix:
+        0 1 1
+        0 0 0
+        0 0 0
+
+    The tree can be:
+         0   or   0
+       1   2     2   1
+
+    Any answer is fine.
+    https://www.geeksforgeeks.org/construct-tree-from-ancestor-matrix/
+
+46. Give a tree, construct an ancestor matrix. Reverse of the above problem.
+    https://www.geeksforgeeks.org/construct-ancestor-matrix-from-a-given-binary-tree/
+
+47. Given Inorder Traversal of a Special Binary Tree in which key of every node is greater than
+    keys in left and right children, construct the Binary Tree and return root.
+
+
