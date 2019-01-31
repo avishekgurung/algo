@@ -35,29 +35,27 @@ public class Problem028 {
   }
 
   public static Node create(int[] postOrder, int left, int right) {
+    if(left > right) return null;
     int data = postOrder[postOrderIndex];
     postOrderIndex++;
     Node node = new Node(null, data, null);
-    if(left >= right) {
-      return node;
-    }
+    if(left == right) return node;
     int inorderIndex = map.get(data);
-    node.right = create(postOrder, left, inorderIndex-1);
-    node.left = create(postOrder, inorderIndex + 1, right);
+    node.right = create(postOrder, inorderIndex + 1, right);
+    node.left = create(postOrder, left, inorderIndex - 1);
     return node;
   }
 
   public static void main(String[] args) {
     int[] inorder = new int[]   {4,2,5,1,6,3,7};
     int[] postorder = new int[] {4,5,2,6,7,3,1};
-    /*int[] inorder = new int[] {2,1,3};
-    int[] postorder = new int[]{2,3,1};*/
     Node root = createTree(inorder, postorder);
     BinaryTree.display(root);
   }
-
 }
 
 /**
+ * This method is very similar to tree creation from inorder and pre-order. First, we reverse
+ * the post order list and make similar changes as pre and inorder problem.
  *
  */

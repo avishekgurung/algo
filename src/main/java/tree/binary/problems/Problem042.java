@@ -33,3 +33,11 @@ public class Problem042 {
     BinaryTree.display(root);
   }
 }
+
+/**
+ * Another simple solution would be create two queues x and y and add all the nodes in them.
+ * Continue till y is empty:
+ *  pop element from x;
+ *  x.left = y.pop()
+ *  x.right = y.pop();
+ */

@@ -9,61 +9,33 @@ import tree.binary.utils.Node;
 
 public class Problem034 {
 
+  /*
+   * Smarter approach.
+   * @param node
+   */
   public static void printBottomUp(Node node) {
     Queue<Node> queue = new LinkedList<Node>();
-    Stack<Queue<Node>> stack = new Stack<Queue<Node>>();
-    Queue<Node> aux = new LinkedList<Node>();
-    aux.add(node.left);
-    aux.add(node.right);
-    aux.add(node);
-    stack.push(aux);
-
-    aux = new LinkedList<Node>();
-    queue.add(node.left);
+    Stack<Node> stack = new Stack<Node>();
     queue.add(node.right);
+    queue.add(node.left);
+    stack.push(node);
 
-    queue.add(null);
-
-    while (!queue.isEmpty()) {
-
+    while(!queue.isEmpty()) {
       Node x = queue.remove();
-
-      if (x == null) {
-        stack.push(aux);
-        aux = new LinkedList<Node>();
-        if (queue.isEmpty())
-          break;
-        queue.add(null);
-      } else {
-        Node y = queue.remove(); //We remove y only when x is not null.
-        if (x.left != null) {
-          queue.add(x.left);
-          aux.add(x.left);
-        }
-
-        if (y.right != null) {
-          queue.add(y.right);
-          aux.add(y.right);
-        }
-
-        if (x.right != null) {
-          queue.add(x.right);
-          aux.add(x.right);
-        }
-
-        if (y.left != null) {
-          queue.add(y.left);
-          aux.add(y.left);
-        }
-      }
+      Node y = queue.remove();
+      stack.push(x);
+      stack.push(y);
+      if(x.left != null) queue.add(x.left);
+      if(y.right != null) queue.add(y.right);
+      if(x.right != null) queue.add(x.right);
+      if(y.left != null) queue.add(y.left);
     }
 
+    System.out.println();
     while(!stack.isEmpty()) {
-      aux = stack.pop();
-      while(!aux.isEmpty()) {
-        System.out.print(aux.remove().data + " ");
-      }
+      System.out.print(stack.pop().data+ " ");
     }
+    System.out.println();
   }
 
   public static void main(String[] args) {

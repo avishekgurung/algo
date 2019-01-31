@@ -8,7 +8,7 @@ public class Problem029 {
 
   public static Node createTree(int[] levelOrder, int[] inOrder, int left, int right) {
     if(left > right) return null;
-    if(left >= right) return new Node(null, inOrder[left], null);
+    if(left >= right) return new Node(null, levelOrder[0], null);
 
     int data = levelOrder[0];
     int inorderIndex = findIndex(inOrder, data);
@@ -44,8 +44,8 @@ public class Problem029 {
   }
 
   public static void main(String[] args) {
-    int[] inOrder = new int[]{3,4,2,5,1,7,6};
-    int[] levelOrder = new int[]{5,4,7,3,2,1,6};
+    int[] inOrder = new int[]{4,2,5,1,6,3,7};
+    int[] levelOrder = new int[]{1,2,3,4,5,6,7};
     Node node = createTree(levelOrder, inOrder, 0, levelOrder.length-1);
     BinaryTree.display(node);
   }

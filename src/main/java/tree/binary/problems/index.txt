@@ -6,7 +6,7 @@ Standard Binary Tree
 
 1.  Perform preorder, inorder, postorder traversal of a Binary Tree by using recursion and iteration.
 
-2.  Perform a breadth first traversal of a Binary Tree using and without using extra space.
+2*. Perform a breadth first traversal of a Binary Tree using and without using extra space.
 
 3.  Find a maximum element in a binary tree.
 
@@ -105,6 +105,7 @@ Standard Binary Tree
 
 35. Reverse alternate levels of a perfect binary tree.
     https://www.geeksforgeeks.org/reverse-alternate-levels-binary-tree/
+    Its not printing the alternate level but changing the tree structure.
 
 36. Perform post order traversal using only one stack.
 
@@ -153,5 +154,17 @@ Standard Binary Tree
 
 47. Given Inorder Traversal of a Special Binary Tree in which key of every node is greater than
     keys in left and right children, construct the Binary Tree and return root.
+    https://www.geeksforgeeks.org/construct-binary-tree-from-inorder-traversal/
+
+48. Given an array that represents a tree in such a way that array indexes are values in tree nodes
+    and array values give the parent node of that particular index (or node). The value of the root
+    node index would always be -1 as there is no parent for root. Construct the standard linked
+    representation of given Binary Tree
+    https://www.geeksforgeeks.org/construct-a-binary-tree-from-parent-array-representation/
+
+49. Given a ternary tree (left, mid and right pointers), create a doubly linked list such that
+    the left pointer should as a prev pointer, right pointer should act as next pointer and mid
+    should point to null.
+    https://www.geeksforgeeks.org/create-doubly-linked-list-ternary-ree/
 
 
