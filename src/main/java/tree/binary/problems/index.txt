@@ -188,4 +188,49 @@ Standard Binary Tree
 55. Check if two nodes are cousins. Two nodes are cousins if they are in the same level but have
     different parents.
 
+56. Given a Binary Tree, find if there exist edge whose removal creates two trees of equal size.
+    https://www.geeksforgeeks.org/check-if-removing-an-edge-can-divide-a-binary-tree-in-two-halves/
 
+57. Check if given Preorder, Inorder and Postorder traversals are of same tree.
+
+58. Check if a binary tree is subtree of another binary tree
+
+59. Given a Binary Tree, check whether the Binary tree contains a duplicate sub-tree of size 2
+    or more.
+    https://www.geeksforgeeks.org/check-binary-tree-contains-duplicate-subtrees-size-2/
+
+60. Given a binary tree and an array, the task is to find if the given array sequence is
+    present as a root to leaf path in given tree.
+    https://www.geeksforgeeks.org/check-root-leaf-path-given-sequence/
+
+61. Given a perfect binary tree, print nodes of middle level without computing its height. A
+    perfect binary tree is a binary tree in which all interior nodes have two children and all
+    leaves have the same depth or same level.
+    https://www.geeksforgeeks.org/print-middle-level-perfect-binary-tree-without-finding-height/
+
+62. Given a binary tree and a node, print all cousins of given node. Note that siblings should
+    not be printed.
+
+63. Print the longest leaf to leaf path in a Binary tree.
+
+64. Given a positive integer L which represents the number of levels in a perfect binary
+    tree. Given that the leaf nodes in this perfect binary tree are numbered starting from 1
+    to n, where n is the number of leaf nodes. And the parent node is the sum of the two
+    child nodes. Our task is to write a program to print the sum of all of the nodes of this
+    perfect binary tree.
+    https://www.geeksforgeeks.org/find-sum-nodes-given-perfect-binary-tree/
+
+65. Given a binary tree, a complete path is defined as a path from root to a leaf. The sum of
+    all nodes on that path is defined as the sum of that path. Given a number K, you have to
+    remove (prune the tree) all nodes which don’t lie in any path with sum>=k.
+    https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
+
+66. A binary tree and a number k are given. Print every path in the tree with sum of the
+    nodes in the path as k. A path can start from any node and end at any node and must be
+    downward only, i.e. they need not be root node and leaf node; and negative numbers can
+    also be there in the tree.
+    https://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/
+
+67. Merge two binary nodes such that if two nodes overlap, then sum node values up as the new
+    value of the merged node. Otherwise, the non-null node will be used as the node of new
+    tree. https://www.geeksforgeeks.org/merge-two-binary-trees-node-sum/
