@@ -167,4 +167,25 @@ Standard Binary Tree
     should point to null.
     https://www.geeksforgeeks.org/create-doubly-linked-list-ternary-ree/
 
+50. Convert a binary tree to Doubly Linked List such that the left pointer acts as a prev and
+    right pointer acts as next. The order of nodes in DLL must be same as Inorder of the given
+    Binary Tree.
+    https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
+
+51. Given a simple Binary Tree, modify it such that a node holds the sum of its two child.
+
+52. Replace a node by sum of its left and right subtrees but the node has to be replaced as
+    explained.
+    https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/
+
+53. Given a BT, replace a node by the sum of all the nodes in its left subtree.
+    https://www.geeksforgeeks.org/change-a-binary-tree-so-that-every-node-stores-
+    sum-of-all-nodes-in-left-subtree/
+
+54. Convert a tree into DLL in a spiral fashion.
+    https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral-fashion/
+
+55. Check if two nodes are cousins. Two nodes are cousins if they are in the same level but have
+    different parents.
+
 
