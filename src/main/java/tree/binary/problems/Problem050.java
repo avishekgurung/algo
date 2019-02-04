@@ -3,7 +3,7 @@ package tree.binary.problems;
 import tree.binary.utils.BinaryTree;
 import tree.binary.utils.Node;
 
-public class Problem50 {
+public class Problem050 {
 
   private static Node head;
   private static Node prev;

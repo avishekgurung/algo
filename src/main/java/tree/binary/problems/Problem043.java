@@ -50,7 +50,56 @@ public class Problem043 {
     int pre[] = new int[] {1, 2, 4, 5, 3, 6, 7};
     int post[] = new int[] {4, 5, 2, 6, 7, 3, 1};
     BinaryTree.display(createUtil(pre, post));
+    BinaryTree.display(myLogic(pre, post ));
   }
+
+  public static Node myLogic(int[] pre, int post[]) {
+    //reverse post order
+    int len = post.length;
+    for(int i=0; i < (int)(post.length/2);i++) {
+      int temp = post[i];
+      post[i] = post[len-1-i];
+      post[len-1-i] = temp;
+    }
+
+    //create post order lookup
+    Map<Integer, Integer> lookUp = new HashMap<Integer, Integer>();
+    for(int i=0; i < post.length; i++) {
+      lookUp.put(post[i],i);
+    }
+
+    //Create a set to store the traversed elements
+    Set<Integer> traversed = new HashSet<Integer>();
+
+    Node node = new Node(null, pre[0], null);
+    Queue<Node> queue = new LinkedList<Node>();
+    queue.add(node);
+    Node root = node;
+    int i = 1;
+    while(!queue.isEmpty()) {
+      node = queue.remove();
+      int data = node.data;
+
+      int leftIndex = i+1;
+      int rightIndex = lookUp.get(data) + 1;
+
+      if(leftIndex < len && rightIndex < len) {
+        int leftData = pre[leftIndex];
+        int rightData = post[rightIndex];
+        if(!traversed.contains(leftData) && !traversed.contains(rightData)) {
+          node.left = new Node(null, leftData, null);
+          node.right = new Node(null, rightData, null);
+          traversed.add(leftData);
+          traversed.add(rightData);
+          queue.add(node.left);
+          queue.add(node.right);
+        }
+      }
+      i++;
+    }
+    return root;
+  }
+
 }
 /**
  *

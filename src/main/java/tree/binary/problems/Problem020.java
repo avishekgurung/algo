@@ -1,9 +1,9 @@
 package tree.binary.problems;
 
 /**
- * We can create a tree if two of a traversal list are given and one of them has to be Inorder.
+ * We can create a tree if two of its traversal list are given and one of them is Inorder.
  *
- * If we can create tree if the following combinations are provided:
+ * We can create tree if the following combinations traversals are provided:
  *  Inorder and pre order
  *  Inorder and post order
  *  Inorder and level order

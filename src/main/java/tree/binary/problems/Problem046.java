@@ -10,15 +10,28 @@ public class Problem046 {
   public static void fillAncestorArray(Node node, int arr[][], int index, int[] lookUp) {
     if(node == null) return;
 
-    for(int i=0; i < index; i++) {
+    /*for(int i=0; i < index; i++) {
       if(lookUp[i] != 0) {
         arr[lookUp[i]][node.data] = 1;
       }
-    }
+    }*/
     lookUp[index] = node.data;
     index++;
+    if(node.left == null && node.right == null) {
+      fillArray(arr, index, lookUp);
+    }
     fillAncestorArray(node.left, arr, index, lookUp);
     fillAncestorArray(node.right, arr, index, lookUp);
+  }
+
+  public static void fillArray(int arr[][], int index, int[] lookUp) {
+    for(int i=0;i < index; i++) {
+      int x = lookUp[i];
+      for(int j=i+1; j < index; j++) {
+        int y = lookUp[j];
+        arr[x][y] = 1;
+      }
+    }
   }
 
   public static void fillAncestorArrayUtil(Node node, int nodeCount) {

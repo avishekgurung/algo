@@ -9,17 +9,17 @@ import tree.binary.utils.Node;
 
 public class Problem024 {
 
-  public static void getVerticalSum(Node root, int column, Map<Integer, Integer> map) {
+  public static void getVerticalSum(Node root, int distance, Map<Integer, Integer> map) {
     if(root == null) return;
 
-    getVerticalSum(root.left, column - 1, map);
+    getVerticalSum(root.left, distance - 1, map);
 
     int data = root.data;
-    if(map.get(column) != null) {
-      data = data + map.get(column);
+    if(map.get(distance) != null) {
+      data = data + map.get(distance);
     }
-    map.put(column, data);
-    getVerticalSum(root.right, column + 1, map);
+    map.put(distance, data);
+    getVerticalSum(root.right, distance + 1, map);
   }
 
   public static void printVerticalSum(Map<Integer, Integer> map) {
@@ -48,7 +48,7 @@ public class Problem024 {
     printVerticalSum(map);
   }
   /**
-   * We perform an inorder search. We increase the column for right subtree and decrease the column
+   * We perform an inorder search. We increase the distance for right subtree and decrease the distance
    * for left subtree by one.
    */
 }
