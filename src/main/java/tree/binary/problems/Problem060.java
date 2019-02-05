@@ -61,8 +61,8 @@ public class Problem060 {
    *
    * The second logic is the smarter one. Here, we do it in single iteration. Whenever we find
    * an element or when the element matches only then we increment the index. So if the index
-   * has reached the size of an array then this means that all the elements has been matched and
-   * we return true.
+   * has reached the size of an array then this means that all the elements has been
+   * matched and we return true.
    *
    */
 }

@@ -78,7 +78,8 @@ public class Problem063 {
    * Here we follow a very straight forward approach and has several steps.
    *
    * 1. Fetch the common ancestor of the two farthest leaves.
-   * We know how to find the diameter. Diameter is also the distance between the longest leaves.
+   * We know how to find the diameter. Diameter is also the distance between the longest
+   * leaves.
    * So we calculate diameter and the node where the diameter is the highest is the
    * common ancestor.
    *

@@ -2,8 +2,8 @@
 
 2.  Find the inorder successor for a given node in an inorder threaded binary tree.
 
-3.  Perform inorder traversal in an inorder threaded binary tree. This question can also be to
-    perform an inorder traversal without using stack or queue.
+3.  Perform inorder traversal in an inorder threaded binary tree.
+    This question can also be to perform an inorder traversal without using stack or queue.
 
 4.  Find a pre-order successor of a given node in an inorder threaded binary tree.
 
