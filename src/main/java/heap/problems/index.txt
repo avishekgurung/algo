@@ -1,0 +1,58 @@
+1*. Implement Max Heap.
+
+2*. Implement Min Heap.
+
+3. a. Create max and min heap with seven elements such that pre-order traversal of it
+      gives the elements in sorted order.
+
+   b. Create max and min heap with seven elements such that in-order traversal of it
+      gives the elements in sorted order.
+
+   c. Create max and min heap with seven elements such that post-order traversal
+   of it gives the elements in sorted order.
+
+   d. What is the minimum and maximum number of elements in a heap of height h.
+
+   e. Delete an arbitrary element from min heap. (or deleting ith indexed element)
+
+4.  Given a big file containing billions of numbers, find the ten maximum numbers.
+
+5.  Find the kth smallest element in a unsorted array.
+
+6.  We need to sort a nearly sorted array. Given an unsorted array and a value k,
+    every element will be k places before or after the current position when sorted.
+    Eg, say k = 2 and the element is at index 5, then when the array is sorted, this
+    element at index 5 will be in one of the following positions: 3,4,5,6,7.
+    Eg: arr[] = {6, 5, 3, 2, 8, 10, 9}, k = 3
+        arr[] = {10, 9, 8, 7, 4, 70, 60, 50} k = 4
+
+    These two arrays are nearly sorted.
+    https://www.geeksforgeeks.org/nearly-sorted-algorithm/
+
+7.  Check if a given Binary Tree is a heap.
+
+8.  Check if a given array represents a heap.
+
+9.  There are given n ropes of different lengths, we need to connect these ropes
+    into one rope. The cost to connect two ropes is equal to sum of their
+    lengths. We need to connect the ropes with minimum cost.
+    https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
+
+10. Design an efficient data structure for given operations:
+    1) findMin() : Returns the minimum item.
+       Frequency: Most frequent
+
+    2) findMax() : Returns the maximum item.
+        Frequency: Most frequent
+
+    3) deleteMin() : Delete the minimum item.
+        Frequency: Moderate frequent
+
+    4) deleteMax() : Delete the maximum item.
+        Frequency: Moderate frequent
+
+    5) Insert() : Inserts an item.
+        Frequency: Least frequent
+
+    6) Delete() : Deletes an item.
+        Frequency: Least frequent.
