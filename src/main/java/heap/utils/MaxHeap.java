@@ -4,15 +4,14 @@ package heap.utils;
  * The elements in heap are maintained in an array. The main objective of heap is that
  * when we call remove() then it has to remove the largest element. The array that we
  * use internally for storing the elements always has the highest element on its 0 index.
- * The other elements are randomly arranged and the other arrangements does not make a
- * different either.
+ * Every other elements in an array are arranged in such a way that for a given element
+ * at index i, its parent is at (i-1)/2, left child is at 2*i+1 and right child at 2*i+2.
  *
  * The theoretical properties of heap:
  * 1. A tree where a node is always higher than its children.
  * 2. All leaves are at height h or h-1
  *
- * These properties are imaginary and does not require implementation. We do not create
- * tree of such properties in reality but use array.
+ * We use array internally to implement a heap.
  */
 public class MaxHeap {
 
@@ -32,8 +31,8 @@ public class MaxHeap {
    * @param data
    *
    * (i-1)/2 gives a parent of i in the array.
-   * So the main objective is if a data is higher than its parent then move up in
-   * a tree.
+   * We start comparing with the last element of an array and keep moving to the left
+   * until we find a suitable place to insert the element.
    *
    */
   public void add(int data) {
@@ -107,7 +106,8 @@ public class MaxHeap {
    *
    * Exp: if(max == i) return;
    * If the value of index i is higher than its left child and right child,
-   * then it need go down further and it has found its right position.
+   * then it need go down further and it has found its right position satisfying the heap
+   * property.
    *
    * Otherwise, we will replace the current index by the maximum of two children.
    * As we see, we do the swap. The max now contains the original value which is yet

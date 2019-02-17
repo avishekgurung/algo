@@ -46,7 +46,7 @@ public class Problem006 {
    * then O(nlogn).
    *
    * If we divide the array into k + 1 subarrays then all the elements even after
-   * sorting will also lie in the subarray.
+   * sorting will also lie in the same subarray.
    * Eg. 6, 5, 3, 2, 8, 10, 9 with k = 3.
    *    [6,5,3,2] and [8,10,9]
    *    Here the elements after sorting will also lie in the same sub-array
@@ -57,8 +57,13 @@ public class Problem006 {
    *
    *Therefore, Sorting takes klogk.
    * Sorting does not happen in every step but happens only when the count is k.
-   * Hence sorting happens only for n/k times in total.
-   * So Time Complexity = n/k*klogk = nlogk
+   *
+   * Every element is inserted in heap so nlogk.
+   * Removing element from heap happens after every k elements, so removing from heap takes
+   * place n/k times.
+   *
+   * Time Complexity = n * (logk + logk) = nlogk
+   *
    * Space complexity = n
    *
    */

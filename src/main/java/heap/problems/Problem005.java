@@ -53,8 +53,10 @@ public class Problem005 {
  * Removing the top element is constant. Now in the array inside heap, we have to put
  * the new element and heapify(percolateDown) it. Now this cannot be done in
  * pre-defined heap as above, we have to create our own heap.
- * Time Complexity = O(n) + (n-k) * log(k) = nlogk
+ * Time Complexity = n + (n-k) * log(k) = nlogk
  *
- *
+ * Normal heap removal process involves removing the 0th element, replacing this
+ * 0th element by last element and percolate down. So it takes O(logn). Here, we want
+ * to skip the second step of percolate down but want to percolate down the new element.
  *
  */

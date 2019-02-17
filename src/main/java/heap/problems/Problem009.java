@@ -7,17 +7,17 @@ public class Problem009 {
 
   public static int getMinCost(int ropes[]) {
     int cost = 0;
-    PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
+    PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
     for(int i=0; i < ropes.length; i++) {
-      heap.add(ropes[i]);
+      minHeap.add(ropes[i]);
     }
 
-    while(!heap.isEmpty()) {
-      int x = heap.remove();
-      if(heap.isEmpty()) break;
-      int y = heap.remove();
+    while(!minHeap.isEmpty()) {
+      int x = minHeap.remove();
+      if(minHeap.isEmpty()) break;
+      int y = minHeap.remove();
       cost = cost + x + y;
-      heap.add(x + y);
+      minHeap.add(x + y);
     }
     return cost;
   }

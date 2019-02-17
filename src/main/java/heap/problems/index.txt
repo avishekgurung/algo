@@ -33,9 +33,22 @@
 
 8.  Check if a given array represents a heap.
 
-9.  There are given n ropes of different lengths, we need to connect these ropes
-    into one rope. The cost to connect two ropes is equal to sum of their
-    lengths. We need to connect the ropes with minimum cost.
+9.  There are given n ropes of different lengths, we need to connect these ropes into one
+    rope. The cost to connect two ropes is equal to sum of their lengths. We need to
+    connect the ropes with minimum cost.
+
+    For example if we are given 4 ropes of lengths 4, 3, 2 and 6. We can connect the
+    ropes in following ways.
+    1) First connect ropes of lengths 2 and 3. Now we have three ropes of lengths 4, 6
+    and 5.
+    2) Now connect ropes of lengths 4 and 5. Now we have two ropes of lengths 6 and 9.
+    3) Finally connect the two ropes and all ropes have connected.
+
+    Total cost for connecting all ropes is 5 + 9 + 15 = 29. This is the optimized cost
+    for connecting ropes. Other ways of connecting ropes would always have same or more
+    cost. For example, if we connect 4 and 6 first (we get three strings of 3, 2 and 10),
+    then connect 10 and 3 (we get two strings of 13 and 2). Finally we connect 13 and 2.
+    Total cost in this way is 10 + 13 + 15 = 38.
     https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
 
 10. Design an efficient data structure for given operations:
@@ -56,3 +69,74 @@
 
     6) Delete() : Deletes an item.
         Frequency: Least frequent.
+
+11*.Given an array of numbers find the Kth smallest number in the range from
+    index 'start' to 'end'.
+    arr[] = {3, 2, 5, 1, 8, 9}
+    Eg. start = 1, end = 4, k = 2
+        from index 1 to 4 has elements [2,5,1,8] and 2nd smallest among them
+        is 2
+
+    Eg. start = 0, end = 5, k = 4
+        Ans is: 5
+
+12. Find the smallest derangement. Lets say k = 2, then the seq is as 0,1,2.
+    The derangement of this seq is a permutation such that no elements are at
+    the same position. Eg for this seq, the derangement are [1,2,0] & [2,0,1]
+     but the smallest is [1,2,0].
+
+    For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
+    We can also try for largest derangement.
+
+13. Maximum sum combination from two arrays.
+    Two arrays of equal sizes are given. We need to find the k number of max
+    sum of the elements of two arrays. Eg.
+    A = [1,4,5,2]
+    B = [3,0,9,7]
+
+    There can be many sum combinations like: 1+3=4, 1+9=10,5+7=12 etc etc.
+    But we need to find k number of max sums. If k = 2, then the max sums are
+    9 + 5 = 14 and
+    9 + 4 = 13
+    https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/
+
+14. Given an array which can contain duplicate elements. We are given a value
+    k. We need to remove k number of elements from the array such that we get
+    the maximum non-repeating elements.
+    Eg. arr[] = {5, 7, 5, 5, 1, 1, 2, 2, 5}, k = 3
+    Here, if we remove three 5s, then distinct element will be 2 (5,7)
+    But if we remove, one 1, one 2, one 5(will not make any difference though)
+    then the distinct elements will be 3 (7,1,2)
+    https://www.geeksforgeeks
+    .org/maximum-distinct-elements-removing-k-elements/
+
+15. Median of Stream of Running Integers. An integer is being read from a
+    continuous stream, we need to find a median of all the elements read so
+    far. A median is an integer that divides the sorted list into two. For
+    odd number of integers, median is the middle element. For even number of
+    integers, median is an average to two middle numbers.
+    https://www.geeksforgeeks.org/median-of-stream-of-running-integers-using
+    -stl/
+
+16. Multiplication of largest triplet. An integer is being read from a
+    continuous stream, for every insertion we need to find a multiplication of
+    largest 3 numbers that been received so far.
+
+17. Given an array of n numbers and a positive integer k. The problem is to
+    find k numbers with most occurrences, i.e., the top k numbers having the
+    maximum frequency. If two numbers have same frequency then the larger
+    number should be given preference. The numbers should be displayed in
+    decreasing order of their frequencies.
+    https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
+
+18. Convert BST to Min Heap. Given a BST, we need to modify this bst such that
+    this modified tree is a min heap where left substree is less than right
+    subtree for all nodes.
+    https://www.geeksforgeeks.org/convert-bst-min-heap/
+
+19. Why is Binary Heap preferred over BST for Priority Queue?
+
+20. A min heap array is given, we have to convert it into max heap in O(n).
+
+21. Given a level order traversal of a Binary Tree, check if its a min heap.
+
