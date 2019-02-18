@@ -31,8 +31,8 @@ public class MaxHeap {
    * @param data
    *
    * (i-1)/2 gives a parent of i in the array.
-   * We start comparing with the last element of an array and keep moving to the left
-   * until we find a suitable place to insert the element.
+   * We start comparing with the last element of an array with the element to insert and
+   * keep moving to the left until we find a suitable place to insert the element.
    *
    */
   public void add(int data) {
@@ -106,10 +106,11 @@ public class MaxHeap {
    *
    * Exp: if(max == i) return;
    * If the value of index i is higher than its left child and right child,
-   * then it need go down further and it has found its right position satisfying the heap
-   * property.
+   * then it need not go down further and it has found its right position satisfying the
+   * heap property.
    *
-   * Otherwise, we will replace the current index by the maximum of two children.
+   * Otherwise, we will replace the current index by the maximum of two children. Giving
+   * first preference to left child.
    * As we see, we do the swap. The max now contains the original value which is yet
    * to find its place and we percolate down.
    *
@@ -165,6 +166,18 @@ public class MaxHeap {
     arr[0] = arr[count];
     percolateDown(0);
     return data;
+  }
+
+  /**
+   * This method will have its use when we want to keep complexities to minimum.
+   * @param dataToInsert
+   * @return
+   */
+  public int removeAndReplace(int dataToInsert) {
+    int dataToRemove = arr[0];
+    arr[0] = dataToInsert;
+    percolateDown(0);
+    return dataToRemove;
   }
 
   public static void main(String[] args) throws Exception{

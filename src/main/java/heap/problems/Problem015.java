@@ -77,7 +77,6 @@ public class Problem015 {
 
     int arr[] = new int[]{8,3,1,5,9,6,4,2,7};
 
-
     for(int i=0; i < arr.length; i++) {
       calculateMedian(arr[i]);
       System.out.println("Adding: " + arr[i]);
@@ -85,8 +84,6 @@ public class Problem015 {
       System.out.println("--------");
       Thread.sleep(2000);
     }
-
-
 
   }
 

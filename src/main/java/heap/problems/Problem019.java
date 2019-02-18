@@ -15,8 +15,8 @@ package heap.problems;
  *  Insert
  *    Both trees take logN to insert an element
  *
- *  Implementing Balanced BST is complex than BH. Normal BST can get skewed so
- *  normal BST will not be efficient.
+ *  To use BST as Priority Queue, we have to create a balanced BST whose implementation
+ *  is more complex than heap.
  *
  *
  *

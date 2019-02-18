@@ -50,13 +50,6 @@ public class Problem020 {
     for(int i=min.length/2; i >=0 ;i--) {
       percolateDown(i, min);
     }
-    /*for(int i=1; i < min.length; i++) {
-
-        int element = min[i];
-        insert(element, min);
-
-    }
-*/
     return min;
   }
 

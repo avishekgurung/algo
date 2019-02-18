@@ -18,6 +18,13 @@ package heap.problems;
  * the array and find the product. Insertion takes logk and iteration will take
  * k. So complexity = nklogk
  *
+ * Efficient: Create a min heap of size k. Fill the min heap first with the elements
+ * from stream. Now if every incoming element, check if the element is greater than
+ * the root, if yes the remove the root and insert the element. Use removeAndReplace()
+ * method so that we do both this op in logk i.e log3. When asked for the product
+ * of triplets, don't pop the element from the heap, find the product and re-insert the
+ * elements. Simply iterate the internal heap array and find the product. This will
+ * also take O(nklogk). For triplets, k = 3, so its O(n).
  *
  */
 

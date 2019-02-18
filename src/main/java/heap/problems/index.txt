@@ -83,7 +83,7 @@
 12. Find the smallest derangement. Lets say k = 2, then the seq is as 0,1,2.
     The derangement of this seq is a permutation such that no elements are at
     the same position. Eg for this seq, the derangement are [1,2,0] & [2,0,1]
-     but the smallest is [1,2,0].
+    but the smallest is [1,2,0].
 
     For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
     We can also try for largest derangement.
@@ -120,7 +120,7 @@
 
 16. Multiplication of largest triplet. An integer is being read from a
     continuous stream, for every insertion we need to find a multiplication of
-    largest 3 numbers that been received so far.
+    largest 3 numbers that has been received so far.
 
 17. Given an array of n numbers and a positive integer k. The problem is to
     find k numbers with most occurrences, i.e., the top k numbers having the

@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class Problem013 {
 
+  /**
+   * This does not work.
+   * @param a
+   * @param b
+   * @param k
+   */
   private static void kMaxSumCombinations(int a[], int b[], int k) {
     System.out.println(Arrays.toString(a));
     System.out.println(Arrays.toString(b));
