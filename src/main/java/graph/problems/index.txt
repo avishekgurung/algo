@@ -1,7 +1,9 @@
 1.  Perform a Bread First and Depth First traversal on a graph.
 
-2. Perform a topological sorting on a Directed Asyclic Graph.
+2.  Perform a topological sorting on a Directed Asyclic Graph.
 
 3.  Perform shortest path for non-weighted graphs.
 
-4.  Perform shortest path for weighted graphs. (Dijkstra's algo)
+4.  Perform shortest path for weighted graphs with non-negative edges. (Dijkstra's algo)
+
+5.  Perform shortest path for weighted graphs with negative edges. (Bellman-Ford algo)

@@ -7,6 +7,11 @@ import graph.utils.Graph;
 
 public class Problem003 {
 
+  /**
+   * Complexity is same as that of BFS
+   * @param graph
+   * @param vertex
+   */
   public static void shortestPath(Graph graph, char vertex) {
     int distance[] = new int[graph.vertices.length];
     String path[] = new String[graph.vertices.length];
@@ -27,17 +32,10 @@ public class Problem003 {
       int vertexIndex = graph.indexMap.get(vertex);
 
       for(int i=0; i < graph.vertices.length; i++) {
-        char neighbour = graph.vertices[i];
-        int newDistance = distance[vertexIndex] + 1;
-        if(graph.adjMatrix[vertexIndex][i] == 1) {
-          if (distance[i] == -1) {
-            distance[i] = newDistance;
-            path[i] = path[vertexIndex] + " -> " + neighbour;
-            queue.add(neighbour);
-          } else if (newDistance < distance[i]) {
-            distance[i] = newDistance;
-            path[i] = path[vertexIndex] + " -> " + neighbour;
-          }
+        if(graph.adjMatrix[vertexIndex][i] == 1 && distance[i] == -1) {
+            distance[i] = distance[vertexIndex] + 1;
+            path[i] = path[vertexIndex] + " -> " + graph.vertices[i];
+            queue.add(graph.vertices[i]);
         }
       }
     }

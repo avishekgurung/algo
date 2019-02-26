@@ -62,3 +62,8 @@ public class Problem002 {
   }
 
 }
+
+/**
+ * Time Complexity = V^2
+ * If we use AdjList, TC = V*e = E
+ */
