@@ -7,3 +7,15 @@
 4.  Perform shortest path for weighted graphs with non-negative edges. (Dijkstra's algo)
 
 5.  Perform shortest path for weighted graphs with negative edges. (Bellman-Ford algo)
+
+6.  Create a Minimal Spanning Tree using Prim's algorithm.
+
+7.  a. In an undirected graph, what is the maximum number of edges? Self loops are not allowed.
+    b. Which graph representation is best to determine if a vertex is isolated.
+    c. How many directed asyclic graphs are possible for n vertices.
+    d. How can we find a maximum spanning tree?
+
+8.  Detect a cycle in a directed and non-directed graph.
+
+9.  Check if there exists a simple path from source s to destination d in a graph.
+

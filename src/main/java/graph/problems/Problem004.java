@@ -346,6 +346,16 @@ public class Problem004 {
     graph.setEdge('B', 'D', 0);
     graph.shortestPath('A');
 
+
+    System.out.println("----------------");
+    vertices = new char[]{'A','B','C','D'};
+    graph = new Graph(vertices);
+    graph.setEdge('A', 'B', 5);
+    graph.setEdge('B', 'C', 5);
+    graph.setEdge('D', 'C', 2);
+    graph.setEdge('D', 'A', 9);
+    graph.shortestPath('D');
+
 /*
     System.out.println("----------------");
     vertices = new char[]{'A','B','C','D'};
