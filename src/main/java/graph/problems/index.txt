@@ -17,5 +17,159 @@
 
 8.  Detect a cycle in a directed and non-directed graph.
 
-9.  Check if there exists a simple path from source s to destination d in a graph.
+9.  Check if there exists a path from source s to destination d in a graph.
 
+10. Count the number of paths from source to destination.
+
+11. Find the articulation points in a graph.
+
+12. Check if the given Graph is bipartite.
+
+13. Given a N X N matrix (M) filled with 1 , 0 , 2 , 3 . Find the minimum numbers of moves needed
+    to move from source to destination (sink) while traversing through blank cells only.
+    You can traverse up, down, right and left.
+    A value of cell 1 means Source.
+    A value of cell 2 means Destination.
+    A value of cell 3 means Blank cell.
+    A value of cell 0 means Blank Wall.
+    Note : there is only single source and single destination and there may be more than one path
+    from source to destination(sink). Each move in matrix we consider as ‘1’
+
+    Eg. Input : M[3][3] = {{ 0 , 3 , 2 },
+                           { 3 , 3 , 0 },
+                           { 1 , 3 , 0 }};
+        Output : 4
+        Exp: Source is at (2,0) -> (2,1) -> (1,1,) -> (0,1) -> (0,2)
+
+        Input : M[4][4] = {{ 3 , 3 , 1 , 0 },
+                           { 3 , 0 , 3 , 3 },
+                           { 2 , 3 , 0 , 3 },
+                           { 0 , 3 , 3 , 3 }};
+        Output : 4
+    https://www.geeksforgeeks.org/find-minimum-numbers-moves-needed-move-one-cell-matrix-another/
+
+14. Given two four digit prime numbers, suppose 1033 and 8179, we need to find the shortest path
+    from 1033 to 8179 by altering only single digit at a time such that every number that we get
+    after changing a digit is prime. For example a solution is 1033, 1733, 3733, 3739, 3779,
+    8779, 8179
+
+    https://www.geeksforgeeks.org/shortest-path-reach-one-prime-changing-single-digit-time/
+
+15. There is a m*n rectangular matrix whose top-left(start) location is (1, 1) and bottom-right
+    (end) location is (m*n). There are k circles each with radius r. Find if there is any path
+    from start to end without touching any circle.
+
+    The input contains values of m, n, k, r and two array of integers X and Y, each of length k.
+    (X[i], Y[i]) is the centre of ith circle.
+
+    Input1 : m = 5, n = 5, k = 2, r = 1,
+             X = {1, 3}, Y = {3, 3}
+    Output1 : Possible
+
+    Input2 : m = 5, n = 5, k = 2, r = 1,
+             X = {1, 1}, Y = {2, 3}.
+    Output2 : Not Possible
+
+    https://www.geeksforgeeks.org/path-rectangle-containing-circles/
+    Asked in Directi.
+
+16. Consider a matrix with rows and columns, where each cell contains either a ‘0’ or a ‘1’ and
+    any cell containing 1 is called a filled cell. Two cells are said to be connected if they
+    are adjacent to each other horizontally, vertically, or diagonally .If one or more filled
+    cells are connected, they form a region. find the length of the largest region.
+
+    Input : M[][5] = { 0 0 1 1 0
+                       1 0 1 1 0
+                       0 1 0 0 0
+                       0 0 0 0 1 }
+    Output : 6
+    Ex: in the following example, there are 2 regions one with length 1 and the other as 6.
+        so largest region : 6
+    https://www.geeksforgeeks.org/find-length-largest-region-boolean-matrix/
+
+17. Given an array A of integers. Index i of A is said to be connected to index j if j = (i +
+    A[i]) % n + 1 (Assume 1-based indexing). Start traversing array from index i and jump to
+    its next connected index. If on traversing array in the described order, index i is again
+    visited then index i is a magical index. Count the number of magical indexes in the array.
+    Assume that array A consists of non-negative integers.
+
+    Input : A = {1, 1, 1, 1}
+    Output : 4
+    Possible traversals:
+    1 -> 3 -> 1
+    2 -> 4 -> 2
+    3 -> 1 -> 3
+    4 -> 2 -> 4
+    Clearly all the indices are magical
+
+    Input : A = {0, 0, 0, 2}
+    Output : 2
+    Possible traversals:
+    1 -> 2 -> 3 -> 4 -> 3...
+    2 -> 3 -> 4 -> 3...
+    3 -> 4 -> 3
+    4 -> 3 ->4
+    Magical indices = 3, 4
+    https://www.geeksforgeeks.org/magical-indices-array/
+
+18. Given a sorted dictionary (array of words) of an alien language, find order of characters
+    in the language.
+    Input:  words[] = {"baa", "abcd", "abca", "cab", "cad"}
+    Output: Order of characters is 'b', 'd', 'a', 'c'
+    The words are sorted. So b comes before a and a comes before c.
+    b -> a, a -> c
+    Take the words, abcd and abca, so d comes before a. d -> a
+    Take the words, cab and cad, so b comes before d. b -> d
+    Hence b -> d -> a -> c
+
+    Input:  words[] = {"caa", "aaa", "aab"}
+    Output: Order of characters is 'c', 'a', 'b'
+
+    https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+
+19. There are n cities and there are roads in between some of the cities. Somehow all the roads
+    are damaged simultaneously. We have to repair the roads to connect the cities again. There
+    is a fixed cost to repair a particular road. Find out the minimum cost to connect all the
+    cities by repairing roads. Input is in matrix(city) form, if city[i][j] = 0 then there is
+    not any road between city i and city j, if city[i][j] = a > 0 then the cost to rebuild the
+    path between city i and city j is a. Print out the minimum cost to connect all the cities.
+    It is sure that all the cities were connected before the roads were damaged.
+
+    Input : {{0, 1, 2, 3, 4},
+             {1, 0, 5, 0, 7},
+             {2, 5, 0, 6, 0},
+             {3, 0, 6, 0, 0},
+             {4, 7, 0, 0, 0}};
+    Output : 10
+    https://www.geeksforgeeks.org/minimum-cost-connect-cities/
+
+20. We are given a matrix of nxn where each cell has some positive integers. These numbers
+    represent the cost. Given a position A[i][j], we have to find the path to reach this position
+    at minimum cost from (0,0). We can traverse in top, bottom, left and right.
+    https://www.geeksforgeeks.org/minimum-cost-path-left-right-bottom-moves-allowed/
+
+21. Given a matrix that is filled with ‘O’, ‘G’, and ‘W’ where ‘O’ represents open space, ‘G’
+    represents guards and ‘W’ represents walls in a Bank. Replace all of the O’s in the matrix
+    with their shortest distance from a guard, without being able to go through any walls.
+    Also, replace the guards with 0 and walls with -1 in output matrix.
+
+    Expected Time complexity is O(MN) for a M x N matrix.
+    O ==> Open Space
+    G ==> Guard
+    W ==> Wall
+
+    Input:
+      O  O  O  O  G
+      O  W  W  O  O
+      O  O  O  W  O
+      G  W  W  W  O
+      O  O  O  O  G
+
+    Output:
+      3  3  2  1  0
+      2 -1 -1  2  1
+      1  2  3 -1  2
+      0 -1 -1 -1  1
+      1  2  2  1  0
+
+    https://www.geeksforgeeks.org/find-shortest-distance-guard-bank/

@@ -13,6 +13,12 @@ public class Problem005 {
    * Dijktra's algo.
    *
    * Its complexity using Adj List is O(EV).
+   *
+   * while(!queue.isEmpty()) loop takes V
+   * Using, adj list, for every neighbour it takes e.
+   * Now q.add takes V
+   * So complexity = V * (eV) = VE
+   *
    * @param graph
    * @param vertex
    */

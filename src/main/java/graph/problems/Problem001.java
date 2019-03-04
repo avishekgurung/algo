@@ -2,6 +2,7 @@ package graph.problems;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 import graph.utils.Graph;
 
@@ -68,7 +69,18 @@ public class Problem001 {
   }
 
   /**
-   * The complexity and explanation is same as that of BFS.
+   * Complexity.
+   * For every vertex,
+   *  1. we are marking it as visited which takes O(1).
+   *  2. We check its every edge if its visited.
+   *
+   *  For adj matrix:
+   *    Complexity = V (1 + V) = V^2
+   *
+   *  For adj list
+   *    Complexity = V (1 + e) where e is the number of edges.
+   *    In adj list, we know exactly who are the neighbours so no need to iterate all vertices.
+   *    Complexity = V + Ve = V + E where E is the total number of edges.
    * @param graph
    * @param vertex
    */
@@ -85,6 +97,25 @@ public class Problem001 {
     }
   }
 
+  public static void depthFirstByIteration(Graph graph, char vertex) {
+    Stack<Character> stack = new Stack<Character>();
+    stack.push(vertex);
+
+    while(!stack.isEmpty()) {
+      vertex = stack.pop();
+      int vertexIndex = graph.indexMap.get(vertex);
+      System.out.print(vertex + "\t");
+      graph.visited[vertexIndex] = 1;
+
+      for(int i=0; i < graph.vertices.length; i++) {
+        if(graph.adjMatrix[vertexIndex][i] == 1 && graph.visited[i] == 0) {
+          stack.push(graph.vertices[i]);
+        }
+      }
+    }
+
+  }
+
   public static void main(String[] args) {
 
     Graph graph = Graph.getPredefinedGraph();
@@ -94,6 +125,10 @@ public class Problem001 {
 
     graph = Graph.getPredefinedGraph();
     depthFirstTraversal(graph,'A' );
+
+    /*graph = Graph.getPredefinedGraph();
+    System.out.println();
+    depthFirstByIteration(graph,'A' );*/
   }
 
 }

@@ -37,7 +37,7 @@ import java.util.Set;
  *
  *
  * Prim's algo is similar to that of Dijktra's in implementation. Whereas Dijktra's algo helps
- * us to find a shortest path from one vertices to all other vertices whereas Prim's algo helps
+ * us to find a shortest path from one vertex to all other vertices whereas Prim's algo helps
  * us to find a Spanning Tree with minimum cost. Lets take a graph for an example:
  *
  *  A ----- B ----- C
@@ -59,38 +59,27 @@ import java.util.Set;
  *                  |
  *                  |
  *                  D
- * Prim's algo works on non-directed graph whereas Dijktra's work most on directed graph.
+ * Prim's algo works on non-directed graph whereas Dijktra's work mostly on directed graph.
  *
  */
 
 public class Problem006 {
-
-  private class Vertex{
-    char label;
-    int distance;
-
-    Vertex(char label, int distance) {
-      this.label = label;
-      this.distance = distance;
-    }
-
-  }
-
-  private class VertexComparator implements Comparator<Vertex> {
-    public int compare(Vertex o1, Vertex o2) {
-      if(o1.distance < o2.distance) return -1;
-      if(o1.distance > o2.distance) return 1;
-      else return -1;
-    }
-  }
-
-  private class Neighbour {
+  private class Vertex {
     char label;
     int weight;
 
-    Neighbour(char label, int weight) {
+    Vertex(char label, int weight) {
       this.label = label;
       this.weight = weight;
+    }
+  }
+
+
+  private class VertexComparator implements Comparator<Vertex> {
+    public int compare(Vertex o1, Vertex o2) {
+      if(o1.weight < o2.weight) return -1;
+      if(o1.weight > o2.weight) return 1;
+      else return -1;
     }
   }
 
@@ -98,7 +87,7 @@ public class Problem006 {
 
     private char[] vertices;
 
-    private LinkedList<Neighbour>[] adjList;
+    private LinkedList<Vertex>[] adjList;
 
     private Map<Character, Integer> indexMap = new HashMap<Character, Integer>();
     private Set<Character> visited = new HashSet<Character>();
@@ -111,7 +100,7 @@ public class Problem006 {
       adjList = new LinkedList[size];
 
       for(int i=0; i < size; i++) {
-        adjList[i] = new LinkedList<Neighbour>();
+        adjList[i] = new LinkedList<Vertex>();
       }
 
       for(int i=0; i < size; i++) {
@@ -122,14 +111,14 @@ public class Problem006 {
 
     public void setEdge(char src, char dest, int weight) {
       int srcIndex = indexMap.get(src);
-      Neighbour neighbour = new Neighbour(dest, weight);
-      LinkedList<Neighbour> neighbours = adjList[srcIndex];
+      Vertex neighbour = new Vertex(dest, weight);
+      LinkedList<Vertex> neighbours = adjList[srcIndex];
       neighbours.add(neighbour);
       adjList[srcIndex] = neighbours;
 
       //For non directed graph
       int destIndex = indexMap.get(dest);
-      neighbour = new Neighbour(src, weight);
+      neighbour = new Vertex(src, weight);
       neighbours = adjList[destIndex];
       neighbours.add(neighbour);
       adjList[destIndex] = neighbours;
@@ -150,7 +139,7 @@ public class Problem006 {
       while(!minHeap.isEmpty()) {
         vertex = minHeap.remove();
         if(!visited.contains(vertex.label)) {
-          cost = cost + vertex.distance;
+          cost = cost + vertex.weight;
           path = path + vertex.label + " -> ";
           visited.add(vertex.label);
           evaluateNeighbours(vertex, minHeap);
@@ -164,12 +153,11 @@ public class Problem006 {
 
     private void evaluateNeighbours(Vertex vertex, PriorityQueue<Vertex> minHeap) {
       int vertexIndex = indexMap.get(vertex.label);
-      LinkedList<Neighbour> neighbours = adjList[vertexIndex];
+      LinkedList<Vertex> neighbours = adjList[vertexIndex];
 
-      for(Neighbour neighbour : neighbours) {
+      for(Vertex neighbour : neighbours) {
         if(!visited.contains(neighbour.label)) {
-          Vertex neighbourVertex = new Vertex(neighbour.label, neighbour.weight);
-          minHeap.add(neighbourVertex);
+          minHeap.add(neighbour);
         }
       }
     }
