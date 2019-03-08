@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Problem021 {
 
-  public static int nextGreateElements(int input[], int index) {
+  public static int nextGreaterElements(int input[], int index) {
     int nge[] = new int[input.length];
     Stack<Integer> stack = new Stack<Integer>();
 
@@ -78,8 +78,8 @@ public class Problem021 {
 
   /**
    * This problem is also a tweak of Next greater element. For every element, we find the next
-   * greater element, and store them in a separate array. We store the indices and not the actual
-   * value of elements.
+   * greater element, and store them in a separate array. We store the indices and not
+   * the actual value of elements.
    *
    * For a given index, we check which is its next highest element.
    * Now for this next highest element, we check which is its next highest element.

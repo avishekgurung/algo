@@ -1,4 +1,4 @@
-package generic;
+package pattern.problems;
 
 import java.util.Stack;
 
@@ -19,3 +19,7 @@ public class Problem0001 {
     }
   }
 }
+
+/***
+ * The time complexity is O(n) since the the outer and inner loop together runs for n times.
+ */

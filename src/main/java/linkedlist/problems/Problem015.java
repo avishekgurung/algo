@@ -4,7 +4,13 @@ import linkedlist.util.LinkedList.LinkedListUtil;
 import linkedlist.util.LinkedList.Node;
 
 public class Problem015 {
-  
+
+  /**
+   * This complex logic is not required. We can take a list from 0 and 1, merge it and keep it
+   * in 0. Then merge 0 and 2 keep it in 0 and continue. The complexity will be the same.
+   * @param arr
+   * @return
+   */
   public static Node util(Node[] arr) {
     int last = arr.length - 1;
     while(last != 0) {

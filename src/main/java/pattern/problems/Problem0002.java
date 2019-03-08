@@ -1,4 +1,4 @@
-package generic;
+package pattern.problems;
 
 public class Problem0002 {
 

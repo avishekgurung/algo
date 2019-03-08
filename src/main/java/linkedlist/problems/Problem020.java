@@ -7,7 +7,7 @@ public class Problem020 {
 
   public static void triplets(Node x, Node y, Node z, int k) {
     y = mergeSort(y);
-    z = mergeSort(z);
+    z = mergeSort(z); //we can perform merge sort in descending order to avoid reverse.
     z = reverse(null ,z);
     Node yHead = y;
     Node zHead = z;

@@ -1,7 +1,7 @@
-1. Finding the next highest element in a list.
-    The list here can be an array or linkedlist or any other list. For an element, we need to find
-    another element to its right which is higher than the element. If there are multiple elements
-    higher than the current one then we choose the first element.
+1. Find of spans or finding of next highest element in a list.
+    The list here can be an array or linkedlist or any other list. For an element, we need to
+    find another element to its right which is higher than the element. If there are multiple
+    elements higher than the current one then we choose the first element.
 
     Ex 1
         arr = {4,5,3,7,8,5,1,2}

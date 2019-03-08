@@ -34,7 +34,7 @@ public class Problem012 {
 
   public static void main(String[] args) {
 
-    int[] histogram = new int[] {6, 5, 5, 4, 5, 1, 6};
+    int[] histogram = new int[] {1,2,3,2};
     System.out.println(findMaxAreaInHistogram(histogram));
 
   }

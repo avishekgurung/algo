@@ -1,0 +1,35 @@
+1.  Finding of spans or finding of next highest element in a list.
+    This algo basically solves finding next highest element (which is greater than the current
+    element) in a list. The list can be array, linkedlist etc.
+
+    For all elements, we need to  find another element to its right which is higher than the
+    element. If there are multiple elements higher than the current one then we choose the
+    first element.
+
+    Ex 1
+        arr = {4,5,3,7,8,5,1,2}
+        4 -> 5
+        5 -> 7
+        3 -> 7
+        7 -> 8
+        8 -> NA
+        5 -> NA
+        1 -> 2
+        2 -> NA
+    There are several questions modified to use this algo. Eg, a linkedlist's random pointer
+    should point to next higher element, finding span in stocks etc.
+
+    Calculate the time complexity.
+
+
+2. Processing all the elements of 2D array in a complexity lesser than O(n2).
+
+    Lets say we have a 2D array as follows:
+        1 2 3 4
+        5 6 7 8
+        2 3 4 5
+        1 3 4 5
+    And we want to process (or traverse) all the elements (say we want to find the sum of all
+    the elements). Then the normal traversing will take O(n2). But we can also do it in O(nlogn).
+
+    This question could also be framed for LL, single array etc.

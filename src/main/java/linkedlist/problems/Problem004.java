@@ -54,4 +54,11 @@ public class Problem004 {
     LinkedListUtil.display(head);
 
   }
+  /**
+   * Another simpler approach would be.
+   * Reverse the node.
+   * Delete the next node if its lesser than the current one.
+   * Reverse the node again.
+   * Here, we do not have to handle the 'deleteFirstNode' condition as above.
+   */
 }

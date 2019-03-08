@@ -60,7 +60,7 @@ public class Problem006 {
   public static void main(String[] args) {
     MyStack stack = new MyStack();
 
-    int arr[] = {3,5,2,1,1,-1};
+    int arr[] = {5,3,4,2};
     for(int i=0; i < arr.length; i++) {
       stack.push(arr[i]);
       System.out.println("Pushed:" + arr[i] + " Min:" + stack.getMinimum() + "\tInternal Stack: " +
@@ -81,7 +81,7 @@ public class Problem006 {
  *
  * Push
  *
- *  Let 'x' be an element to be pushed into the stop.
+ *  Let 'x' be an element to be pushed into the stack.
  *  if stack is empty:
  *    we push x into the stack
  *    we keep x as min element

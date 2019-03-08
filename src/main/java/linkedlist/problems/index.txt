@@ -1,0 +1,177 @@
+1. Given a linked list and a key to be deleted. Delete last occurrence of key from list.
+The list may have duplicates.
+
+Input:   1->2->3->5->2->10, key = 2
+Output:  1->2->3->5->10
+
+2. Length of a linked list by recursion.
+
+3. Search an element in a LinkedList (by recursion).
+
+4. Given a singly linked list, remove all the nodes which have a greater value on right side.
+    12->15->10->11->5->6->2->3->NULL should be changed to 15->11->6->3->NULL
+    10->20->30->40->50->60->NULL should be changed to 60->NULL
+    60->50->40->30->20->10->NULL should not be changed.
+
+5. Sort linked list of 0s,1s and 2s.
+
+6. Clone a LinkedList which has an extra pointer that points to any random node.
+
+7. Given a singly linked list, rotate the linked list counter-clockwise by k nodes.
+Where k is a given positive integer. For example, if the given linked list is
+10->20->30->40->50->60 and k is 4, the list should be modified to 50->60->10->20->30->40.
+Try using minimum pointer too.
+
+8.* Sort a LinkedList (MergeSort method)
+
+9. Rearrange the linked list such that
+    1-2-3-4-5 is 1-5-2-4-3
+    1-2-3-4 is 1-4-2-3
+
+10. We have a linked list with two pointers. One of the pointer is a random pointer
+which points to NULL. We need to point this random pointer to HIGHEST element to its
+right.
+    Eg. 5 -> 10 -> 2 -> 3
+    5's rand should point to 10
+    10's rand should point to 3
+    2's rand should point to 3
+    3's rand should point to Null
+
+11*. We have a linked list with two pointers. One of the pointer is a random pointer
+    which points to NULL. We need to point this random pointer to NEXT highest element to its
+    right.
+    Eg. 5 -> 10 -> 2 -> 3
+    5's rand should point to 10
+    10's rand should point to NULL (as there are no elements higher than 10)
+    2's rand should point to 3
+    3's rand should point to Null
+
+    Eg. 4 -> 5 -> 2 -> 25
+    4's rand should point to 5
+    5's rand should point to 25
+    2's rand should point to 25
+    25's rand should point to N
+
+12. Give a linked list that is alternately increasing and decreasing. Sort the linked
+list.
+    Eg. Input List:   10->40->53->30->67->12->89->NULL
+        Output List:  10->12->30->43->53->67->89->NULL
+
+13. Insertion sort for a linked list.
+
+14. Multiply two numbers represented by linked list. The result should be a number and
+    not a linked list.
+    Eg: Input: 9 -> 4 -> 6 and 8 -> 4
+        Output: 79464
+
+15*. Merge K sorted list. We are given k number of linked list, we need to sort them
+    and merge them into one.
+    eg:
+        Input: k = 3, n =  4
+        list1 = 1->3->5->7->NULL
+        list2 = 2->4->6->8->NULL
+        list3 = 0->9->10->11->NULL
+
+        Output:
+        0->1->2->3->4->5->6->7->8->9->10->11->NULL
+
+16. Union and Intersection of two linked list.
+    Input:
+       List1: 10->15->4->20
+       List2:  8->4->2->10
+    Output:
+       Intersection List: 4->10
+       Union List: 2->8->20->4->15->10]
+
+17. Find pair for given sum in a sorted singly linked without extra space
+    Given a sorted singly linked list and a value x, the task is to find pair whose sum is
+    equal to x. We are not allowed to use any extra space and expected time complexity is
+    O(n).
+
+    Examples:
+
+    Input : head = 3-->6-->7-->8-->9-->10-->11 , x=17
+    Output: (6, 11), (7, 10), (8, 9)
+
+18. What is XOR Linked List? Give the logic and can we implement in Java?
+
+19. Flattening a Linked List. Given a linked list which has two pointers.
+    One is a usual next pointer and the other is a 'down' pointer as given below.
+    We need to flatten the linked list and sort them. The linked list is sorted
+    in both the direction.
+
+    Eg.
+    5 - 10 - 19 - 28
+    |   |    |    |
+    7   20   22   35
+    |        |    |
+    8        50   40
+    |             |
+    30            45
+
+20. Find a triplet from three linked lists with sum equal to a given number.
+    Given three linked lists, say a, b and c, find one node from each list
+    such that the sum of the values of the nodes is equal to a given number.
+    For example, if the three linked lists are 12->6->29, 23->5->8 and
+    90->20->59, and the given number is 101, the output should be triplet
+     “6 5 90”.
+
+21*. Find the length of a largest palindrome in a linked list without using
+    any extra space.
+    Input  : List = 2->3->7->3->2->12->24
+    Output : 5
+    The longest palindrome list is 2->3->7->3->2
+
+    Input  : List = 12->4->4->3->14
+    Output : 2
+    The longest palindrome list is 4->4
+
+22*. Subtract two numbers represented by two different linked list, giving
+     an output as another linked list.
+
+23*. Add two numbers represented by two different linked list, giving an
+     out as another linked list.
+
+24. Sort linked list which is already sorted on absolute values.
+    Input :  1 -> -10
+    output: -10 -> 1
+
+    Input : 1 -> -2 -> -3 -> 4 -> -5
+    output: -5 -> -3 -> -2 -> 1 -> 4
+
+    Input : -5 -> -10
+    Output: -10 -> -5
+
+    Input : 5 -> 10
+    output: 5 -> 10
+
+    The inputs are sorted without considering - sign. But we need to sort them considering -
+    sign.
+
+25. Count the number of rotations in Rotated Linked List. We assume that the linked list was
+    first sorted and then made k rotations. We need to find the value of k.
+
+    Eg: Original list: 5-8-11-12-15-18
+    After 2 rotations: 15-18-5-8-11-12
+    The input give will be 15-18-5-8-11-12, we need to give the output as 2.
+
+26. Reverse every K elements of a linked list.
+    Input: 1-2-3-4-5-6-7-8-9 k=3
+    Output: 3-2-1-6-5-4-9-8-7
+
+    Input: 1-2-3-4-5-6-7-8
+    Output:3-2-1-6-5-4-7-8
+
+27. Reverse a Linked List (Recursion and Iteration).
+
+28. Merge two linked lists that are sorted to give a final linked list that is also sorted.
+
+29. Merge two linked lists that are sorted to give a final linked list that is in descending
+    order.
+
+30. Alternately reverse a linked list.
+    Input: 1-2-3-4-5-6
+    Output: 2-1-4-3-6-5
+
+    Input: 1-2-3-4-5
+    Output: 2-1-4-3-5

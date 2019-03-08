@@ -1,4 +1,4 @@
-The generic tree we shall consider is the tree present GenericTree class in getTree method.
+The pattern tree we shall consider is the tree present GenericTree class in getTree method.
 
 1.  Find the sum of all elements of a Generic Tree.
 
@@ -14,5 +14,5 @@ The generic tree we shall consider is the tree present GenericTree class in getT
 
 5. Given a node in a Generic Tree, count the number of siblings and number of children.
 
-6. Level order traversal of generic tree.
+6. Level order traversal of pattern tree.
 

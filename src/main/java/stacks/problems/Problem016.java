@@ -73,5 +73,17 @@ public class Problem016 {
  * We know that heap sorts elements internally based on priority. So for every given element
  * we keep increasing the priority so that the latest element inserted is at the top of the heap.
  *
+ * Another approach is, lets say we are given only numbers. Then heap always gives us
+ * the min element when removed (min heap). So every time, we insert an element into the
+ * heap, it should always be higher than the top element of the heap.
+ * So we can perform the following operations.
+ *
+ * push(int item)
+ * heap.insert(item + heap.peek())
+ *
+ * pop()
+ * x = heap.remove()
+ * int item = x - heap.peek()
+ * return item
  *
  */
