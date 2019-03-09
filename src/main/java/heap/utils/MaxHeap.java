@@ -16,7 +16,7 @@ package heap.utils;
 public class MaxHeap {
 
   private int count;
-  private int arr[];
+  private int arr[]; //The elements in this array is as per Level Order Traversal.
   private int size; //capacity
 
   MaxHeap() {

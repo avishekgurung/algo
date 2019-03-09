@@ -17,7 +17,7 @@ package heap.problems;
  *  Insert() will involve searching the whole list so O(n) and since insert is
  *  least frequent so we can afford it.
  *
- *  Delete(0 also involves searching the whole list so O(n) and since delete is
+ *  Delete() also involves searching the whole list so O(n) and since delete is
  *  least frequent so we can afford it.
  *
  *

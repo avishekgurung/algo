@@ -103,3 +103,8 @@ public class Problem045 {
  * So we create a root node and store in queue. We follow the same approach to construct a tree.
  *
  */
+
+/**
+ * Another simple solution would be to create a Directed Asyclic Graph and perform
+ * topological sorting.
+ **/

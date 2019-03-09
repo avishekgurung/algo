@@ -13,6 +13,8 @@ public class Problem004 {
    *
    * Same but opposite logic for predecessor as well.
    *
+   * Approach 2: Perform a traversal, store in the array and find the successor etc.
+   *
    * @param root
    * @param element
    * @return

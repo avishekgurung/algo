@@ -28,7 +28,8 @@ Standard Binary Tree
 
 11. Find number of leaves, full nodes, half nodes in a Binary Tree.
 
-12. Given two trees, check if they are 1.identical 2.mirrors. 3.isomorphic 4. quasi-isomorphic
+12. Given two trees, check if they are 1.identical 2.mirrors. 3.isomorphic 4.
+    quasi-isomorphic
 
 13. Find the diameter(width) of a Binary Tree. Diameter of a tree is the distance between
     the two farthest leaves. To get the more details of the width of a tree,

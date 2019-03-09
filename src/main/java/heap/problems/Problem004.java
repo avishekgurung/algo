@@ -44,6 +44,9 @@ public class Problem004 {
    * percolatesDown(0). And then insertion happens.
    *
    * This solution is better than the above.
+   *If k is the size of our heap and n is the number of elements in the file (or in the
+   * stream), complexity = n log k. As percolate down takes logk and removing the element
+   * takes O(1) in our custom heap.
    *
    */
 

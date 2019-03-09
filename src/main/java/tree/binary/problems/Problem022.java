@@ -14,8 +14,7 @@ public class Problem022 {
    */
   public static Node getLowestCommonAncestor(Node root, int x, int y) {
     if(root == null) return null;
-    if(x == root.data) return root;
-    if(y == root.data) return root;
+    if(x == root.data || y == root.data) return root;
     Node left = getLowestCommonAncestor(root.left, x, y);
     Node right = getLowestCommonAncestor(root.right, x, y);
     if(left != null && right != null) return root;

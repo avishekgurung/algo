@@ -4,8 +4,8 @@ import tree.binary.utils.BinaryTree;
 import tree.binary.utils.Node;
 
 /**
- * One simple approach I have thought is do a level order traversal. After completion of every
- * level (say after 1) move a pointer depth wise by twice the level and check if the pointer
+ * One simple approach I have thought is do a level order traversal. After completion of
+ * every level (say after 1) move a pointer depth wise by twice the level and check if the pointer
  * reaches null. If it does then its the middle level and we can print them.
  *
  * But this case be considered invalid as we are keeping track of level.

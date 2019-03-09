@@ -61,3 +61,20 @@ public class Problem035 {
   }
 
 }
+
+/**
+ * Another simple approach can be. Maintain two queues q1 and q2. Perform a level order
+ * traversal and store the nodes in both the queue. (q2 should not contain root).
+ *
+ * flag = true
+ * while q2 is not empty
+ *  pop x from q2 and y from q2.
+ *  pop n from q1
+ *  if flag is true
+ *    n.left = x
+ *    n.right = y
+ *  else
+ *    n.left = y
+ *    n.right = x
+ *  flag = !flag
+ */

@@ -28,8 +28,10 @@
 
 15. Find the union and intersection of BSTs.
 
-16. Given two element x and y, print all the elements that lies in the within the range of x and y.
-    Alt: Given a root of a BST, trim the tree so that all the elements are in the range x and y.
+16. Given two element x and y, print all the elements that lies in the within the range
+    of x and y.
+    Alt: Given a root of a BST, trim the tree so that all the elements are in the range
+    x and y.
 
 17. Check if two given BSTs has same elements (same content and same size).
 

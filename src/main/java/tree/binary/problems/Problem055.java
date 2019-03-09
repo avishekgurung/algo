@@ -53,8 +53,46 @@ public class Problem055 {
     Node n6 = root.right.left;
 
     System.out.println();
-    System.out.println("Cousin " + n2.data + " " + n3.data + " ? " + isCousins(root, n2, n3));
-    System.out.println("Cousin " + n4.data + " " + n6.data + " ? " + isCousins(root, n4, n6));
-    System.out.println("Cousin " + root.data + " " + n3.data + " ? " + isCousins(root, root, n3));
+    System.out.println("Cousin " + n2.data + " " + n3.data + " ? " + isCousins(root, n2,
+        n3));
+    System.out.println("Cousin " + n4.data + " " + n6.data + " ? " + isCousins(root, n4,
+        n6));
+    System.out.println("Cousin " + root.data + " " + n3.data + " ? " + isCousins(root,
+        root, n3));
+
+    System.out.println();
+    System.out.println("Cousin " + n2.data + " " + n3.data + " ? " + recursionUtil(root,
+        n2, n3));
+    System.out.println("Cousin " + n4.data + " " + n6.data + " ? " + recursionUtil(root,
+        n4, n6));
+    System.out.println("Cousin " + root.data + " " + n3.data + " ? " + recursionUtil
+        (root, root, n3));
   }
+
+
+  public static boolean recursionUtil(Node root, Node x, Node y) {
+    int[] xinfo = new int[2];
+    int[] yinfo = new int[2];
+    recursion(root, null, x, y,xinfo,yinfo,0);
+    if(xinfo[0] != yinfo[0] && xinfo[1] == yinfo[1]) return true;
+    return false;
+  }
+
+  public static void recursion(Node root, Node parent, Node x, Node y, int xInfo[], int
+      yInfo[], int distance) {
+
+    if(root == null) return;
+    if(root == x && parent != null) {
+      xInfo[0] = parent.data;
+      xInfo[1] = distance;
+    }
+    if(root == y && parent != null) {
+      yInfo[0] = parent.data;
+      yInfo[1] = distance;
+    }
+    distance =  distance + 1;
+    recursion(root.left, root, x, y, xInfo, yInfo, distance);
+    recursion(root.right, root, x, y, xInfo, yInfo, distance);
+  }
+
 }

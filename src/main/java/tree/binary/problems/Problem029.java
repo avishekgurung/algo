@@ -85,4 +85,11 @@ public class Problem029 {
  *   order array.
  *
  *  https://algorithms.tutorialhorizon.com/construct-a-binary-tree-from-given-inorder-and-level-order-traversal/
+ *
+ *  Approach 2.
+ *  We can simply create a tree from level order without even using inorder. Just
+ *  create two queue and add all the nodes. Pop one from q1 (x) and pop two from q2(a,b)
+ *  x.left = a, x.right = b. Continue till q2 is exhausted.
+ *
+ *
  */

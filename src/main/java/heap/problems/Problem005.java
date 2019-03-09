@@ -45,15 +45,16 @@ public class Problem005 {
  *
  * But in general, if we use heap, we can reduce the time complexity.
  *
- * We take first k elements and put it in a max heap. The heap creation takes O(k).
- * The top element of the heap is the maximum.
+ * We take first k elements and put it in a max heap. The top element of the heap is
+ * the maximum. For every insertion takes logk, so inserting k elements takes klogk.
  *
  * We iterate remaining elements. If the element is smaller than the top element then
  * we remove the top and insert the smaller element.
  * Removing the top element is constant. Now in the array inside heap, we have to put
  * the new element and heapify(percolateDown) it. Now this cannot be done in
  * pre-defined heap as above, we have to create our own heap.
- * Time Complexity = n + (n-k) * log(k) = nlogk
+ * Time Complexity = klogk + (n-k) * log(k) = nlogk (worst case if elements are in
+ * descending order).
  *
  * Normal heap removal process involves removing the 0th element, replacing this
  * 0th element by last element and percolate down. So it takes O(logn). Here, we want

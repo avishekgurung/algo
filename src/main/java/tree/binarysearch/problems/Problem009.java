@@ -8,8 +8,8 @@ public class Problem009 {
   private static Node prev = null;
 
   /**
-   * The BT can now be used as a DLL as where left pointer is same prev and right pointer is same as
-   * next in DLL.
+   * The BT can now be used as a DLL as where left pointer is same prev and right
+   * pointer is same as next in DLL.
    * @param root
    */
   public static void convertBstToDll(Node root) {

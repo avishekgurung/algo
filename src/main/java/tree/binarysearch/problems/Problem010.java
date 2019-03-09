@@ -97,10 +97,8 @@ public class Problem010 {
    *  We can ask for this approach and then we can proceed with real example.
    *
    *  The above solution takes nLogn solution. Because finding the mid element takes n.
-   *  So if we are asked to reduce the cost, then we use an array, add all the data in the array
-   *  and reduce the complexity to logn.
-   *
-   *
+   *  So if we are asked to reduce the cost, then we use an array, add all the data in
+   *  the array and reduce the complexity to logn.
    *
    */
 

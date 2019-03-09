@@ -80,4 +80,12 @@ public class Problem038 {
  * right view check has to be before this leaf check else the printing order will
  * not be correct.
  *
+ *
+ * Another approach without lookup (set).
+ *  1.print root node.
+ *  2.Make a level order traversal and make a previous node.
+ *  3. If a prev node is null then print the element(left view)
+ *  4. if queue.peek == null add element in the stack.
+ *  5. If leaf, print the element.
+ *
  */

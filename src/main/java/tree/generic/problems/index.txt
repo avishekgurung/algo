@@ -2,17 +2,17 @@ The pattern tree we shall consider is the tree present GenericTree class in getT
 
 1.  Find the sum of all elements of a Generic Tree.
 
-2.  Given a 4-ary tree what is the maximum possible height with 100 nodes. Assume that the height
-    of a single node is 0.
+2.  Given a 4-ary tree what is the maximum possible height with 100 nodes. Assume that
+    the height of a single node is 0.
 
 3.  For a 4-ary tree what is the minimum height with n nodes.
 
-4.  For a given array A, where A[i] is the parent of the ith node (assume that the parent of root
-    node is -1), find the height of a tree.
+4.  For a given array A, where A[i] is the parent of the ith node (assume that the
+    parent of root node is -1), find the height of a tree.
 
     Ex. arr= [-1,0,1,6,6,0,0,2,7]
 
-5. Given a node in a Generic Tree, count the number of siblings and number of children.
+5.  Given a node in a Generic Tree, count the number of siblings and number of children.
 
-6. Level order traversal of pattern tree.
+6.  Level order traversal of pattern tree.
 
