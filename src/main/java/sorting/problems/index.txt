@@ -1,0 +1,1 @@
+1.  Perform bubble sort, selection sort and insertion sort.Compare them.
