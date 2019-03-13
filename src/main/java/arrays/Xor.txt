@@ -1,0 +1,38 @@
+A truth table for bitwise XOR is as follows:
+
+      0       1
+  +----------------
+0 |   0       1
+  |
+1 |   1       0
+
+
+We see that Xor of same elements is 0. The Xor operator in java is represented by ^.
+
+Lets see the Xor of 2 and 3. The binary digit of 2 and 3 are
+
+1   0
+1   1
+-----
+0   1 which is 1. So 2 ^ 3 = 1.
+
+This is just an explanation of Xor operator. The use case is mostly when we have to deal with
+elements that are repeated.
+
+Following are the operations that are important to know. Refer to truth table for better
+understanding.
+
+i.   3 ^ 3 = 0
+
+ii.  3 ^ 3 ^ 3 = 3
+     3 ^ 3 = 0
+     0 ^ 3 = 3
+
+iii. 2 ^ 3 ^ 2 = 3
+     2 ^ 2 = 0
+     0 ^ 3 = 3
+
+     Xor works more in a distributive fashion. Here, rather than calculating 2 ^ 3, we can calculate
+     2 ^ 2 and then we can Xor its result with 3.
+
+iv. 2 ^ 3 ^ 2 ^ 3 = 0 (Same explanation).

@@ -1,0 +1,16 @@
+1.  If there is a problem where the array is of size n and the elements in the array are in the range
+    0 to n-1, then these kind of problems are usually solved by using the arr element as an index.
+    Also, if there are no duplicates then the sum of all the elements in k(k+1)/2 where k=arrSize-1.
+    Eg. Problem007
+
+2.  Bitwise XOR operator. Learn more about it than just a truth table. Following are the
+    characteristics of Bitwise XOR:
+    a.  XORing of all the elements in a boolean array would tell you if the array has odd number of
+        true elements
+    b.  If you have an array with all numbers repeating even number of times except one which repeats
+        odd number of times you can find that by XORing all elements.
+    c.  Swapping values without using temporary variable
+    d.  Finding missing number in the range 1 to n
+    e.  Basic validation of data sent over the network.
+
+    Most of the problems which involves odd and even occurrences can be approached by Bitwise XOR.
