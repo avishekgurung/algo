@@ -4,7 +4,16 @@ import java.util.*;
 
 public class LabTest {
 
-  public static void main(String[] args) {
-    System.out.println(3^3^3);
+  public static void main(String args[]){
+    long res = 1;
+    int n = 20;
+
+    while(n != 0) {
+      res = res * n;
+      n--;
+    }
+
+    System.out.println(res);
   }
+
 }

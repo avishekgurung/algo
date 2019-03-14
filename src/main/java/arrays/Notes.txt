@@ -14,3 +14,6 @@
     e.  Basic validation of data sent over the network.
 
     Most of the problems which involves odd and even occurrences can be approached by Bitwise XOR.
+
+3.  If there are sorted array, then try using binary search as much cos its complexity is really
+    less.
