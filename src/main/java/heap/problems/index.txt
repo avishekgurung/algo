@@ -26,7 +26,7 @@
     Eg: arr[] = {6, 5, 3, 2, 8, 10, 9}, k = 3
         arr[] = {10, 9, 8, 7, 4, 70, 60, 50} k = 4
 
-    These two arrays are nearly sorted.
+    These two array are nearly sorted.
     https://www.geeksforgeeks.org/nearly-sorted-algorithm/
 
 7.  Check if a given Binary Tree is a heap.
@@ -88,9 +88,9 @@
     For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
     We can also try for largest derangement.
 
-13. Maximum sum combination from two arrays.
-    Two arrays of equal sizes are given. We need to find the k number of max
-    sum of the elements of two arrays. Eg.
+13. Maximum sum combination from two array.
+    Two array of equal sizes are given. We need to find the k number of max
+    sum of the elements of two array. Eg.
     A = [1,4,5,2]
     B = [3,0,9,7]
 
@@ -98,7 +98,7 @@
     But we need to find k number of max sums. If k = 2, then the max sums are
     9 + 5 = 14 and
     9 + 4 = 13
-    https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/
+    https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-array/
 
 14. Given an array which can contain duplicate elements. We are given a value
     k. We need to remove k number of elements from the array such that we get

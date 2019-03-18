@@ -8,7 +8,7 @@ public class Problem058 {
    * Now check if these two nodes are identical or not.
    *
    * Approach 2. Find in-order and pre-order traversal of T and store them in an array,
-   * iT[], pT[]. Find in-order and pre-order traversal of S and store them in arrays
+   * iT[], pT[]. Find in-order and pre-order traversal of S and store them in array
    * iS[], pS[].
    * Check iS[] is a subarray of iT[] and pS[] is a sub-array of p[].
    *

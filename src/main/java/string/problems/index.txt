@@ -1,0 +1,11 @@
+1.  Give a paragraph of words, find the word that appears max number of times. If the paragraph is
+    scrolled down then some words may disappear from first frame, some words will still appear
+    and some are new words. We still have to give the maximum word occurrence.
+
+2.  Find the longest substring between two strings.
+
+3.  Find the longest palindrome between two strings.
+
+4.  Given a word, find the next word in a dictionary.
+
+5. Find the permutations and combinations of a string.

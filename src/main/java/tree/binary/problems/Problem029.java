@@ -81,7 +81,7 @@ public class Problem029 {
  *
  *   Likewise we create a right level order elements.
  *
- *   Hence, in the next recursion we will be using this arrays in place of level
+ *   Hence, in the next recursion we will be using this array in place of level
  *   order array.
  *
  *  https://algorithms.tutorialhorizon.com/construct-a-binary-tree-from-given-inorder-and-level-order-traversal/
