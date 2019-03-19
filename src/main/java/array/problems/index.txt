@@ -107,10 +107,34 @@
 
 31. Given an array of with 0s and 1s. Put all 0s in the beginning and 1s at the end.
 
+32. Given an array of elements of length N, ranging from 0 to N – 1. All elements may not be present
+    in the array. If element is not present then there will be -1 present in the array. Rearrange
+    the array such that A[i] = i and if i is not present, display -1 at that place.
+    https://www.geeksforgeeks.org/rearrange-array-arri/
+    Input : arr = {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1}
+    Output : [-1, 1, 2, 3, 4, -1, 6, -1, -1, 9]
+
+33. Given an array of n elements. Our task is to write a program to rearrange the array such that
+    elements at even positions are greater than all elements before it and elements at odd positions
+    are less than all elements before it.
+    Input : arr[] = {1, 2, 3, 4, 5, 6, 7}
+    Output : 4 5 3 6 2 7 1
+
+    Input : arr[] = {1, 2, 1, 4, 5, 6, 8, 8}
+    Output : 4 5 2 6 1 8 1 8
+
 34. An array of size n contains element from range 1 to n and all the elements are repeating thrice
     except one element. Find that element.
 
 35. How many trailing zeros are there in a factorial of a given number.
+
+36. An array contains both positive and negative numbers in random order. Rearrange the array
+    elements so that positive and negative numbers are placed alternatively. Number of positive
+    and negative numbers need not be equal. If there are more positive numbers they appear at the
+    end of the array. If there are more negative numbers, they too appear in the end of the array.
+
+    For example, if the input array is [-1, 2, -3, 4, 5, 6, -7, 8, 9], then the output should be
+    [9, -7, 8, -3, 5, -1, 2, 4, 6]
 
 40. We have a building of with n floors and we have many eggs with us. When an egg is thrown from a
     floor higher than F then egg breaks else it will not. Devise a strategy to identify the F floor
