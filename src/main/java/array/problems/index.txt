@@ -42,6 +42,38 @@
 15. Given an array of size (n-1) where the integers are in the range 1 to n. There are no duplicates
     in the list. One of the integer is missing, find the missing integer.
 
+16. Rotate an array by k elements without using any extra space. Eg, input=[1, 2, 3, 4, 5, 6, 7]
+    k = 2, output = [3, 4, 5, 6, 7, 1, 2]
+
+17. Find a pair whose sum equals to K in a rotated array.
+    Input: arr[] = {11, 15, 6, 8, 9, 10}, x = 16
+    Output: true
+    There is a pair (6, 10) with sum 16
+
+    Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 35
+    Output: true
+    There is a pair (26, 9) with sum 35
+
+    Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 45
+    Output: false
+    There is no pair with sum 45.
+
+18. Given an array, only rotation operation is allowed on array. We can rotate the array as many
+    times as we want. Return the maximum possbile of summation of i*arr[i].
+    Input: arr[] = {1, 20, 2, 10}
+    Output: 72
+    We can 72 by rotating array twice.
+    {2, 10, 1, 20}
+    20*3 + 1*2 + 10*1 + 2*0 = 72
+
+    Input: arr[] = {10, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Output: 330
+    We can 330 by rotating array 9 times.
+    {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    0*1 + 1*2 + 2*3 ... 9*10 = 330
+    https://www.geeksforgeeks.org/find-maximum-value-of-sum-iarri-with-only-rotations-on-given
+    -array-allowed/
+
 19. Given an array of 0s,1s and 2s, sort them. Dutch Flag Problem.
 
 20. Given an array where all the numbers occurs even number of times except the one number which
@@ -57,6 +89,18 @@
 
 24. Given an nxn array where the elements are in ascending order in each row as well as in column.
     Search an element.
+
+25. Consider an array of distinct numbers sorted in increasing order. The array has been rotated
+    (clockwise) k number of times. Given such an array, find the value of k.
+
+26. Given a value k, rotate the array (sorted) to its left (anti-clockwise rotation).
+    arr[] = {1,2,3,4,5}, k=2, output = {3,4,5,1,2}
+
+27. Find the minimum element in a sorted and rotated array.
+
+28. Print left rotation of an array in O(n) without rotating the array.
+
+29. Rotate two dimensional matrix by 90 degree to its right(or left).
 
 30. Given an array of size n+2 where the elements are in the range 1 to n so two elements are
     occurring twice. Find these two elements.
