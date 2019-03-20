@@ -7,7 +7,7 @@
 
 3.  Given an array, find a pair of elements whose sum is k.
 
-4.  Given an array of postive and negative integers, find the pair which is closest to 0.
+4.  Given an array of positive and negative integers, find the pair which is closest to 0.
 
 5.
 
@@ -136,6 +136,30 @@
     For example, if the input array is [-1, 2, -3, 4, 5, 6, -7, 8, 9], then the output should be
     [9, -7, 8, -3, 5, -1, 2, 4, 6]
 
+37. Given an array of n positive integers and a number k. Find the minimum number of swaps required
+    to bring all the numbers less than or equal to k together.
+    Input:  arr[] = {2, 1, 5, 6, 3}, k = 3
+    Output: 1
+
+    Input:  arr[] = {5,6,3,7,1,2,9,10}, k = 3
+    Output: 1
+
+38. Rearrange array re-arrange them such that:
+    A[i] >= A[i-1]  , if i is even.
+    A[i] <= A[i-1]  , if i is odd.
+
+39. Given an array of integers of size n. Assume ‘0’ as invalid number and all other as valid
+    number. Convert the array in such a way that if next valid number is same as current number,
+    double its value and replace the next number with 0. After the modification, rearrange the
+    array such that all 0’s are shifted to the end.
+
+    Input : arr[] = {2, 2, 0, 4, 0, 8}
+    Output : 4 4 8 0 0 0
+
+    Input : arr[] = {0, 2, 2, 2, 0, 6, 6, 0, 0, 8}
+    Output :  4 2 12 8 0 0 0 0 0 0
+    (Asked in Microsoft)
+
 40. We have a building of with n floors and we have many eggs with us. When an egg is thrown from a
     floor higher than F then egg breaks else it will not. Devise a strategy to identify the F floor
     by throwing minimum number of eggs.
@@ -145,10 +169,109 @@
     Eg, arr[]={2,3,10,6,4,8,1}. Max diff is 8 (between 2 and 10).
     arr[] = {7,9,5,6,3,2}. Max diff is 2 (between 9 and 7)
 
+42. Given two integer arrays of same size, “arr[]” and “index[]”, reorder elements in “arr[]”
+    according to given index array. It is not allowed to given array arr’s length.
+
+    Input:  arr[]   = [10, 11, 12];
+            index[] = [1, 0, 2];
+    Output: arr[]   = [11, 10, 12]
+            index[] = [0,  1,  2]
+
+    Input:  arr[]   = [50, 40, 70, 60, 90]
+            index[] = [3,  0,  4,  1,  2]
+    Output: arr[]   = [40, 60, 90, 50, 70]
+            index[] = [0,  1,  2,  3,   4]
+
+
+43. Given an array of numbers, arrange them in a way that yields the largest value. For example,
+    if the given numbers are {54, 546, 548, 60}, the arrangement 6054854654 gives the largest value.
+    And if the given numbers are {1, 34, 3, 98, 9, 76, 45, 4}, then the arrangement 998764543431
+    gives the largest value.
+
+44. Given an array of size n where all elements are distinct and in range from 0 to n-1, change
+    contents of arr[] so that arr[i] = j is changed to arr[j] = i.
+
+    Input: arr[]  = {1, 3, 0, 2};
+    Output: arr[] = {2, 0, 3, 1};
+    Explanation for the above output.
+    Since arr[0] is 1, arr[1] is changed to 0
+    Since arr[1] is 3, arr[3] is changed to 1
+    Since arr[2] is 0, arr[0] is changed to 2
+    Since arr[3] is 2, arr[2] is changed to 3
+
+    Input: arr[]  = {2, 0, 1, 4, 5, 3};
+    Output: arr[] = {1, 2, 0, 5, 3, 4};
+
+45. You have been given an array and you have to make a program to convert that array such that
+    positive elements occur at even numbered places in the array and negative elements occur at
+    odd numbered places in the array. We have to do it in place.
+    There can be unequal number of positive and negative values and the extra values have to left
+    as it is.
+
+    Input : arr[] = {1, -3, 5, 6, -3, 6, 7, -4, 9, 10}
+    Output : arr[] = {1, -3, 5, -3, 6, 6, 7, -4, 9, 10}
+
+    Input : arr[] = {-1, 3, -5, 6, 3, 6, -7, -4, -9, 10}
+    Output : arr[] = {3, -1, 6, -5, 3, -7, 6, -4, 10, -9}
+
+46. Given an array of integers, update every element with multiplication of previous and next
+    elements with following exceptions.
+    a) First element is replaced by multiplication of first and second.
+    b) Last element is replaced by multiplication of last and second last.
+
+    Input: arr[] = {2, 3, 4, 5, 6}
+    Output: arr[] = {6, 8, 15, 24, 30}
+
+    // We get the above output using following
+    // arr[] = {2*3, 2*4, 3*5, 4*6, 5*6}
+
+47. Shuffle an array. (My generic :))
+
+48. Given an array with all distinct elements, find the largest three elements. Expected time
+    complexity is O(n) and extra space is O(1).
+
+49. Given two equally sized arrays (A, B) and N (size of both arrays).
+    A sum combination is made by adding one element from array A and another element of array B.
+    Display the maximum K valid sum combinations from all the possible sum combinations.
+
+    Input :  A[] : {3, 2}
+             B[] : {1, 4}
+             K : 2 [Number of maximum sum
+                   combinations to be printed]
+    Output : 7    // (A : 3) + (B : 4)
+             6    // (A : 2) + (B : 4)
+
+    Input :  A[] : {4, 2, 5, 1}
+             B[] : {8, 0, 3, 5}
+             K : 3
+    Output : 13   // (A : 5) + (B : 8)
+             12   // (A : 4) + (B :  8)
+             10   // (A : 2) + (B : 8)
+
 50. Given an an array, segregate odd and even numbers such that even numbers are at the beginning
     and odd number towards the end.
 
+51. Given an Array of Integers and an Integer value k, find out k sub-arrays(may be overlapping)
+    which have k maximum sums.
+    Input : arr = {4, -8, 9, -4, 1, -8, -1, 6}, k = 4
+    Output : 9 6 6 5
+    https://www.geeksforgeeks.org/k-maximum-sum-overlapping-contiguous-sub-arrays/
 
+52. Given a sorted array of n distinct integers where each integer is in the range from 0 to m-1
+    and m > n. Find the smallest number that is missing from the array.
+
+    Examples
+    Input: {0, 1, 2, 6, 9}, n = 5, m = 10
+    Output: 3
+
+    Input: {4, 5, 10, 11}, n = 4, m = 12
+    Output: 0
+
+    Input: {0, 1, 2, 3}, n = 4, m = 5
+    Output: 4
+
+    Input: {0, 1, 2, 3, 4, 5, 6, 7, 10}, n = 9, m = 11
+    Output: 8
 
 
 
