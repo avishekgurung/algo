@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class Problem004 {
 
+  /**
+   * Since we are finding the sum which is close to 0 so we should always have some negative
+   * elements. If the array can have only negative or only positive elements, then we can handle
+   * such scenario by sorting the array and finding the max difference between consecutive elements.
+   */
   public static void findPairClosestToZero(int arr[]) {
     Arrays.sort(arr);
     String pair = "";
@@ -14,16 +19,8 @@ public class Problem004 {
       int left = arr[i];
       int right = arr[j];
       int diff;
-      if(left < 0 && right < 0) {
-        diff = right + left;
-      }
 
-      else if(left > 0 && right > 0) {
-        diff = right - left;
-      }
-      else {
-        diff = left + right;
-      }
+      diff = left + right;
 
       if(Math.abs(diff) < minDiff) {
         minDiff = Math.abs(diff);
@@ -43,16 +40,6 @@ public class Problem004 {
 
   public static void main(String[] args) {
     int arr[] = new int[]{1,60,-10,70,-80,85};
-    System.out.println(Arrays.toString(arr));
-    findPairClosestToZero(arr);
-
-    System.out.println();
-    arr = new int[]{1,3,4,5,6,7};
-    System.out.println(Arrays.toString(arr));
-    findPairClosestToZero(arr);
-
-    System.out.println();
-    arr = new int[]{-1,-2,-3,-4,-5,-6,-7};
     System.out.println(Arrays.toString(arr));
     findPairClosestToZero(arr);
   }

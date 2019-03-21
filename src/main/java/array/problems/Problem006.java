@@ -3,21 +3,18 @@ package array.problems;
 public class Problem006 {
 
   public static int gallopSearch(int arr[]) {
-    int size = arr.length;
     int i=1;
 
-    while ( i < size ) {
-      if(arr[i] == 0) {
-        while(i != 0) {
-          if(arr[i] == 1) {
-            return i+1;
-          }
-          i--;
-        }
-      }
+    while ( true ) { //Not using size of an array as it may take long to calculate it internally.
+      if(arr[i] == 0) break;
       i = i * 2;
     }
-    return -1;
+
+    while(arr[i] != 1) {
+      i--;
+    }
+
+    return i + 1;
   }
 
   public static void main(String[] args) {

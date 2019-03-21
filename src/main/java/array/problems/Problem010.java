@@ -30,6 +30,9 @@ public class Problem010 {
 
     arr = new int[]{2,1,2,3,2};
     getMajorityElement(arr);
+
+    arr = new int[]{2,3,4,2,1};
+    getMajorityElement(arr);
   }
 
 }

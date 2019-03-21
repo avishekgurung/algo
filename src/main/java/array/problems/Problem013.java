@@ -31,13 +31,14 @@ public class Problem013 {
   }
 
   public static void main(String[] args) {
-    int arr[] = new int[]{2,3,4,4};
+    int arr[] = new int[]{1,2,3,4,4};
     System.out.println(Arrays.toString(arr));
     subArrayWithSumS(arr,7);
     subArrayWithSumS(arr,5);
     subArrayWithSumS(arr,8);
     subArrayWithSumS(arr,11);
     subArrayWithSumS(arr,10);
+    subArrayWithSumS(arr,12);
   }
 
 }

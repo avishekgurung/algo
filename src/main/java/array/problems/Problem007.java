@@ -23,7 +23,7 @@ public class Problem007 {
     for(int i=0; i < n; i++) {
       int index = arr[i] % n;
       int element = arr[index];
-      if(element/n >= 1) {
+      if(element/n >= 1) { //This condition can also be if(element >= n)
         return index;
       }
       arr[index] = arr[index] + n;

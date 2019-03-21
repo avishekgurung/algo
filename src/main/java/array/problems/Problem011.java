@@ -61,6 +61,7 @@ public class Problem011 {
   public static void main(String[] args) {
     util(new int[]{1,-3,2,1,-1});
     util(new int[]{-2,-3,4,-1,-2,1,5,-3});
+    util(new int[]{1,-2});
 
   }
 
