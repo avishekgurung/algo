@@ -8,7 +8,7 @@ public class Problem024 {
 
     int i = arr.length-1, j = 0;
 
-    while(i >= 0 && j >= 0) {
+    while(i >= 0 && j < arr.length) {
       int origin = arr[i][j];
       if(origin == element) {
         System.out.println("Element " +  element +" found at (" + j + "," + i + ")");

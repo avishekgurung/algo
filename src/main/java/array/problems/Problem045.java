@@ -77,9 +77,28 @@ public class Problem045 {
     return -1;
   }
 
+  /**
+   * The simpler version of above logic.
+   */
+  public static void rearrangePositiveAndNegativeElementsSimpler(int arr[]) {
+    System.out.println(Arrays.toString(arr));
+    int i=0, j=0;
+    while(i < arr.length && j < arr.length) {
+      i = nextPositivePointerAtWrongLocation(i, arr);
+      j = nextNegativePointerAtWrongLocation(j, arr);
+      if(i == -1 || j == -1) break;
+      swap(arr, i, j);
+    }
+    System.out.println(Arrays.toString(arr));
+    System.out.println();
+  }
 
   public static void main(String[] args) {
     rearrangePositiveAndNegativeElements(new int[]{1, -3, 5, 6, -3, 6, 7, -4, 9, 10});
     rearrangePositiveAndNegativeElements(new int[]{-1, 3, -5, 6, 3, 6, -7, -4, -9, 10});
+
+    System.out.println("-----------------------------------");
+    rearrangePositiveAndNegativeElementsSimpler(new int[]{1, -3, 5, 6, -3, 6, 7, -4, 9, 10});
+    rearrangePositiveAndNegativeElementsSimpler(new int[]{-1, 3, -5, 6, 3, 6, -7, -4, -9, 10});
   }
 }

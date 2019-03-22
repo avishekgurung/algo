@@ -16,4 +16,4 @@
     Most of the problems which involves odd and even occurrences can be approached by Bitwise XOR.
 
 3.  If there are sorted array, then try using binary search as much cos its complexity is really
-    less.
+    less. Most of the problems on sorted array or rotated can be solved in O(logn).

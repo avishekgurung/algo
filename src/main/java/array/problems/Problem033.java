@@ -4,6 +4,9 @@ import java.util.Arrays;
 
 public class Problem033 {
 
+  /**
+   * O(n) time and space.
+   */
   public static void rearrangeOddAndEven(int arr[]) {
     sort(arr);
     System.out.println(Arrays.toString(arr));

@@ -64,7 +64,7 @@ public class Problem037 {
     minSwap(new int[]{2,1,5,6,3}, 3);
     minSwap(new int[]{2,1,5,6,3}, 2);
     minSwap(new int[]{5,6,3,7,5,2,9,10,1}, 3);
-    minSwap(new int[]{5,6,3,7,5,2,9,10,1}, 3);
+    minSwap(new int[]{5,6,3,7,5,2,9,10,}, 3);
     minSwap(new int[]{5,6,3,7,5,2,9,1,1}, 3);
   }
 
