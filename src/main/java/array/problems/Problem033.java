@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Problem033 {
 
   /**
-   * O(n) time and space.
+   * O(nlogn) time and O(n) space.
    */
   public static void rearrangeOddAndEven(int arr[]) {
     sort(arr);

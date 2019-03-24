@@ -8,6 +8,7 @@ import java.util.Map;
 
 /**
  * We keep calculating the current sum and store them in a map.
+ * If the current element is 0 then that element is also a subarray.
  * If the current sum is 0 then the sub array is from 0 to current index
  * If the current sum has already been seen before then there is a subarray.
  *

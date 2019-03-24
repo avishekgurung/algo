@@ -1,6 +1,6 @@
 1.  If there is a problem where the array is of size n and the elements in the array are in the range
     0 to n-1, then these kind of problems are usually solved by using the arr element as an index.
-    Also, if there are no duplicates then the sum of all the elements in k(k+1)/2 where k=arrSize-1.
+    Also, if there are no duplicates then the sum of all the elements is k(k+1)/2 where k=arrSize.
     Eg. Problem007
 
 2.  Bitwise XOR operator. Learn more about it than just a truth table. Following are the

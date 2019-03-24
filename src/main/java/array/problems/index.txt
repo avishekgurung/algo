@@ -22,7 +22,6 @@
     Eg, arr[] = {15,16,19,20,25,1,3,4,5,7,10,14}. Search 5, output = 8 (which is an index of 5)
 
 9.  Given a sorted array with duplicates, find the index of first occurrence of a number in O(logn).
-9.  Given a sorted array with duplicates, find the index of first occurrence of a number in O(logn).
     arr[] = {1,1,2,2,2,3,3}, if a number is 2 then return 3 (index of first occ of 2). We can
     practice for last occurrence as well.
 
@@ -160,7 +159,7 @@
     Input:  arr[] = {5,6,3,7,1,2,9,10}, k = 3
     Output: 1
 
-38. Rearrange array re-arrange them such that:
+38. Rearrange array such that:
     A[i] >= A[i-1]  , if i is even.
     A[i] <= A[i-1]  , if i is odd.
 
@@ -221,7 +220,7 @@
 45. You have been given an array and you have to make a program to convert that array such that
     positive elements occur at even numbered places in the array and negative elements occur at
     odd numbered places in the array. We have to do it in place.
-    There can be unequal number of positive and negative values and the extra values have to left
+    There can be unequal number of positive and negative values and the extra values have to be left
     as it is.
 
     Input : arr[] = {1, -3, 5, 6, -3, 6, 7, -4, 9, 10}
@@ -289,6 +288,160 @@
     Input: {0, 1, 2, 3, 4, 5, 6, 7, 10}, n = 9, m = 11
     Output: 8
 
+53. Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
+    that no 2 numbers in the sequence should be adjacent in the array.
+    Input : arr[] = {5, 5, 10, 100, 10, 5}
+    Output : 110
 
+    Input : arr[] = {1, 2, 3}
+    Output : 4
+
+    Input : arr[] = {1, 20, 3}
+    Output : 20
+
+54. Given heights of n towers and a value k. We need to either increase or decrease height of every
+    tower by k (only once) where k > 0. The task is to minimize the difference between the heights
+    of the longest and the shortest tower after modifications, and output this difference.
+
+    Input  : arr[] = {1, 15, 10}, k = 6
+    Output :  Maximum difference is 5.
+    Explanation : We change 1 to 6, 15 to
+    9 and 10 to 4. Maximum difference is 5
+    (between 4 and 9). We can't get a lower
+    difference.
+
+    Input : arr[] = {4, 6} k = 10
+    Output : Maximum difference is 2
+    arr[] = {14, 16} OR {-6, -4}
+
+55. Given an array of integers and a number x, find the smallest subarray with sum greater than the
+    given value.
+
+    arr[] = {1, 4, 45, 6, 0, 19}
+       x  =  51
+    Output: 3
+    Minimum length subarray is {4, 45, 6}
+
+    arr[] = {1, 10, 5, 2, 7}
+       x  = 9
+    Output: 1
+    Minimum length subarray is {10}
+
+    arr[] = {1, 11, 100, 1, 0, 200, 3, 2, 1, 250}
+        x = 280
+    Output: 4
+    Minimum length subarray is {100, 1, 0, 200}
+
+    arr[] = {1, 2, 4}
+        x = 8
+    Output : Not Possible
+    Whole array sum is smaller than 8.
+
+
+56. Minimum steps required to get a desired array.
+    Consider an array with n elements and value of all the elements is zero. We can perform
+    following operations on the array.
+
+    Incremental operations:Choose 1 element from the array and increment its value by 1.
+    Doubling operation: Double the values of all the elements of array.
+
+    We are given desired array target[] containing n elements. Compute and return the smallest
+    possible number of the operations needed to change the array from all zeros to desired array.
+
+    Input: target[] = {2, 3}
+    Output: 4
+    To get the target array from {0, 0}, we
+    first increment both elements by 1 (2
+    operations), then double the array (1
+    operation). Finally increment second
+    element (1 more operation)
+
+    Input: target[] = {2, 1}
+    Output: 3
+    One of the optimal solution is to apply the
+    incremental operation 2 times to first and
+    once on second element.
+
+    Input: target[] = {16, 16, 16}
+    Output: 7
+    The output solution looks as follows. First
+    apply an incremental operation to each element.
+    Then apply the doubling operation four times.
+    Total number of operations is 3+4 = 7
+    https://www.geeksforgeeks.org/count-minimum-steps-get-given-desired-array/
+
+57. You are given an array of n-elements, you have to find the number of subsets whose product
+    of elements is less than or equal to a given integer k.
+
+58. Given a sorted array (sorted in non-decreasing order) of positive numbers, find the smallest
+    positive integer value that cannot be represented as sum of elements of any subset of given
+    set.
+    Input:  arr[] = {1, 3, 6, 10, 11, 15};
+    Output: 2
+
+    Input:  arr[] = {1, 1, 1, 1};
+    Output: 5
+
+    Input:  arr[] = {1, 1, 3, 4};
+    Output: 10
+
+    Input:  arr[] = {1, 2, 5, 10, 20, 40};
+    Output: 4
+
+    Input:  arr[] = {1, 2, 3, 4, 5, 6};
+    Output: 22
+
+59. Given an array of positive integers. We need to make the given array a ‘Palindrome’. Only
+    allowed operation on array is merge. Merging two adjacent elements means replacing them with
+    their sum. The task is to find minimum number of merge operations required to make given array
+    a ‘Palindrome’.
+
+    To make an array a palindromic we can simply apply merging operations n-1 times where n is the
+    size of array (Note a single element array is alway palindrome similar to single character
+    string). In that case, size of array will be reduced to 1. But in this problem we are asked to
+    do it in minimum number of operations.
+
+    Input : arr[] = {15, 4, 15}
+    Output : 0
+    Array is already a palindrome. So we
+    do not need any merge operation.
+
+    Input : arr[] = {1, 4, 5, 1}
+    Output : 1
+    We can make given array palindrome with
+    minimum one merging (merging 4 and 5 to
+    make 9)
+
+    Input : arr[] = {11, 14, 15, 99}
+    Output : 3
+    We need to merge all elements to make
+    a palindrome.
+
+60. Longest Span with same Sum in two Binary arrays. Given two binary arrays, we need to find the
+    longest subarray such that this subarray is commont to both and has the maximum sum.
+
+    In other words, given two binary arrays arr1[] and arr2[] of same size n. Find length of the
+    longest common span (i, j) where j >= i such that arr1[i] + arr1[i+1] + …. + arr1[j] = arr2[i]
+    + arr2[i+1] + …. + arr2[j].
+
+    Input: arr1[] = {0, 1, 0, 0, 0, 0};
+           arr2[] = {1, 0, 1, 0, 0, 1};
+    Output: 4
+    The longest span with same sum is from index 1 to 4.
+
+    Input: arr1[] = {0, 1, 0, 1, 1, 1, 1};
+           arr2[] = {1, 1, 1, 1, 1, 0, 1};
+    Output: 6
+    The longest span with same sum is from index 1 to 6.
+
+    Input: arr1[] = {0, 0, 0};
+           arr2[] = {1, 1, 1};
+    Output: 0
+
+    Input: arr1[] = {0, 0, 1, 0};
+           arr2[] = {1, 1, 1, 1};
+    Output: 1
+
+61. Find the largest in a binary array subarray with equal number of 0s and 1s.
 
 

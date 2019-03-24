@@ -15,8 +15,8 @@ public class Problem027 {
   }
 
   /**
-   * This function will return a pivot if an array is sorted. If an array is just sorted then it
-   * returns the last element of an array.
+   * This function will return a pivot if an array is sorted and rotated. If an array is just
+   * sorted then it returns the last element of an array.
    */
   public static int getPivot(int arr[], int left, int right) {
     if(arr[left] < arr[right]) return right; //array is not rotated.

@@ -49,7 +49,7 @@ public class Problem007 {
   /**
    * Since all the elements are in the range 0 to n-1 for an array of size n. If no duplicate
    * elements are present then these elements will be from 0 to n-1 but not in an order. We can
-   * calculate their sum with the formulae n(n-1)/2 and compare with original sum.
+   * calculate their sum with the formulae n(n+1)/2 and compare with original sum.
    * @param arr
    * @return
    */
