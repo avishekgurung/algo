@@ -9,7 +9,7 @@ public class Problem030 {
    *
    * We can perform it in O(n) time and constant space by using bitwise XOR.
    *
-   * We can also use mathematical eq to peeform in O(n) time and constant space.
+   * We can also use mathematical eq to perform in O(n) time and constant space.
    * Let S be the sum of elements in the array. Let a and b the those two elements to find.
    * n(n+1)/2 + a + b = S
    * a + b = S - n(n+1)/2  ----------> eq-1

@@ -397,7 +397,7 @@
     a ‘Palindrome’.
 
     To make an array a palindromic we can simply apply merging operations n-1 times where n is the
-    size of array (Note a single element array is alway palindrome similar to single character
+    size of array (Note a single element array is always palindrome similar to single character in
     string). In that case, size of array will be reduced to 1. But in this problem we are asked to
     do it in minimum number of operations.
 
@@ -417,8 +417,11 @@
     We need to merge all elements to make
     a palindrome.
 
+    Input : arr[] = {3, 5, 1, 1, 1}
+    Output: 2
+
 60. Longest Span with same Sum in two Binary arrays. Given two binary arrays, we need to find the
-    longest subarray such that this subarray is commont to both and has the maximum sum.
+    longest subarray such that this subarray is common to both and has the maximum sum.
 
     In other words, given two binary arrays arr1[] and arr2[] of same size n. Find length of the
     longest common span (i, j) where j >= i such that arr1[i] + arr1[i+1] + …. + arr1[j] = arr2[i]
@@ -442,6 +445,6 @@
            arr2[] = {1, 1, 1, 1};
     Output: 1
 
-61. Find the largest in a binary array subarray with equal number of 0s and 1s.
+61. Find the largest subarray in a binary array with equal number of 0s and 1s.
 
 
