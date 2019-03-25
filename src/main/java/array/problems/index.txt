@@ -447,4 +447,20 @@
 
 61. Find the largest subarray in a binary array with equal number of 0s and 1s.
 
+62. You are given an array of n-elements you have to find k smallest elements from the array but
+    they must be in the same order as they are in given array and we are allowed to use only O(1)
+    extra space.
+     Eg. arr[] = {5,7,4,2,6,1,9} and k = 3
+     output = 4,2,1
+
+63. Shuffle 2n integers in format {a1, b1, a2, b2, a3, b3, ……, an, bn} without using extra space.
+
+64. Find the k maximum sum of a contiguous array.
+    a. The sub-array could be overlapping.
+        Eg. arr = {4, -8, 9, -4, 1, -8, -1, 6}, k = 4
+            output: 9 6 6 5
+
+    b. The sub-array should not overlap
+        Eg. arr = {4, 1, 1, -1, -3, -5, 6, 2, -6, -2}, k = 3
+            output: 8, 6, -1
 
