@@ -17,3 +17,9 @@
 
 3.  If there are sorted array, then try using binary search as much cos its complexity is really
     less. Most of the problems on sorted array or rotated can be solved in O(logn).
+
+4.  Problems that requires us to maintain orders, eg sort the elements based on their freq but if
+    two or more elements have same freq then they should be ordered based on their occurrence,
+    such can be solved easily by creating a Node(class) that takes different parameters like
+    element, freq (or any attribute) and index. We sort elements by the attribute but also on
+    their index if the attribute are same.

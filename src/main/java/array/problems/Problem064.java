@@ -35,12 +35,7 @@ public class Problem064 {
         end = i;
       }
 
-      if(maxSum < sumTillHere) {
-        maxSum = sumTillHere;
-        maxStart = start;
-        maxEnd = end;
-        heap.add(new Node(maxSum, maxStart, maxEnd));
-      }
+      heap.add(new Node(sumTillHere, start, end));
     }
 
     while(k != 0) {
@@ -62,7 +57,7 @@ public class Problem064 {
 
   private class NodeComparator implements Comparator<Node>{
     public int compare(Node o1, Node o2) {
-      return o1.sum < o2.sum ? -1 : 1;
+      return o1.sum < o2.sum ? 1 : -1;
     }
   }
 
@@ -113,7 +108,11 @@ public class Problem064 {
   }
 
   public static void main(String[] args) {
-    kMaxSubArrayForNonOverlappingSubArrays(new int[]{4, 1, 1, -1, -3, -5, 6, 2, -6, -2}, 3);
+    Problem064 instance = new Problem064();
+    instance.kMaxSubArray(new int[]{4, -8, 9, -4, 1, -8, -1, 6}, 4);
+
+    //kMaxSubArrayForNonOverlappingSubArrays(new int[]{4, 1, 1, -1, -3, -5, 6, 2, -6, -2}, 3);
+
   }
 
 }

@@ -46,11 +46,12 @@ public class LabTest {
   // Driver function
   public static void main(String argc[])
   {
-    int[] arr = { 10,9,8,7,6,5,4,3,2,1 };
-
-    int n = 10;
-    int k = 5;
-    printSmall(arr, n, k);
+    int[] arr = {1,2,3};
+    int c = arr[0];
+    for(int i=1; i < arr.length; i++) {
+      c = c ^ arr[i];
+    }
+    System.out.println(c);
   }
 
 }
