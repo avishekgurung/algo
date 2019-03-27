@@ -3,55 +3,40 @@ package practice;
 import java.util.*;
 
 public class LabTest {
-  public static void printSmall(int arr[], int n, int k)
+  static int arr1[] = new int[]{1, 5, 9, 10, 15, 20};
+  static int arr2[] = new int[]{2, 3, 8, 13};
+
+  static void merge(int m, int n)
   {
-    int count_1 = 0, count_2 = 0;
-    // For each arr[i] find whether
-    // it is a part of n-smallest
-    // with insertion sort concept
-    for (int i = k; i < n; ++i) {
-      // Find largest from top n-element
-      int max_var = arr[k - 1];
-      int pos = k - 1;
-      for (int j = k - 2; j >= 0; j--) {
-        count_1++;
-        if (arr[j] > max_var) {
-          max_var = arr[j];
-          pos = j;
+    System.out.println(Arrays.toString(arr1));
+    System.out.println(Arrays.toString(arr2));
+    // Iterate through all elements of ar2[] starting from
+    // the last element
+    for (int i=n-1; i>=0; i--)
+    {
+            /* Find the smallest element greater than ar2[i]. Move all
+               elements one position ahead till the smallest greater
+               element is not found */
+      int j, last = arr1[m-1];
+      for (j=m-2; j >= 0 && arr1[j] > arr2[i]; j--)
+        arr1[j+1] = arr1[j];
 
-        }
-      }
-
-      // If largest is greater than arr[i]
-      // shift all element one place left
-      if (max_var > arr[i]) {
-        int j = pos;
-        count_2++;
-        while (j < k - 1) {
-          arr[j] = arr[j + 1];
-          j++;
-
-        }
-        // make arr[k-1] = arr[i]
-        arr[k - 1] = arr[i];
+      // If there was a greater element
+      if (j != m-2 || last > arr2[i])
+      {
+        arr1[j+1] = arr2[i];
+        arr2[i] = last;
       }
     }
-    // print result
-    for (int i = 0; i < k; i++)
-      System.out.print(arr[i] + " ");
-    System.out.println("\ncount 1: " + count_1);
-    System.out.println("count 2: " + count_2);
   }
 
-  // Driver function
-  public static void main(String argc[])
+  // Driver method to test the above function
+  public static void main(String[] args)
   {
-    int[] arr = {1,2,3};
-    int c = arr[0];
-    for(int i=1; i < arr.length; i++) {
-      c = c ^ arr[i];
-    }
-    System.out.println(c);
+    merge(arr1.length,arr2.length);
+    System.out.print("After Merging nFirst Array: ");
+    System.out.println(Arrays.toString(arr1));
+    System.out.print("Second Array:  ");
+    System.out.println(Arrays.toString(arr2));
   }
-
 }
