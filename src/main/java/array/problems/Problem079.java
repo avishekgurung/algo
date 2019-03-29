@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * This problem can be solved in O(n) by Moore's voting algorithm. It can be solved by other ways
- * as well but it the efficient one is this.
+ * as well but the efficient one is this.
  *
  * Moore's voting algo has two parts:
  *
@@ -33,12 +33,8 @@ public class Problem079 {
       if(arr[i] != arr[majorityIndex]) {
         count--;
         if(count == 0) {
-          majorityIndex = arr[i];
+          majorityIndex = i;
           count = 1;
-        }
-
-        if(count != 0) {
-          count--;
         }
       }
 
@@ -62,7 +58,7 @@ public class Problem079 {
       System.out.println("The majority candidate is " + candidate);
     }
     else {
-      System.out.println("There is not majority candidate");
+      System.out.println("There is no majority candidate");
     }
     System.out.println();
   }

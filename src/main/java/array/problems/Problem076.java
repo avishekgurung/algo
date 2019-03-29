@@ -6,11 +6,13 @@ package array.problems;
  * We will follow a gallop search kind of method.
  *
  * 1. Let low = 0 and high = 1
- *    check the condition element >= low and element <= high
- *      if true then perform BS on low and high
- *      else
- *        high = 2 * high;
- *        low = high
+ *    if element == high return high //element found
+ *    if element < high //range found where the element will be present
+ *      BST(low, high)
+ *    else // still no clue of element
+ *      low = high
+ *      high = 2*high
+ *
  */
 public class Problem076 {
 }

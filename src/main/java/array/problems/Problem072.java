@@ -25,7 +25,7 @@ public class Problem072 {
         while(k < arr.length && arr[i] + arr[j] > arr[k]) {
           k++;
         }
-        if(k > j) {
+        if(k - j > 0 ) {
           int triangles = k -j - 1;
           totalTriangles = totalTriangles + triangles;
         }

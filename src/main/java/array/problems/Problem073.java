@@ -19,16 +19,17 @@ public class Problem073 {
    *  for a correct position we ll keep shifting elements to the right in a. So when correct
    *  position is found, the element is inserted into that position. And also, since the
    *  elements of a are shifted towards right, so the last element is out of place. We place
-   *  this last element of a into the element of b.
+   *  this last element of a into the position of the element of b.
    *
    *  Lets take e = 13.
-   *  We search for an element which is just higer than 13, which is 10 in our case.
+   *  We search for an element which is just higher than 13, which is 10 in our case.
    *  We start this search from the last element of array a.
    *  When we find 10, we insert 13 in position of 10. Since we are shifting elements while
    *  searching so 20 will be out of place. We will now insert 20 in place of 13.
    *
    *  Doing so will sort both the arrays simultaneously.
    *
+   *  Focus on the logic and not on the code.
    *
    *
    */
@@ -43,13 +44,13 @@ public class Problem073 {
       int key = brr[i];
 
       int last = arr[len_a - 1];
-      int j = len_a - 2;
+      int j = len_a - 1;
       while(j >=0 && key < arr[j]) {
-        arr[j+1] = arr[j];
+        arr[j] = arr[j - 1];
         j--;
       }
 
-      if(j != len_a - 2 && last > key) {
+      if(j != len_a - 1 && last > key) {
         brr[i] = last;
         arr[j + 1] = key;
       }
