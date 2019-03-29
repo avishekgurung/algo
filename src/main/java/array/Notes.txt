@@ -23,3 +23,7 @@
     such can be solved easily by creating a Node(class) that takes different parameters like
     element, freq (or any attribute) and index. We sort elements by the attribute but also on
     their index if the attribute are same.
+
+5.  When there are Binary Arrays and the problem involves finding subarray. We might have to change
+    this problem so that we have elements like 0,1 and -1. And then the problem might boil down to
+    find subarrays with sum equal to 0.

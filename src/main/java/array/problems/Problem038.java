@@ -6,6 +6,10 @@ public class Problem038 {
 
   /**
    * Sort the array and swap the element and its next element. Thats all.
+   *
+   *  This is a array wave form problem which can be solved in O(n)
+   *
+   *
    * @param arr
    */
   public static void rearrangeOddAndEven(int arr[]) {
