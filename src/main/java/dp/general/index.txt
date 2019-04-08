@@ -1,0 +1,230 @@
+1.  Find the nth Catalan number. The first few Catalan numbers for n = 0, 1, 2, 3, … are 1, 1, 2, 5,
+    14, 42, 132, 429, 1430, 4862, …
+
+2.  Tiling Problem.
+    Given a “2 x n” board and tiles of size “2 x 1”, count the number of ways to tile the given
+    board using the 2 x 1 tiles. A tile can either be placed horizontally i.e., as a 1 x 2 tile or
+    vertically i.e., as 2 x 1 tile.
+
+    Input n = 3
+    Output: 3
+    Explanation:
+    We need 3 tiles to tile the board of size  2 x 3.
+    We can tile the board using following ways
+    1) Place all 3 tiles vertically.
+    2) Place first tile vertically and remaining 2 tiles horizontally.
+    3) Place first 2 tiles horizontally and remaining tiles vertically
+
+    Input n = 4
+    Output: 5
+    Explanation:
+    For a 2 x 4 board, there are 5 ways
+    1) All 4 vertical
+    2) All 4 horizontal
+    3) First 2 vertical, remaining 2 horizontal
+    4) First 2 horizontal, remaining 2 vertical
+    5) Corner 2 vertical, middle 2 horizontal
+    https://www.geeksforgeeks.org/tiling-problem/
+
+3.  Gold Mining.
+    Given a gold mine of n*m dimensions. Each field in this mine contains a positive integer which
+    is the amount of gold in tons. Initially the miner is at first column but can be at any row.
+    He can move only (right->,right up /,right down\) that is from a given cell, the miner can
+    move to the cell diagonally up towards the right or right or diagonally down towards the
+    right. Find out maximum amount of gold he can collect.
+
+    Input : mat[][] = {{1, 3, 3},
+                       {2, 1, 4},
+                       {0, 6, 4}};
+    Output : 12
+    {(1,0)->(2,1)->(2,2)}
+
+    Input: mat[][] = { {1, 3, 1, 5},
+                       {2, 2, 4, 1},
+                       {5, 0, 2, 3},
+                       {0, 6, 1, 2}};
+    Output : 16
+    (2,0) -> (1,1) -> (1,2) -> (0,3) OR
+    (2,0) -> (3,1) -> (2,2) -> (2,3)
+
+    Input : mat[][] = {{10, 33, 13, 15},
+                      {22, 21, 04, 1},
+                      {5, 0, 2, 3},
+                      {0, 6, 14, 2}};
+    Output : 83
+    https://www.geeksforgeeks.org/gold-mine-problem/
+
+4.  Friends pair problem.
+    Given n friends, each one can remain single or can be paired up with some other friend. Each
+    friend can be paired only once. Find out the total number of ways in which friends can remain
+    single or can be paired up.
+
+    Input  : n = 3
+    Output : 4
+
+    Explanation
+    {1}, {2}, {3} : all single
+    {1}, {2, 3} : 2 and 3 paired but 1 is single.
+    {1, 2}, {3} : 1 and 2 are paired but 3 is single.
+    {1, 3}, {2} : 1 and 3 are paired but 2 is single.
+    Note that {1, 2} and {2, 1} are considered same.
+    https://www.geeksforgeeks.org/friends-pairing-problem/
+
+5.  Subset with sum divisible by m
+    Given a set of non-negative distinct integers, and a value m, determine if there is a subset
+    of the given set with sum divisible by m.
+    Input Constraints
+    Size of set i.e., n <= 1000000, m <= 1000
+
+    Examples:
+    Input : arr[] = {3, 1, 7, 5};
+            m = 6;
+    Output : YES
+
+    Input : arr[] = {1, 6};
+            m = 5;
+    Output : NO
+
+    https://www.geeksforgeeks.org/subset-sum-divisible-m/
+
+6.  Largest divisible pairs subset
+    Given an array of n distinct elements, find length of the largest subset such that every pair
+    in the subset is such that the larger element of the pair is divisible by smaller element.
+
+    Input : arr[] = {10, 5, 3, 15, 20}
+    Output : 3
+    Explanation: The largest subset is 10, 5, 20.
+    10 is divisible by 5, and 20 is divisible by 10.
+
+    Input : arr[] = {18, 1, 3, 6, 13, 17}
+    Output : 4
+    Explanation: The largest subset is 18, 1, 3, 6,
+    In the subsequence, 3 is divisible by 1,
+    6 by 3 and 18 by 6.
+
+    https://www.geeksforgeeks.org/largest-divisible-pairs-subset/
+
+7.  Choice of area.
+    Consider a game, in which you have two types of powers, A and B and there are 3 types of
+    Areas X, Y and Z. Every second you have to switch between these areas, each area has specific
+    properties by which your power A and power B increase or decrease. We need to keep choosing
+    areas in such a way that our survival time is maximized. Survival time ends when any of the
+    powers, A or B reaches less than 0.
+
+    Initial value of Power A = 20
+    Initial value of Power B = 8
+
+    Area X (3, 2) : If you step into Area X,
+                    A increases by 3,
+                    B increases by 2
+
+    Area Y (-5, -10) : If you step into Area Y,
+                       A decreases by 5,
+                       B decreases by 10
+
+    Area Z (-20, 5) : If you step into Area Z,
+                      A decreases by 20,
+                      B increases by 5
+
+    It is possible to choose any area in our first step.
+    We can survive at max 5 unit of time by following
+    these choice of areas :
+    X -> Z -> X -> Y -> X
+
+
+8.  Given a fence with n posts and k colors, find out the number of ways of painting the fence
+    such that at most 2 adjacent posts have the same color.
+
+    Input : n = 2 k = 4
+    Output : 16
+    We have 4 colors and 2 posts.
+    Ways when both posts have same color : 4
+    Ways when both posts have diff color :
+    4*(choices for 1st post) * 3(choices for
+    2nd post) = 12
+
+    Input : n = 3 k = 2
+    Output : 6
+
+9.  Assembly Line Scheduling.
+    https://www.geeksforgeeks.org/assembly-line-scheduling-dp-34/
+
+10. Golomb Sequence
+    In mathematics, the Golomb sequence is a non-decreasing integer sequence where n-th term is
+     equal to number of times n appears in the sequence.
+
+    The first few values are
+    1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, ……
+
+    Explanation of few terms:
+    Third term is 2, note that three appears 2 times.
+    Second term is 2, note that two appears 2 times.
+    Fourth term is 3, note that four appears 3 times.
+
+    Given a positive integer n. The task is to find the first n terms of Golomb sequence.
+    Input : n = 4
+    Output : 1 2 2 3
+
+    Input : n = 6
+    Output : 1 2 2 3 3 4
+
+11. Maximum length of Snake sequence.
+    Given a grid of numbers, find maximum length Snake sequence and print it. If multiple snake
+    sequences exists with the maximum length, print any one of them.
+
+    A snake sequence is made up of adjacent numbers in the grid such that for each number, the
+    number on the right or the number below it is +1 or -1 its value. For example, if you are
+    at location (x, y) in the grid, you can either move right i.e. (x, y+1) if that number is
+    ± 1 or move down i.e. (x+1, y) if that number is ± 1.
+
+    For example,
+
+    9, 6, 5, 2
+    8, 7, 6, 5
+    7, 3, 1, 6
+    1, 1, 1, 7
+
+    In above grid, the longest snake sequence is: (9, 8, 7, 6, 5, 6, 7)
+
+12. Given an array of numbers, find the maximum product formed by multiplying numbers of an
+    increasing subsequence of that array.
+
+    Input : arr[] = { 3, 100, 4, 5, 150, 6 }
+    Output : 45000
+    Maximum product is 45000 formed by the
+    increasing subsequence 3, 100, 150. Note
+    that the longest increasing subsequence
+    is different {3, 4, 5, 6}
+
+    Input : arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 }
+    Output : 21780000
+    Maximum product is 21780000 formed by the
+    increasing subsequence 10, 22, 33, 50, 60.
+
+13. Given a non negative array, find the number of subsequences having product smaller than K.
+    Input : [1, 2, 3, 4]
+            k = 10
+    Output :11
+    The subsequences are {1}, {2}, {3}, {4},
+    {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4},
+    {1, 2, 3}, {1, 2, 4}
+
+    Input  : [4, 8, 7, 2]
+             k = 50
+    Output : 9
+
+14. Given two strings str1 and str2, find the shortest string that has both str1 and str2 as
+    sub-sequences. The simpler version of this question is to find the length of above string.
+
+15. Partition problem is to determine whether a given set can be partitioned into two subsets
+    such that the sum of elements in both subsets is same.
+
+    arr[] = {1, 5, 11, 5}
+    Output: true
+    The array can be partitioned as {1, 5, 5} and {11}
+
+    arr[] = {1, 5, 3}
+    Output: false
+    The array cannot be partitioned into equal sum sets.
+
+
