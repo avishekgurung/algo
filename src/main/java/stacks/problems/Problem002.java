@@ -34,7 +34,9 @@ public class Problem002 {
           postfix = postfix + stack.pop();
         }
         stack.pop(); // We want to remove '(' from the stack as well.
-        postfix = postfix + item;
+      }
+      else {
+        postfix += item;
       }
     }
 

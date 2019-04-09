@@ -33,4 +33,8 @@ public class Problem029 {
     LinkedListUtil.display(res);
   }
 
+  /**
+   * One approach would be to reverse both the list and merge them based on the higher values.
+   * Reverse the result.
+   */
 }

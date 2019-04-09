@@ -52,8 +52,7 @@ right.
     2's rand should point to 25
     25's rand should point to N
 
-12. Give a linked list that is alternately increasing and decreasing. Sort the linked
-list.
+12. Give a linked list that is alternately increasing and decreasing. Sort the linked list.
     Eg. Input List:   10->40->53->30->67->12->89->NULL
         Output List:  10->12->30->43->53->67->89->NULL
 

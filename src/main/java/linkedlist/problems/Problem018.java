@@ -25,10 +25,10 @@ package linkedlist.problems;
  *
  * Let a,b,c,d be the memory address of A,B,C and D respectively.
  *
- * Node A will store 0 X b
- * Node B will store a X c
- * Node C will store b X d
- * Node D will store c X 0
+ * Node A will store 0 ^ b
+ * Node B will store a ^ c
+ * Node C will store b ^ d
+ * Node D will store c ^ 0
  *
  * To find the address of next pointer, we do address of prev XOR pnr of current
  * where pnr is the pointer of a Node.
@@ -37,31 +37,31 @@ package linkedlist.problems;
  *
  *  Step 1. We are at node A
  *    Address of next pointer = address of prev XOR pnr(A)
- *    Address of next pointer = 0 X (0 X b) since pnr(A) = 0 X b
- *    Address of next pointer = O X (b)
+ *    Address of next pointer = 0 ^ (0 ^ b) since pnr(A) = 0 ^ b
+ *    Address of next pointer = O ^ (b)
  *    Address of next pointer = b
  *    Now we can go to next node B since we have its address
  *
  *  Step 2. We are at node B
  *    Address of next pointer = address of prev XOR pnr(B)
- *    Address of next pointer = a X (a X c)
- *    Address of next pointer = (a X a) X c
- *    Address of next pointer = 0 X c
+ *    Address of next pointer = a ^ (a ^ c)
+ *    Address of next pointer = (a ^ a) ^ c
+ *    Address of next pointer = 0 ^ c
  *    Address of next pointer = c
  *
  *  So likewise, we can move forward.
  *
  *  Traversing backward:
  *  Step 1. We are at node D
- *    Address of next pointer = pnr(D) X address of prev
- *    Address of next pointer = (c X 0) X 0 (remember we are moving back)
+ *    Address of next pointer = pnr(D) ^ address of prev
+ *    Address of next pointer = (c ^ 0) ^ 0 (remember we are moving back)
  *    Address of next pointer =  c
  *
  *  Step 2. We are at node C
- *    Address of next pointer = pnr(C) X address of prev
- *    Address of next pointer = (b X d) X d
- *    Address of next pointer = b X (d X d)
- *    Address of next pointer = b X 0
+ *    Address of next pointer = pnr(C) ^ address of prev
+ *    Address of next pointer = (b ^ d) ^ d
+ *    Address of next pointer = b ^ (d ^ d)
+ *    Address of next pointer = b ^ 0
  *    Address of next pointer = b
  *
  *   Likewise we can move backwards too.
