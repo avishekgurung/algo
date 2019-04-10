@@ -27,8 +27,10 @@ public class Problem059 {
     Node node = BinaryTree.getTree();
     BinaryTree.display(node);
     result = false;
-    checkDuplicateSubTree(node, new HashSet<String>());
+    Set<String> set = new HashSet<String>();
+    checkDuplicateSubTree(node, set);
     System.out.println("Contains duplicate subtree: " + result);
+    System.out.println(set);
     System.out.println();
 
     node = BinaryTree.createTree(new int[]{1,2,2,3,4,3,4});

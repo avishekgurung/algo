@@ -60,4 +60,15 @@ public class Problem048 {
     BinaryTree.display(node);
   }
 
+
+  /**
+   * The time complexity of the above solution is O(n2) as we are iterating while process every
+   * queue element. It can be made O(n) by using a map<Integer, List<Integer>></Integer>. Eg,
+   * 5 -> [1,2]
+   * 2 -> [3,4]
+   *
+   *
+   * Another approach to look into above solution is by using topological sorting.
+   */
+
 }

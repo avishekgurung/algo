@@ -173,8 +173,7 @@ Standard Binary Tree
 50. Convert a binary tree to Doubly Linked List such that the left pointer acts as a prev
     and right pointer acts as next. The order of nodes in DLL must be same as Inorder of
     the given Binary Tree.
-    https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked
-    -list/
+    https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
 
 51. Given a simple Binary Tree, modify it such that a node holds the sum of its two child.
 
@@ -187,16 +186,14 @@ Standard Binary Tree
     sum-of-all-nodes-in-left-subtree/
 
 54. Convert a tree into DLL in a spiral fashion.
-    https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral
-    -fashion/
+    https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral-fashion/
 
 55. Check if two nodes are cousins. Two nodes are cousins if they are in the same level
     but have different parents.
 
 56. Given a Binary Tree, find if there exist edge whose removal creates two trees of
     equal size.
-    https://www.geeksforgeeks.org/check-if-removing-an-edge-can-divide-a-binary-tree-in
-    -two-halves/
+    https://www.geeksforgeeks.org/check-if-removing-an-edge-can-divide-a-binary-tree-in-two-halves/
 
 57. Check if given Preorder, Inorder and Postorder traversals are of same tree.
 
@@ -213,8 +210,7 @@ Standard Binary Tree
 61. Given a perfect binary tree, print nodes of middle level without computing its
     height. A perfect binary tree is a binary tree in which all interior nodes have two
     children and all leaves have the same depth or same level.
-    https://www.geeksforgeeks.org/print-middle-level-perfect-binary-tree-without-finding
-    -height/
+    https://www.geeksforgeeks.org/print-middle-level-perfect-binary-tree-without-finding-height/
 
 62. Given a binary tree and a node, print all cousins of given node. Note that siblings
     should not be printed.
@@ -231,8 +227,7 @@ Standard Binary Tree
 65. Given a binary tree, a complete path is defined as a path from root to a leaf. The
     sum of all nodes on that path is defined as the sum of that path. Given a number K,
     you have to remove (prune the tree) all nodes which don’t lie in any path with sum>=k.
-    https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less
-    -than-k/
+    https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
 
 66. A binary tree and a number k are given. Print every path in the tree with sum of the
     nodes in the path as k. A path can start from any node and end at any node and must be

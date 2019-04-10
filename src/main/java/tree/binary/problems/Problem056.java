@@ -54,6 +54,8 @@ public class Problem056 {
  * Let size of the whole tree be n. At any given node, if n - s = s then a tree can be divided
  * into equal halves.
  *
+ * If the sum of tree is odd then the tree cannot be divided into equal halves.
+ *
  * Or we can also say n == 2s. Little different than usual.
  *
  *

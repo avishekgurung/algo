@@ -1,6 +1,8 @@
 package tree.binary.problems;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 import tree.binary.utils.BinaryTree;
@@ -59,6 +61,58 @@ public class Problem045 {
     return root;
   }
 
+  /**
+   * Solution using topological sort.
+   * We use the exact way of topological sorting for this.
+   */
+  public static Node createByTopoSort(int[][] arr) {
+    int n = arr.length; //no of vertices for us.
+    int inDegree[] = new int[arr.length];
+
+    //calculate indegree
+    for(int i=0; i < n; i++) {
+      for(int j=0; j < n; j++) {
+        if(arr[i][j] == 1) {
+          inDegree[j]++;
+        }
+      }
+    }
+
+    List<Node> list = new ArrayList<Node>();
+    Queue<Integer> queue = new LinkedList<Integer>();
+    for(int i=0; i < n; i++) {
+      if(inDegree[i] == 0) queue.add(i);
+    }
+
+    //Start storing the elements with indegree 0
+    while(!queue.isEmpty()) {
+      int vertex = queue.remove();
+      list.add(new Node(null, vertex, null));
+      for(int i=0; i < n; i++) {
+        if(arr[vertex][i] == 1) {
+          inDegree[i]--;
+          if(inDegree[i] == 0) {
+            queue.add(i);
+          }
+        }
+      }
+    }
+
+    //simply create a tree from a list.
+    int i=0, j=1;
+    while(j < n) {
+      list.get(i).left = list.get(j);
+      j++;
+      if(j == n) break;
+      list.get(i).right = list.get(j);
+      j++;
+      i++;
+    }
+
+    return list.get(0);
+  }
+
+
   public static void main(String[] args) {
     int arr[][] = new int[][] {
         {0,0,0,0,0,0},
@@ -72,6 +126,11 @@ public class Problem045 {
     BinaryTree.display(root);
     System.out.println();
 
+    root = createByTopoSort(arr);
+    BinaryTree.display(root);
+    System.out.println();
+
+
     arr = new int[][]{
         {0,1,1},
         {0,0,0},
@@ -79,6 +138,11 @@ public class Problem045 {
     };
     root = createTree(arr);
     BinaryTree.display(root);
+
+    System.out.println();
+    root = createByTopoSort(arr);
+    BinaryTree.display(root);
+    System.out.println();
   }
 }
 

@@ -43,10 +43,36 @@ public class Problem029 {
     return -1;
   }
 
+
+  public static Node levelOrderCreation(int[] levelOrder) {
+    int n = levelOrder.length;
+    Node[] list = new Node[n];
+    for(int i=0; i < n; i++) {
+      list[i] = new Node(null, levelOrder[i], null);
+    }
+
+    int i = 0, j = 1;
+    while (j < n) {
+      list[i].left = list[j];
+      j++;
+      if(j < n) {
+        list[i].right = list[j];
+        j++;
+      }
+      i++;
+    }
+    return list[0];
+  }
+
   public static void main(String[] args) {
     int[] inOrder = new int[]{4,2,5,1,6,3,7};
     int[] levelOrder = new int[]{1,2,3,4,5,6,7};
     Node node = createTree(levelOrder, inOrder, 0, levelOrder.length-1);
+    BinaryTree.display(node);
+
+    //Simple way
+    System.out.println();
+    node = levelOrderCreation(levelOrder);
     BinaryTree.display(node);
   }
 }

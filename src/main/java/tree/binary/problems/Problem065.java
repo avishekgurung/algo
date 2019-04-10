@@ -18,16 +18,10 @@ public class Problem065 {
 
     if(left) {
       node.left = null;
-      if(node.right == null) {
-        return true;
-      }
     }
 
     if(right) {
       node.right = null;
-      if(node.left == null) {
-        return true;
-      }
     }
 
     return left && right;
@@ -37,7 +31,7 @@ public class Problem065 {
   public static void main(String[] args) {
     Node node = BinaryTree.getTree();
     BinaryTree.display(node);
-    trim(node, 0, 12); //Keep tuning the value of k from 7 to 12 and see the change.
+    trim(node, 0, 10); //Keep tuning the value of k from 7 to 12 and see the change.
     System.out.println();
     BinaryTree.display(node);
 
