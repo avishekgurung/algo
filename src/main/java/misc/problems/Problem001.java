@@ -1,4 +1,4 @@
-package crucial.problems;
+package misc.problems;
 
 /**
  * 1. We can store them and perform a XOR operation where all the duplicates get removed. But if

@@ -29,6 +29,7 @@ public class Problem008 {
      *
      * If the first two post are same then to make the third post different, we have
      * k-1 ways. Hence same * (k-1)
+     * [same=k, so same * k-1 = k*(k-1) = diff => Remember this.]
      *
      * If the first two posts are different then to make the third different, we also have
      * k - 1 ways. Hence diff * (k-1)

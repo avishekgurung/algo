@@ -1,4 +1,4 @@
-package crucial.problems;
+package misc.problems;
 
 
 public class Problem002 {

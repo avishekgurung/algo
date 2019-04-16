@@ -1,1 +1,15 @@
 43. Create a Full Tree from preorder and postorder traversal.
+
+59. Given a Binary Tree, check whether the Binary tree contains a duplicate sub-tree of
+    size 2 or more.
+    https://www.geeksforgeeks.org/check-binary-tree-contains-duplicate-subtrees-size-2/
+
+13. Find the diameter(width) of a Binary Tree. Diameter of a tree is the distance between
+    the two farthest leaves. To get the more details of the width of a tree,
+    check https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
+
+4.  Find the inorder predecessor and successor in a BST.
+
+18. Given a pre-order traversal, create a BST.
+
+

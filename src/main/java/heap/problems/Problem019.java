@@ -16,7 +16,8 @@ package heap.problems;
  *    Both trees take logN to insert an element
  *
  *  To use BST as Priority Queue, we have to create a balanced BST whose implementation
- *  is more complex than heap.
+ *  is more complex than heap. As normal BST can be skewed and worst case for search will be n.
+ *
  *
  *
  *

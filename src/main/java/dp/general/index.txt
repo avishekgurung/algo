@@ -215,6 +215,8 @@
 
 14. Given two strings str1 and str2, find the shortest string that has both str1 and str2 as
     sub-sequences. The simpler version of this question is to find the length of above string.
+    Lets consider two strings, ravi and avishek. We need to find a shortest string which has both
+    the above two strings as subsequence. There can be many possible results, we can find one.
 
 15. Partition problem is to determine whether a given set can be partitioned into two subsets
     such that the sum of elements in both subsets is same.
@@ -226,5 +228,15 @@
     arr[] = {1, 5, 3}
     Output: false
     The array cannot be partitioned into equal sum sets.
+
+16. Max subsequence sum with no two adjacent elements.
+    Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
+    that no 2 numbers in the sequence should be adjacent in the array.
+
+    Input : arr[] = {5, 5, 10, 100, 10, 5}
+    Output : 110
+
+    Input : arr[] = {20, 1, 2, 3}
+    Output : 23
 
 

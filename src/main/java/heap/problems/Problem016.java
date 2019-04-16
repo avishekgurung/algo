@@ -28,5 +28,26 @@ package heap.problems;
  *
  */
 
+
+/**
+ * Another simple and efficient would be to find the largest 3 elements by using an algo
+ * first = second = third = Integer.MIN_VAL
+ * if(ele > first) {
+ *   third = second;
+ *   second = first;
+ *   first = element;
+ * }
+ *
+ * else if(ele > second) {
+ *   third = second;
+ *   second = element;
+ * }
+ *
+ * else if(ele > third) {
+ *   third = element;
+ * }
+ *
+ * return first * second * third;
+ */
 public class Problem016 {
 }
