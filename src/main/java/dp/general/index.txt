@@ -239,4 +239,23 @@
     Input : arr[] = {20, 1, 2, 3}
     Output : 23
 
+17. Given a 'n' pair of numbers where each pair (a,b) is such that a < b. Let the pairs be
+    (a1,b1),(a2,b2),(a3,b3) ... These pairs are said to form a chain if b of one pair is less than
+    a of another pair. We need to find the longest chain.
+
+    For example, if the given pairs are {{5, 24}, {39, 60}, {15, 28}, {27, 40}, {50, 90} }, then
+    the longest chain that can be formed is of length 3, and the chain is {{5, 24}, {27, 40},
+    {50, 90}}
+
+18. Given a square matrix of size N*N, where each cell is associated with a specific cost. A path
+    is defined as a specific sequence of cells which starts from top left cell move only right or
+    down and ends on bottom right cell. We want to find a path with maximum average over all
+    existing paths. Average is computed as total cost divided by number of cells visited in path
+
+    Input : Matrix = [1, 2, 3
+                      4, 5, 6
+                      7, 8, 9]
+    Output : 5.8
+    Path with maximum average is, 1 -> 4 -> 7 -> 8 -> 9
+    Sum of the path is 29 and average is 29/5 = 5.8
 
