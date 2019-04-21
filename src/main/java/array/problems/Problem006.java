@@ -25,3 +25,14 @@ public class Problem006 {
   }
 
 }
+
+/**
+ * To make it more efficient.
+ * Lets say that the list is really long. While galloping, we found 0 at index 5000. But the first
+ * 0 is at 2500. Here we have to traverse 2500 backwards to get the first index of zero. To improve
+ * the performance, we can always not the last value of i. When we find 0, then the first 0 would
+ * lie between last value of i and current value of i. We can now use binary search to find the
+ * first value of 0. The complexity decreases by log. So before, it would take 2500 and now it
+ * will take log(2500)
+ *
+ */

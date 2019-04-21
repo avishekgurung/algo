@@ -96,7 +96,8 @@ public class S5_QuickSort {
  * Lets say we want to sort numbers (and we do not want extra space so mergesort is ruled out)and
  * at no point, we want our sorting algo to go beyond nlogn then we can use heapsort. We can
  * also use this algo when there are problems related to streams, finding largest/smallest k
- * elements etc.
+ * elements etc. So if we want our sorting in nlogn at all conditions and we do not want extra
+ * space then we use heap sort.
  *
  * 5. Quicksort: We can use quicksort in most of the cases as it uses no aux space. By adjusting
  * the pivot we can avoid the worst complexity of O(n2). This algo is considered the best of all

@@ -19,7 +19,7 @@ public class Problem059 {
    * arr[i] < arr[j]
    *  merge arr[i] into arr[i+1]
    *  i++
-   * arr[j] > arr[i]
+   * arr[j] < arr[i]
    *  merge arr[j] into arr[j-1]
    *  j--
    */

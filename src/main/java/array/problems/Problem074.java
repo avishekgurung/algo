@@ -19,7 +19,7 @@ import java.util.Arrays;
  *  here n is the size of array and not the size of pair_sum, which is expected to be
  *  provided.
  *
- *
+ *  We can use our own logic than the above.
  */
 public class Problem074 {
 

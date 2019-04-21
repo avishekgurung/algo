@@ -8,6 +8,7 @@ public class Problem005 {
    *
    * b. Count from 1 to n and replace all the elements from 1 to n.
    *    OR Replace every element by its index + 1.
+   *    This soln will not hold true if the elements are repeated.
    *
    */
   public static void main(String[] args) {

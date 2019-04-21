@@ -1,0 +1,18 @@
+Graph Algo.
+
+    1. Shortest Path Non Weighted:
+        For a given vertex, check its neighbours. If the neighbours are not visited then
+        calculate their distance and add them in a queue.
+
+    2. Dijkstra's Algo:
+        For a given vertex, check its neighbours. If the neighbours are not visited, then calculate
+        their distance and add them in the heap. Calculating their distance also involves comparing.
+
+    3. Bellman-Ford:
+        For a given vertex, check its neighbours. If the neighbours are not visited calculate the
+        distance and add neigbour to queue. If the neighbours are visited, calculate the distance
+        and assign the min distance.
+
+    4. Prim's algo (MST):
+        Start with a vertex with min edge.
+        For a given vertex, find a neighbour with min cost and add it to the min heap.

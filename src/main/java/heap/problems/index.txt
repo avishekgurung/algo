@@ -70,7 +70,7 @@
     6) Delete() : Deletes an item.
         Frequency: Least frequent.
 
-11*.Given an array of numbers find the Kth smallest number in the range from
+11 .Given an array of numbers find the Kth smallest number in the range from
     index 'start' to 'end'.
     arr[] = {3, 2, 5, 1, 8, 9}
     Eg. start = 1, end = 4, k = 2
@@ -82,7 +82,7 @@
 
 12. Find the smallest derangement. Lets say k = 2, then the seq is as 0,1,2.
     The derangement of this seq is a permutation such that no elements are at
-    the same position. Eg for this seq, the derangement are [1,2,0] & [2,0,1]
+    the original position. Eg for this seq, the derangement are [1,2,0] & [2,0,1]
     but the smallest is [1,2,0].
 
     For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
@@ -104,7 +104,7 @@
     k. We need to remove k number of elements from the array such that we get
     the maximum non-repeating elements.
     Eg. arr[] = {5, 7, 5, 5, 1, 1, 2, 2, 5}, k = 3
-    Here, if we remove three 5s, then distinct element will be 2 (5,7)
+    Here, if we remove three 5s, then distinct element left in array will be 2 (5,7)
     But if we remove, one 1, one 2, one 5(will not make any difference though)
     then the distinct elements will be 3 (7,1,2)
     https://www.geeksforgeeks

@@ -112,7 +112,7 @@
     Magical indices = 3, 4
     https://www.geeksforgeeks.org/magical-indices-array/
 
-18. Given a sorted dictionary (array of words) of an alien language, find order of characters
+18*. Given a sorted dictionary (array of words) of an alien language, find order of characters
     in the language.
     Input:  words[] = {"baa", "abcd", "abca", "cab", "cad"}
     Output: Order of characters is 'b', 'd', 'a', 'c'

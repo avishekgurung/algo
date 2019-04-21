@@ -65,8 +65,34 @@ public class Problem073 {
 
   }
 
+  public static void simplerApproach(int arr[], int brr[]) {
+    System.out.println(Arrays.toString(arr));
+    System.out.println(Arrays.toString(brr));
+    int j = brr.length - 1;
+    int i = arr.length - 1;
+    while(j >= 0) {
+      int element = brr[j];
+      if(element < arr[i]) { //Sort only if the last element of arr is greater than current element
+        // of brr else no need of sorting.
+        int k = i;
+        int displaceElement = arr[k];
+        while(k > 0 && element < arr[k]) {
+          arr[k] = arr[k-1];
+          k--;
+        }
+        arr[k+1] = element;
+        brr[j] = displaceElement;
+      }
+      j--;
+    }
+    System.out.println();
+    System.out.println(Arrays.toString(arr));
+    System.out.println(Arrays.toString(brr));
+    System.out.println("-------------------");
+  }
+
   public static void main(String[] args) {
-    mergeSortedArrays(new int[]{1, 5, 9, 10, 15, 20}, new int[]{2, 3, 8, 13});
+    simplerApproach(new int[]{1, 5, 9, 10, 15, 20}, new int[]{2, 3, 8, 50});
   }
 
 }

@@ -48,6 +48,8 @@ package heap.problems;
  * }
  *
  * return first * second * third;
+ *
+ * This will not take extra space as heap does too.
  */
 public class Problem016 {
 }

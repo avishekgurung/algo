@@ -39,3 +39,19 @@ public class Problem036 {
   }
 
 }
+
+/**
+ * Another simple approach that would be short and efficient would be:
+ * Iterate an array:
+ *  if i is odd and element is negative
+ *    continue
+ *  else
+ *    arr[i] = next Negative Element
+ *
+ * if i is even and element is positive
+ *    continue
+ * else
+ *    arr[i] = next Positive Element
+ *
+ * The next negative or positive element always be searched from i+1.
+ */

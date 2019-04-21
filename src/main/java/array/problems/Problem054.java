@@ -45,6 +45,7 @@ public class Problem054 {
     levelPoleHeight(new int[]{1, 5, 15, 10}, 3);
     levelPoleHeight(new int[]{4, 6}, 10);
     levelPoleHeight(new int[]{6, 10}, 3);
+    levelPoleHeight(new int[]{3, 4, 8}, 2);
     //levelPoleHeight(new int[]{}, );
     //levelPoleHeight(new int[]{}, );
   }

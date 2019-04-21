@@ -5,6 +5,10 @@ import java.util.Queue;
 
 import graph.utils.Graph;
 
+
+/**
+ * Algo: See if the neighbours are not visited, then calculate its distance.
+ */
 public class Problem003 {
 
   /**

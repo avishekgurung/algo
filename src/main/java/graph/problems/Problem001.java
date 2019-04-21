@@ -85,13 +85,14 @@ public class Problem001 {
    * @param vertex
    */
   public static void depthFirstTraversal(Graph graph, char vertex) {
-
-    System.out.print(vertex + "\t");
     int vertexIndex = graph.indexMap.get(vertex);
+    if(graph.visited[vertexIndex] == 1) return;
+    System.out.print(vertex + "\t");
+
     graph.visited[vertexIndex] = 1;
 
     for(int i=0; i < graph.vertices.length; i++) {
-      if(graph.adjMatrix[vertexIndex][i] == 1 && graph.visited[i] == 0) {
+      if(graph.adjMatrix[vertexIndex][i] == 1) {
         depthFirstTraversal(graph, graph.vertices[i]);
       }
     }
@@ -104,12 +105,15 @@ public class Problem001 {
     while(!stack.isEmpty()) {
       vertex = stack.pop();
       int vertexIndex = graph.indexMap.get(vertex);
-      System.out.print(vertex + "\t");
-      graph.visited[vertexIndex] = 1;
 
-      for(int i=0; i < graph.vertices.length; i++) {
-        if(graph.adjMatrix[vertexIndex][i] == 1 && graph.visited[i] == 0) {
-          stack.push(graph.vertices[i]);
+      if(graph.visited[vertexIndex] == 0) {
+        System.out.print(vertex + "\t");
+        graph.visited[vertexIndex] = 1;
+
+        for (int i = 0; i < graph.vertices.length; i++) {
+          if (graph.adjMatrix[vertexIndex][i] == 1 && graph.visited[i] == 0) {
+            stack.push(graph.vertices[i]);
+          }
         }
       }
     }
@@ -119,16 +123,16 @@ public class Problem001 {
   public static void main(String[] args) {
 
     Graph graph = Graph.getPredefinedGraph();
-    breadFirstTraversal(graph, 'A');
+    //breadFirstTraversal(graph, 'A');
 
     System.out.println();
-
-    graph = Graph.getPredefinedGraph();
-    depthFirstTraversal(graph,'A' );
 
     /*graph = Graph.getPredefinedGraph();
+    depthFirstTraversal(graph,'A' );*/
+
+    graph = Graph.getPredefinedGraph();
     System.out.println();
-    depthFirstByIteration(graph,'A' );*/
+    depthFirstByIteration(graph,'A' );
   }
 
 }

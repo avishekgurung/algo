@@ -21,6 +21,11 @@ public class Problem003 {
     }
   }
 
+  /**
+   * nlogn space and contant time.
+   * @param arr
+   * @param k
+   */
   public static void findPairsForGivenNumberSum1(int arr[], int k) {
     Arrays.sort(arr);
     int i=0, j=arr.length-1;

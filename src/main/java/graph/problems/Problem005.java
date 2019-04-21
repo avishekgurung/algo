@@ -8,6 +8,17 @@ import graph.utils.Graph;
 public class Problem005 {
 
   /**
+   * Quick Walkthrough:
+   * Bellman-Ford works as follows:
+   * For a given vertex, it looks into all its neighbours. If the neighbour is
+   *  1. NOT visited
+   *    It will calculate the distance and assign it.
+   *    It will add this neighbour to the queue.
+   *
+   *  2. Visited
+   *    It will calculated the distance. If this distance is less than already calculated
+   *    distance of neighbour then it assigns this new distance.
+   *
    * This is a Bellman-Ford algo that is a combination of Dijktra and non-weighted graph algo
    * and works for negative edges as well but its complexity is slightly higher than that of
    * Dijktra's algo.

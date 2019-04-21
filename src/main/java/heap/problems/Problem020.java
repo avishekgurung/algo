@@ -74,7 +74,7 @@ public class Problem020 {
   /**
    * The solution might look like O(nlogn) but building heap takes O(n).
    *
-   * If we are allowed to use
+   * If we are allowed to use.
    *
    */
 

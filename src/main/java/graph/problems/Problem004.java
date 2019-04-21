@@ -12,6 +12,14 @@ import java.util.Set;
 /**
  * Dijktra's shortest path algorithm
  *
+ * Quick Walkthrough:
+ * We use PriorityQueue or Heap(min).
+ * For a given vertex, we check for all its neighbours. We process only the non-visited
+ * neighbours. So if the neighbour is not visited, then we calculate the distance.
+ * If this distance is less than already calculated distance then we add this neighbour with
+ * its new calculated distance in the heap.
+ *
+ *
  * Explanation
  * This algorithm is a single source shortest path problem for non-negative edges. It is solved
  * using Greedy method. Given a vertex, we find a shortest distance to all the

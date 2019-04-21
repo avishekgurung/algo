@@ -5,17 +5,17 @@ import java.util.Arrays;
 public class Problem010 {
 
   public static int getMajorityElement(int arr[]) {
-    int count = 0; int element = -1;
-
-    for(int i=0; i < arr.length; i++) {
-      if(count == 0) {
-        element = arr[i];
-      }
-      else if(element == arr[i]) {
+    int count = 1; int element = arr[0];
+    for(int i=1; i < arr.length; i++) {
+      if(arr[i] == element) {
         count++;
       }
       else {
         count--;
+        if(count == 0) {
+          count = 1;
+          element = arr[i];
+        }
       }
     }
     System.out.println(Arrays.toString(arr));

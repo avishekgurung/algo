@@ -29,24 +29,19 @@ public class Problem004 {
    * If the element is greater than the heap root,
    *  simply remove the root
    *  add the element
-   *  Implementation wise, this can be a single step.
-   *    arr[0] = element;
-   *    percolateDown(0);
    *
    * If the element is smaller than the heap root then do nothing.
    *
+   * If k is the size of our heap and n is the number of elements in the file (or in the
+   * stream), complexity =
+   * n * ( removing top element + adding new element)
+   * n * (logn + logn)
+   * n * logn
    *
-   * Rather than using a pre-build heap if we can use our own heap implementation
-   * then the above step to remove the root and add an element will be a single
-   * step, hence efficient.
-   * Else, in pre-built heap, it would involve, removing the top element (which
-   * internally removes arr[0], brings the last element to arr[0] and
-   * percolatesDown(0). And then insertion happens.
-   *
-   * This solution is better than the above.
-   *If k is the size of our heap and n is the number of elements in the file (or in the
-   * stream), complexity = n log k. As percolate down takes logk and removing the element
-   * takes O(1) in our custom heap.
+   * Offcourse we can make the second term as one single operation if we start using our custom
+   * heap. Removing involves removing the top element and heapifying (percolateDown). So here,
+   * we can replace arr[0] by new element and heapify it. This will be faster as we have removed
+   * one extra process of insertion which will cost us logn.
    *
    */
 

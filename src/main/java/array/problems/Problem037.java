@@ -26,32 +26,18 @@ public class Problem037 {
     for(int m=0; m <=j; m++){
       if(arr[m] > k) {
         valuesGreaterThanK++;
-        minOfValuesGreaterThanK++;
       }
     }
 
-    while(j < len) {
-      if(i==0) {
-        i++;
-        j++;
-        continue; //The first calculation of counting has already been done
-      }
-      int elementGettingRemoved = arr[i-1];
-      int elementAdded = arr[j];
-      if(elementAdded == elementGettingRemoved) {
-        //do nothing
-      }
-      if(elementAdded != elementGettingRemoved) {
-        if(elementGettingRemoved <= k && elementAdded > k) {
-          valuesGreaterThanK++;
-        }
-        if(elementGettingRemoved > k && elementAdded <= k) {
-          if(valuesGreaterThanK == 0) continue;
-          valuesGreaterThanK--;
-          if(minOfValuesGreaterThanK > valuesGreaterThanK) {
-            minOfValuesGreaterThanK = valuesGreaterThanK;
-          }
-        }
+    minOfValuesGreaterThanK = valuesGreaterThanK;
+
+    while(j < len - 1) {
+      int elementRemoved = arr[i];
+      int elementAdded = arr[j+1];
+      if(elementAdded != elementRemoved) {
+        if(elementRemoved > k) valuesGreaterThanK--;
+        if(elementAdded > k) valuesGreaterThanK++;
+        minOfValuesGreaterThanK = Math.min(valuesGreaterThanK, minOfValuesGreaterThanK);
       }
       i++;
       j++;

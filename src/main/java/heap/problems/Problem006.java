@@ -54,17 +54,11 @@ public class Problem006 {
    *
    * So we will sort subarray that will take klogk and merge the result.
    *
-   *
-   *Therefore, Sorting takes klogk.
-   * Sorting does not happen in every step but happens only when the count is k.
-   *
-   * Every element is inserted in heap so nlogk.
-   * Removing element from heap happens after every k elements, so removing from heap takes
-   * place n/k times.
-   *
-   * Time Complexity = n * (logk + logk) = nlogk
-   *
-   * Space complexity = n
+   * We can optimize this by using any other sorting. As using heap will require us to use extra
+   * space.
+   * Here we ll divide array of size n into k+1 halves and sort these k+1 halves.
+   * The total look will run for n/k. For each iteration, we sort, which takes klogk.
+   * So n/k * klogk = nlogk and constant space.
    *
    */
 

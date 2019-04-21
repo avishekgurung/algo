@@ -50,14 +50,15 @@ public class Problem005 {
  *
  * We iterate remaining elements. If the element is smaller than the top element then
  * we remove the top and insert the smaller element.
- * Removing the top element is constant. Now in the array inside heap, we have to put
- * the new element and heapify(percolateDown) it. Now this cannot be done in
- * pre-defined heap as above, we have to create our own heap.
+ * So the loop runs for (n-k) elements. And for every iteration, we remove the element and
+ * insert the element. So (n-k) * (logn + logn) = n-k * logk
+ *
  * Time Complexity = klogk + (n-k) * log(k) = nlogk (worst case if elements are in
  * descending order).
  *
- * Normal heap removal process involves removing the 0th element, replacing this
- * 0th element by last element and percolate down. So it takes O(logn). Here, we want
- * to skip the second step of percolate down but want to percolate down the new element.
+ * We can make this little faster in processing by using our custom heap where we can skip one
+ * heapifying process. So if the element is smaller than the top element, we will replace arr[0]=
+ * element and heapify. Normal process would involve, remove arr[0] and heapify. Add element. So
+ * we can skip this process of add element which takes us logn.
  *
  */

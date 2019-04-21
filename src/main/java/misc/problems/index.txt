@@ -91,3 +91,24 @@
 
 12. Count all possible paths from top left to bottom right of a [m x n] matrix.
     We can either move only to right or down.
+
+13. Given only a pointer/reference to a node to be deleted in a singly linked list, how do you
+    delete it?
+
+14. Given a integer as a input and replace all the ‘0’ with ‘5’ in the integer.
+    102 -> 152
+    1020 -> 1525
+    Use of array to store all digits is not allowed. (Amazon SDET)
+
+15. Find the maximum path sum between two leaves of a binary tree. (Microsoft).
+    https://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/
+
+16. Find the number of Islands
+    Given a boolean 2D matrix, find the number of islands. A group of connected 1s forms an
+    island. For example, the below matrix contains 5 islands.
+
+    {1, 1, 0, 0, 0},
+    {0, 1, 0, 0, 1},
+    {1, 0, 0, 1, 1},
+    {0, 0, 0, 0, 0},
+    {1, 0, 1, 0, 1}

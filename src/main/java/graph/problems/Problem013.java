@@ -115,3 +115,8 @@ public class Problem013 {
   }
 
 }
+
+/**
+ * Another simple way is to use DP and solve it (recursion). No too much code on
+ * creating a graph.
+ */

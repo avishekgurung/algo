@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * This does not work.
+ */
 public class Problem057 {
 
   public static void subsetsWithProductLessThanK(int arr[], int k) {
@@ -25,5 +28,6 @@ public class Problem057 {
 
   public static void main(String[] args) {
     subsetsWithProductLessThanK(new int[]{2, 4, 5, 3}, 12);
+    subsetsWithProductLessThanK(new int[]{1, 2, 4, 5, 3}, 12);
   }
 }

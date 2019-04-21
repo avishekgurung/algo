@@ -7,7 +7,15 @@ public class Problem038 {
   /**
    * Sort the array and swap the element and its next element. Thats all.
    *
+   *  The Efficient method:
    *  This is a array wave form problem which can be solved in O(n)
+   *  The approach is simple. It expects elements in the following format:
+   *      arr[i] must be less than arr[i-1] and arr[i+1].
+   *  start with i=1
+   *    check if arr[i] < arr[i-1] ? No => swap
+   *    check if arr[i] < arr[i+1] ? No => swap
+   *  The resulting array will be in the form of a wave where the element at odd position will
+   *  always be smaller than its sides. It does not need sorting as well.
    *
    *
    * @param arr

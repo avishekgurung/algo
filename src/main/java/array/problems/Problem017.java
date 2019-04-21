@@ -50,5 +50,10 @@ public class Problem017 {
     arr = new int[]{11, 15, 26, 38, 9, 10};
     pairSum(arr, 45);
   }
-
+  /**
+   * Another approach could be to reverse algo and sort the array.
+   * Reverse elements till pivot. Reverse elements from pivot's next element.
+   * Reverse whole array, that gives us the sorted array.
+   * We can use a general solution to find the pair now.
+   */
 }

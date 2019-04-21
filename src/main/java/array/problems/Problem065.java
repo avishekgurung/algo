@@ -17,6 +17,9 @@ import java.util.TreeSet;
  * Another simple approach to these kind of problems where the order is to be maintained,
  * we can use a Node with element, diff, and order (index). Create an array of them and sort them.
  * Such that if the differences are same then we would consider the index.
+ *
+ * Follow Prob 68 to prevent using extra space.
+ *
  */
 public class Problem065 {
 
@@ -56,3 +59,9 @@ public class Problem065 {
   }
 
 }
+
+/**
+ * Create a class that will hold the difference, element and index.
+ * Store them in a heap where comparision is done based on diff, But if diff are same then
+ * index is used to sort. Once done, keep popping out elements.
+ */
