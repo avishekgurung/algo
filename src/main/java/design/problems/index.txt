@@ -1,0 +1,65 @@
+0.  Design LRU Cache
+
+1.  There is a stream where the words keep coming. We need to store them. If any word already
+    exists then we need to remove them.
+
+2.  Design a cache such that it keeps data of past three hours.
+
+3.  Leader board problem.
+    There is a game going on whose score is shown on the board. The board shows all players. Each
+    player has a userid, score and rank. Higher the score, lower is the rank. We are given two
+    methods which has to be implemented.
+
+    getRank(userId) => Takes userId and returns player's rank.
+
+    updateRank(userId, score) => Update the rank such that the player should be placed at correct
+    location. Also, the other players location should be changed accordingly.
+
+    display() => This method should give us all the players sorted based on their rank.
+
+    The leader board should show the players sorted according to their rank.
+
+4.  SNAKE AND LADDER
+
+5.  PARKING LOT
+
+4.  There are 10,000 files and each file has 1 millions integers. Find the sum of all of them.
+
+5.  Sort millions of numbers.
+
+6.  Design elevator control system.
+
+7.  Design whisper-sync feature.
+
+build tic tac toe application
+
+Tree 1 has one billion nodes and tree 2 has thousand of nodes. How will you find tree 2 is a subtree of tree1
+
+add very large numbers.
+
+https://www.geeksforgeeks.org/a-data-structure-question/
+
+https://www.geeksforgeeks.org/design-a-data-structure-for-lru-cache/
+
+https://javarevisited.blogspot.com/2017/03/2-practical-data-structure-algorithm-interview-questions-java.html
+
+https://softwareengineering.stackexchange.com/questions/tagged/data-structures
+
+https://stackoverflow.com/questions/25221544/efficient-data-structure-for-leaderboard-i-e-a-list-of-records-name-points
+
+ To clear the bar raiser do refer the 14 leadership principles of Amazon.
+
+Design an online book reader system
+Design S3
+Design a distributed Cache
+Design tiny url
+Design bookmyshow
+Design Google Drive
+How will you built a query service for all the stakeholders responsible for delivery of product.
+Design payment system for cab services like Uber Ola etc.
+ sort a million Person records according to their age.
+Low Level Design for stock quota aggregation system
+Design a distributed chess playing system.
+Design snake and ladder game. The solution should be extendable for other games. They asked me to give a HLD and then LLD. Interviewer was very helpful.
+Bus Booking System
+Distributed chess

@@ -1,0 +1,14 @@
+The rules of games
+
+1.  There can be N number of players who can play this game.
+2.  A dice can roll from 1 to 6.
+3.  There are 100 areas.
+4.  If a player throws 6 then he can throw again.
+5.  If a player reaches the start of ladder then he climbs up.
+6.  If a player reaches the head of snake, he climbs down.
+7.  Any player reaching 100th position first is the winner.
+
+Edge cases:
+    Area with snake's head should not be a ladder's end.
+    Area with snake's tail should not be a ladder's head.
+    If the count goes beyond 100 then the turn goes to another player.

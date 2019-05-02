@@ -79,3 +79,7 @@ public class Problem007 {
   }
 
 }
+/**
+ * One way to solve this problem would be to solve it like array rotation. Dividing the array into
+ * two halves, reverse it, join it and again reverse.
+ */

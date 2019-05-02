@@ -239,7 +239,7 @@
     Input : arr[] = {20, 1, 2, 3}
     Output : 23
 
-17. Given a 'n' pair of numbers where each pair (a,b) is such that a < b. Let the pairs be
+17. Given an 'n' pair of numbers where each pair (a,b) is such that a < b. Let the pairs be
     (a1,b1),(a2,b2),(a3,b3) ... These pairs are said to form a chain if b of one pair is less than
     a of another pair. We need to find the longest chain.
 

@@ -63,6 +63,7 @@ public class Problem03 {
     longestIncreasingSubSequence(new int[]{4,3,6,4,8,6,7});
     longestIncreasingSubSequence(new int[]{5,2,3,1,6});
     longestIncreasingSubSequence(new int[]{2,8,5,6,3,7,4});
+    longestIncreasingSubSequence(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80});
   }
 
 }

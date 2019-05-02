@@ -10,7 +10,7 @@ public class Problem15 {
 
     if(dp[n][sum] != 0) return dp[n][sum];
 
-    System.out.println("count = " + count++);
+    //System.out.println("count = " + count++);
     /**
      * If sum is less than 0 then return 0.
      *

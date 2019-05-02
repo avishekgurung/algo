@@ -12,7 +12,6 @@ public class Problem041 {
     if(prev != null) prev.right = node;
     prev = node;
     Node temp = node.right;
-    //node.right = null;
     modify(node.left);
     modify(temp);
     return node;

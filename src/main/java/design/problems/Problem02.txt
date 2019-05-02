@@ -1,0 +1,31 @@
+There are two scenarios to consider here
+
+1.  The cache is time bound
+    Lets use two Data structure, DLL and Map.
+
+    DLL
+        [A, 100] <=> [B, 500] <=> [C, 1000]
+
+    Map
+        A : Node A
+        B : Node B
+
+    Every new element will be added to the tail of DLL. This NODE of DLL is stored as a value in
+    the Map. The key of the Map will be the element.
+
+    There is a daemon process that runs through the DLL and removes all the elements older than
+    3 hours.
+
+    If element is present, then it can be added to the end of the list with its Updated Expiry time.
+
+    Edge case: A clean job is running where it is removing an element A which has expired. While
+    the job is removing the element from DLL and Map, a request comes with an element A. Then
+    there can be an issue. Like, A can be present in DLL but in Map. So this step of removing
+    an element from Map and DLL has to be thread safe.
+
+2. The cache is time bound and size bound
+    Same as above, we just need to the size of the cache as restriction and evict the elements
+    like LRU.
+
+3.  Memory not an issue
+    Store it in the Map.

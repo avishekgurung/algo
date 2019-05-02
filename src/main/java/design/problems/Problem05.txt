@@ -1,0 +1,18 @@
+Requirements
+
+1.  Should support 3 vehicles: Bike, Car and Truck. But should be modular enough such that
+    addition of new type of vehicles tomorrow should NOT involve lot of code change.
+
+2.  A bigger vehicle should not fit in smaller vehicle area whereas smaller vehicle can fit in
+    bigger vehicle area. The relationship being:
+
+    3 bikes can fit in 1 car area.
+    4 cards can fit in 1 truck area.
+    So 12 bikes fit in 1 truck area.
+
+3.  Allocation of vehicles should be at their own area in the beginning. But when the spaces
+    runs off, then we can allocate smaller vehicles in larger vehicle area.
+
+4.  The design should be modular enough such that addition of new space/area, vehicle should
+    involve minimum code change.
+

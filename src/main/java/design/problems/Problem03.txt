@@ -1,0 +1,49 @@
+This is interesting.
+
+We will use two DS for this:
+    a. Balanced Binary Search Tree
+    b. Hash Map
+
+Each node of a Binary Search Tree is [Uid, Score, Reverse-rank]
+    Uid: is the user id of a player.
+    Score: is the score of a player.
+    Reverse-rank: This is a rank of a player but in reverse order. The player scoring lowest will
+    have this value as 1. The player scoring highest will have this value as the size of a BST.
+
+    The Binary Search Tree is implemented based on the score of a player.
+
+The Hash Map structure is as follows:
+    Key: Uid
+    Value: BST Node.
+
+updateRank(userId, score)
+    if player is new (userid not in map)
+        1. Insert the player in a BST.
+        2. Insert the player in a Map.
+        3. Calculate Rank: If a node is inserted to right, then its rank will be one less than its
+        parent. If a node is inserted to left, then its rank will be one more than its parent.
+
+    if player is old (userid exists in map)
+        1. Fetch the node from Map.
+        2. if new score and old score is same then do nothing.
+        3. Delete the old node.
+        4. Insert the new node.
+        5. Calculate Rank: Perform in-order and mark all the nodes from 1 to n (length).
+           This op is expensive among all. It takes O(n)
+    O(n)
+
+getRank(userId)
+    Find a node from the map.
+    return rank as (n + 1) - reverse rank
+    O(1)
+
+display()
+    Perform inorder traversal and return all the players.
+    O(n)
+
+NOTE: 1. The tree has to be balanced BST.
+      2. We cannot use heap because, the display() would be difficult to implement. We would have
+      to remove every element from heap which would take O(nlogn).
+
+
+
