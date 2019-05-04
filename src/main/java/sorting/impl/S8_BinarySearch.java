@@ -40,10 +40,13 @@ public class S8_BinarySearch {
   }
 
   public static void main(String[] args) {
-    int arr[] = new int[] {8,2,4,1,7,3,9,6,5};
-    System.out.println(Arrays.toString(arr));
+    //int arr[] = new int[] {8,2,4,1,7,3,9,6,5};
+    //System.out.println(Arrays.toString(arr));
 
-    int element = 1;
+    System.out.println(search(new int[]{1,2,3,4,5}, 5));
+
+
+/*    int element = 1;
     System.out.println("Search " +element + " " + search(arr, element));
 
     element = 2;
@@ -71,7 +74,7 @@ public class S8_BinarySearch {
     System.out.println("Search " + element + " " + search(arr, element));
 
     element = 10;
-    System.out.println("Search " + element + " " + search(arr, element));
+    System.out.println("Search " + element + " " + search(arr, element));*/
   }
 
 }

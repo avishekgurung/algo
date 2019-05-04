@@ -55,12 +55,29 @@ public class Problem018 {
     System.out.println();
   }
 
+  public static float maxAvg(int arr[][], int i, int j, int path, int sum) {
+    int n = arr.length;
+    if(i < 0 || j < 0 || i >= n || j >= n) return 0;
+    if(i == n-1 && j== n-1) {
+      return (float)sum / path;
+    }
+    float down = 0;
+    float right = 0;
+    if(j < n) right = maxAvg(arr, i, j+1, path+1, sum+arr[i][j]);
+    if(i < n) down = maxAvg(arr, i+1, j, path+1, sum + arr[i][j]);
+    return Math.max(right, down);
+  }
+
+  public static void maxAvgUtil(int arr[][]) {
+    System.out.println(maxAvg(arr, 0, 0, 0, 0));
+  }
+
   public static void main(String[] args) {
-    util(new int[][]{
+    maxAvgUtil(new int[][]{
         {1, 2},
         {4, 5}
     });
-    util(new int[][]{
+    maxAvgUtil(new int[][]{
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}

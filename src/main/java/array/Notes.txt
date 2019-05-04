@@ -27,3 +27,21 @@
 5.  When there are Binary Arrays and the problem involves finding subarray. We might have to change
     this problem so that we have elements like 0,1 and -1. And then the problem might boil down to
     find subarrays with sum equal to 0.
+
+6.  Array rearrangement can normally be solved by following approaches:
+        1. Segregating odd/negative as last and even/pos at first.
+            Here, first find the index of first neg/odd element. Take pointer one step ahead and
+            start the re-arrangement.
+
+        2.  Some problems also involves, if the current element is at wrong position then finding
+            the next element which is at wrong position and swapping them. This will keep the
+            position of other elements intact.
+
+        3.  Wave form: We check if an element at arr[i] is as follows:
+            arr[i] < arr[i-1]
+                Yes: Do nothing
+                No: swap(arr[i], arr[i-1])
+
+            arr[i] < arr[i+1]
+                Yes: Do nothing
+                No: swap(arr[i], arr[i+1])

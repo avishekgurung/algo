@@ -31,6 +31,17 @@ import java.util.Map;
  * Time complexity = O(logn) for sorting the array and space  = O(n)
  *
  * This might not solve all the edge cases.
+ *
+ * Start from the last element and perform insertion sort and check after every sort if the
+ * arrays are sorted. (Verify if this works)
+ *
+ * Or
+ *
+ * start from the last element, let i be the last element index.
+ * find largest element from 0 to i-1.
+ * If this largest element is > arr[i], then we need to swap.
+ * So we shift this largest element to the end oor we might perform an insertion sort too.
+ *
  */
 public class Problem069 {
 

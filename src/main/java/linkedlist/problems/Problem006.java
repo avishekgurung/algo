@@ -48,9 +48,9 @@ public class Problem006 {
   //clone by extra space
   public static Node cloneByExtraSpace(Node head) {
     Node pointer = head;
-    Map<Integer, Node> map = new HashMap<Integer, Node>();
+    Map<Node, Node> map = new HashMap<Node, Node>();
     while(pointer != null) {
-      map.put(pointer.data, new Node(pointer.data, null, null));
+      map.put(pointer, new Node(pointer.data, null, null));
       pointer = pointer.next;
     }
 
@@ -58,8 +58,8 @@ public class Problem006 {
     Node cloneHead = null;
     while (pointer != null) {
       Node node = map.get(pointer.data);
-      node.next = pointer.next == null ? null : map.get(pointer.next.data);
-      node.rand = pointer.rand == null ? null : map.get(pointer.rand.data);
+      node.next = pointer.next == null ? null : map.get(pointer.next);
+      node.rand = pointer.rand == null ? null : map.get(pointer.rand);
       if(cloneHead == null) cloneHead = node;
       pointer = pointer.next;
     }

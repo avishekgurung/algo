@@ -20,20 +20,15 @@ public class Problem066 {
 
   public static void waveFormSort(int arr[]) {
     System.out.println(Arrays.toString(arr));
-    for(int i=0; i < arr.length; i+=2) {
+    for(int i=1; i < arr.length; i+=2) {
 
-      if(i == 0) {
-        if(arr[i] < arr[i + 1]) {
-          swap(arr, i, i+1);
-        }
+      if(i + 1 >= arr.length) break;
+
+      if(arr[i] > arr[i + 1]) {
+        swap(arr, i, i+1);
       }
-      else {
-        if(arr[i] < arr[i + 1]) {
-          swap(arr, i, i+1);
-        }
-        if(arr[i] < arr[i - 1]) {
-          swap(arr, i, i-1);
-        }
+      if(arr[i] > arr[i - 1]) {
+        swap(arr, i, i-1);
       }
     }
 

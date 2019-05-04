@@ -7,19 +7,22 @@ package string.problems;
 public class Problem002 {
 
   public static void longestCommonSubstring(String s1, String s2) {
+    s1 = '\0' + s1;
+    s2 = '\0' + s2;
     int n = s1.length();
     int m = s2.length();
-    int arr[][] = new int[n+1][m+1];
+    int dp[][] = new int[n][m];
+
+    int x = 0, y=0;
     int max = 0;
-    int x = 0, y = 0;
 
-    for(int i=1; i < n + 1; i++) {
-      for(int j=1; j < m + 1; j++) {
-        if(s1.charAt(i-1) == s2.charAt(j-1)) {
-          arr[i][j] = arr[i-1][j-1] + 1;
+    for(int i=1;i < n; i++) {
+      for(int j=1; j < m; j++) {
+        if(s1.charAt((i)) == s2.charAt(j)) {
+          dp[i][j] = dp[i-1][j-1] + 1;
 
-          if(arr[i][j] > max) {
-            max = arr[i][j];
+          if(max < dp[i][j]) {
+            max = dp[i][j];
             x = i;
             y = j;
           }
@@ -27,16 +30,14 @@ public class Problem002 {
       }
     }
 
-    int rightIndex = x - 1;
-    int leftIndex = 0;
-
-    while(arr[x][y] != 1) {
+    System.out.println("The length of longest common substring is " + max);
+    String substring = "";
+    while(dp[x][y] != 0) {
+      substring = s1.charAt(x) + substring;
       x--;
       y--;
     }
-    leftIndex = x - 1;
-    System.out.println("The string is '" + s1.substring(leftIndex, rightIndex + 1)
-        + "' of size " + max);
+    System.out.println("The substring is " + substring);
   }
 
   public static void main(String[] args) {
