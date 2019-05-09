@@ -89,5 +89,17 @@ public class Problem020 {
     triplets(x,y,z,16);
 
   }
-
 }
+
+/**
+ * The complexity of above algo is n2.
+ *
+ * We may reduce it to nlogn as follows. Sort all three lists and keep its header at x,y and z.
+ *
+ * Take the sum of x,y,z. If sum == k then print.
+ * Else, if the sum is lesser than k, then move forward a pointer which is smallest.
+ *
+ * The sum cannot be larger than k since all list are sorted. So if a sum is larger than k
+ * then the triplet does not exists.
+ *
+ */

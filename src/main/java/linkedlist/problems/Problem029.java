@@ -34,7 +34,7 @@ public class Problem029 {
   }
 
   /**
-   * One approach would be to reverse both the list and merge them based on the higher values.
+   * Another approach would be merge the two linked list in usual way in non decreasing order.
    * Reverse the result.
    */
 }

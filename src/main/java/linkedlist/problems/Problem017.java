@@ -53,7 +53,6 @@ public class Problem017 {
 
     /**
      * We will convert a given linked list into Doubly Linked List.
-     * We can have a look at XOR list.
      * Then we use this DLL to find the pair.
      * Lets abstract the logic to convert LL to DLL with the help of an array.
      */

@@ -1,0 +1,19 @@
+Requirements:
+
+    The ATM should have fixed denominations of currency. Eg, 100, 200 and 1000 rupees.
+    A user should only enter sum of these denominations.
+    The ATM should try to dispense the high denomination notes and then lower denomination notes.
+    Eg, if a user wants to 2500 then it should dispense:
+        2 * 1000
+        2 * 200
+        1 * 100
+
+        This will not exhaust the lower denomination notes.
+
+
+    We use a design pattern which is called a Chain of Responsibility.
+
+
+
+    We can also extend it to handle the number of notes of 1000, 200 and 100. As of now, we have
+    considered that there are infinite supply of these notes.

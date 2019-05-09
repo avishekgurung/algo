@@ -1,0 +1,3 @@
+A user should be able to use log in a very simple manner.
+A user should be able to add appender like file, network and database.
+One or more appender can be chose.

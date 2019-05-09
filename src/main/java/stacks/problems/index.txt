@@ -41,7 +41,7 @@
      4 -> On 1st and 2nd day, the value of stock was less than or equal to 4 hence its 2.
 
     Eg: arr[] = {100, 80, 60, 70, 60, 75, 85};
-    Span = {1, 1, 1, 2, 1, 4, 6}
+    Span =      {1,    1, 1,   2,  1,  4,  6}
 
 12. Find the max area in a histogram.
 

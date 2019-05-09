@@ -58,4 +58,8 @@ public class Problem011 {
  * popped, and when all the (for loop) iteration are completed, the while loop runs in total for
  * only n times hence the total time complexity is O(n).
  *
+ *
+ * The same but modified simple approach would be to reverse the elements. Find the next
+ * greater element and subtract the element's index with greater element's index.
+ *
  **/

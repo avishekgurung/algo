@@ -23,6 +23,14 @@
 
 5.  PARKING LOT
 
+6.  Design ATM
+
+7.  Design a logging System. This same system can be High Level Design as
+    well.
+
+
+
+
 4.  There are 10,000 files and each file has 1 millions integers. Find the sum of all of them.
 
 5.  Sort millions of numbers.
