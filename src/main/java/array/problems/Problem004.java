@@ -5,6 +5,8 @@ import java.util.Arrays;
 public class Problem004 {
 
   /**
+   * Brute Force Way: would be to perform two for loops and check every element with one another. Time : O(n2)
+   *
    * Since we are finding the sum which is close to 0 so we should always have some negative
    * elements. If the array can have only negative or only positive elements, then we can handle
    * such scenario by sorting the array and finding the max difference between consecutive elements.

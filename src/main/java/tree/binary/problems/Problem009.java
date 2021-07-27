@@ -3,6 +3,7 @@ package tree.binary.problems;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import practice.LabTest;
 import tree.binary.utils.BinaryTree;
 import tree.binary.utils.Node;
 
@@ -33,6 +34,41 @@ public class Problem009 {
     getDeepestByRecursion(node.left, distance);
     getDeepestByRecursion(node.right, distance);
   }
+
+
+  /**
+   * Deepest Node without using any global variable
+   */
+
+  private static class DeepNodeInfo {
+    Node node;
+    int depth;
+
+    public DeepNodeInfo(Node node, int depth) {
+      this.node = node;
+      this.depth = depth;
+    }
+  }
+
+  private static DeepNodeInfo deepestNode(Node node, int level) {
+    if(node == null) return null;
+    level++;
+    DeepNodeInfo left = deepestNode(node.left, level);
+    DeepNodeInfo right = deepestNode(node.right, level);
+    if(left == null && right == null) {
+      return new DeepNodeInfo(node, level);
+    }
+    if(left == null) return right;
+    if(right == null) return left;
+    if(left.depth > right.depth) {
+      return left;
+    }
+    else {
+      return right;
+    }
+  }
+
+  // Till here!
 
   public static void main(String[] args) {
     Node root = BinaryTree.getTree();

@@ -35,8 +35,8 @@ public class Problem004 {
    * If k is the size of our heap and n is the number of elements in the file (or in the
    * stream), complexity =
    * n * ( removing top element + adding new element)
-   * n * (logn + logn)
-   * n * logn
+   * n * (logk + logk)
+   * n * logk
    *
    * Offcourse we can make the second term as one single operation if we start using our custom
    * heap. Removing involves removing the top element and heapifying (percolateDown). So here,

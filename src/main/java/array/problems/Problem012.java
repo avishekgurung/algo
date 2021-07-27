@@ -2,6 +2,10 @@ package array.problems;
 
 public class Problem012 {
 
+  /**
+   * Time: O(m+n)
+   * @param arr
+   */
   public static void rowWithMax1s(int arr[][]) {
     int maxOnes = 0;
     int rowWithMaxOnes = 0;
@@ -41,6 +45,14 @@ public class Problem012 {
     System.out.println("Row " + (rowWithMaxZeroes) + " has maximum 0s with value " + maxZeroes);
 
   }
+
+  /**
+   * We can improve this algo from m+n to logm + n as follows:
+   * Use the same approach, but instead of counting 0 in each row, perform a binary search and find the first index
+   * of zero. Now no of zero in that row is m - firstIndex.
+   *
+   * @param args
+   */
 
   public static void main(String[] args) {
     int arr[][] = new int[][] {

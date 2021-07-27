@@ -113,7 +113,8 @@
     {0, 0, 0, 0, 0},
     {1, 0, 1, 0, 1}
 
-17. Given an array where each element represents a size of each group. How many new groups can be   formed from this existing group given a size of a new group.
+17. Given an array where each element represents a size of each group. How many new groups can be
+formed from this existing group given a size of a new group.
 
     Eg: [10,11,5], k=3
         We can form 5 new groups where every new group will be of size 3 and have members from

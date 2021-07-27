@@ -52,4 +52,30 @@ package heap.problems;
  * This will not take extra space as heap does too.
  */
 public class Problem016 {
+
+    private static void productOfLargestThreeElements(int element) {
+        int first = 0;
+        int second = 0;
+        int third = 0;
+
+        if(element > first) {
+            second = first;
+            third = second;
+            first = element;
+        }
+        else if(element > second) {
+            third = second;
+            second = element;
+        }
+        else if(element > third) {
+            third = element;
+        }
+
+        System.out.println(first * second * third);
+    }
+
+    public static void main(String[] args) {
+
+    }
+
 }

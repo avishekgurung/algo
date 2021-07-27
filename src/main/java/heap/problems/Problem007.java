@@ -17,5 +17,9 @@ public class Problem007 {
    *  2, we find another leaf at height 1. There should not be any other leaves at height 2 after
    *  we encountered leaf with height 1.
    *
+   *
+   *  Another approach could be using post-order traversal. Pass a counter which increments when we go to next level.
+   *  When we encounter a leaf, store the leaf's counter, index and analyse the result later.
+   *
    */
 }

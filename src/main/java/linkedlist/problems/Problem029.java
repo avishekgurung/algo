@@ -36,5 +36,7 @@ public class Problem029 {
   /**
    * Another approach would be merge the two linked list in usual way in non decreasing order.
    * Reverse the result.
+   *
+   * OR reverse both the linked list and merge them.
    */
 }

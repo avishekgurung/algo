@@ -22,7 +22,7 @@ public class Problem003 {
   }
 
   /**
-   * nlogn space and contant time.
+   * nlogn space and constant time.
    * @param arr
    * @param k
    */

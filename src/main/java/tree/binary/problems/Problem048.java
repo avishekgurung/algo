@@ -1,6 +1,8 @@
 package tree.binary.problems;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
 
 import tree.binary.utils.BinaryTree;
@@ -48,6 +50,36 @@ public class Problem048 {
     }
     return indices;
   }
+
+
+  /**
+   *
+   * @param arr
+   * @return
+   * A simplified solution takes O(n) time and space.
+   */
+  private static Node createTreeSimplified(int arr[]) {
+    Map<Integer, Node> map = new HashMap<Integer, Node>();
+    for(int i=0; i < arr.length; i++) {
+      map.put(i, new Node(null, i, null));
+    }
+
+    Node root = null;
+
+    for(int i=0; i < arr.length; i++) {
+      if(arr[i] == -1) {
+        root = map.get(i);
+      }
+      else {
+        Node parent = map.get(arr[i]);
+        Node child = map.get(i);
+        if(parent.left == null) parent.left = child;
+        else parent.right = child;
+      }
+    }
+    return root;
+  }
+
 
   public static void main(String[] args) {
     int arr[] = new int[]{1, 5, 5, 2, 2, -1, 3};

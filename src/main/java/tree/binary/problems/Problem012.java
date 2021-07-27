@@ -24,31 +24,31 @@ public class Problem012 {
   }
 
   /**
-   * Do verify them once.
-   * @param x
-   * @param y
-   * @return
+   * Isomorphic trees are those trees where one tree can be obtained from another tree by flipping any of the nodes.
+   *  i.e. by swapping left and right children of a number of nodes. Any number of nodes at any level can have their
+   *  children swapped. Two empty trees are isomorphic.
+   *
+   *  So this means that for any node, its children can be identical or mirror of the node of another tree. Hence, we
+   *  need to check mirror as well as identical properties of two trees.
    */
-  public static boolean isIsomorphic(Node x, Node y) {
-    if(x == null && y == null) return true;
-    if(x == null || y == null) return false;
-    boolean left = isIsomorphic(x.left, y.left);
-    boolean right = isIsomorphic(x.right, y.right);
-    return left && right;
+  public static boolean isIsomorphic(Node n,  Node m) {
+    if(n == null && m ==null) return true;
+    if(n == null || m ==null) return false;
+    if(n.data != m.data) return false;
+
+    return (isIsomorphic(n.left, m.left) && isIsomorphic(n.right, m.right)) ||
+            (isIsomorphic(n.left, m.right) && isIsomorphic(n.right, m.left));
   }
 
   /**
-   * Do verify them once.
-   * @param x
-   * @param y
-   * @return
+   * Quasi Isomorphic trees are same as Isomorphic trees just that the value of the node is not taken into account.
+   *
    */
-  public static boolean isQuasiIsomorphic(Node x, Node y) {
-    if(x == null && y == null) return true;
-    if(x == null || y == null) return false;
-    boolean left = isQuasiIsomorphic(x.left, y.right);
-    boolean right = isQuasiIsomorphic(x.right, y.left);
-    return left && right;
+  public static boolean isQuasiIsomorphic(Node n, Node m) {
+    if(n == null && m == null) return true;
+    if(n == null || m == null) return false;
+    return (isQuasiIsomorphic(n.left, m.left) && isQuasiIsomorphic(n.right, m.right)) ||
+            (isQuasiIsomorphic(n.left, m.right) || isQuasiIsomorphic(n.right, m.left));
   }
 
   public static void main(String[] args) {

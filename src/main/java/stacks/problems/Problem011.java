@@ -21,18 +21,33 @@ public class Problem011 {
     return output;
   }
 
+  public static int[] findSpanAlt(int input[]) {
+    int output[] = new int[input.length];
+    for(int i=0; i < input.length; i++) output[i] = 1;
+    Stack<Integer> stack = new Stack<>();
+    for(int i=0; i < input.length; i++) {
+      while(!stack.isEmpty() && input[i] > input[stack.peek()]) {
+        output[i] = output[i] + output[stack.pop()];
+      }
+      stack.push(i);
+    }
+    return output;
+  }
+
   public static void main(String[] args) {
 
     int[] input = new int[] {6,3,4,5,2};
     int[] output = findSpan(input);
     System.out.println(Arrays.toString(input));
     System.out.println(Arrays.toString(output));
+    System.out.println(Arrays.toString(findSpanAlt(input)));
     System.out.println();
 
     input = new int[] {100, 80, 60, 70, 60, 75, 85};
     output = findSpan(input);
     System.out.println(Arrays.toString(input));
     System.out.println(Arrays.toString(output));
+    System.out.println(Arrays.toString(findSpanAlt(input)));
 
   }
 

@@ -88,4 +88,13 @@ public class Problem038 {
  *  4. if queue.peek == null add element in the stack.
  *  5. If leaf, print the element.
  *
+ *  The above solution would have a fault where we have tree like this
+ *
+ *                1
+ *           2           3
+ *       4       5    6      7
+ *             8  9
+ *
+ *      Here node 5 has two children, 8 and 9. So the leaves should be printed in the order 4,8,9,6,7
+ *
  */

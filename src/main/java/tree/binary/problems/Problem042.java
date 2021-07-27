@@ -27,6 +27,12 @@ public class Problem042 {
     return head;
   }
 
+  /**
+   * Simpler way
+   * Store all the elements of an array in a node array
+   * Then a[0].left = a[1], a[0].right = a[2] and so on.
+   */
+
   public static void main(String[] args) {
     int arr[] = new int[]{1,2,3,4,5,6,7};
     Node root = createTree(arr);

@@ -166,7 +166,7 @@ Standard Binary Tree
     https://www.geeksforgeeks.org/construct-a-binary-tree-from-parent-array-representation/
 
 49. Given a ternary tree (left, mid and right pointers), create a doubly linked list such
-    that the left pointer should as a prev pointer, right pointer should act as next
+    that the left pointer should act as a prev pointer, right pointer should act as next
     pointer and mid should point to null.
     https://www.geeksforgeeks.org/create-doubly-linked-list-ternary-ree/
 

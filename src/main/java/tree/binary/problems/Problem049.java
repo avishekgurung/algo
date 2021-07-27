@@ -72,6 +72,6 @@ public class Problem049 {
  * Another simple approach can be, traverse the tree as pre-order (like how we traversed). Store
  * the node in a queue say x. Keep one already popped element as prev. Pop the element e, make
  * suitable change and the keep e as prev. Continue this until all the elements of queue are
- * exhausted.
+ * exhausted. This will however take a O(N) extra space.
  *
  */

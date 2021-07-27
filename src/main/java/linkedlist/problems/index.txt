@@ -52,7 +52,7 @@ right.
     2's rand should point to 25
     25's rand should point to N
 
-12. Give a linked list that is alternately increasing and decreasing. Sort the linked list.
+12. Given a linked list that is alternately increasing and decreasing. Sort the linked list.
     Eg. Input List:   10->40->53->30->67->12->89->NULL
         Output List:  10->12->30->43->53->67->89->NULL
 
@@ -80,7 +80,7 @@ right.
        List2:  8->4->2->10
     Output:
        Intersection List: 4->10
-       Union List: 2->8->20->4->15->10]
+       Union List: 2->8->20->4->15->10
 
 17. Find pair for given sum in a sorted singly linked without extra space
     Given a sorted singly linked list and a value x, the task is to find pair whose sum is

@@ -88,7 +88,7 @@
     For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
     We can also try for largest derangement.
 
-13. Maximum sum combination from two array.
+13*. Maximum sum combination from two array.
     Two array of equal sizes are given. We need to find the k number of max
     sum of the elements of two array. Eg.
     A = [1,4,5,2]

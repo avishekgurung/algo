@@ -2,33 +2,51 @@ package heap.problems;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class Problem013 {
 
-  /**
-   * This does not work.
-   * @param a
-   * @param b
-   * @param k
-   */
+  static class Data {
+    int sum;
+    int i;
+    int j;
+
+    Data(int sum, int i, int j) {
+      this.sum = sum;
+      this.i = i;
+      this.j = j;
+    }
+
+    public int getSum() {
+      return sum;
+    }
+  }
+
   private static void kMaxSumCombinations(Integer a[], Integer b[], Integer k) {
-    System.out.println(Arrays.toString(a));
-    System.out.println(Arrays.toString(b));
-    Arrays.sort(a, Collections.<Integer>reverseOrder());
-    Arrays.sort(b, Collections.<Integer>reverseOrder());
+    Arrays.sort(a, Collections.reverseOrder());
+    Arrays.sort(b, Collections.reverseOrder());
+    Comparator<Data> dataComparator = Comparator.comparing(Data::getSum, Collections.reverseOrder());
+    PriorityQueue<Data> maxHeap = new PriorityQueue<>(dataComparator);
+    maxHeap.add(new Data(a[0] + b[0], 0, 0));
 
-    Integer i = 0, j = 0;
 
-    while(k != 0) {
-      System.out.println(a[i] + " + " + b[j] + " = " + (a[i] + b[j]));
-      if(i + 1 >= a.length || j + 1 >= a.length) break;
-      Integer sum1 = a[i] + b[j+1];
-      Integer sum2 = a[i+1] + b[j];
-      if(sum1 > sum2)j++;
-      else i++;
+    while(k>0 && !maxHeap.isEmpty()){
+      Data data = maxHeap.remove();
+      System.out.println(data.i + " + " + data.j + " = " + data.sum);
+      int i = data.i;
+      int j = data.j;
+
+      if(j + 1 < b.length)
+        maxHeap.add(new Data(a[i] + b[j+1], i, j+1));
+
+      if(i + 1 < a.length)
+        maxHeap.add(new Data(a[i+1] + b[j], i+1, j));
       k--;
     }
+
     System.out.println();
+
   }
 
 
@@ -52,19 +70,4 @@ public class Problem013 {
     kMaxSumCombinations(a,b,k);
 
   }
-
 }
-
-/**
- * The solution should be using a node
- *
- * Node {
- *   int sum;
- *   int i;
- *   int j;
- * }
- *
- * Find the sum a[i]+b[j], create a node and store in the max heap.
- *
- *
- */

@@ -39,7 +39,7 @@ public class Problem024 {
 
   public static void main(String[] args) {
 
-    Node root = BinaryTree.createTree(new int[]{1,2,3,4,5,6,7,8,9});
+    Node root = BinaryTree.createTree(new int[]{1,2,3,4,5,6,7});
     BinaryTree.display(root);
     System.out.println();
 

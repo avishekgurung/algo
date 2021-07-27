@@ -8,6 +8,12 @@ import tree.binary.utils.Node;
 
 public class Problem010 {
 
+  /**
+   * We find the deepest node (which is usually a leaf)
+   * We find a node to delete.
+   * We swap the content of deepest node and node to delete.
+   * We then delete the deepest node which is just a leaf deletion.
+   */
   public static void deleteElement(Node root, int element) {
     Node deepestNode = getDeepestNode(root);
     Node nodeToBeDeleted = getNodeToBeDeleted(root, element);
@@ -48,6 +54,59 @@ public class Problem010 {
       if(deepestNode.right != null) queue.add(deepestNode.right);
     }
     return deepestNode;
+  }
+
+
+  /**
+   * Another little cumbersome way to delete the node.
+   * This method can be helpful if we are not give a constraint to not swap the contents (which might need some bit
+   * of a modification)
+   */
+
+  private static void deleteTree(Node node, int element) {
+    if( node == null ) return;
+    Node nodeToDelete;
+    if(node.left != null && node.left.data == element) {
+      nodeToDelete = node.left;
+      if(nodeToDelete.left == null && nodeToDelete.right == null) {
+        node.left = null;
+      }
+      else if(nodeToDelete.left == null || node.right == null) {
+        if(nodeToDelete.left == null) {
+          node.left = nodeToDelete.right;
+        }
+        else {
+          node.left = nodeToDelete.left;
+        }
+      }
+      else {
+        int temp = nodeToDelete.data;
+        nodeToDelete.data = nodeToDelete.left.data;
+        nodeToDelete.left.data = temp;
+      }
+    }
+
+    if(node.right != null && node.right.data == element) {
+      nodeToDelete = node.right;
+      if(nodeToDelete.left == null && nodeToDelete.right == null) {
+        node.right = null;
+      }
+      else if(nodeToDelete.left == null || nodeToDelete.right == null) {
+        if(nodeToDelete.left == null) {
+          node.right = nodeToDelete.right;
+        }
+        else {
+          node.right = nodeToDelete.left;
+        }
+      }
+      else {
+        int temp = nodeToDelete.data;
+        nodeToDelete.data = nodeToDelete.left.data;
+        nodeToDelete.left.data = temp;
+      }
+    }
+    deleteTree(node.left, element);
+    deleteTree(node.right, element);
   }
 
   public static void main(String[] args) {

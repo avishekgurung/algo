@@ -54,4 +54,10 @@ public class Problem059 {
     System.out.println("Contains duplicate subtree: " + result);
 
   }
+
+  /**
+   * Another similar approach can be to perform a post order traversal and store the result as string.
+   * Then perform post order traversal and for each subtree, check if its a substring of the above string. If
+   * space is a constraint.
+   */
 }

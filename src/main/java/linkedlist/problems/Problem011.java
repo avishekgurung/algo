@@ -17,8 +17,8 @@ public class Problem011 {
 
   private Problem011.Node getLinkedList() {
     Problem011.Node four = new Problem011.Node(4,null, null);
-    Problem011.Node two = new Problem011.Node(2,null, null);
-    Problem011.Node five = new Problem011.Node(5,null, null);
+    Problem011.Node two = new Problem011.Node(5,null, null);
+    Problem011.Node five = new Problem011.Node(2,null, null);
     Problem011.Node twnFive = new Problem011.Node(25,null, null);
 
     four.next = five;

@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Set;
 
-public class Problem014 {
+public class  Problem014 {
 
   public static int getMaxDistinctElements(int arr[], int k) {
     int distinct = 0;

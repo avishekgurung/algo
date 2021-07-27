@@ -9,11 +9,17 @@ public class Problem007 {
    * Sol 2. Sort and find. O(nlogn)
    * Sol 3. Use hash map. O(n) for both time and space.
    * Sol 4. If elements are in range 0 to n-1 then use bucket sort approach. O(n) time and O(1) sp.
-   * This approach allows us to get even the first duplicate element if present any. But if its
-   * only about finding whether any duplicate element exists then the other soln is simpler.
+   *        This approach allows us to get even the first duplicate element if present any. But if its
+   *        only about finding whether any duplicate element exists then the other soln is simpler.
    *
-   * We can also approach this method by making an element negative and using the absolute value
-   * as index.
+   * Sol 5: Index Approach with negative elements:
+   *        We can also approach this method by making an element negative and using the absolute value
+   *        as index. However, this method will fail if all the elements are 0.
+   *
+   *
+   * Sol 6: Index Approach with array length:
+   *        Every element can be added to a length of an array. So when we encounter an element that is greater than
+   *        the size of an array, then that element is duplicate.
    *
    * @param arr
    * @return
@@ -87,9 +93,9 @@ public class Problem007 {
     arr = new int[]{5,1,3,3,3,1};
     System.out.println(Arrays.toString(arr));
     System.out.println(hasDuplicateSimpler(arr));
-    arr = new int[]{5,1,3,3,3,1};
+    arr = new int[]{0,0,0,0,0};
     System.out.println("Has duplicate: " + hasDuplicate(arr));
-    arr = new int[]{5,1,3,3,3,1};
+    arr = new int[]{0,0,0,0,0};
     System.out.println("Has duplicate: " + hasDuplicate1(arr));
   }
 
