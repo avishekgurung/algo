@@ -6,6 +6,7 @@ public class Problem020 {
   /**
    * The solution can be achieved using different methods but in order to find the solution in
    * O(n) time and constant space we use bitwise xor.
+   * Understand bitwise operations and programming first.
    */
 
   public static int getOddElement(int arr[]) {

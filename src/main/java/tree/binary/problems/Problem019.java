@@ -11,7 +11,7 @@ public class Problem019 {
   private static Map<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
 
   public static Node createTree(int[] preorder, int left, int right) {
-
+    if(preIndex == preorder.length) return null;
     int data = preorder[preIndex];
     preIndex++;
     Node node = new Node(null, data, null);

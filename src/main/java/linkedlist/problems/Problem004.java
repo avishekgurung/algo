@@ -53,6 +53,15 @@ public class Problem004 {
     head = deleteNodesGreaterOnRight(null);
     LinkedListUtil.display(head);
 
+
+    /**
+     * This approach would not work for the scenario below. The expected output is 15 -> 13 but we get another
+     * output. So the correct solution is to reverse the metrics and proceed.
+     */
+    head = LinkedListUtil.customBulkInsert(new int[] {12,11,13,15,10,9,8,13});
+    head = deleteNodesGreaterOnRight(head);
+    LinkedListUtil.display(head);
+
   }
   /**
    * Another simpler approach would be.
@@ -61,4 +70,32 @@ public class Problem004 {
    * Reverse the node again.
    * Here, we do not have to handle the 'deleteFirstNode' condition as above.
    */
+
+  public static Node reverse(Node node, Node prev) {
+    if(node == null) return prev;
+    Node next = node.next;
+    node.next = prev;
+    return reverse(next, node);
+  }
+
+  public static Node removeElementsGreaterToRight(Node head) {
+    head = reverse(head, null);
+    Node pointer = head.next;
+    Node prev = head;
+
+    while(pointer != null) {
+      if(pointer.data < prev.data) {
+        Node nextPointer = pointer.next;
+        prev.next = nextPointer;
+        pointer = nextPointer;
+      }
+      else {
+        prev = pointer;
+        pointer = pointer.next;
+      }
+    }
+
+    head = reverse(head, null);
+    return head;
+  }
 }

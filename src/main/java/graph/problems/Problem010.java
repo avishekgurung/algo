@@ -19,6 +19,18 @@ public class Problem010 {
     return count;
   }
 
+  /**
+   * Using adj list and for directed graph
+   *
+   *     private int pathCount(Graph graph, char source, char destination) {
+   *         if(source == destination) return 1;
+   *         int result = 0;
+   *         for(HeapNode neighbour : graph.adjList.get(source)) {
+   *             result = result + pathCount(graph, neighbour.label, destination);
+   *         }
+   *         return result;
+   *     }
+   */
 
   public static void main(String[] args) {
     char vertices[] = new char[]{'A','B','C','D','E'};

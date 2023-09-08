@@ -50,4 +50,13 @@ public class Problem023 {
     zigzagTraversal(root);
   }
 
+  /**
+   * To solve this problem without using extra space, we can perform the level order traversal logic without extra
+   * space. We can find the height of a tree. We can iterate from 1 to height and for each iteration we perform
+   * recursion but with different traversal order.
+   *
+   * Eg for 1, we will perform normal traversal.
+   * For 2, we will perform just reverse traversal, eg we will traverse right and then left subtrees.
+   */
+
 }

@@ -6,23 +6,16 @@ public class Problem046 {
 
   public static void multiplePairs(int arr[]) {
     System.out.println(Arrays.toString(arr));
-    int prev = 0;
+    int prev = arr[0];
+    arr[0] = arr[0] * arr[1];
 
-    for(int i=0; i < arr.length; i++) {
-      int product;
-
-      if(i == 0) {
-        product = arr[i] * arr[i+1];
-      }
-      else if(i == arr.length - 1) {
-        product = prev * arr[i];
-      }
-      else {
-        product = prev * arr[i+1];
-      }
-      prev = arr[i];
-      arr[i] = product;
+    for(int i=1; i < arr.length - 1; i++) {
+      int current = arr[i];
+      arr[i] = prev * arr[i+1];
+      prev = current;
     }
+
+    arr[arr.length - 1] = arr[arr.length - 1] * prev;
     System.out.println(Arrays.toString(arr));
     System.out.println();
   }

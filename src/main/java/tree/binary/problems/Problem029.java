@@ -117,5 +117,20 @@ public class Problem029 {
  *  create two queue and add all the nodes. Pop one from q1 (x) and pop two from q2(a,b)
  *  x.left = a, x.right = b. Continue till q2 is exhausted.
  *
+ *  This will not work. When level order is A B C, the possible trees are
+ *
+ *     A
+ *   B  C
+ *
+ *      A
+ *     B
+ *    C
+ *
+ *     A
+ *      B
+ *        C
+ *
+ * etc.
+ *
  *
  */

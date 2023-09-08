@@ -1,9 +1,7 @@
 package array.problems;
 
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * My approach.
@@ -72,10 +70,69 @@ public class Problem069 {
   public static void main(String[] args) {
     minimumNumberOfSwapsToSortArray(new int[]{1,2,3,4,5});
     minimumNumberOfSwapsToSortArray(new int[]{4, 3, 2, 1});
-    minimumNumberOfSwapsToSortArray(new int[]{1, 5, 4, 3, 2});
+    //altSolution(new int[]{1, 5, 4, 3, 2});
     minimumNumberOfSwapsToSortArray(new int[]{6, 5, 2, 7, 4, 1, 3});
   }
 
+  /**
+   * A simple and easy approach. Start from the first element. Now find the smallest element to its right. If the element
+   * exists then swap it, if not move forward. The complexity will n2 if the elements are sorted in reverse order.
+   *
+   * We will use extra space to optimise time complexity. We will put all the elements in min heap. We will also
+   * maintain a set to check if the element has been traversed. This will be useful discard the elements from heap that
+   * is already processed. We will see better clarity in the example.
+   *
+   * The time complexity will be nlogn since for each removal from heap, we are heapifying the element.
+   * The space complexity will O(n).
+   */
+
+
+  private static void altSolution(int arr[]) {
+    Comparator<MyNode> comparator = Comparator.comparing(MyNode::getElement);
+    PriorityQueue<MyNode> minHeap = new PriorityQueue<>(comparator);
+    for(int i=0; i < arr.length; i++) {
+      MyNode myNode = new MyNode(arr[i], i);
+      minHeap.add(myNode);
+    }
+    Set<Integer> traversed = new HashSet<>();
+
+    int steps = 0;
+
+    for(int i=0; i < arr.length; i++) {
+      if(!minHeap.isEmpty() && arr[i] > minHeap.peek().element) {
+        while(true) {
+          MyNode top = minHeap.remove();
+          if(traversed.contains(top.element)) {
+            continue;
+          }
+          int aux = arr[i];
+          arr[i] = arr[top.index];
+          arr[top.index] = aux;
+          traversed.add(arr[i]);
+          steps++;
+        }
+       }
+      else {
+        traversed.add(arr[i]);
+      }
+    }
+    System.out.println(Arrays.toString(arr));
+    System.out.println("Steps: " + steps);
+  }
+}
+
+class MyNode {
+  int element;
+  int index;
+
+  MyNode(int element, int index) {
+    this.element = element;
+    this.index = index;
+  }
+
+  public int getElement() {
+    return element;
+  }
 }
 
 

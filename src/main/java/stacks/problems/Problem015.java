@@ -49,3 +49,7 @@ public class Problem015 {
   }
 
 }
+
+/**
+ * the another solution would be to reverse the queue, remove the element and return it as pop() and again reverse the queue.
+ */

@@ -154,4 +154,7 @@ public class Problem016 {
  *  pick next node from this set.
  *
  *  3. To find a region, we just do bfs or dfs and find the node count.
+ *
+ *
+ *  We can simply solve this by simple recursion.
  */

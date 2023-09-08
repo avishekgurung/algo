@@ -83,12 +83,74 @@ public class Problem014 {
     }
   }
 
+  /**
+   * Max subarray with standard implementation. We take a sum and keep storing it in a map with its index.
+   * At any point, if we encounter the same index, then it simply means that it had a negative number that
+   * made it go down to 0 and again come up to same number.
+   */
+
+  private static void subarraysWithSum0(int arr[]) {
+    System.out.println(Arrays.toString(arr));
+
+    Map<Integer, List<Integer>> map = new HashMap<>();
+    int sum = 0;
+    for(int i=0; i < arr.length; i++) {
+      sum = sum + arr[i];
+      if(map.containsKey(sum)) {
+        List<Integer> values = map.get(sum);
+        values.add(i);
+      }
+      else {
+        List<Integer> values = new ArrayList<>();
+        values.add(i);
+        map.put(sum, values);
+      }
+    }
+
+    for(Integer _sum: map.keySet()) {
+      List<Integer> indices = map.get(_sum);
+
+
+      /**
+       * We will have to handle special case for sum = 0.
+       * If the key 0 has only one value, then the sum of all the arrays are 0, hence from 0 to arr.len - 1
+       * if the key 0 has more than one values, eg 0 : [2,5], then the answers are [0,2],[0,5],[3,5]
+       */
+      if(_sum == 0 && indices.size() == 1) {
+        System.out.println(0 + " : " + (arr.length - 1));
+      }
+      else if (sum == 0 && indices.size() > 1) {
+        for(Integer index: indices) {
+          System.out.println("0 : " + index);
+        }
+
+        for(int i=0; i < indices.size() - 1; i++) {
+          for(int j=i+1; j < indices.size(); j++) {
+            System.out.println(indices.get(i) + 1 + " : " + indices.get(j));
+          }
+        }
+
+      }
+      else if (indices.size() > 1) {
+        for(int i=0; i < indices.size() - 1; i++) {
+          for(int j=i+1; j < indices.size(); j++) {
+            System.out.println(indices.get(i) + 1 + " : " + indices.get(j));
+          }
+        }
+      }
+    }
+
+  }
+
   public static void main(String[] args) {
     subArrayWithSum0(new int[]{1,2,-3,1});
     System.out.println();
 
     subArrayWithSumZeroEfficient(new int[]{-4,2,-1,-1,2,-1,1});
     System.out.println();
+
+    System.out.println();
+    subarraysWithSum0(new int[]{-1, 0, -1, 0, 0, 1, 0});
   }
 
 }

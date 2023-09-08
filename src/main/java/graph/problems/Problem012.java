@@ -46,6 +46,11 @@ public class Problem012 {
     return true;
   }
 
+  /**
+   * We can also follow a simpler approach wherein, we keep traversing the graph with BFS and keeping assigning colors.
+   * Once done, we will traverse the tree again and check that the colours are placed right.
+   */
+
   private static void printComponents(char vertices[], boolean colors[]) {
     String component1 = "";
     String component2 = "";

@@ -39,4 +39,13 @@ public class Problem025 {
     System.out.println();
   }
 
+  /**
+   * The above logic will fail if the linked list is sorted and never rotated. If the linked list is never rotated
+   * then we need to return 0. So we need to slightly tweak the logic.
+   *
+   * If head.data > head.next.data, then stop incrementing the rotationCount value.
+   *
+   * if this value equals the length of the LL then the list was not rotated or rotated to its length.
+   */
+
 }

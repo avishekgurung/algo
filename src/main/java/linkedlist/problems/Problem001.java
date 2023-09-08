@@ -41,4 +41,8 @@ public class Problem001 {
  *  then in the next iteration, go to the element before the index and remove the next element.
  *
  *  2. We can reverse the LL and delete the first occurrence of an element.
+ *
+ *  Both approaches will have constant space and O(n) time complexity, however the latter is simple to implement and
+ *  can be done in single iteration.
+ *
  */

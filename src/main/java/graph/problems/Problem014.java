@@ -9,6 +9,19 @@ import java.util.Queue;
 import graph.utils.Graph;
 import graph.utils.GraphInt;
 
+/**
+ * Algo:
+ *
+ * 1. We find all the 4 digit prime numbers, i.e between 999 and 10000.
+ * 2. From these prime numbers, we will pick a set of prime numbers whose digits differs by ONLY 1.
+ * Eg, 1001, 1003, 1031 etc. This will be a good sized numbers.
+ * 3. We will keep the above set as vertices. The required source and destination will be one of the vertices. We also
+ * need to remember that we will have to create edges only between those vertices where the digit diff is 1.
+ * Eg, 1001 will not have edges to 8179, but will have edges to 1003, 1031 etc. Later, these vertices will have edges
+ * towards other different numbers like 1031 => 1331, 3031 etc. This is how a network will be formed.
+ *
+ * 4. We will find a shortest distance between the source and destination.
+ */
 public class Problem014 {
 
   public static void shortestPathUtil(int n1, int n2) {

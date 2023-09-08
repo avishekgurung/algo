@@ -27,4 +27,9 @@ public class Problem030 {
     printPostOrder(preorder, 0, preorder.length-1);
   }
 
+  /**
+   * The solution is same as creating a tree from preorder and inorder, just that we will be printing the element
+   * rather than creating a tree.
+   */
+
 }

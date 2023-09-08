@@ -78,7 +78,8 @@ public class Problem045 {
   }
 
   /**
-   * The simpler version of above logic.
+   * The simpler version of above logic. But this will take more than O(n) since for each element we are blindly
+   * searching the next wrong element.
    */
   public static void rearrangePositiveAndNegativeElementsSimpler(int arr[]) {
     System.out.println(Arrays.toString(arr));

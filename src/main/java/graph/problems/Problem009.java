@@ -19,6 +19,19 @@ public class Problem009 {
     return false;
   }
 
+  /**
+   * Simplified solution using adjacency list.
+   *
+   *     private boolean pathExists(Graph graph, char source, char dest) {
+   *         if(source == dest) return true;
+   *         boolean result = false;
+   *         for(HeapNode neighbour : graph.adjList.get(source)) {
+   *             result = result || pathExists(graph, neighbour.label, dest);
+   *         }
+   *         return result;
+   *     }
+   */
+
   public static void main(String[] args) {
     char[] vertices = new char[]{'A','B','C'};
     Graph graph = new Graph(vertices, false);

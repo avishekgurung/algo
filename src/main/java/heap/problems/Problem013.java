@@ -53,7 +53,7 @@ public class Problem013 {
   public static void main(String[] args) {
     Integer a[] = new Integer[]{3,2};
     Integer b[] = new Integer[]{1,4};
-    Integer k = 2;
+    /*Integer k = 2;
     kMaxSumCombinations(a,b,k);
 
     k = 10;
@@ -67,6 +67,11 @@ public class Problem013 {
     a = new Integer[]{1,4,5,2};
     b = new Integer[]{3,0,9,7};
     k = 3;
+    kMaxSumCombinations(a,b,k);*/
+
+    a = new Integer[]{20,19,18,17};
+    b = new Integer[]{5,1,0};
+    Integer k =4;
     kMaxSumCombinations(a,b,k);
 
   }

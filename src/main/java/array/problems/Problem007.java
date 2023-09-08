@@ -21,6 +21,8 @@ public class Problem007 {
    *        Every element can be added to a length of an array. So when we encounter an element that is greater than
    *        the size of an array, then that element is duplicate.
    *
+   * Sol 7: The sum of the elements should be N*(N+1) / 2 ~= (n-1)n/2. If not then duplicate exists.
+   *
    * @param arr
    * @return
    */

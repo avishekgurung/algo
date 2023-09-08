@@ -51,6 +51,9 @@ public class  Problem053 {
 
     maxSumWithNoElementAdjacent(new int[]{8,6,30,5,10,100});
     maxSum(new int[]{8,6,30,5,10,100});
+
+
+    maxSumWithNoElementAdjacent(new int[]{3, 2, 7, 10});
   }
 
 }

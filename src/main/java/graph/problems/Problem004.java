@@ -1,16 +1,33 @@
 package graph.problems;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.*;
 
 
 /**
- * Dijktra's shortest path algorithm
+ * The algorithm for shortest path for weighted graph is as follows:
+ *
+ * 0. Create a distance and path table, with distance table holding the largest value for all the other vertices, except
+ * the initial vertex.
+ * 1. Add the initial start vertex into the heap.
+ * 2. Pop out the vertex from the heap. And for every popped vertex.
+ * 3. If its not visited
+ *      4. Process it (mark it as visited).
+ *      5. If the adjacent vertices are not visited then calculate their distance. If the new distance is less than
+ *      their already existing distance, then add them into the queue and calculate their path.
+ *
+ * This is just a BFS traversal with very minimal modification. In the non weighted algo, whenever we see a new adjacent
+ * neighbour then we will consider that it is at the shortest distance. But in weighted graph, we will calculate their
+ * distance and compare and only then consider it as shortest. We are replacing queue with heap.
+ *
+ * For Adj Mat, O(n) =
+ * For Adj List, O(n) = ElogV
+ *
+ */
+
+
+
+/**
+ * Dijktra's shortest path algorithm examples.
  *
  * Quick Walkthrough:
  * We use PriorityQueue or Heap(min).
@@ -33,7 +50,7 @@ import java.util.Set;
  *    |             |
  *    C-------------D
  *          1
- *  Its a directed graph where A -> B = 2, A -> C = 3, B -> D = 3, C -> D = 1.
+ *  Its a undirected graph where A -> B = 2, A -> C = 3, B -> D = 3, C -> D = 1.
  *  Dijktra's algo starts with a source vertex and then starts traversing its
  *  neighbours (which have NOT been visited before) with minimum distance,
  *  until all the nodes are visited. This will be clear with an example. Let A
@@ -198,7 +215,182 @@ import java.util.Set;
  */
 public class Problem004 {
 
-  private class Vertex{
+  private class Graph {
+    char[] vertices;
+    int[][] adjMatrix;
+    Map<Character, Integer> indexMap = new HashMap<>();
+    Map<Character, LinkedList<HeapNode>> adjList = new HashMap<>();
+
+    Graph(char[] vertices) {
+      this.vertices = vertices;
+      this.adjMatrix = new int[vertices.length][vertices.length];
+      for(int i=0; i < vertices.length; i++) {
+        indexMap.put(vertices[i], i);
+        adjList.put(vertices[i], new LinkedList<>());
+      }
+    }
+
+    void addEdge(char a, char b) {
+      adjMatrix[indexMap.get(a)][indexMap.get(b)] = 1;
+      adjMatrix[indexMap.get(b)][indexMap.get(a)] = 1;
+      adjList.get(a).add(new HeapNode(b, 1));
+      adjList.get(b).add(new HeapNode(a, 1));
+    }
+
+    void addEdge(char a, char b, int weight) {
+      adjMatrix[indexMap.get(a)][indexMap.get(b)] = weight;
+      adjMatrix[indexMap.get(b)][indexMap.get(a)] = weight;
+      adjList.get(a).add(new HeapNode(b, weight));
+      adjList.get(b).add(new HeapNode(a, weight));
+    }
+
+    void showMatrix() {
+      System.out.println("\t" + Arrays.toString(vertices) + "\n");
+      for(int i=0; i < vertices.length; i++) {
+        System.out.println(vertices[i] + "\t" + Arrays.toString(adjMatrix[i]));
+      }
+    }
+
+    void showList() {
+      System.out.println();
+      for(int i=0; i < vertices.length; i++) {
+        System.out.println(vertices[i] + "\t" + adjList.get(vertices[i]));
+      }
+    }
+  }
+
+  private class HeapNode {
+    char label;
+    int weight;
+
+    HeapNode(char label, int weight) {
+      this.label = label;
+      this.weight = weight;
+    }
+
+    public int getWeight() {
+      return weight;
+    }
+
+    @Override
+    public String toString() {
+      return "(" + label + "," + weight + ")";
+    }
+  }
+
+  private void shortestPathForWeightedGraphWithAdjMat(Graph graph, char vertex) {
+    int size = graph.vertices.length;
+    int distance[] = new int[size];
+    String path[] = new String[size];
+    for(int i=0; i < size; i++) {
+      distance[i] = Integer.MAX_VALUE;
+    }
+    distance[graph.indexMap.get(vertex)] = 0;
+    path[graph.indexMap.get(vertex)] = vertex + "";
+
+    Comparator<HeapNode> comparator = Comparator.comparing(HeapNode::getWeight);
+    PriorityQueue<HeapNode> heap = new PriorityQueue<>(comparator);
+    HeapNode node = new HeapNode(vertex, 0);
+    heap.add(node);
+
+    Set<Character> visited = new HashSet<>();
+
+    while(!heap.isEmpty()) {
+      node = heap.remove();
+      if(!visited.contains(node.label)) {
+        vertex = node.label;
+        visited.add(node.label);
+        int vertexIndex = graph.indexMap.get(vertex);
+        for(int i=0; i < size; i++) {
+          if(graph.adjMatrix[vertexIndex][i] != 0 && !visited.contains(graph.vertices[i])) {
+            int newDistance = distance[vertexIndex] + graph.adjMatrix[vertexIndex][i];
+            if(newDistance < distance[i]) {
+              distance[i] = newDistance;
+              path[i] = path[vertexIndex] + " -> " + graph.vertices[i];
+              heap.add(new HeapNode(graph.vertices[i], newDistance));
+            }
+          }
+        }
+      }
+    }
+
+    for(int i=0; i < graph.vertices.length; i++) {
+      System.out.println(distance[i] + " : " + path[i]);
+    }
+  }
+
+
+  private void shortestPathForWeightedGraphWithAdjList(Graph graph, char vertex) {
+    int size = graph.vertices.length;
+    int distance[] = new int[size];
+    String path[] = new String[size];
+    for(int i=0; i < size; i++) distance[i] = Integer.MAX_VALUE;
+    int vertexIndex = graph.indexMap.get(vertex);
+    distance[vertexIndex] = 0;
+    path[vertexIndex] = vertex + "";
+    Set<Character> visited = new HashSet<>();
+    HeapNode node = new HeapNode(vertex, 0);
+    Comparator<HeapNode> comparator = Comparator.comparing(HeapNode::getWeight);
+    PriorityQueue<HeapNode> heap = new PriorityQueue<>(comparator);
+    heap.add(node);
+
+    while(!heap.isEmpty()) {
+      node = heap.remove();
+      vertex = node.label;
+      if(!visited.contains(vertex)) {
+        visited.add(vertex);
+        vertexIndex = graph.indexMap.get(vertex);
+        for(HeapNode adjVertex : graph.adjList.get(vertex)) {
+          if(!visited.contains(adjVertex.label)) {
+            int newDistance = distance[vertexIndex] + adjVertex.weight;
+            int adjVertexIndex = graph.indexMap.get(adjVertex.label);
+            if(newDistance < distance[adjVertexIndex]) {
+              distance[adjVertexIndex] = newDistance;
+              path[adjVertexIndex] = path[vertexIndex] + " -> " + adjVertex.label;
+              heap.add(new HeapNode(adjVertex.label, newDistance));
+            }
+          }
+        }
+      }
+    }
+    for(int i=0; i < graph.vertices.length; i++) {
+      System.out.println(distance[i] + " : " + path[i]);
+    }
+  }
+
+  private void run() {
+    char vertices[] = new char[]{'A','B','C','D','E'};
+    Graph graph = new Graph(vertices);
+    graph.addEdge('A', 'B', 4);
+    graph.addEdge('A', 'C', 1);
+    graph.addEdge('C', 'B', 2);
+    graph.addEdge('B', 'E', 4);
+    graph.addEdge('C', 'D', 4);
+    graph.addEdge('D', 'E', 2);
+
+    shortestPathForWeightedGraphWithAdjMat(graph, 'A');
+    System.out.println();
+    shortestPathForWeightedGraphWithAdjList(graph, 'A');
+
+    System.out.println("-------------------------------");
+    vertices = new char[]{'A','B','C','D'};
+    graph = new Graph(vertices);
+    graph.addEdge('A', 'B', 2);
+    graph.addEdge('A', 'C', 3);
+    graph.addEdge('C', 'D', -10);
+    graph.addEdge('B', 'D', 0);
+    shortestPathForWeightedGraphWithAdjList(graph, 'A');
+    System.out.println("Dijktra's algo fails where the shortest distance from A to D is -8 but the algo gives us 2.");
+
+
+    //graph.showList();
+
+    //graph.showMatrix();
+  }
+
+
+
+/*  private class Vertex{
     char label;
     int distance;
 
@@ -225,9 +417,9 @@ public class Problem004 {
       this.label = label;
       this.weight = weight;
     }
-  }
+  }*/
 
-  private class Graph {
+  /*private class Graph {
 
     private char[] vertices;
 
@@ -261,11 +453,11 @@ public class Problem004 {
       adjList[srcIndex] = neighbours;
 
       //For non directed graph
-      /*int destIndex = indexMap.get(dest);
+      *//*int destIndex = indexMap.get(dest);
       LinkedList<Neighbour> neighbours1 = adjList.get(destIndex);
       Neighbour neighbour1 = new Neighbour(src, weight);
       neighbours1.add(neighbour1);
-      adjList.add(destIndex, neighbours1);*/
+      adjList.add(destIndex, neighbours1);*//*
     }
 
 
@@ -317,14 +509,14 @@ public class Problem004 {
         }
       }
     }
-  }
+  }*/
 
   public static void main(String[] args) {
-    new Problem004().util();
+    new Problem004().run();
   }
 
   public void util() {
-    char vertices[] = new char[]{'A','B','C','D','E'};
+ /*   char vertices[] = new char[]{'A','B','C','D','E'};
     Graph graph = new Graph(vertices);
 
     graph.setEdge('A', 'B', 4);
@@ -362,7 +554,7 @@ public class Problem004 {
     graph.setEdge('B', 'C', 5);
     graph.setEdge('D', 'C', 2);
     graph.setEdge('D', 'A', 9);
-    graph.shortestPath('D');
+    graph.shortestPath('D');*/
 
 /*
     System.out.println("----------------");

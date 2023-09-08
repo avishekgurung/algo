@@ -41,6 +41,41 @@ public class Problem055 {
     System.out.print("]\n\n");
   }
 
+
+  /***
+   * Another simpler solution with similar logic
+   */
+
+  private static void smallestSubArrayWithGreaterSum(int arr[], int k) {
+    int sum = 0;
+    int start = 0;
+    int minArrSize = arr.length + 1;
+    int end = 0;
+    int reqStart = 0;
+    int reqEnd = 0;
+
+    for(int i=0; i < arr.length; i++) {
+      sum = sum + arr[i];
+      if(sum > k) {
+        while(sum - arr[start] > k) {
+          sum = sum - arr[start];
+          start++;
+        }
+        end = i;
+        if(end - start < minArrSize) {
+          minArrSize = end - start;
+          reqStart = start;
+          reqEnd = end;
+        }
+      }
+    }
+
+    System.out.println(Arrays.toString(arr));
+    for(int i=reqStart; i <= reqEnd; i++) {
+      System.out.print(arr[i]+ " ");
+    }
+  }
+
   public static void main(String[] args) {
     smallestSubArraySum(new int[]{1,1,1,1,1,1}, 5);
     smallestSubArraySum(new int[]{1,1,1,1,1,2}, 5);

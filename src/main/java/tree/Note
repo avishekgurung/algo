@@ -1,0 +1,7 @@
+1. If a preorder traversal of a tree is provided then there can be several trees formed from this traversal. So if the two tree has same pre/in/post traversal, then we cannot
+say that they are the same tree. However, if the pre & in, post and in and level & in are same then we can say that the tree are same. So that is the reason why we need
+inorder traversal along with another traversal (any) to create a tree.
+
+
+2. Whenever we have perfect or full binary tree, it usually involves traversal with nodes i.e operating two nodes at a time. Eg, inserting and processing two nodes,
+moving two pointers down etc.

@@ -8,6 +8,10 @@ public class S4_MergeSort {
    * 1. Uses divide and conquer.
    * 2. Used to sort linked list.
    * 3. Time Complexity = O(nlogn). Refer to master theorem for finding the complexity.
+   * We are dividing the array by half in each split case. So the time complexity of split is logN base 2.
+   * Now for each split, we are doing merge too. In merge, we have two sorted arrays and we just need to combine them
+   * hence the time complexity of merge is N. Since we are doing merge for each split, the total time complexity is
+   * NlogN
    * 4. Space Complexity = O(n).
    * 5. For sorting of large files or parallel processing we use merge sort.
    * @param arr

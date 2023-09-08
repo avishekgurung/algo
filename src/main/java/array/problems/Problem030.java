@@ -20,6 +20,9 @@ public class Problem030 {
    *
    * We have to solve them.
    *
+   *
+   * OR we can simply solve by index search
+   *
    */
 
 
@@ -50,4 +53,37 @@ public class Problem030 {
    * Time complexity = O(n)
    * Space complexity = O(1)
    */
+
+
+  /**
+   * Implementation using index search is as follows:
+   */
+
+  public static void searchTwice(int arr[]) {
+    int size = arr.length;
+    for(int i=0; i < arr.length; i++) {
+      int index = arr[i] % size;
+      int element = arr[index] + size;
+      arr[index] = element;
+    }
+
+    int max1 = 0;
+    int max2 = 0;
+    int i1 = 0;
+    int i2 = 0;
+
+    for(int i=0; i < arr.length; i++) {
+      if(arr[i] > max1 && arr[i] > max2) {
+        max1 = max2;
+        max2 = arr[i];
+        i1 = i2;
+        i2 = i;
+      }
+      else if(arr[i] > max1) {
+        max1 = arr[i];
+        i1 = i;
+      }
+    }
+    System.out.println("The two repeating numbers are " + i1 + " and " + i2);
+  }
 }

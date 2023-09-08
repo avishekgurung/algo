@@ -44,6 +44,24 @@ public class Problem063 {
     alternateSwap(arr, mid+1, right);
   }
 
+  /**
+   * An alternative approach
+   */
+  private static void altPosition(int arr[], int start, int end) {
+    if(start >= end) return;
+    int mid = ( start + end ) / 2;
+    int leftMid = ( start + mid ) / 2 + 1;
+    int counter = 1;
+    for(int i = leftMid; i <= mid; i++) {
+      int aux = arr[i];
+      arr[i] = arr[mid + counter];
+      arr[mid + counter] = aux;
+      counter++;
+    }
+    altPosition(arr, start, mid);
+    altPosition(arr, mid + 1, end);
+  }
+
   public static void util(int arr[]) {
     System.out.println(Arrays.toString(arr));
     alternateSwap(arr, 0, arr.length - 1);

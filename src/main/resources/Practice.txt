@@ -1,0 +1,117 @@
+package practice;
+
+class Node {
+    int data;
+    Node next;
+
+    public Node(int data, Node next) {
+        this.data = data;
+        this.next = next;
+    }
+}
+
+class LL {
+
+    public static Node insert(int arr[]) {
+        Node prev = null;
+        Node head = null;
+
+        for(int i=0; i < arr.length; i++) {
+            Node node = new Node(arr[i], null);
+            if(i==0) {
+                prev = node;
+                head = prev;
+            }
+            else {
+                prev.next = node;
+                prev = node;
+            }
+        }
+        return head;
+    }
+
+    public static void display(Node pointer) {
+        while(pointer != null) {
+            System.out.print(pointer.data + " -> ");
+            pointer = pointer.next;
+        }
+        System.out.println();
+    }
+
+
+    public static Node reverse(Node node) {
+        Node prev = null;
+        Node next = null;
+
+        while(node != null) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return prev;
+    }
+}
+
+public class Practice {
+    public static void main (String args[]) {
+        int arr[] = {12,6,29};
+        Node head = LL.insert(arr);
+        LL.display(head);
+
+        int arr1[] = {23, 5, 8};
+        Node head1 = LL.insert(arr1);
+        LL.display(head1);
+
+        int arr2[] = {90, 20, 59};
+        Node head2 = LL.insert(arr2);
+        LL.display(head2);
+
+        triplet(node1, node2, node3, 101);
+
+    }
+
+    1 2 3 2 1
+    public static void largestPalindrome(Node node) {
+        Node pointer = node;
+        Node prev = null;
+        int max = 0;
+
+        while(node != null) {
+            Node next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+
+            int s1 = palindromeSize(prev, next);
+            int s2 = 0;
+            if(next != null) {
+                s2 = palindromSize(prev, next.next);
+            }
+
+            if(Math.max(s1,s2) > max) {
+              max = Math.max(s1,s2);
+        }
+
+    }
+
+    public static int palindromeSize(Node x, Node y) {
+
+        int size = 0;
+        while(x != null && y != null && x.data == y.data) {
+            size++;
+        }
+        return size;
+    }
+
+   public static void Node reverse(Node node) {
+    Node prev = null;
+    while(node != null) {
+        Node next = node.next;
+        node.next = prev;
+        prev = node;
+        node = next;
+    }
+    return prev;
+   }
+}

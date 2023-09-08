@@ -1,9 +1,8 @@
 package heap.problems;
 
 /**
- * The solution that comes in my mind is sorted circularly doubly linked list.
- *   __________________________________
- *  |                                 |
+ * The solution that comes in my mind is sorted doubly linked list.
+ *
  *  1 <-> 3 <-> 4  <-> 6  <-> 8  <-> 10
  *
  *  FindMin() will always be the first element so O(1)

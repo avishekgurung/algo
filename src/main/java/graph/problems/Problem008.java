@@ -46,6 +46,35 @@ public class Problem008 {
     return false;
   }
 
+  /**
+   * Another simple solution using adjacency list.
+   *
+   *     private boolean cycleInDag(Graph graph, Set<Character> visited, char vertex) {
+   *         if(visited.contains(vertex)) return true;
+   *         visited.add(vertex);
+   *         boolean result = false;
+   *         for(HeapNode neighbour : graph.adjList.get(vertex)) {
+   *             result = cycleInDag(graph, visited, neighbour.label) || result;
+   *         }
+   *         visited.remove(vertex);
+   *         return result;
+   *     }
+   *
+   *     private boolean cycleInNonDG(Graph graph, Set<Character> visited, char vertex, char previous) {
+   *         if(visited.contains(vertex)) return false;
+   *         visited.add(vertex);
+   *         boolean result = false;
+   *         for(HeapNode neighbour: graph.adjList.get(vertex)) {
+   *             if(visited.contains(neighbour.label) && neighbour.label != previous) {
+   *                 return true;
+   *             }
+   *             result = cycleInNonDG(graph, visited, neighbour.label, vertex) || result;
+   *         }
+   *         return result;
+   *     }
+   *
+   */
+
   public static void main(String[] args) {
     char vertices[] = new char[]{'A', 'B', 'C', 'D'};
     Graph graph = new Graph(vertices, true);

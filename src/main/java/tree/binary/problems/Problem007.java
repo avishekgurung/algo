@@ -43,4 +43,11 @@ public class Problem007 {
     BinaryTree.display(root);
     reversePrint(root);
   }
+
+  /**
+   * Without using extra space, we can follow an approach of performing level order traversal without using extra space.
+   *
+   * We will find the height of the tree. And we will print the nodes at height h, h-1, h-2, ... 1
+   *
+   */
 }

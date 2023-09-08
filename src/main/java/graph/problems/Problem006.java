@@ -1,12 +1,6 @@
 package graph.problems;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Prim's Algorithm for minimal spanning tree.
@@ -59,138 +53,137 @@ import java.util.Set;
  *                  |
  *                  |
  *                  D
- * Prim's algo works on non-directed graph whereas Dijktra's work mostly on directed graph.
+ * Prim's algo works on non-directed graph whereas Dijktra's work mostly on directed graph. We do not need to calculate
+ * new distance in Prim's algo, we just add the nearest neighbour to heap.
  *
  */
 
 public class Problem006 {
-  private class Vertex {
+
+
+  private class Graph {
+    char[] vertices;
+    int[][] adjMatrix;
+    Map<Character, Integer> indexMap = new HashMap<>();
+    Map<Character, LinkedList<Node>> adjList = new HashMap<>();
+    boolean isDirected = false;
+
+    Graph(char[] vertices, boolean isDirected) {
+      this(vertices);
+      this.isDirected = isDirected;
+    }
+
+    Graph(char[] vertices) {
+      this.vertices = vertices;
+      this.adjMatrix = new int[vertices.length][vertices.length];
+      for(int i=0; i < vertices.length; i++) {
+        indexMap.put(vertices[i], i);
+        adjList.put(vertices[i], new LinkedList<>());
+      }
+    }
+
+    void addEdge(char a, char b) {
+      adjMatrix[indexMap.get(a)][indexMap.get(b)] = 1;
+      adjList.get(a).add(new Node(b, 1));
+      if(!isDirected) {
+        adjMatrix[indexMap.get(b)][indexMap.get(a)] = 1;
+        adjList.get(b).add(new Node(a, 1));
+      }
+    }
+
+    void addEdge(char a, char b, int weight) {
+      adjMatrix[indexMap.get(a)][indexMap.get(b)] = weight;
+      adjList.get(a).add(new Node(b, weight));
+      if(!isDirected) {
+        adjMatrix[indexMap.get(b)][indexMap.get(a)] = weight;
+        adjList.get(b).add(new Node(a, weight));
+      }
+    }
+
+    void showMatrix() {
+      System.out.println("\t" + Arrays.toString(vertices) + "\n");
+      for(int i=0; i < vertices.length; i++) {
+        System.out.println(vertices[i] + "\t" + Arrays.toString(adjMatrix[i]));
+      }
+    }
+
+    void showList() {
+      System.out.println();
+      for(int i=0; i < vertices.length; i++) {
+        System.out.println(vertices[i] + "\t" + adjList.get(vertices[i]));
+      }
+    }
+  }
+
+  private class Node {
     char label;
     int weight;
+    String extra;
 
-    Vertex(char label, int weight) {
+    Node(char label, int weight) {
       this.label = label;
       this.weight = weight;
     }
-  }
 
+    public int getWeight() {
+      return weight;
+    }
 
-  private class VertexComparator implements Comparator<Vertex> {
-    public int compare(Vertex o1, Vertex o2) {
-      if(o1.weight < o2.weight) return -1;
-      if(o1.weight > o2.weight) return 1;
-      else return -1;
+    @Override
+    public String toString() {
+      return "(" + label + "," + weight + ")";
     }
   }
 
-  private class Graph {
 
-    private char[] vertices;
+  private void run() {
+    char[] vertices = {'A', 'B', 'C', 'D', 'E'};
+    Graph graph = new Graph(vertices);
+    graph.addEdge('A', 'B', 2);
+    graph.addEdge('A', 'C', 15);
+    graph.addEdge('C', 'D', 3);
+    graph.addEdge('B', 'E', 2);
+    graph.addEdge('A', 'E', 2);
+    graph.addEdge('D', 'E', 2);
+    minimalSpanningTree(graph, 'A');
+  }
 
-    private LinkedList<Vertex>[] adjList;
-
-    private Map<Character, Integer> indexMap = new HashMap<Character, Integer>();
-    private Set<Character> visited = new HashSet<Character>();
-    private int size;
-
-    Graph(char[] vertices) {
-      this.size = vertices.length;
-      this.vertices = vertices;
-
-      adjList = new LinkedList[size];
-
-      for(int i=0; i < size; i++) {
-        adjList[i] = new LinkedList<Vertex>();
-      }
-
-      for(int i=0; i < size; i++) {
-        indexMap.put(this.vertices[i], i);
-      }
-    }
-
-
-    public void setEdge(char src, char dest, int weight) {
-      int srcIndex = indexMap.get(src);
-      Vertex neighbour = new Vertex(dest, weight);
-      LinkedList<Vertex> neighbours = adjList[srcIndex];
-      neighbours.add(neighbour);
-      adjList[srcIndex] = neighbours;
-
-      //For non directed graph
-      int destIndex = indexMap.get(dest);
-      neighbour = new Vertex(src, weight);
-      neighbours = adjList[destIndex];
-      neighbours.add(neighbour);
-      adjList[destIndex] = neighbours;
-    }
+  /**
+   * This algo is simpler than that of Dijktra since we do not need to calculate distance and path. We just add the
+   * nearest neighbour into the heap. Since, we are interested in identifying all the edges that are needed
+   * to create a tree, so we are storing all these edges into a list and displaying them finally.
+   */
+  private void minimalSpanningTree(Graph graph, char vertex) {
+    int size = graph.vertices.length;
+    Comparator<Node> comparator = Comparator.comparing(Node::getWeight);
+    PriorityQueue<Node> heap = new PriorityQueue<>(comparator);
+    heap.add(new Node(vertex, 0));
+    Set<Character> visited = new HashSet<>();
+    List<String> minTree = new LinkedList<>();
 
 
-    public void minimalSpanningTree(char source) {
-
-      String path = "";
-      int cost = 0;
-
-      PriorityQueue<Vertex> minHeap =  new PriorityQueue<Vertex>(size,new
-          VertexComparator());
-
-      Vertex vertex = new Vertex(source, 0);
-      minHeap.add(vertex);
-
-      while(!minHeap.isEmpty()) {
-        vertex = minHeap.remove();
-        if(!visited.contains(vertex.label)) {
-          cost = cost + vertex.weight;
-          path = path + vertex.label + " -> ";
-          visited.add(vertex.label);
-          evaluateNeighbours(vertex, minHeap);
-        }
-      }
-
-      System.out.println("Path " + path);
-      System.out.println("Cost: " + cost);
-
-    }
-
-    private void evaluateNeighbours(Vertex vertex, PriorityQueue<Vertex> minHeap) {
-      int vertexIndex = indexMap.get(vertex.label);
-      LinkedList<Vertex> neighbours = adjList[vertexIndex];
-
-      for(Vertex neighbour : neighbours) {
-        if(!visited.contains(neighbour.label)) {
-          minHeap.add(neighbour);
+    while(!heap.isEmpty()) {
+      Node node = heap.remove();
+      int vertexIndex = graph.indexMap.get(node.label);
+      if(!visited.contains(node.label)) {
+        visited.add(node.label);
+        minTree.add(node.extra);
+        for(int i=0; i < size; i++) {
+          if(graph.adjMatrix[vertexIndex][i] !=0 && !visited.contains(graph.vertices[i])) {
+            Node adjNode = new Node(graph.vertices[i], graph.adjMatrix[vertexIndex][i]);
+            adjNode.extra = node.label + " - " + graph.vertices[i];
+            heap.add(adjNode);
+          }
         }
       }
     }
+
+    System.out.println("The edges to generate the minimal spanning tree are: ");
+    System.out.println(minTree);
   }
 
   public static void main(String[] args) {
-    new Problem006().util();
-  }
-
-  public void util() {
-
-    char[] vertices = new char[]{'A','B','C','D'};
-    Graph graph = new Graph(vertices);
-    graph.setEdge('A', 'B', 5);
-    graph.setEdge('B', 'C', 5);
-    graph.setEdge('D', 'C', 2);
-    graph.setEdge('D', 'A', 9);
-    graph.minimalSpanningTree('D');
-
-
-    System.out.println("----------------");
-    vertices = new char[]{'1','2','3','4','5','6','7'};
-    graph = new Graph(vertices);
-    graph.setEdge('1', '6', 10);
-    graph.setEdge('6', '5', 25);
-    graph.setEdge('5', '4', 22);
-    graph.setEdge('5', '7', 24);
-    graph.setEdge('7', '4', 18);
-    graph.setEdge('1', '2', 28);
-    graph.setEdge('7', '2', 14);
-    graph.setEdge('4', '3', 12);
-    graph.setEdge('3', '2', 16);
-    graph.minimalSpanningTree('1');
+    new Problem006().run();
   }
 
 }

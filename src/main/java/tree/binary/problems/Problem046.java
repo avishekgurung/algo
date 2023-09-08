@@ -49,6 +49,25 @@ public class Problem046 {
     BinaryTree.display(root);
     fillAncestorArrayUtil(root, 6);
   }
+
+  /**
+   * This is another implementation, which looks simpler.
+   * @param node
+   * @param aux
+   * @param index
+   * @param arr
+   */
+  public static void createAncestorMatrix(Node node, int aux[], int index, int arr[][]) {
+    if(node == null || index >= aux.length) return;
+    for(int i=0; i < index; i++) {
+      arr[aux[i]][node.data] = 1;
+    }
+    aux[index] = node.data;
+    index++;
+    createAncestorMatrix(node.left, aux, index, arr);
+    createAncestorMatrix(node.right, aux, index, arr);
+  }
+
 }
 /***
  * I maintain a lookUp array which holds the ancestor. And every time I travers a node, I check

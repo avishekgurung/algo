@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class Problem024 {
 
+  /**
+   * The time complexity of this problem is m+n where m and n are the dimensions of an array.
+   * @param arr
+   * @param element
+   */
   public static void searchIn2DAscendingArray(int arr[][], int element) {
 
     int i = arr.length-1, j = 0;

@@ -28,6 +28,8 @@ import java.util.Arrays;
  *
  * Now start the procedure for second element of second array which is '6'.
  *
+ * This process also takes n*k time complexity. For n-k times, we are running a inner loop of k times. (n-k)k ~ nk
+ *
  */
 public class Problem062 {
 

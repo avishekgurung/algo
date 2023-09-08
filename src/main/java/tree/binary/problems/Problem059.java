@@ -58,6 +58,7 @@ public class Problem059 {
   /**
    * Another similar approach can be to perform a post order traversal and store the result as string.
    * Then perform post order traversal and for each subtree, check if its a substring of the above string. If
-   * space is a constraint.
+   * space is a constraint. This solution cannot work because there can be two different subtrees but have same post
+   * order traversal.
    */
 }

@@ -44,7 +44,7 @@ public class Problem066 {
   public static void main(String[] args) {
     waveFormSort(new int[]{10, 5, 6, 3, 2, 20, 100, 80});
     waveFormSort(new int[]{3, 6, 5, 10, 7, 20});
-    waveFormSort(new int[]{6,5,4,3,2,1});
+    waveFormSort(new int[]{4, 1, 1, -1, -3, -5, 6, 2, -6, -2});
   }
 
 }

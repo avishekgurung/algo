@@ -12,7 +12,7 @@ public class Problem058 {
    * iS[], pS[].
    * Check iS[] is a subarray of iT[] and pS[] is a sub-array of p[].
    *
-   * We can also use post-order in place of pre-order. But inorder has to be there.
+   * We can also use post-order / level order in place of pre-order. But inorder has to be there.
    *
    *
    */

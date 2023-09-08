@@ -2,6 +2,7 @@ package graph.problems;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Set;
 
 public class Problem013 {
 
@@ -99,6 +100,36 @@ public class Problem013 {
   }
 
 
+  /**
+   * Used this simple trick of recursion.
+   */
+  private int shortPathIn2DMatrix(int arr[][], Set<String> visited, int i, int j) {
+    /**
+     * Return any largest value if the condition is not sufficing since we want to find the minimal value.
+     * Do not use Integer.MAX_VALUE since it will become negative on adding any value to to.
+     *
+     * In order to avoid traversing the same path again, we use set to check the visited nodes. We create a key to store
+     * in that set.
+     *
+     */
+    if(i >= arr.length || i < 0 || j >= arr.length || j < 0) return (arr.length * 2);
+    if(arr[i][j] == 0) return (arr.length * 2);
+
+    String key = i + " : " + j;
+    if(visited.contains(key)) return (arr.length * 2);
+
+    if(arr[i][j] == 2) return 0;
+
+    visited.add(key);
+
+    int leftResult = shortPathIn2DMatrix(arr, visited, i-1, j);
+    int rightResult = shortPathIn2DMatrix(arr, visited, i+1, j);
+    int topResult = shortPathIn2DMatrix(arr, visited, i, j + 1);
+    int bottomResult = shortPathIn2DMatrix(arr, visited, i, j - 1);
+    visited.remove(key);
+    return Math.min(Math.min(Math.min(leftResult, rightResult), topResult), bottomResult) + 1;
+  }
+
   public static void main(String[] args) {
     int matrix[][] = new int[][]{{0,3,2},{3,3,0},{1,3,0}};
     Problem013 obj = new Problem013();
@@ -120,3 +151,6 @@ public class Problem013 {
  * Another simple way is to use DP and solve it (recursion). No too much code on
  * creating a graph.
  */
+
+
+

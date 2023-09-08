@@ -5,6 +5,12 @@ import linkedlist.util.LinkedList.Node;
 
 public class Problem005 {
 
+
+  /**
+   * We are appending the nodes with 2 at end and nodes with 0 at the beginning. For nodes with 1, we do nothing.
+   * @param head
+   * @return
+   */
   public static Node sort012(Node head) {
 
     if(head == null || head.next == null) return head;
@@ -73,6 +79,9 @@ public class Problem005 {
    * Let the counts be n1, n2 and n3 respectively.
    2) Traverse the list again, fill the first n1 nodes with 0,
    then n2 nodes with 1 and finally n3 nodes with 2
+
+   This logic will not sort the references or the addresses. And it just exchanges the values.
+
    * @param head
    * @return
    */
@@ -126,5 +135,11 @@ public class Problem005 {
     head = sort012(head);
     LinkedListUtil.display(head);
   }
+
+
+  /**
+   * Another approach can be to create a new linked list and keep insering elements in the linkedList in an order.
+   * This will take the time complexity as O(n) whereas the space complexity will also be O(n).
+   */
 
 }

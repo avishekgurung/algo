@@ -55,6 +55,27 @@ public class Problem041 {
     System.out.println("Max diff is " + maxSum + " ("+arr[maxStart]+" and "+ arr[end]+")\n");
   }
 
+  /**
+   * This problem is also like finding the next greatest element to its right, where we start from the end and traverse
+   * forward
+   */
+
+  private static void maxDiffToRight(int arr[]) {
+    int max = arr[arr.length - 1];
+    int maxDiff = 0;
+    for(int i=arr.length-2; i >=0; i--) {
+      int element = arr[i];
+      if(element < max) {
+        int diff = max - element;
+        maxDiff = Math.max(maxDiff,diff);
+      }
+      else {
+        max = element;
+      }
+    }
+    System.out.println("Max diff: " + maxDiff);
+  }
+
 
   public static void main(String[] args) {
     maxDiffSimple(new int[]{7,9,8,12,20});

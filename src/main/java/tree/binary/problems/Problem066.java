@@ -16,6 +16,13 @@ public class Problem066 {
     printSum(node.right, arr, index, sum);
   }
 
+  /**
+   * We have an array and the value of sum. So this problem is more of a subarray if we want to optimise the time.
+   * Its like, given an array, find all the subarrays whose sum are equal to sum.
+   * @param arr
+   * @param index
+   * @param sum
+   */
   public static void printNodes(int arr[], int index, int sum) {
     for(int i=0; i < index; i++) {
       int nodeSum = arr[i];

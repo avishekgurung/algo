@@ -116,7 +116,8 @@
 
 28. Print left rotation of an array in O(n) without rotating the array.
 
-29. Rotate two dimensional matrix by 90 degree to its right(or left).
+29. Rotate two dimensional matrix by 90 degree to its right(or left). This can be extended to rotating the array by
+    n no of times. If n=2, then we are rotating by 180, n=3 then 270 and so on.
 
 30. Given an array of size n+2 where the elements are in the range 1 to n so two elements are
     occurring twice. Find these two elements.
@@ -127,7 +128,7 @@
     in the array. If element is not present then there will be -1 present in the array. Rearrange
     the array such that A[i] = i and if i is not present, display -1 at that place.
     https://www.geeksforgeeks.org/rearrange-array-arri/
-    Input : arr = {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1}
+    Input :  {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1}
     Output : [-1, 1, 2, 3, 4, -1, 6, -1, -1, 9]
 
 33. Given an array of n elements. Our task is to write a program to rearrange the array such that
@@ -165,7 +166,7 @@
     A[i] >= A[i-1]  , if i is even.
     A[i] <= A[i-1]  , if i is odd.
 
-39. Given an array of integers of size n. Assume ‘0’ as invalid number and all other as valid
+39*. Given an array of integers of size n. Assume ‘0’ as invalid number and all other as valid
     number. Convert the array in such a way that if next valid number is same as current number,
     double its value and replace the next number with 0. After the modification, rearrange the
     array such that all 0’s are shifted to the end.
@@ -290,7 +291,7 @@
     Input: {0, 1, 2, 3, 4, 5, 6, 7, 10}, n = 9, m = 11
     Output: 8
 
-53. Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
+53*. Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
     that no 2 numbers in the sequence should be adjacent in the array.
     Input : arr[] = {5, 5, 10, 100, 10, 5}
     Output : 110
@@ -300,6 +301,9 @@
 
     Input : arr[] = {1, 20, 3}
     Output : 20
+
+    Input : arr[] = {3, 2, 7, 10}
+    Output : 13
 
 54*. Given heights of n towers and a value k. We need to either increase or decrease height of every
     tower by k (only once) where k > 0. The task is to minimize the difference between the heights

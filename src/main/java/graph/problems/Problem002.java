@@ -5,6 +5,21 @@ import java.util.Queue;
 
 import graph.utils.Graph;
 
+/**
+ * Topological sorting:
+ *
+ * 1. Calculate the indegree of all the vertices.
+ * 2. For all the vertices, whose indegree are 0, add them into the queue.
+ * 3. Pop out vertex from the queue.
+ *    3.1 Reduce the indegree of all its adjacency vertex
+ *    3.2 If any of the adjacency vertex's indegree reduces to 0, then put that vertex into the queue.
+ *
+ * Complexity
+ * This is a simple BFS algorithm.
+ * For Adj Matrix: V^2
+ * For Adj List: V + E
+ */
+
 public class Problem002 {
 
   private static void topologicalSort(Graph graph) {
@@ -45,6 +60,7 @@ public class Problem002 {
     System.out.println();
   }
 
+
   public static void main(String[] args) {
 
     char[] vertices = new char[]{'A','B','C','D','E','F','G','H'};
@@ -63,7 +79,3 @@ public class Problem002 {
 
 }
 
-/**
- * Time Complexity = V^2
- * If we use AdjList, TC = V + V*e =V + E
- */

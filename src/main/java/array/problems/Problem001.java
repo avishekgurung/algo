@@ -56,7 +56,7 @@ public class Problem001 {
     int winningVotes = 0;
     int maxElement = Integer.MIN_VALUE;
 
-    for(int i=0; i < arr.length; i++) {
+    for(int i=0; i < arr.length; i++) { //since we know that the array is largely filled only from 1 to 5, so we can iterate only from 1 to 5 for better efficiency
       if(arr[i] > maxElement) {
         winningCandidate = i;
         winningVotes = arr[i] / len;
