@@ -6,14 +6,14 @@ import java.util.*;
 /**
  * The algorithm for shortest path for weighted graph is as follows:
  *
- * 0. Create a distance and path table, with distance table holding the largest value for all the other vertices, except
+ * 0. Create a distance, path table and min heap, with distance table holding the largest value for all the other vertices, except
  * the initial vertex.
  * 1. Add the initial start vertex into the heap.
  * 2. Pop out the vertex from the heap. And for every popped vertex.
  * 3. If its not visited
  *      4. Process it (mark it as visited).
  *      5. If the adjacent vertices are not visited then calculate their distance. If the new distance is less than
- *      their already existing distance, then add them into the queue and calculate their path.
+ *      their already existing distance, then add them into the heap and calculate their path.
  *
  * This is just a BFS traversal with very minimal modification. In the non weighted algo, whenever we see a new adjacent
  * neighbour then we will consider that it is at the shortest distance. But in weighted graph, we will calculate their

@@ -14,7 +14,7 @@ import java.util.*;
  *      4. Process it (mark it as visited).
  *      5. If the adjacent vertices are not visited then add them into the queue and calculate their distance and path.
  *
- * This is just a BFS traversal with very minimal modification. Whenever, we see the node first time then it is usually
+ * This is just a BFS traversal with very minimal modification. Whenever, when we see the node first time then it is usually
  * considered that it has a shortest distance.
  *
  * The time and space complexity is same as that of BFS.
