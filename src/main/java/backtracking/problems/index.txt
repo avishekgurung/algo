@@ -1,0 +1,58 @@
+1.  Find the permutation and combination  of a given string "ABC".
+
+2.  A string S is provided whose length is more than t. A set of valid words W, each of size t is provided. Find the all
+    possible combination of t letter valid words that can be formed from S. Eg, S="ABCDE", W = ["DEF", "CAB", "BED"], t=3,
+    the answer should be "CAB", "BED".
+
+3.  For a given array of integers, find all the possible sub-arrays.
+
+4.  Given an MxN matrix where each element can either be 0 or 1. We need to find the path between a given
+    source cell to a destination cell. The path can only be created out of a cell if its value is 1. If the path
+    does not exists, then return -1.
+
+    a. Find the distance of the shortest path.
+    b. Find the distance of the longest path.
+    c. Find the distance of the shortest path along with the path.
+    d. Find the total number of unique paths from source to destination.
+
+5.  Given a positive number n, find all combinations of 2×n elements such that every element from 1 to n appears exactly
+    twice and the distance between its two appearances is exactly equal to the value of the element.
+
+    Input: n = 3
+    Output:
+    3 1 2 1 3 2
+    2 3 1 2 1 3
+
+    Input: n = 4
+    Output:
+    4 1 3 1 2 4 3 2
+    2 3 4 2 1 3 1 4
+
+    Input: n = 7
+    Output:
+    1 7 1 2 5 6 2 3 4 7 5 3 6 4
+    5 1 7 1 6 2 5 4 2 3 7 6 4 3
+    4 1 7 1 6 4 2 5 3 2 7 6 3 5
+    …
+    …
+    Total 52 configurations possible.
+
+    Note that no combination of elements is possible for some values of n like 2, 5, 6, etc.
+
+
+6.  Letter combination of a phone number.
+    https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+
+
+7.  Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
+    https://leetcode.com/problems/combinations/
+
+8.  Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+    https://leetcode.com/problems/permutations/
+
+9.  Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations
+    of candidates where the chosen numbers sum to target. You may return the combinations in any order.
+    https://leetcode.com/problems/combination-sum/
+
+10. Word search
+    https://leetcode.com/problems/word-search/?envType=study-plan-v2&envId=top-interview-150

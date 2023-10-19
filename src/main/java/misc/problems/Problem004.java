@@ -11,6 +11,8 @@ public class Problem004 {
       return;
     }
 
+    System.out.println(left + " : " + right);
+
     subsetSum(arr, left + 1, right, sum + arr[left]);
 
     subsetSum(arr, left + 1, right, sum);
@@ -22,3 +24,4 @@ public class Problem004 {
   }
 
 }
+

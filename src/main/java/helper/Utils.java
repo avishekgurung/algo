@@ -25,6 +25,33 @@ class HeapNode1 {
     }
 }
 
+class HeapNodeComparator implements Comparator<HeapNode1> {
+
+    /**
+     * We will sort the nodes based on increasing data, i.e. The heap node will be minHeap based on the value of data.
+     * But in cases, where the data value are same, then higher freq will take precedence.
+     *
+     * We can think of compare function working as , if the first object o1's attribute > o2's attribute and if it
+     * returns 1, then they are sorted in increasing order.
+     */
+
+    @Override
+    public int compare(HeapNode1 o1, HeapNode1 o2) {
+        if(o1.data > o2.data) {
+            return 1;
+        } else if(o1.data < o2.data) {
+            return -1;
+        } else {
+            if(o1.freq > o2.freq) {
+                return -1;
+            }
+            else {
+                return 1;
+            }
+        }
+    }
+}
+
 public class Utils {
 
     public static void main(String args[]) {
@@ -89,7 +116,7 @@ public class Utils {
         }
 
         /**
-         * Storing objects in heap.
+         * Storing objects in heap and sorting the nodes by one attribute.
          * Heaps is created as max heap since we are using Collections.reverseOrder()
          */
         System.out.println("\nCustom heap implementation and sorting based on specific attribute.");
@@ -102,6 +129,27 @@ public class Utils {
             System.out.println(customHeap.remove());
         }
 
+
+        /**
+         * Storing the object in heap and sorting them by one attribute. But of the attributes are different then
+         * sorting them by another attribute.
+         */
+
+        System.out.println("\nCustom heap implementation and sorting based on more than one attributes");
+        HeapNodeComparator heapNodeComparator = new HeapNodeComparator();
+        PriorityQueue<HeapNode1> customHeap1 = new PriorityQueue<>(heapNodeComparator);
+        customHeap1.add(new HeapNode1(4, 2));
+        customHeap1.add(new HeapNode1(2, 5));
+        customHeap1.add(new HeapNode1(2, 1));
+        customHeap1.add(new HeapNode1(2, 8));
+        while(!customHeap1.isEmpty()) {
+            System.out.println(customHeap1.remove());
+        }
+
+
+
+
+
         /**
          * Random number generation.
          */
@@ -113,5 +161,31 @@ public class Utils {
         for(int i=0; i < 3; i++) {
             System.out.println(random.nextInt(max - min) + min);
         }
+
+        /**
+         * Sorting a 2D array by a specific colum
+         */
+        int points[][] = {{10,16},{2,8},{1,6},{7,12}};
+        for(int i=0; i < points.length; i++) System.out.print(Arrays.toString(points[i]));
+        Arrays.sort(points, new Comparator<int[]>() {
+            @Override
+            public int compare(final int[] entry1, final int[] entry2) {
+                if(entry1[1] > entry2[1]) return 1;
+                else return -1;
+            }
+        });
+        System.out.println();
+        for(int i=0; i < points.length; i++) System.out.print(Arrays.toString(points[i]));
+
+
+        /**
+         * Sorting a String
+         */
+        String str = "badec";
+        char chars[] = str.toCharArray();
+        Arrays.toString(chars);
+        String sorted = new String(chars);
+        System.out.println(sorted);
+
     }
 }

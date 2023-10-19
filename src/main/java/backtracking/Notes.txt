@@ -1,0 +1,5 @@
+Backtracking is a technique for solving problem by exploring all possible solutions. Backtracking speeds the exhaustive
+search by pruning. Backtracking problems usually asks us to find combinations and permutations.
+
+Most of the problems that has patterns like finding all possible solutions, or having large number of solutions are
+solved using backtracking.
