@@ -105,10 +105,12 @@ public class Problem10 {
     maxProfit = Integer.MIN_VALUE;
     int arr[] = new int[price.length];
     for(int i=0; i < arr.length; i++) arr[i] = i+1;
-    recur(0, 0,0, n, arr, price);
+    //recur(0, 0,0, n, arr, price);
+
+    int result = recurWithDp(0, 0, 0, arr, price, n, new HashMap<String, Integer>());
     System.out.println("Length: " + n);
     System.out.println("Price: " + Arrays.toString(price));
-    System.out.println("Maximum profit: " + maxProfit);
+    System.out.println("Maximum profit: " + result);
     System.out.println();
   }
 
@@ -133,6 +135,25 @@ public class Problem10 {
     for(int i=index; i < arr.length; i++) {
       recur(i, sum + arr[i], profit + price[i], target, arr, price);
     }
+  }
+
+  /**
+   * This is the best solution so far without using any extra variables
+   */
+
+  private int recurWithDp(int index, int sum, int profit, int rod[], int price[], int target, Map<String, Integer> dp) {
+    if(sum == target) return profit;
+    if(sum > target) return -1;
+    int result = -1;
+
+    String key = index + ":" + sum;
+    if(dp.containsKey(key)) return dp.get(key);
+
+    for(int i=index; i < rod.length; i++) {
+      result = Math.max(result, recurWithDp(i, sum + rod[i], profit + price[i], rod, price, target, dp));
+    }
+    dp.put(key, result);
+    return result;
   }
 
 }
