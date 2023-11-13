@@ -1,43 +1,400 @@
-3.  Find a maximum element in a binary tree.
+[1] 13. Find the diameter(width) of a Binary Tree. Diameter of a tree is the distance between
+    the two farthest leaves. To get the more details of the width of a tree,
+    check https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
 
 
-10. Word search
-    https://leetcode.com/problems/word-search/?envType=study-plan-v2&envId=top-interview-150
-79. Find the majority element and if not present display a message. In an array of size n, the
-    majority element is the one whose occurrences is more than n/2.
-
-5.  Subset with sum divisible by m
-    Given a set of non-negative distinct integers, and a value m, determine if there is a subset
-    of the given set with sum divisible by m.
-    Input Constraints
-    Size of set i.e., n <= 1000000, m <= 1000
-
-    Examples:
-    Input : arr[] = {3, 1, 7, 5};
-            m = 6;
-    Output : YES
-
-    Input : arr[] = {1, 6};
-            m = 5;
-    Output : NO
-
-    https://www.geeksforgeeks.org/subset-sum-divisible-m/
+[2] 25. Consider an array of distinct numbers sorted in increasing order. The array has been rotated
+    (clockwise) k number of times. Given such an array, find the value of k.
+    Eg, [4, 1, 2, 3] is rotated 1.
+        [1, 2, 3, 4] is rotated 0.
 
 
-4.  Perform shortest path for weighted graphs with non-negative edges. (Dijkstra's algo)
+[3] 59. Given a Binary Tree, check whether the Binary tree contains a duplicate sub-tree of
+    size 2 or more.
+    https://www.geeksforgeeks.org/check-binary-tree-contains-duplicate-subtrees-size-2/
 
 
-39. Given a Binary Tree, find density of it by doing one traversal of it.
-    Density of Binary Tree = Size / Height
+[4] 43. Given an array of numbers, arrange them in a way that yields the largest value. For example,
+    if the given numbers are {54, 546, 548, 60}, the arrangement 6054854654 gives the largest value.
+    And if the given numbers are {1, 34, 3, 98, 9, 76, 45, 4}, then the arrangement 998764543431
+    gives the largest value.
+
+44*. Given an array of size n where all elements are distinct and in range from 0 to n-1, change
+    contents of arr[] so that arr[i] = j is changed to arr[j] = i.
+
+    Input: arr[]  = {1, 3, 0, 2};
+    Output: arr[] = {2, 0, 3, 1};
+    Explanation for the above output.
+    Since arr[0] is 1, arr[1] is changed to 0
+    Since arr[1] is 3, arr[3] is changed to 1
+    Since arr[2] is 0, arr[0] is changed to 2
+    Since arr[3] is 2, arr[2] is changed to 3
+
+    Input: arr[]  = {2, 0, 1, 4, 5, 3};
+    Output: arr[] = {1, 2, 0, 5, 3, 4};
+
+45*. You have been given an array and you have to make a program to convert that array such that
+    positive elements occur at even numbered places in the array and negative elements occur at
+    odd numbered places in the array. We have to do it in place.
+    There can be unequal number of positive and negative values and the extra values have to be left
+    as it is.
+
+    Input : arr[] = {1, -3, 5, 6, -3, 6, 7, -4, 9, 10}
+    Output : arr[] = {1, -3, 5, -3, 6, 6, 7, -4, 9, 10}
+
+    Input : arr[] = {-1, 3, -5, 6, 3, 6, -7, -4, -9, 10}
+    Output : arr[] = {3, -1, 6, -5, 3, -7, 6, -4, 10, -9}
 
 
-6. Clone a LinkedList which has an extra pointer that points to any random node.
+[5] 15. There is a m*n rectangular matrix whose top-left(start) location is (1, 1) and bottom-right
+    (end) location is (m*n). There are k circles each with radius r. Find if there is any path
+    from start to end without touching any circle.
+
+    The input contains values of m, n, k, r and two array of integers X and Y, each of length k.
+    (X[i], Y[i]) is the centre of ith circle.
+
+    Input1 : m = 5, n = 5, k = 2, r = 1,
+             X = {1, 3}, Y = {3, 3}
+    Output1 : Possible
+
+    Input2 : m = 5, n = 5, k = 2, r = 1,
+             X = {1, 1}, Y = {2, 3}.
+    Output2 : Not Possible
+
+    https://www.geeksforgeeks.org/path-rectangle-containing-circles/
+    Asked in Directi.
 
 
-8.  Detect a cycle in a directed and non-directed graph.
+[6] 41. Given a binary tree. Modify it in such a way that after modification you can
+    have a preorder traversal of it using only the right pointers. During
+    modification, you can use right pointer as well as left pointers.
 
 
-2.  Tiling Problem.
+[7] 55. Given an array of integers and a number x, find the smallest subarray with sum greater than the
+    given value.
+
+    arr[] = {1, 4, 45, 6, 0, 19}
+       x  =  51
+    Output: 3
+    Minimum length subarray is {4, 45, 6}
+
+    arr[] = {1, 10, 5, 2, 7}
+       x  = 9
+    Output: 1
+    Minimum length subarray is {10}
+
+    arr[] = {1, 11, 100, 1, 0, 200, 3, 2, 1, 250}
+        x = 280
+    Output: 4
+    Minimum length subarray is {100, 1, 0, 200}
+
+    arr[] = {1, 2, 4}
+        x = 8
+    Output : Not Possible
+    Whole array sum is smaller than 8.
+
+
+
+[8] 3. Search an element in a LinkedList (by recursion).
+
+
+[9] 5.  Miscellaneous questions:
+    a. Merge two sorted arrays of size n and n+m (where only m elements are filled) into second arr.
+    b. Sort an array which contains values from 1 to n.
+
+
+[10] 15. Print all the root to leaf path of a Binary Tree.
+
+
+[11] 66. Sort the array in wave form. Given an unsorted array of integers, sort the array into a wave
+    like array. An array ‘arr[0..n-1]’ is sorted in wave form if arr[0] >= arr[1] <= arr[2] >=
+    arr[3] <= arr[4] >= ….
+
+     Input:  arr[] = {10, 5, 6, 3, 2, 20, 100, 80}
+     Output: arr[] = {10, 5, 6, 2, 20, 3, 100, 80} OR
+                     {20, 5, 10, 2, 80, 6, 100, 3} OR
+                     any other array that is in wave form
+
+     Input:  arr[] = {20, 10, 8, 6, 4, 2}
+     Output: arr[] = {20, 8, 10, 4, 6, 2} OR
+                     {10, 8, 20, 2, 6, 4} OR
+                     any other array that is in wave form
+
+
+[12] 13. Find kth smallest element in a BST.
+
+
+[13] 14. Given a rope of length n meters, cut the rope in different parts of integer lengths in a way
+    that maximizes product of lengths of all parts. You must make at least one cut. Assume that
+    the length of rope is more than 2 meters.
+
+    Input: n = 2
+    Output: 1 (Maximum obtainable product is 1*1)
+
+    Input: n = 3
+    Output: 2 (Maximum obtainable product is 1*2)
+
+    Input: n = 4
+    Output: 4 (Maximum obtainable product is 2*2)
+
+    Input: n = 5
+    Output: 6 (Maximum obtainable product is 2*3)
+
+    Input: n = 10
+    Output: 36 (Maximum obtainable product is 3*3*4)
+
+
+
+[14] 11. Maximum length of Snake sequence.
+    Given a grid of numbers, find maximum length Snake sequence and print it. If multiple snake
+    sequences exists with the maximum length, print any one of them.
+
+    A snake sequence is made up of adjacent numbers in the grid such that for each number, the
+    number on the right or the number below it is +1 or -1 its value. For example, if you are
+    at location (x, y) in the grid, you can either move right i.e. (x, y+1) if that number is
+    ± 1 or move down i.e. (x+1, y) if that number is ± 1.
+
+    For example,
+
+    9, 6, 5, 2
+    8, 7, 6, 5
+    7, 3, 1, 6
+    1, 1, 1, 7
+
+    In above grid, the longest snake sequence is: (9, 8, 7, 6, 5, 6, 7)
+
+
+[15] 57. Check if given Preorder, Inorder and Postorder traversals are of same tree.
+
+
+[16] 8.  Detect a cycle in a directed and non-directed graph.
+
+
+[17] 1.  Find the sum of all elements of a Generic Tree.
+
+
+[18] 19. Why is Binary Heap preferred over BST for Priority Queue?
+
+
+[19] 2.  Find the longest substring between two strings.
+
+
+[20] 4.  SNAKE AND LADDER
+
+
+[21] 20. Next Greater Frequency Element.
+    Given an array, for each element find the value of nearest element to the right which
+    is having frequency greater than as that of current element. If there does not exist
+    an answer for a position, then make the value ‘-1’.
+
+    Input : a[] = [ 1,  1, 2, 3, 4, 2,  1]
+    Output :      [-1, -1, 1, 2, 2, 1, -1]
+    Explanation:
+    Given array a[] =            [1, 1, 2, 3, 4, 2, 1]
+    Frequency of each element is: 3, 3, 2, 1, 1, 2, 3
+    Lets calls Next Greater Frequency element as NGF
+    1. For element a[0] = 1 which has a frequency = 3,
+       As it has frequency of 3 and no other next element
+       has frequency more than 3 so  '-1'
+    2. For element a[1] = 1 it will be -1 same logic
+       like a[0]
+    3. For element a[2] = 2 which has frequency = 2,
+       NGF element is 1 at position = 6  with frequency
+       of 3 > 2
+    4. For element a[3] = 3 which has frequency = 1,
+       NGF element is 2 at position = 5 with frequency
+       of 2 > 1
+    5. For element a[4] = 4 which has frequency = 1,
+       NGF element is 2 at position = 5 with frequency
+       of 2 > 1
+    6. For element a[5] = 2 which has frequency = 2,
+       NGF element is 1 at position = 6 with frequency
+       of 3 > 2
+    7. For element a[6] = 1 there is no element to its
+       right, hence -1
+
+    Input : a[] = [1, 1, 1, 2, 2, 2, 2, 11, 3, 3]
+    Output : [2, 2, 2, -1, -1, -1, -1, 3, -1, -1]
+
+
+[22] 44. Create Full Tree from pre-order traversal of a tree and pre-order traversal of a
+    mirror of the tree.
+
+
+[23] 40. We have a building of with n floors and we have many eggs with us. When an egg is thrown from a
+    floor higher than F then egg breaks else it will not. Devise a strategy to identify the F floor
+    by throwing minimum number of eggs.
+
+
+[24] 4.  Search an element in a Binary Tree.
+
+
+[25] 6.  Design elevator control system.
+
+
+[26] 4.  Evaluate infix expression.
+
+
+[27] 16. Union and Intersection of two linked list.
+    Input:
+       List1: 10->15->4->20
+       List2:  8->4->2->10
+    Output:
+       Intersection List: 4->10
+       Union List: 2->8->20->4->15->10
+
+
+[28] 9. Rearrange the linked list such that
+    1-2-3-4-5 is 1-5-2-4-3
+    1-2-3-4 is 1-4-2-3
+
+
+[29] 5.  PARKING LOT
+
+
+[30] 52. Given a sorted array of n distinct integers where each integer is in the range from 0 to m-1
+    and m > n. Find the smallest number that is missing from the array.
+
+    Examples
+    Input: {0, 1, 2, 6, 9}, n = 5, m = 10
+    Output: 3
+
+    Input: {4, 5, 10, 11}, n = 4, m = 12
+    Output: 0
+
+    Input: {0, 1, 2, 3}, n = 4, m = 5
+    Output: 4
+
+    Input: {0, 1, 2, 3, 4, 5, 6, 7, 10}, n = 9, m = 11
+    Output: 8
+
+53*. Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
+    that no 2 numbers in the sequence should be adjacent in the array.
+    Input : arr[] = {5, 5, 10, 100, 10, 5}
+    Output : 110
+
+    Input : arr[] = {1, 2, 3}
+    Output : 4
+
+    Input : arr[] = {1, 20, 3}
+    Output : 20
+
+    Input : arr[] = {3, 2, 7, 10}
+    Output : 13
+
+54*. Given heights of n towers and a value k. We need to either increase or decrease height of every
+    tower by k (only once) where k > 0. The task is to minimize the difference between the heights
+    of the longest and the shortest tower after modifications, and output this difference.
+
+    Input  : arr[] = {1, 15, 10}, k = 6
+    Output :  Maximum difference is 5.
+    Explanation : We change 1 to 6, 15 to
+    9 and 10 to 4. Maximum difference is 5
+    (between 4 and 9). We can't get a lower
+    difference.
+
+    Input : arr[] = {4, 6} k = 10
+    Output : Maximum difference is 2
+    arr[] = {14, 16} OR {-6, -4}
+
+
+[31] 18. Given a square matrix of size N*N, where each cell is associated with a specific cost. A path
+    is defined as a specific sequence of cells which starts from top left cell move only right or
+    down and ends on bottom right cell. We want to find a path with maximum average over all
+    existing paths. Average is computed as total cost divided by number of cells visited in path
+
+    Input : Matrix = [1, 2, 3
+                      4, 5, 6
+                      7, 8, 9]
+    Output : 5.8
+    Path with maximum average is, 1 -> 4 -> 7 -> 8 -> 9
+    Sum of the path is 29 and average is 29/5 = 5.8
+
+
+[32] 32. Given a binary tree and a node, we need to write a program to find inorder successor
+    of this node.
+
+
+[33] 5.  Perform pre-order traversal in an inorder threaded binary tree.
+
+[34] 51. Given a simple Binary Tree, modify it such that a node holds the sum of its two child.
+
+
+[35] 2. Length of a linked list by recursion.
+
+
+[36] 2.  Construct a minimum AVL Trees of height 0,1,2,3,4 and 5. What is the number of nodes
+    in a minimal AVL tree of height 6?
+
+
+[37] 43. Create a Full Tree from preorder and postorder traversal.
+
+
+[38] 1*. Implement Max Heap.
+
+2*. Implement Min Heap.
+
+
+[39] 65. Given an array of n distinct elements and a number x, arrange array elements according to the
+    absolute difference with x, i. e., element having minimum difference comes first and so on.
+    Note : If two or more elements are at equal distance arrange them in same sequence as in the
+    given array.
+
+    Input : arr[] : x = 7, arr[] = {10, 5, 3, 9, 2}
+    Output : arr[] = {5, 9, 10, 3, 2}
+    Explanation:
+    7 - 10 = 3(abs)
+    7 - 5 = 2
+    7 - 3 = 4
+    7 - 9 = 2(abs)
+    7 - 2 = 5
+    So according to the difference with X,
+    elements are arranged as 5, 9, 10, 3, 2.
+
+
+[40] 62. Given a binary tree and a node, print all cousins of given node. Note that siblings
+    should not be printed.
+
+
+[41] 2. Search an element in a BST.
+
+
+[42] 49. Given a ternary tree (left, mid and right pointers), create a doubly linked list such
+    that the left pointer should act as a prev pointer, right pointer should act as next
+    pointer and mid should point to null.
+    https://www.geeksforgeeks.org/create-doubly-linked-list-ternary-ree/
+
+
+[43] 10. Given a sorted DLL, convert it into BST.
+
+
+[44] 14. Given two strings str1 and str2, find the shortest string that has both str1 and str2 as
+    sub-sequences. The simpler version of this question is to find the length of above string.
+    Lets consider two strings, ravi and avishek. We need to find a shortest string which has both
+    the above two strings as subsequence. There can be many possible results, we can find one.
+
+
+[45] 19. There are n cities and there are roads in between some of the cities. Somehow all the roads
+    are damaged simultaneously. We have to repair the roads to connect the cities again. There
+    is a fixed cost to repair a particular road. Find out the minimum cost to connect all the
+    cities by repairing roads. Input is in matrix(city) form, if city[i][j] = 0 then there is
+    not any road between city i and city j, if city[i][j] = a > 0 then the cost to rebuild the
+    path between city i and city j is a. Print out the minimum cost to connect all the cities.
+    It is sure that all the cities were connected before the roads were damaged.
+
+    Input : {{0, 1, 2, 3, 4},
+             {1, 0, 5, 0, 7},
+             {2, 5, 0, 6, 0},
+             {3, 0, 6, 0, 0},
+             {4, 7, 0, 0, 0}};
+    Output : 10
+    https://www.geeksforgeeks.org/minimum-cost-connect-cities/
+
+
+[46] 8. Check if a given tree is BST or not.
+
+
+[47] 2.  Tiling Problem.
     Given a “2 x n” board and tiles of size “2 x 1”, count the number of ways to tile the given
     board using the 2 x 1 tiles. A tile can either be placed horizontally i.e., as a 1 x 2 tile or
     vertically i.e., as 2 x 1 tile.
@@ -63,76 +420,643 @@
     https://www.geeksforgeeks.org/tiling-problem/
 
 
-2.  Given a 4-ary tree what is the maximum possible height with 100 nodes. Assume that
-    the height of a single node is 0.
+[48] 0.  Design LRU Cache
 
 
-48. Given an array with all distinct elements, find the largest three elements. Expected time
-    complexity is O(n) and extra space is O(1).
+[49] 4.* Given a singly linked list, remove all the nodes which have a greater value on right side.
+    12->15->10->11->5->6->2->3->NULL should be changed to 15->11->6->3->NULL
+    10->20->30->40->50->60->NULL should be changed to 60->NULL
+    60->50->40->30->20->10->NULL should not be changed.
 
 
-2.  Longest Common Sub-Sequence.
-    A subsequence is a sequence that appears in the same relative order, but not necessarily
-    contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ”acefg”, .. etc are subsequences of
-    “abcdefg”. So a string of length n has 2^n different possible subsequences.
-
-    LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
-    LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
-    LCS for input Sequences “STONEY” and “LONGEST” is “ONE” of length 3.
+[50] 16. Check existence of a path with given sum. Meaning given a sum, there should exits a path
+    from root to any leaf such that the sum of their nodes must be equal to the given sum.
 
 
-67. Merge two binary nodes such that if two nodes overlap, then sum node values up as the
+[51] 13. Given only a pointer/reference to a node to be deleted in a singly linked list, how do you
+    delete it?
+
+
+[52] 26. Given a value k, rotate the array (sorted) to its left (anti-clockwise rotation).
+    arr[] = {1,2,3,4,5}, k=2, output = {3,4,5,1,2}
+
+
+[53] 1.  Find the nth Catalan number. The first few Catalan numbers for n = 0, 1, 2, 3, … are 1, 1, 2, 5,
+    14, 42, 132, 429, 1430, 4862, …
+
+
+[54] 16. Consider a matrix with rows and columns, where each cell contains either a ‘0’ or a ‘1’ and
+    any cell containing 1 is called a filled cell. Two cells are said to be connected if they
+    are adjacent to each other horizontally, vertically, or diagonally .If one or more filled
+    cells are connected, they form a region. find the length of the largest region.
+
+    Input : M[][5] = { 0 0 1 1 0
+                       1 0 1 1 0
+                       0 1 0 0 0
+                       0 0 0 0 1 }
+    Output : 6
+    Ex: in the following example, there are 2 regions one with length 1 and the other as 6.
+        so largest region : 6
+    https://www.geeksforgeeks.org/find-length-largest-region-boolean-matrix/
+
+
+[55] 6.  Delete a binary tree.
+
+
+[56] 3. a. Create max and min heap with seven elements such that pre-order traversal of it
+      gives the elements in sorted order.
+
+   b. Create max and min heap with seven elements such that in-order traversal of it
+      gives the elements in sorted order.
+
+   c. Create max and min heap with seven elements such that post-order traversal
+   of it gives the elements in sorted order.
+
+   d. What is the minimum and maximum number of elements in a heap of height h.
+
+   e. Delete an arbitrary element from min heap. (or deleting ith indexed element)
+
+
+[57] 4.  Given an array of positive and negative integers, find the pair which is closest to 0.
+
+
+[58] 20. We are given a matrix of nxn where each cell has some positive integers. These numbers
+    represent the cost. Given a position A[i][j], we have to find the path to reach this position
+    at minimum cost from (0,0). We can traverse in top, bottom, left and right.
+    https://www.geeksforgeeks.org/minimum-cost-path-left-right-bottom-moves-allowed/
+
+
+[59] 12. Coin Change
+    A set of denomination of coins are given and a value N is provided.
+
+    1.  Find the total number of ways in which we can make a change.
+        For example, for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}
+        So output should be 4.
+
+    2.  Find the minimum number of coins needed to make a value N.
+        Example, N = 10 and coins = [2, 3, 5], then minumum no of coins needed is [5,5] hence the answer is 2.
+
+    Given a value N, if we want to make change for N cents, and we have infinite supply of each of
+    S = { S1, S2, .. , Sm} valued coins, how many ways can we make the change? The order of coins
+    does not matter.
+
+    For example, for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}
+    So output should be 4. For N = 10 and S = {2, 5, 3, 6}, there are five solutions: {2,2,2,2,2},
+    {2,2,3,3}, {2,2,6}, {2,3,5} and {5,5}. So the output should be 5.
+
+
+[60] 10. Rod Cutting.
+    Given a rod of length n and a table which shows the price of rod based on
+    its length. How can we cut the rod so that we get the maximum return.
+    Eg, price char = 1(5), 2(5), 3(8), 4(9), 5(10), 6(17), 7(17), 8(20), 9(24), 10(30)
+    Rod of length 1 costs 5.
+    Rod of length 2 costs 5.
+    Rod of length 3 costs 8. and so on.
+
+    If a rod of length 4 is given then the max revenue would be obtained by cutting the rod in two
+    halves of size 2 where the revenue would be 2(5) + 2(5) = 10.
+
+    If a rod of length 3 is given the max revenue would be obtained by not cutting the rod.
+
+
+[61] 7.  Check if a given Binary Tree is a heap.
+
+
+[62] 22. Find a Lowest Common Ancestor of two given nodes in Binary Tree.
+
+
+[63] 9.  Number of subsequences of the form a^i b^j c^k.
+    Given a string, count number of subsequences of the form aibjck, i.e., it consists of i ’a’
+    characters, followed by j ’b’ characters, followed by k ’c’ characters where i >= 1, j >=1 and
+    k >= 1.
+
+    Note: Two subsequences are considered different if the set of array indexes picked for the 2
+    subsequences are different.
+
+    Expected Time Complexity : O(n)
+
+    Input  : abbc
+    Output : 3
+    Subsequences are abc, abc and abbc
+
+    Input  : abcabc
+    Output : 7
+    Subsequences are abc, abc, abbc, aabc
+    abcc, abc and abc
+
+
+[64] 48. Given an array that represents a tree in such a way that array indexes are values in
+    tree nodes and array values give the parent node of that particular index (or node).
+    The value of the root node index would always be -1 as there is no parent for root.
+    Construct the standard linked representation of given Binary Tree
+    https://www.geeksforgeeks.org/construct-a-binary-tree-from-parent-array-representation/
+
+
+[65] 45. Construct a tree from ancestor matrix.
+    Given matrix:
+        0 1 1
+        0 0 0
+        0 0 0
+
+    The tree can be:
+         0   or   0
+       1   2     2   1
+
+    Any answer is fine.
+    https://www.geeksforgeeks.org/construct-tree-from-ancestor-matrix/
+
+
+[66] 1. Given a linked list and a key to be deleted. Delete last occurrence of key from list.
+The list may have duplicates.
+
+Input:   1->2->3->5->2->10, key = 2
+Output:  1->2->3->5->10
+
+
+[67] 36. An array contains both positive and negative numbers in random order. Rearrange the array
+    elements so that positive and negative numbers are placed alternatively. Number of positive
+    and negative numbers need not be equal. If there are more positive numbers they appear at the
+    end of the array. If there are more negative numbers, they too appear in the end of the array.
+
+    For example, if the input array is [-1, 2, -3, 4, 5, 6, -7, 8, 9], then the output should be
+    [9, -7, 8, -3, 5, -1, 2, 4, 6]
+
+37*.Given an array of n positive integers and a number k. Find the minimum number of swaps required
+    to bring all the numbers less than or equal to k together.
+    Input:  arr[] = {2, 1, 5, 6, 3}, k = 3
+    If we replace 3 with 5 then all the numbers [2,1,3] will be together. Hence only 1 swap.
+    Output: 1
+
+    Input:  arr[] = {5,6,3,7,1,2,9,10}, k = 3
+    Output: 1
+
+38*. Rearrange array such that:
+    A[i] >= A[i-1]  , if i is even.
+    A[i] <= A[i-1]  , if i is odd.
+
+39*. Given an array of integers of size n. Assume ‘0’ as invalid number and all other as valid
+    number. Convert the array in such a way that if next valid number is same as current number,
+    double its value and replace the next number with 0. After the modification, rearrange the
+    array such that all 0’s are shifted to the end.
+
+    Input : arr[] = {2, 2, 0, 4, 0, 8}
+    Output : 4 4 8 0 0 0
+
+    Input : arr[] = {0, 2, 2, 2, 0, 6, 6, 0, 0, 8}
+    Output :  4 2 12 8 0 0 0 0 0 0
+    (Asked in Microsoft)
+
+
+[68] 24. Convert infix to prefix.
+
+
+[69] 34. An array of size n contains element from range 1 to n and all the elements are repeating thrice
+    except one element. Find that element.
+
+
+[70] 19. Given an array, find the number of subarrays whose product is less than k.
+    VISA
+
+[71] 27. Find the minimum element in a sorted and rotated array.
+
+
+[72] 3.  How many AVL trees of different shapes can be generated for a height 6?
+
+
+[73] 9. Convert BST to Circular DLL with space complexity as O(1).
+
+
+[74] 3.  For a 4-ary tree what is the minimum height with n nodes.
+
+
+[75] 36. Perform post order traversal using only one stack.
+
+
+[76] 12. Find the smallest derangement. Lets say k = 2, then the seq is as 0,1,2.
+    The derangement of this seq is a permutation such that no elements are at
+    the original position. Eg for this seq, the derangement are [1,2,0] & [2,0,1]
+    but the smallest is [1,2,0].
+
+    For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
+    We can also try for largest derangement.
+
+13*. Maximum sum combination from two array.
+    Two array of equal sizes are given. We need to find the k number of max
+    sum of the elements of two array. Eg.
+    A = [1,4,5,2]
+    B = [3,0,9,7]
+
+    There can be many sum combinations like: 1+3=4, 1+9=10,5+7=12 etc etc.
+    But we need to find k number of max sums. If k = 2, then the max sums are
+    9 + 5 = 14 and
+    9 + 4 = 13
+    https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-array/
+
+
+[77] 12. Given a linked list that is alternately increasing and decreasing. Sort the linked list.
+    Eg. Input List:   10->40->53->30->67->12->89->NULL
+        Output List:  10->12->30->43->53->67->89->NULL
+
+
+[78] 72. Find total number of triangles.
+    https://www.geeksforgeeks.org/find-number-of-triangles-possible/
+
+
+[79] 6. Find shortest path between two nodes in a BST.
+
+
+[80] 6.  Letter combination of a phone number.
+    https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+
+
+
+[81] 7.  Design whisper-sync feature.
+
+build tic tac toe application
+
+Tree 1 has one billion nodes and tree 2 has thousand of nodes. How will you find tree 2 is a subtree of tree1
+
+add very large numbers.
+
+https://www.geeksforgeeks.org/a-data-structure-question/
+
+https://www.geeksforgeeks.org/design-a-data-structure-for-lru-cache/
+
+https://javarevisited.blogspot.com/2017/03/2-practical-data-structure-algorithm-interview-questions-java.html
+
+https://softwareengineering.stackexchange.com/questions/tagged/data-structures
+
+https://stackoverflow.com/questions/25221544/efficient-data-structure-for-leaderboard-i-e-a-list-of-records-name-points
+
+ To clear the bar raiser do refer the 14 leadership principles of Amazon.
+
+Design an online book reader system
+Design S3
+Design a distributed Cache
+Design tiny url
+Design bookmyshow
+Design Google Drive
+How will you built a query service for all the stakeholders responsible for delivery of product.
+Design payment system for cab services like Uber Ola etc.
+ sort a million Person records according to their age.
+Low Level Design for stock quota aggregation system
+Design a distributed chess playing system.
+Design snake and ladder game. The solution should be extendable for other games. They asked me to give a HLD and then LLD. Interviewer was very helpful.
+Bus Booking System
+Distributed chess
+
+[82] 6.  Create a Minimal Spanning Tree using Prim's algorithm.
+
+
+[83] 54. Convert a tree into DLL in a spiral fashion.
+    https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral-fashion/
+
+
+[84] 78. Given an array arr[]. Find maximum value of prefix sum which is also suffix sum for index i
+    in arr[].
+
+    Input : arr[] = {-1, 2, 3, 0, 3, 2, -1}
+    Output : 4
+    Prefix sum of arr[0..3] =
+                Suffix sum of arr[3..6]
+
+    Input : arr[] = {-2, 5, 3, 1, 2, 6, -4, 2}
+    Output : 7
+    Prefix sum of arr[0..3] =
+                  Suffix sum of arr[3..7]
+
+
+
+[85] 7. Reverse a stack.
+
+
+[86] 3.  Leader board problem.
+    There is a game going on whose score is shown on the board. The board shows all players. Each
+    player has a userid, score and rank. Higher the score, lower is the rank. We are given two
+    methods which has to be implemented.
+
+    getRank(userId) => Takes userId and returns player's rank.
+
+    updateRank(userId, score) => Update the rank such that the player should be placed at correct
+    location. Also, the other players location should be changed accordingly.
+
+    display() => This method should give us all the players sorted based on their rank.
+
+    The leader board should show the players sorted according to their rank.
+
+
+[87] 33. Given an array of n elements. Our task is to write a program to rearrange the array such that
+    elements at odd positions are greater than all elements before it and elements at even positions
+    are less than all elements before it.
+    Input : arr[] = {3,1,5,6,2,7,4}
+    Output : 4 5 3 6 2 7 1
+
+    Input : arr[] = {1, 2, 1, 4, 5, 6, 8, 8}
+    Output : 4 5 2 6 1 8 1 8
+
+
+[88] 35. How many trailing zeros are there in a factorial of a given number.
+
+
+[89] 11. Find number of leaves, full nodes, half nodes in a Binary Tree.
+
+
+[90] 2.  Find the first repeating element in an array. Eg, arr[] = {3,2,1,2,2,3}. The first repeating
+    element is 3 and not 2.
+
+
+[91] Standard Binary Tree
+        |-------1-------|
+    |---2---|       |---3---|
+    4       5       6       7
+
+
+
+[92] 67. Merge two binary nodes such that if two nodes overlap, then sum node values up as the
     new value of the merged node. Otherwise, the non-null node will be used as the node
     of new tree. https://www.geeksforgeeks.org/merge-two-binary-trees-node-sum/
 
-3.  Perform inorder traversal in an inorder threaded binary tree.
-    This question can also be to perform an inorder traversal without using stack or queue.
+[93] 16. Rotate an array by k elements without using any extra space. Eg, input=[1, 2, 3, 4, 5, 6, 7]
+    k = 2, output = [3, 4, 5, 6, 7, 1, 2]
 
 
-63. Shuffle 2n integers in format {a1, b1, a2, b2, a3, b3, ……, an, bn} without using extra space.
+[94] 74. Given a pair-sum array and size of the original array (n), construct the original array.
+    A pair-sum array for an array is the array that contains sum of all pairs in ordered form.
+    For example pair-sum array for arr[] = {6, 8, 3, 4} is {14, 9, 10, 11, 12, 7}
 
 
-24. Sort linked list which is already sorted on absolute values.
-    Input :  1 -> -10
-    output: -10 -> 1
+[95] 
 
-    Input : 1 -> -2 -> -3 -> 4 -> -5
-    output: -5 -> -3 -> -2 -> 1 -> 4
+[96] 7.  Subset Sum Problem.
+    Given a set of non-negative integers, and a value sum, determine if there is a subset of the
+    given set with sum equal to given sum.
+    Example:
 
-    Input : -5 -> -10
-    Output: -10 -> -5
-
-    Input : 5 -> 10
-    output: 5 -> 10
-
-    The inputs are sorted without considering - sign. But we need to sort them considering -
-    sign.
+    Input:  set[] = {3, 34, 4, 12, 5, 2}, sum = 9
+    Output:  True  //There is a subset (4, 5) with sum 9.
+    if sum = 18, output is true where subset is 2,12,4
 
 
-53. Given a BT, replace a node by the sum of all the nodes in its left subtree.
-    https://www.geeksforgeeks.org/change-a-binary-tree-so-that-every-node-stores-
-    sum-of-all-nodes-in-left-subtree/
+[97] 75. Given an array where difference between adjacent elements is 1, write an efficient algorithm to
+    search for an element in the array and return the position of the element (return the
+    first occurrence).
 
+    Input: arr[] = {8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3}
+           x = 3
+    Output: Element 3 found at index 7
 
-64. Given a positive integer L which represents the number of levels in a perfect binary
-    tree. Given that the leaf nodes in this perfect binary tree are numbered starting
-    from 1 to n, where n is the number of leaf nodes. And the parent node is the sum of
-    the two child nodes. Our task is to write a program to print the sum of all of the
-    nodes of this perfect binary tree.
-    https://www.geeksforgeeks.org/find-sum-nodes-given-perfect-binary-tree/
+    We can enhance this question where every element differs by k and search an element x.
 
-
-3. Find a maximum and minimum element in a BST.
-
-
-7.  Design a logging System. This same system can be High Level Design as
-    well.
+    Input : arr[] = {20, 40, 50, 70, 70, 60}
+              k = 20
+              x = 60
+    Output : 5
+    The index of 60 is 5
 
 
 
+[98] 28. Merge two linked lists that are sorted to give a final linked list that is also sorted.
 
 
-70. Union and Intersection of two arrays without using any extra space.
+[99] 14. Find the floor and ceiling value for a given node in BST.
+
+
+[100] 7.  Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
+    https://leetcode.com/problems/combinations/
+
+
+[101] 4.  Friends pair problem.
+    Given n friends, each one can remain single or can be paired up with some other friend. Each
+    friend can be paired only once. Find out the total number of ways in which friends can remain
+    single or can be paired up.
+
+    Input  : n = 3
+    Output : 4
+
+    Explanation
+    {1}, {2}, {3} : all single
+    {1}, {2, 3} : 2 and 3 paired but 1 is single.
+    {1, 2}, {3} : 1 and 2 are paired but 3 is single.
+    {1, 3}, {2} : 1 and 3 are paired but 2 is single.
+    Note that {1, 2} and {2, 1} are considered same.
+    https://www.geeksforgeeks.org/friends-pairing-problem/
+
+
+[102] 4.  Edit Distance.
+    Given two strings str1 and str2 and below operations that can performed on str1.
+    Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
+
+        Insert
+        Remove
+        Replace
+    All of the above operations are of equal cost.
+    Input:   str1 = "geek", str2 = "gesek"
+    Output:  1
+    We can convert str1 into str2 by inserting a 's'.
+
+    Input:   str1 = "cat", str2 = "cut"
+    Output:  1
+    We can convert str1 into str2 by replacing 'a' with 'u'.
+
+    Input:   str1 = "sunday", str2 = "saturday"
+    Output:  3
+    Last three and first characters are same.  We basically
+    need to convert "un" to "atur".  This can be done using
+    below three operations.
+    Replace 'n' with 'r', insert t, insert a
+
+
+[103] 18. Given an integer k and an array. Find if the sum or difference of the elements sums up to k.
+    Eg [1,1,1]. This array's element can be summed and differ as follows:
+    1 + 1 + 1 = 3
+    1 - 1 - 1 = -1
+    1 + 1 - 1 = 1
+    1 - 1 + 1 = 1
+
+    Here, k=3 is true. k = 1 is also true. But k=2 is false since no combination sums upto 2.
+    EXTENDED: Run it in a multi-threaded environment.
+    WALLMART
+
+
+[104] 16. Multiplication of largest triplet. An integer is being read from a
+    continuous stream, for every insertion we need to find a multiplication of
+    largest 3 numbers that has been received so far.
+
+
+[105] 3.  Find a maximum element in a binary tree.
+
+
+[106] 1.  Find the permutation and combination  of a given string "ABC".
+
+
+[107] 40. Given a pre-order traversal of a full binary tree where 0 denotes leaf and 1
+    denotes node. Find the height.
+    Eg: 10100 = 2 and 1011000 = 3
+
+
+[108] 14. Given an array which can contain duplicate elements. We are given a value
+    k. We need to remove k number of elements from the array such that we get
+    the maximum non-repeating elements.
+    Eg. arr[] = {5, 7, 5, 5, 1, 1, 2, 2, 5}, k = 3
+    Here, if we remove three 5s, then distinct element left in array will be 2 (5,7)
+    But if we remove, one 1, one 2, one 5(will not make any difference though)
+    then the distinct elements will be 3 (7,1,2)
+    https://www.geeksforgeeks
+    .org/maximum-distinct-elements-removing-k-elements/
+
+
+[109] 20. A min heap array is given, we have to convert it into max heap in O(n).
+
+
+[110] 30. Given an array of size n+2 where the elements are in the range 1 to n so two elements are
+    occurring twice. Find these two elements.
+
+
+[111] 1.  Check balancing of symbols i.e. for a given mathematical expression, we need to check if
+    the expression is valid or not.
+    Eg 1.
+        (a+b)+(c+d) is valid
+        ((a+b)+(c+d) is invalid
+        ((a+b)+(c-d)} is invalid
+
+
+[112] 15. Given an array of size (n-1) where the integers are in the range 1 to n. There are no duplicates
+    in the list. One of the integer is missing, find the missing integer.
+
+
+[113] 2.  Convert an infix expression to postfix expression.
+
+
+[114] 9.  There are given n ropes of different lengths, we need to connect these ropes into one
+    rope. The cost to connect two ropes is equal to sum of their lengths. We need to
+    connect the ropes with minimum cost.
+
+    For example if we are given 4 ropes of lengths 4, 3, 2 and 6. We can connect the
+    ropes in following ways.
+    1) First connect ropes of lengths 2 and 3. Now we have three ropes of lengths 4, 6
+    and 5.
+    2) Now connect ropes of lengths 4 and 5. Now we have two ropes of lengths 6 and 9.
+    3) Finally connect the two ropes and all ropes have connected.
+
+    Total cost for connecting all ropes is 5 + 9 + 15 = 29. This is the optimized cost
+    for connecting ropes. Other ways of connecting ropes would always have same or more
+    cost. For example, if we connect 4 and 6 first (we get three strings of 3, 2 and 10),
+    then connect 10 and 3 (we get two strings of 13 and 2). Finally we connect 13 and 2.
+    Total cost in this way is 10 + 13 + 15 = 38.
+    https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
+
+
+[115] 4.  Perform shortest path for weighted graphs with non-negative edges. (Dijkstra's algo)
+
+
+[116] 1. Fibonacci series.
+
+
+[117] 7.  Find a pair with maximum product in an array.
+    Input: arr[] = {1, 4, 3, 6, 7, 0}
+    Output: {6,7}
+
+    Input: arr[] = {-1, -3, -4, 2, 0, -5}
+    Output: {-4,-5}
+
+
+[118] 73. We are given two sorted array. We need to merge these two arrays such that the initial
+    numbers (after complete sorting) are in the first array and the remaining numbers are in
+    the second array. Extra space allowed in O(1).
+    (Asked in several big companies)
+
+    Input: ar1[] = {10};
+           ar2[] = {2, 3};
+    Output: ar1[] = {2}
+            ar2[] = {3, 10}
+
+    Input: ar1[] = {1, 5, 9, 10, 15, 20};
+           ar2[] = {2, 3, 8, 13};
+    Output: ar1[] = {1, 2, 3, 5, 8, 9}
+            ar2[] = {10, 13, 15, 20}
+
+
+[119] 5. Find the permutations and combinations of a string.
+
+[120] 13. Insertion sort for a linked list.
+
+
+[121] 21. Given a level order traversal of a Binary Tree, check if its a min heap.
+
+
+[122] 6.  Largest divisible pairs subset
+    Given an array of n distinct elements, find length of the largest subset such that every pair
+    in the subset is such that the larger element of the pair is divisible by smaller element.
+
+    Input : arr[] = {10, 5, 3, 15, 20}
+    Output : 3
+    Explanation: The largest subset is 10, 5, 20.
+    10 is divisible by 5, and 20 is divisible by 10.
+
+    Input : arr[] = {18, 1, 3, 6, 13, 17}
+    Output : 4
+    Explanation: The largest subset is 18, 1, 3, 6,
+    In the subsequence, 3 is divisible by 1,
+    6 by 3 and 18 by 6.
+
+    https://www.geeksforgeeks.org/largest-divisible-pairs-subset/
+
+
+[123] 5.  Given a positive integer n, count the total number of set bits in binary representation of all
+    numbers from 1 to n. Set bit is the number of 1s in a binary number. Unset bit is 0.
+    Input: n = 3
+    Output:  4
+    Reason: set-bit of 1 is 1, set bit of 2 is 1 and set bit of 3 is 2 (has two 1s). So total
+    set-bit till 3 is 1+1+2 = 4.
+
+    Input: n = 6
+    Output: 9
+
+    Input: n = 7
+    Output: 12
+
+    Input: n = 8
+    Output: 13
+
+
+[124] 18. Convert BST to Min Heap. Given a BST, we need to modify this bst such that
+    this modified tree is a min heap where left substree is less than right
+    subtree for all nodes.
+    https://www.geeksforgeeks.org/convert-bst-min-heap/
+
+
+[125] 14. Given a integer as a input and replace all the ‘0’ with ‘5’ in the integer.
+    102 -> 152
+    1020 -> 1525
+    Use of array to store all digits is not allowed. (Amazon SDET)
+
+
+[126] 18. Given a pre-order traversal, create a BST.
+
+
+[127] 23. Given an array of 2n + 1 elements where all elements appear twice except one element which lies
+    deep inside. Find this single occurring element.
+
+
+[128] 1.  Perform a Bread First and Depth First traversal on a graph.
+
+
+[129] 8.  Given a sorted array of n integers which has been rotated unknown number of times. Find logn
+    algo to find an element in the array.
+    Eg, arr[] = {15,16,19,20,25,1,3,4,5,7,10,14}. Search 5, output = 8 (which is an index of 5)
+
+
+[130] 30. Alternately reverse a linked list.
+    Input: 1-2-3-4-5-6
+    Output: 2-1-4-3-6-5
+
+    Input: 1-2-3-4-5
+    Output: 2-1-4-3-5
+
+[131] 1.  Given a height h, create a HB(0).
+
+
+[132] 70. Union and Intersection of two arrays without using any extra space.
     Input : arr1[] = {1, 3, 4, 5, 7}
             arr2[] = {2, 3, 5, 6}
     Output : Union : {1, 2, 3, 4, 5, 6, 7}
@@ -144,11 +1068,403 @@
              Intersection : {6}
 
 
-54. Convert a tree into DLL in a spiral fashion.
-    https://www.geeksforgeeks.org/convert-a-binary-tree-into-doubly-linked-list-in-spiral-fashion/
+[133] 8.  Find a height of a binary tree.
 
 
-15. Partition problem is to determine whether a given set can be partitioned into two subsets
+[134] 27. Given a Binary Tree with three pointers: left, right and nextSibling. Point nextSibling
+     standard tree, the next sibling pointer would be as follows:
+
+    1 -> N
+    2 -> 3
+    3 -> N
+    4 -> 5
+    5 -> 6
+    6 -> 7
+    7 -> N
+
+
+[135] 4. Find the inorder predecessor and successor in a BST.
+
+
+[136] 50. Convert a binary tree to Doubly Linked List such that the left pointer acts as a prev
+    and right pointer acts as next. The order of nodes in DLL must be same as Inorder of
+    the given Binary Tree.
+    https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
+
+
+[137] 14. Given two four digit prime numbers, suppose 1033 and 8179, we need to find the shortest path
+    from 1033 to 8179 by altering only single digit at a time such that every number that we get
+    after changing a digit is prime. For example a solution is 1033, 1733, 3733, 3739, 3779,
+    8779, 8179
+
+    https://www.geeksforgeeks.org/shortest-path-reach-one-prime-changing-single-digit-time/
+
+
+[138] 79. Find the majority element and if not present display a message. In an array of size n, the
+    majority element is the one whose occurrences is more than n/2.
+
+[139] 18. Convert Binary Tree to its mirror.
+
+     Eg: Inorder: D B E A F C
+        Preorder: A B D E C F
+
+
+[140] 16. Minimum difference between two subsets.
+    Given a set of integers, the task is to divide it into two sets S1 and S2 such that the absolute
+    difference between their sums is minimum.
+    If there is a set S with n elements, then if we assume Subset1 has m elements, Subset2 must have
+    n-m elements and the value of abs(sum(Subset1) – sum(Subset2)) should be minimum.
+
+    Input:  arr[] = {1, 6, 11, 5}
+    Output: 1
+    Explanation:
+    Subset1 = {1, 5, 6}, sum of Subset1 = 12
+    Subset2 = {11}, sum of Subset2 = 11
+
+[141] 11.*Finding a Span. Span is basically used for financial analysis. If we are given a stock
+    value of an item per day, then span for each day is the number of days before this day
+    where the stock value was less than or equal to this day.
+
+    Lets assume that the array index represents the order of days.
+
+    Eg: arr[] = {6,3,4,5,2}. At 0th day, the value of stock is 6 and so on.
+    Now the span = {1,1,2,3,1}
+     6 -> No days where stock value was less than or equal to 6 on/before 0th day hence
+     its 1
+     3 -> No days where stock value was less than or equal to 3 on/before 1st day hence
+     its 1
+     4 -> On 1st and 2nd day, the value of stock was less than or equal to 4 hence its 2.
+
+    Eg: arr[] = {100, 80, 60, 70, 60, 75, 85};
+    Span =      {1,    1, 1,   2,  1,  4,  6}
+
+
+[142] 62. You are given an array of n-elements you have to find k smallest elements from the array but
+    they must be in the same order as they are in given array and we are allowed to use only O(1)
+    extra space.
+     Eg. arr[] = {5,7,4,2,6,1,9} and k = 3
+     output = 4,2,1
+
+
+[143] 1.  Covert Binary Tree to full threaded inorder tree.
+
+
+[144] 5.  Implement a stack where getMinimum() gives us the minimum element of stack at constant
+    time O(1).
+
+6*. Implement a stack where getMinimum() gives us the minimum element of stack at constant
+    time O(1) without any extra space.
+
+
+[145] 3.  Evaluate postfix expression.
+
+
+[146] 26. Reverse every K elements of a linked list.
+    Input: 1-2-3-4-5-6-7-8-9 k=3
+    Output: 3-2-1-6-5-4-9-8-7
+
+    Input: 1-2-3-4-5-6-7-8
+    Output:3-2-1-6-5-4-7-8
+
+
+[147] 13. Given a N X N matrix (M) filled with 1 , 0 , 2 , 3 . Find the minimum numbers of moves needed
+    to move from source to destination (sink) while traversing through blank cells only.
+    You can traverse up, down, right and left.
+    A value of cell 1 means Source.
+    A value of cell 2 means Destination.
+    A value of cell 3 means Blank cell.
+    A value of cell 0 means Blank Wall.
+    Note : there is only single source and single destination and there may be more than one path
+    from source to destination(sink). Each move in matrix we consider as ‘1’
+
+    Eg. Input : M[3][3] = {{ 0 , 3 , 2 },
+                           { 3 , 3 , 0 },
+                           { 1 , 3 , 0 }};
+        Output : 4
+        Exp: Source is at (2,0) -> (2,1) -> (1,1,) -> (0,1) -> (0,2)
+
+        Input : M[4][4] = {{ 3 , 3 , 1 , 0 },
+                           { 3 , 0 , 3 , 3 },
+                           { 2 , 3 , 0 , 3 },
+                           { 0 , 3 , 3 , 3 }};
+        Output : 4
+    https://www.geeksforgeeks.org/find-minimum-numbers-moves-needed-move-one-cell-matrix-another/
+
+
+[148] 5. Sort linked list of 0s,1s and 2s.
+
+
+[149] 67. Given an array A of size N consisting of elements 1 to N. A boolean array B consisting of N-1
+    elements indicates that if B[i] is 1, then A[i] can be swapped with A[i+1].
+    Find out if A can be sorted by swapping elements.
+
+    Input : A[] = {1, 2, 5, 3, 4, 6}
+            B[] = {0, 1, 1, 1, 0}
+    Output : A can be sorted
+    We can swap a[3] with a[4] and then a[4] with a[5].
+
+    Input : A[] = {2, 3, 1, 4, 5, 6}
+            B[] = {0, 1, 1, 1, 1}
+    Output : A can not be sorted
+    We can not sort A by swapping elements
+
+
+68*. Print the elements of an array in the decreasing frequency if 2 numbers have same frequency
+    then print the one which came first.
+
+    Input:  arr[] = {2, 5, 2, 8, 5, 6, 8, 8}
+    Output: arr[] = {8, 8, 8, 2, 2, 5, 5, 6}
+
+    Input: arr[] = {2, 5, 2, 6, -1, 9999999, 5, 8, 8, 8}
+    Output: arr[] = {8, 8, 8, 2, 2, 5, 5, 6, -1, 9999999}
+
+69*. Given an array of n distinct elements, find the minimum number of swaps required to sort the
+    array.
+
+    Input : {4, 3, 2, 1}
+    Output : 2
+    Explanation : Swap index 0 with 3 and 1 with 2 to form the sorted array {1, 2, 3, 4}.
+
+    Input : {1, 5, 4, 3, 2}
+    Output : 2
+
+
+[150] 2.  Perform a topological sorting on a Directed Asyclic Graph.
+
+
+[151] 11. Ways to cover a distance.
+    Given a distance ‘dist, count total number of ways to cover the distance with 1, 2 and 3 steps.
+    Input:  n = 3
+    Output: 4
+    Below are the four ways
+     1 step + 1 step + 1 step
+     1 step + 2 step
+     2 step + 1 step
+     3 step
+
+    Input:  n = 4
+    Output: 7
+
+
+[152] 58. Check if a binary tree is subtree of another binary tree
+
+
+[153] 16. Given two element x and y, print all the elements that lies in the within the range
+    of x and y.
+    Alt: Given a root of a BST, trim the tree so that all the elements are in the range
+    x and y.
+
+
+[154] 18. What is XOR Linked List? Give the logic and can we implement in Java?
+
+
+[155] 17. Find a pair whose sum equals to K in a rotated array.
+    Input: arr[] = {11, 15, 6, 8, 9, 10}, x = 16
+    Output: true
+    There is a pair (6, 10) with sum 16
+
+    Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 35
+    Output: true
+    There is a pair (26, 9) with sum 35
+
+    Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 45
+    Output: false
+    There is no pair with sum 45.
+
+
+[156] 4.  Given a word, find the next word in a dictionary.
+
+
+[157] 19. Given an array of 0s,1s and 2s, sort them. Dutch Flag Problem.
+
+
+[158] 16. Find the number of Islands
+    Given a boolean 2D matrix, find the number of islands. A group of connected 1s forms an
+    island. For example, the below matrix contains 5 islands.
+
+    {1, 1, 0, 0, 0},
+    {0, 1, 0, 0, 1},
+    {1, 0, 0, 1, 1},
+    {0, 0, 0, 0, 0},
+    {1, 0, 1, 0, 1}
+
+
+[159] 10. Delete an element from a Binary Tree.
+
+
+[160] 9.  Assembly Line Scheduling.
+    https://www.geeksforgeeks.org/assembly-line-scheduling-dp-34/
+
+
+[161] 6.  Longest Path in a Matrix
+    Given a n*n matrix where all numbers are distinct, find the maximum length path
+    (starting from any cell) such that all cells along the path are in increasing order with a
+    difference of 1.
+
+    We can move in 4 directions from a given cell (i, j), i.e., we can move to (i+1, j) or
+    (i, j+1) or (i-1, j) or (i, j-1) with the condition that the adjacent cells have a difference
+    of 1.
+
+    Input:  mat[][] = {{1, 2, 9}
+                       {5, 3, 8}
+                       {4, 6, 7}}
+    Output: 4
+    The longest path is 6-7-8-9.
+
+
+[162] 60. Given a binary tree and an array, the task is to find if the given array sequence is
+    present as a root to leaf path in given tree.
+    https://www.geeksforgeeks.org/check-root-leaf-path-given-sequence/
+
+
+[163] 21. Given an array of size n where the elements range from 0 to n-1. Find the element that occurs
+    maximum number of times.
+
+
+[164] 17. Find pair for given sum in a sorted singly linked without extra space
+    Given a sorted singly linked list and a value x, the task is to find pair whose sum is
+    equal to x. We are not allowed to use any extra space and expected time complexity is
+    O(n).
+
+    Examples:
+
+    Input : head = 3-->6-->7-->8-->9-->10-->11 , x=17
+    Output: (6, 11), (7, 10), (8, 9)
+
+
+[165] 63. Print the longest leaf to leaf path in a Binary tree.
+
+
+[166] 76. Search an element in an infinite sorted array. (Amazon)
+
+
+[167] 10. Word search
+    https://leetcode.com/problems/word-search/?envType=study-plan-v2&envId=top-interview-150
+[168] 14. Multiply two numbers represented by linked list. The result should be a number and
+    not a linked list.
+    Eg: Input: 9 -> 4 -> 6 and 8 -> 4
+        Output: 79464
+
+15*. Merge K sorted list. We are given k number of linked list, we need to sort them
+    and merge them into one.
+    eg:
+        Input: k = 3, n =  4
+        list1 = 1->3->5->7->NULL
+        list2 = 2->4->6->8->NULL
+        list3 = 0->9->10->11->NULL
+
+        Output:
+        0->1->2->3->4->5->6->7->8->9->10->11->NULL
+
+
+[169] 2. Processing all the elements of 2D array in a complexity lesser than O(n2).
+
+    Lets say we have a 2D array as follows:
+        1 2 3 4
+        5 6 7 8
+        2 3 4 5
+        1 3 4 5
+    And we want to process (or traverse) all the elements (say we want to find the sum of all
+    the elements). Then the normal traversing will take O(n2). But we can also do it in O(nlogn).
+
+    This question could also be framed for LL, single array etc.
+
+[170] 23. Traverse a Binary Tree in zig-zag fashion. Our standard Binary Tree should be printed as
+    1 3 2 4 5 6 7
+    Can this be done without using extra space?
+
+
+[171] 64. Find the k maximum sum of a contiguous array.
+    a. The sub-array could be overlapping.
+        Eg. arr = {4, -8, 9, -4, 1, -8, -1, 6}, k = 4
+            output: 9 6 6 5
+
+    b. The sub-array should not overlap
+        Eg. arr = {4, 1, 1, -1, -3, -5, 6, 2, -6, -2}, k = 3
+            output: 8, 6, -1
+
+
+[172] 4.  Find a pre-order successor of a given node in an inorder threaded binary tree.
+
+
+[173] 8.  Optimal Strategy for a Game.
+    Consider a row of n coins of values v1 . . . vn, where n is even. We play a
+    game against an opponent by alternating turns. In each turn, a player selects either the first
+    or last coin from the row, removes it from the row permanently, and receives the value of the
+    coin. Determine the maximum possible amount of money we can definitely win if we move first.
+
+    Note: The opponent is as clever as the user.
+
+
+
+[174] 5.  Find a size of Binary Tree (total no of nodes in a tree).
+
+
+[175] 21. Given a matrix that is filled with ‘O’, ‘G’, and ‘W’ where ‘O’ represents open space, ‘G’
+    represents guards and ‘W’ represents walls in a Bank. Replace all of the O’s in the matrix
+    with their shortest distance from a guard, without being able to go through any walls.
+    Also, replace the guards with 0 and walls with -1 in output matrix.
+
+    Expected Time complexity is O(MN) for a M x N matrix.
+    O ==> Open Space
+    G ==> Guard
+    W ==> Wall
+
+    Input:
+      O  O  O  O  G
+      O  W  W  O  O
+      O  O  O  W  O
+      G  W  W  W  O
+      O  O  O  O  G
+
+    Output:
+      3  3  2  1  0
+      2 -1 -1  2  1
+      1  2  3 -1  2
+      0 -1 -1 -1  1
+      1  2  2  1  0
+
+    https://www.geeksforgeeks.org/find-shortest-distance-guard-bank/
+
+[176] 5.  Find the kth smallest element in a unsorted array.
+
+
+[177] 9.  Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations
+    of candidates where the chosen numbers sum to target. You may return the combinations in any order.
+    https://leetcode.com/problems/combination-sum/
+
+
+[178] 52. Replace a node by sum of its left and right subtrees but the node has to be replaced as
+    explained.
+    https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/
+
+
+[179] 49.  Given two equally sized arrays (A, B) and N (size of both arrays).
+    A sum combination is made by adding one element from array A and another element of array B.
+    Display the maximum K valid sum combinations from all the possible sum combinations.
+
+    Input :  A[] : {3, 2}
+             B[] : {1, 4}
+             K : 2 [Number of maximum sum
+                   combinations to be printed]
+    Output : 7    // (A : 3) + (B : 4)
+             6    // (A : 2) + (B : 4)
+
+    Input :  A[] : {4, 2, 5, 1}
+             B[] : {8, 0, 3, 5}
+             K : 3
+    Output : 13   // (A : 5) + (B : 8)
+             12   // (A : 4) + (B :  8)
+             10   // (A : 2) + (B : 8)
+
+
+[180] 9. Implement stack using two queues.
+
+
+[181] 3.  N queen problem.
+
+
+[182] 15. Partition problem is to determine whether a given set can be partitioned into two subsets
     such that the sum of elements in both subsets is same.
 
     arr[] = {1, 5, 11, 5}
@@ -160,7 +1476,1004 @@
     The array cannot be partitioned into equal sum sets.
 
 
-56. Minimum steps required to get a desired array.
+[183] 8.  Find four elements a, b, c and d in an array such that a+b = c+d.
+    Input:   {3, 4, 7, 1, 2, 9, 8}
+    Output:  (3, 8) and (4, 7)
+    Explanation: 3+8 = 4+7
+
+    Input:   {3, 4, 7, 1, 12, 9};
+    Output:  (4, 12) and (7, 9)
+    Explanation: 4+12 = 7+9
+
+    Input:  {65, 30, 7, 90, 1, 9, 8};
+    Output:  No pairs found
+
+    Input: {1, 2, 3, 4, 100, 200, 300, 400}
+    Output: 1+4 = 2+3
+
+
+[184] 20. Find a triplet from three linked lists with sum equal to a given number.
+    Given three linked lists, say a, b and c, find one node from each list
+    such that the sum of the values of the nodes is equal to a given number.
+    For example, if the three linked lists are 12->6->29, 23->5->8 and
+    90->20->59, and the given number is 101, the output should be triplet
+     “6 5 90”.
+
+21*. Find the length of a largest palindrome in a linked list without using
+    any extra space.
+    Input  : List = 2->3->7->3->2->12->24
+    Output : 5
+    The longest palindrome list is 2->3->7->3->2
+
+    Input  : List = 12->4->4->3->14
+    Output : 2
+    The longest palindrome list is 4->4
+
+22*. Subtract two numbers represented by two different linked list, giving
+     an output as another linked list.
+
+23*. Add two numbers represented by two different linked list, giving an
+     out as another linked list.
+
+
+[185] 23. Convert postfix to infix.
+
+
+[186] 6.  Design ATM
+
+
+[187] 1.  There is a stream where the words keep coming. We need to store them. If any word already
+    exists then we need to remove them.
+
+
+[188] 17. Create a customized data structure such that it has functions :-
+    GetLastElement();
+    RemoveLastElement();
+    AddElement()
+    GetMin()
+
+
+[189] 15. Find the maximum path sum between two leaves of a binary tree. (Microsoft).
+    https://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/
+
+
+[190] 14. How to implement a stack which will support following operations in O(1) time complexity?
+    1) push() which adds an element to the top of stack.
+    2) pop() which removes an element from top of stack.
+    3) findMiddle() which will return middle element of the stack.
+    4) deleteMiddle() which will delete the middle element.
+    Push and pop are standard stack operations.
+
+15*. Implement stack using single queue.
+
+
+[191] 8. Implement queue using two stacks.
+
+
+[192] 13. Given a non negative array, find the number of subsequences having product smaller than K.
+    Input : [1, 2, 3, 4]
+            k = 10
+    Output :11
+    The subsequences are {1}, {2}, {3}, {4},
+    {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4},
+    {1, 2, 3}, {1, 2, 4}
+
+    Input  : [4, 8, 7, 2]
+             k = 50
+    Output : 9
+
+
+[193] 7.  Design a logging System. This same system can be High Level Design as
+    well.
+
+
+
+
+
+[194] 9.  Check if there exists a path from source s to destination d in a graph.
+
+
+[195] 26. Given a tree where leaves are represented by 0 and internal nodes by 1, assuming that
+    each node has either 0 or 2 children, create a tree given its pre-order traversal.
+    Eg: 10100 should create a tree as follows.
+             1
+         0      1
+               0 0
+
+
+[196] 47. Given Inorder Traversal of a Special Binary Tree in which key of every node is
+    greater than keys in left and right children, construct the Binary Tree and return
+    root. https://www.geeksforgeeks.org/construct-binary-tree-from-inorder-traversal/
+
+
+[197] 34. For a full binary tree, print the level order traversal in bottom up approach as:
+    8 15 9 14 10 13 11 12 4 7 5 6 2 3 1
+    https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal-set-2/
+    Asked in Amazon.
+
+
+[198] 61. Find the largest subarray in a binary array with equal number of 0s and 1s.
+
+
+[199] 19. Give a pre-order traversal, create a post order traversal.
+
+[200] 10. Implement N number of stacks in one array.
+    Sub: Implement two/three stack in an array.
+
+
+[201] 17. Given an array where each element represents a size of each group. How many new groups can be
+formed from this existing group given a size of a new group.
+
+    Eg: [10,11,5], k=3
+        We can form 5 new groups where every new group will be of size 3 and have members from
+        each old group.
+    WALLMART
+
+
+[202] 48. Given an array with all distinct elements, find the largest three elements. Expected time
+    complexity is O(n) and extra space is O(1).
+
+
+[203] 1.  Perform bubble sort, selection sort and insertion sort.Compare them.
+
+[204] 1.  Perform preorder, inorder, postorder traversal of a Binary Tree by using recursion and
+    iteration.
+
+2*. Perform a breadth first traversal of a Binary Tree using and without using extra space.
+
+
+[205] 4.  Given an MxN matrix where each element can either be 0 or 1. We need to find the path between a given
+    source cell to a destination cell. The path can only be created out of a cell if its value is 1. If the path
+    does not exists, then return -1.
+
+    a. Find the distance of the shortest path.
+    b. Find the distance of the longest path.
+    c. Find the distance of the shortest path along with the path.
+    d. Find the total number of unique paths from source to destination.
+
+
+[206] 38. Print the boundary of a tree. For our standard tree, the output should be
+    1,2,4,5,6,7,3
+
+
+[207] 3.  Find the longest palindrome between two strings.
+
+
+[208] 33. For a full binary tree, print the level order traversal as:
+    1 2 3 4 7 5 6 8 15 9 14 10 13 11 12
+    https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal/
+    Hint: The tree is a perfect binary tree (full binary tree).
+
+
+[209] 10. Highest power of 2 less than or equal to given number.
+    Input : n = 10
+    Output : 8
+
+    Input : n = 19
+    Output : 16
+
+    Input : n = 32
+    Output : 32
+
+
+[210] 10. Golomb Sequence
+    In mathematics, the Golomb sequence is a non-decreasing integer sequence where n-th term is
+     equal to number of times n appears in the sequence.
+
+    The first few values are
+    1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, ……
+
+    Explanation of few terms:
+    Third term is 2, note that three appears 2 times.
+    Second term is 2, note that two appears 2 times.
+    Fourth term is 3, note that four appears 3 times.
+
+    Given a positive integer n. The task is to find the first n terms of Golomb sequence.
+    Input : n = 4
+    Output : 1 2 2 3
+
+    Input : n = 6
+    Output : 1 2 2 3 3 4
+
+
+[211] 2.  Given arrival and departure time of trains in an array. What is the minimum number of platforms
+    required to build.
+    Input:  arr[]  = {9:00,  9:40, 9:50,  11:00, 15:00, 18:00}
+            dep[]  = {9:10, 12:00, 11:20, 11:30, 19:00, 20:00}
+    Output: 3
+
+
+[212] 5.  Given a height h, create a minimal AVL tree.
+
+
+
+[213] 3.  Given an array, find a pair of elements whose sum is k.
+
+
+[214] 59. Given an array of positive integers. We need to make the given array a ‘Palindrome’. Only
+    allowed operation on array is merge. Merging two adjacent elements means replacing them with
+    their sum. The task is to find minimum number of merge operations required to make given array
+    a ‘Palindrome’.
+
+    To make an array a palindromic we can simply apply merging operations n-1 times where n is the
+    size of array (Note a single element array is always palindrome similar to single character in
+    string). In that case, size of array will be reduced to 1. But in this problem we are asked to
+    do it in minimum number of operations.
+
+    Input : arr[] = {15, 4, 15}
+    Output : 0
+    Array is already a palindrome. So we
+    do not need any merge operation.
+
+    Input : arr[] = {1, 4, 5, 1}
+    Output : 1
+    We can make given array palindrome with
+    minimum one merging (merging 4 and 5 to
+    make 9)
+
+    Input : arr[] = {11, 14, 15, 99}
+    Output : 3
+    We need to merge all elements to make
+    a palindrome.
+
+    Input : arr[] = {3, 5, 1, 1, 1}
+    Output: 2
+
+
+[215] 18. Given an array, only rotation operation is allowed on array. We can rotate the array as many
+    times as we want. Return the maximum possible of summation of i*arr[i].
+    Input: arr[] = {1, 20, 2, 10}
+    Output: 72
+    We get 72 by rotating array twice.
+    {2, 10, 1, 20}
+    20*3 + 1*2 + 10*1 + 2*0 = 72
+
+    Input: arr[] = {10, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    Output: 330
+    We can 330 by rotating array 9 times.
+    {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    0*1 + 1*2 + 2*3 ... 9*10 = 330
+    https://www.geeksforgeeks.org/find-maximum-value-of-sum-iarri-with-only-rotations-on-given
+    -array-allowed/
+
+
+[216] 5.  Subset with sum divisible by m
+    Given a set of non-negative distinct integers, and a value m, determine if there is a subset
+    of the given set with sum divisible by m.
+    Input Constraints
+    Size of set i.e., n <= 1000000, m <= 1000
+
+    Examples:
+    Input : arr[] = {3, 1, 7, 5};
+            m = 6;
+    Output : YES
+
+    Input : arr[] = {1, 6};
+            m = 5;
+    Output : NO
+
+    https://www.geeksforgeeks.org/subset-sum-divisible-m/
+
+
+[217] 47. Shuffle an array. (My generic :))
+
+
+[218] 7.  Printing the level order data in reverse order. Meaning for a standard tree, the output
+    should be 4567231. Can we do this without using extra space?
+
+
+[219] 39. Given a Binary Tree, find density of it by doing one traversal of it.
+    Density of Binary Tree = Size / Height
+
+
+[220] 7. Find LCA between two nodes in a BST.
+
+
+[221] 8.* Sort a LinkedList (MergeSort method)
+
+
+[222] 29. Merge two linked lists that are sorted to give a final linked list that is in descending
+    order.
+
+
+[223] 28. Print left rotation of an array in O(n) without rotating the array.
+
+
+[224] 24. Given an nxn array where the elements are in ascending order in each row as well as in column.
+    Search an element.
+    {2,5,8,20},
+    {6,7,10,25},
+    {9,11,15,30},
+    {13,14,16,31}
+
+
+[225] 20. Given two travel sequences, can we construct a binary tree.
+
+
+[226] 17. Given an 'n' pair of numbers where each pair (a,b) is such that a < b. Let the pairs be
+    (a1,b1),(a2,b2),(a3,b3) ... These pairs are said to form a chain if b of one pair is less than
+    a of another pair. We need to find the longest chain.
+
+    For example, if the given pairs are {{5, 24}, {39, 60}, {15, 28}, {27, 40}, {50, 90} }, then
+    the longest chain that can be formed is of length 3, and the chain is {{5, 24}, {27, 40},
+    {50, 90}}
+
+
+[227] 2.  Given a 4-ary tree what is the maximum possible height with 100 nodes. Assume that
+    the height of a single node is 0.
+
+
+[228] 66. A binary tree and a number k are given. Print every path in the tree with sum of the
+    nodes in the path as k. A path can start from any node and end at any node and must be
+    downward only, i.e. they need not be root node and leaf node; and negative numbers can
+    also be there in the tree.
+    https://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/
+
+
+[229] 71. Given an array find the minimum subarray which when sorted makes the whole array sorted.
+    1) If the input array is [10, 12, 28, 30, 25, 40, 32, 31, 35, 50, 60], your program should
+     be able to find that the subarray lies between the indexes 3 and 8.
+
+    2) If the input array is [0, 1, 15, 25, 6, 7, 30, 40, 50], your program should be able to
+     find that the subarray lies between the indexes 2 and 5.
+
+
+[230] The pattern tree we shall consider is the tree present GenericTree class in getTree method.
+
+
+[231] 2.  Find the inorder successor for a given node in an inorder threaded binary tree.
+
+
+[232] 8.  Given a fence with n posts and k colors, find out the number of ways of painting the fence
+    such that at most 2 adjacent posts have the same color.
+
+    Input : n = 2 k = 4
+    Output : 16
+    We have 4 colors and 2 posts.
+    Ways when both posts have same color : 4
+    Ways when both posts have diff color :
+    4*(choices for 1st post) * 3(choices for
+    2nd post) = 12
+
+    Input : n = 3 k = 2
+    Output : 6
+
+
+[233] 30. Print Postorder traversal from given Inorder and Preorder traversals
+
+
+[234] 21. Number of NGEs to the right.
+    Input : arr[] = {3, 4, 2, 7, 5, 8, 10, 6}
+    Given index = 0.
+
+    For index = 0, element = 3. We need to find how many elements are greater than 3 to
+    its right but these elements should be in an increasing order, eg: the elements
+    greater than 3 to its right are 4,7,5,8,10 and 6. But the elements which are in
+    increasing order are 4,7,8 and 10. So we consider only these elements hence the
+    output will be 4.
+
+    For index = 5, output = 1.
+
+
+[235] 19. Given an array, print the Next Greater Element (NGE) for every element. The Next
+    Greater Element for an element x is the first greater element on the right side of x
+    in array. Elements for which no greater element exist, consider next greater element
+    as -1.
+
+    Eg: arr = {4, 5, 2, 25}
+        4 -> 5
+        5 -> 25
+        2 -> 25
+        25 -> -1
+
+
+[236] 25. Count the number of rotations in Rotated Linked List. We assume that the linked list was
+    first sorted and then made k rotations. We need to find the value of k.
+
+    Eg: Original list: 5-8-11-12-15-18
+    After 2 rotations: 15-18-5-8-11-12
+    The input give will be 15-18-5-8-11-12, we need to give the output as 2.
+
+
+[237] 9.  Find a deepest node of a binary tree.
+
+
+[238] 11. Given a sorted array, convert it into BST.
+
+
+[239] 3.  Perform shortest path for non-weighted graphs.
+
+
+[240] 8.  Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
+    https://leetcode.com/problems/permutations/
+
+
+[241] 20. Given an array where all the numbers occurs even number of times except the one number which
+    occurs odd number of times. Find the number.
+
+
+[242] 22. Celebrity problem. In a party there are N number of people. Among them one is a
+    celebrity. The condition being:
+        a. Every body knows a celebrity
+        b. Celebrity does not know anybody.
+    How would you identify the celebrity by calling the below function minimum number of
+    times. We can assume that there is function called 'knows(A,B)' which would return
+    true if A knows B else false.
+
+    NOTE: A celebrity might not be present as well.
+
+
+[243] 11. Find the articulation points in a graph.
+
+
+[244] 7.  Given an array of elements, find if any duplicate element occurs. How can we optimize if all the
+    elements are in the range 0 to n-1.
+
+
+[245] 16. Implement stack using Heap/Priority Queue.
+
+
+[246] 17. Check if two given BSTs has same elements (same content and same size).
+
+
+[247] 1. Insert element into BST using recursion and iteration.
+
+
+[248] 63. Shuffle 2n integers in format {a1, b1, a2, b2, a3, b3, ……, an, bn} without using extra space.
+
+
+[249] 27. Reverse a Linked List (Recursion and Iteration).
+
+
+[250] 1.  Finding of spans or finding of next highest element in a list.
+    This algo basically solves finding next highest element (which is greater than the current
+    element) in a list. The list can be array, linkedlist etc.
+
+    For all elements, we need to  find another element to its right which is higher than the
+    element. If there are multiple elements higher than the current one then we choose the
+    first element.
+
+    Ex 1
+        arr = {4,5,3,7,8,5,1,2}
+        4 -> 5
+        5 -> 7
+        3 -> 7
+        7 -> 8
+        8 -> NA
+        5 -> NA
+        1 -> 2
+        2 -> NA
+    There are several questions modified to use this algo. Eg, a linkedlist's random pointer
+    should point to next higher element, finding span in stocks etc.
+
+    Calculate the time complexity.
+
+
+
+[251] 15. Median of Stream of Running Integers. An integer is being read from a
+    continuous stream, we need to find a median of all the elements read so
+    far. A median is an integer that divides the sorted list into two. For
+    odd number of integers, median is the middle element. For even number of
+    integers, median is an average to two middle numbers.
+    https://www.geeksforgeeks.org/median-of-stream-of-running-integers-using
+    -stl/
+
+
+[252] 12. Check if the given Graph is bipartite.
+
+
+[253] 13. Given an input string and a dictionary of words, find out if the input string can be segmented
+    into a space-separated sequence of dictionary words. See following examples for more details.
+
+    Consider the following dictionary
+    { i, like, sam, sung, samsung, mobile, ice,
+      cream, icecream, man, go, mango}
+
+    Input:  ilike
+    Output: Yes
+    The string can be segmented as "i like".
+
+    Input:  ilikesamsung
+    Output: Yes
+    The string can be segmented as "i like samsung"
+    or "i like sam sung".
+
+
+
+[254] 12. Given two trees, check if they are 1.identical 2.mirrors. 3.isomorphic 4.
+    quasi-isomorphic
+
+
+[255] 2.  Design a cache such that it keeps data of past three hours.
+
+
+[256] 12. Given an array of numbers, find the maximum product formed by multiplying numbers of an
+    increasing subsequence of that array.
+
+    Input : arr[] = { 3, 100, 4, 5, 150, 6 }
+    Output : 45000
+    Maximum product is 45000 formed by the
+    increasing subsequence 3, 100, 150. Note
+    that the longest increasing subsequence
+    is different {3, 4, 5, 6}
+
+    Input : arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 }
+    Output : 21780000
+    Maximum product is 21780000 formed by the
+    increasing subsequence 10, 22, 33, 50, 60.
+
+
+[257] 15. Find the union and intersection of BSTs.
+
+
+[258] 3. Longest Increasing Sub-sequence.
+    The Longest Increasing Subsequence (LIS) problem is to find the length of the longest
+    subsequence of a given sequence such that all elements of the subsequence are sorted in
+    increasing order. For example, the length of LIS for {10, 22, 9, 33, 21, 50, 41, 60, 80} is 6
+    and LIS is {10, 22, 33, 50, 60, 80}.
+
+
+[259] 14. Find a level that has maximum sum in a Binary Tree.
+
+
+[260] 37. Given a Binary Tree, print all diagonal elements in a binary tree belonging to
+    same line.
+    https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
+
+
+[261] 24. Find vertical sum of a Binary Tree.
+
+
+[262] 29. Rotate two dimensional matrix by 90 degree to its right(or left). This can be extended to rotating the array by
+    n no of times. If n=2, then we are rotating by 180, n=3 then 270 and so on.
+
+
+[263] 5.  Given a node in a Generic Tree, count the number of siblings and number of children.
+
+
+[264] 5.  Given a positive number n, find all combinations of 2×n elements such that every element from 1 to n appears exactly
+    twice and the distance between its two appearances is exactly equal to the value of the element.
+
+    Input: n = 3
+    Output:
+    3 1 2 1 3 2
+    2 3 1 2 1 3
+
+    Input: n = 4
+    Output:
+    4 1 3 1 2 4 3 2
+    2 3 4 2 1 3 1 4
+
+    Input: n = 7
+    Output:
+    1 7 1 2 5 6 2 3 4 7 5 3 6 4
+    5 1 7 1 6 2 5 4 2 3 7 6 4 3
+    4 1 7 1 6 4 2 5 3 2 7 6 3 5
+    …
+    …
+    Total 52 configurations possible.
+
+    Note that no combination of elements is possible for some values of n like 2, 5, 6, etc.
+
+
+
+[265] 46. Given an array of integers, update every element with multiplication of previous and next
+    elements with following exceptions.
+    a) First element is replaced by multiplication of first and second.
+    b) Last element is replaced by multiplication of last and second last.
+
+    Input: arr[] = {2, 3, 4, 5, 6}
+    Output: arr[] = {6, 8, 15, 24, 30}
+
+    // We get the above output using following
+    // arr[] = {2*3, 2*4, 3*5, 4*6, 5*6}
+
+
+[266] 56. Given a Binary Tree, find if there exist edge whose removal creates two trees of
+    equal size.
+    https://www.geeksforgeeks.org/check-if-removing-an-edge-can-divide-a-binary-tree-in-two-halves/
+
+
+[267] 6. Clone a LinkedList which has an extra pointer that points to any random node.
+
+
+[268] 17. Given an array of n numbers and a positive integer k. The problem is to
+    find k numbers with most occurrences, i.e., the top k numbers having the
+    maximum frequency. If two numbers have same frequency then the larger
+    number should be given preference. The numbers should be displayed in
+    decreasing order of their frequencies.
+    https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
+
+
+[269] 4.  Find the sum of all the subsets of an array.
+
+
+[270] 16. Max subsequence sum with no two adjacent elements.
+    Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
+    that no 2 numbers in the sequence should be adjacent in the array.
+
+    Input : arr[] = {5, 5, 10, 100, 10, 5}
+    Output : 110
+
+    Input : arr[] = {20, 1, 2, 3}
+    Output : 23
+
+
+[271] 17. Given an array A of integers. Index i of A is said to be connected to index j if j = (i +
+    A[i]) % n + 1 (Assume 1-based indexing). Start traversing array from index i and jump to
+    its next connected index. If on traversing array in the described order, index i is again
+    visited then index i is a magical index. Count the number of magical indexes in the array.
+    Assume that array A consists of non-negative integers.
+
+    Input : A = {1, 1, 1, 1}
+    Output : 4
+    Possible traversals:
+    1 -> 3 -> 1
+    2 -> 4 -> 2
+    3 -> 1 -> 3
+    4 -> 2 -> 4
+    Clearly all the indices are magical
+
+    Input : A = {0, 0, 0, 2}
+    Output : 2
+    Possible traversals:
+    1 -> 2 -> 3 -> 4 -> 3...
+    2 -> 3 -> 4 -> 3...
+    3 -> 4 -> 3
+    4 -> 3 ->4
+    Magical indices = 3, 4
+    https://www.geeksforgeeks.org/magical-indices-array/
+
+18*. Given a sorted dictionary (array of words) of an alien language, find order of characters
+    in the language.
+    Input:  words[] = {"baa", "abcd", "abca", "cab", "cad"}
+    Output: Order of characters is 'b', 'd', 'a', 'c'
+    The words are sorted. So b comes before a and a comes before c.
+    b -> a, a -> c
+    Take the words, abcd and abca, so d comes before a. d -> a
+    Take the words, cab and cad, so b comes before d. b -> d
+    Hence b -> d -> a -> c
+
+    Input:  words[] = {"caa", "aaa", "aab"}
+    Output: Order of characters is 'c', 'a', 'b'
+
+    https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
+
+
+[272] 5.  Perform shortest path for weighted graphs with negative edges. (Bellman-Ford algo)
+
+
+[273] 10. Count the number of paths from source to destination.
+
+
+[274] 3.  For a given array of integers, find all the possible sub-arrays.
+
+
+[275] 12. Given a sorted Singly Linked List, convert it into BST.
+
+
+[276] 12. Count all possible paths from top left to bottom right of a [m x n] matrix.
+    We can either move only to right or down.
+
+
+[277] 17. Find sum of all the elements of a Binary Tree.
+
+
+[278] 29. Construct a tree from inorder and level-order traverals.
+
+
+[279] 21. For a given node, print all the ancestors of a node in a Binary Tree.
+
+
+[280] 6.  Level order traversal of pattern tree.
+
+
+[281] 7.  a. In an undirected graph, what is the maximum number of edges? Self loops are not allowed.
+    b. Which graph representation is best to determine if a vertex is isolated.
+    c. How many directed asyclic graphs are possible for n vertices.
+    d. How can we find a maximum spanning tree?
+
+
+[282] 60. Longest Span with same Sum in two Binary arrays. Given two binary arrays, we need to find the
+    longest subarray such that this subarray is common to both and has the maximum sum.
+
+    In other words, given two binary arrays arr1[] and arr2[] of same size n. Find length of the
+    longest common span (i, j) where j >= i such that arr1[i] + arr1[i+1] + …. + arr1[j] = arr2[i]
+    + arr2[i+1] + …. + arr2[j].
+
+    Input: arr1[] = {0, 1, 0, 0, 0, 0};
+           arr2[] = {1, 0, 1, 0, 0, 1};
+    Output: 4
+    The longest span with same sum is from index 1 to 4.
+
+    Input: arr1[] = {0, 1, 0, 1, 1, 1, 1};
+           arr2[] = {1, 1, 1, 1, 1, 0, 1};
+    Output: 6
+    The longest span with same sum is from index 1 to 6.
+
+    Input: arr1[] = {0, 0, 0};
+           arr2[] = {1, 1, 1};
+    Output: 0
+
+    Input: arr1[] = {0, 0, 1, 0};
+           arr2[] = {1, 1, 1, 1};
+    Output: 1
+
+
+[283] 42. Given an array of elements, construct a binary tree in level order fashion.
+    Eg, arr[] = 1,2,3,4,5,6 then BT should be constructed such that its level
+    order is also the same.
+
+
+[284] 3.  Perform inorder traversal in an inorder threaded binary tree.
+    This question can also be to perform an inorder traversal without using stack or queue.
+
+
+[285] 6.  Given an array contain numbers of 0's and 1's such that 1's occur before 0. Find the index of
+    1st 0 element. The number are in millions.
+
+
+[286] 6.  We need to sort a nearly sorted array. Given an unsorted array and a value k,
+    every element will be k places before or after the current position when sorted.
+    Eg, say k = 2 and the element is at index 5, then when the array is sorted, this
+    element at index 5 will be in one of the following positions: 3,4,5,6,7.
+    Eg: arr[] = {6, 5, 3, 2, 8, 10, 9}, k = 3
+        arr[] = {10, 9, 8, 7, 4, 70, 60, 50} k = 4
+
+    These two array are nearly sorted.
+    https://www.geeksforgeeks.org/nearly-sorted-algorithm/
+
+
+[287] 65. Given a binary tree, a complete path is defined as a path from root to a leaf. The
+    sum of all nodes on that path is defined as the sum of that path. Given a number K,
+    you have to remove (prune the tree) all nodes which don’t lie in any path with sum>=k.
+    https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
+
+
+[288] 31. Given an array of with 0s and 1s. Put all 0s in the beginning and 1s at the end.
+
+32*. Given an array of elements of length N, ranging from 0 to N – 1. All elements may not be present
+    in the array. If element is not present then there will be -1 present in the array. Rearrange
+    the array such that A[i] = i and if i is not present, display -1 at that place.
+    https://www.geeksforgeeks.org/rearrange-array-arri/
+    Input :  {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1}
+    Output : [-1, 1, 2, 3, 4, -1, 6, -1, -1, 9]
+
+
+[289] 55. Check if two nodes are cousins. Two nodes are cousins if they are in the same level
+    but have different parents.
+
+
+[290] 18. Implement Stack and Queue using Deque.
+
+
+[291] 9.  Given a sorted array with duplicates, find the index of first occurrence of a number in O(logn).
+    arr[] = {1,1,2,2,2,3,3}, if a number is 2 then return 2 (index of first occ of 2). We can
+    practice for last occurrence as well.
+
+10*. We have an array of size n where one element occurs more than n/2. We need to find that element.
+    We can assume that all the element occurs only once. In the below example, 2 is the req element.
+    [2,1,2,2], [2,1,2,3,2],[1,2,2,3,2] etc.
+
+11*. Find the subarray with largest sum. (Kadane's algo).
+    Eg arr[] = {1,-3,2,1,-1}, max = 3. Also find the starting and ending of subarray.
+
+12*. Given a 2D array of 0s and 1s where each in row 1s are followed by 0s. Find the row with maximum
+    0. Do the vice versa as well, find the row with max no of 1s.
+    Eg, {1,1,0,0,0},
+        {1,1,1,1,0},
+        {1,0,0,0,0},
+        {1,1,1,0,0}
+    row with max 0 is 2 with max zero as 4.
+
+13*. Find the subarray with sum equal to S. All the elements in an array are positive.
+    Eg, arr = [1, 2, 3, 4, 4] and S = 7, Ans is [3,4]
+
+14*. Find all the subarrays with sum equal to 0.
+    Eg. [2,-1,-1,2]. There are two subarrays from 0 to 2 and 1 to 3.
+
+
+[292] 12. Find the max area in a histogram.
+
+13*.Sort a stack. (Both recursion and iteration)
+
+
+[293] 4.  Given a Binary Tree, check whether its an AVL tree or not.
+
+
+[294] 41.*Given an array of elements find the max difference between two elements such that the larger
+    element appears after the smaller element.
+    Eg, arr[]={2,3,10,6,4,8,1}. Max diff is 8 (between 2 and 10).
+    arr[] = {7,9,5,6,3,2}. Max diff is 2 (between 9 and 7)
+
+42*. Given two integer arrays of same size, “arr[]” and “index[]”, reorder elements in “arr[]”
+    according to given index array. It is not allowed to given array arr’s length.
+
+    Input:  arr[]   = [10, 11, 12];
+            index[] = [1, 0, 2];
+    Output: arr[]   = [11, 10, 12]
+            index[] = [0,  1,  2]
+
+    Input:  arr[]   = [50, 40, 70, 60, 90]
+            index[] = [3,  0,  4,  1,  2]
+    Output: arr[]   = [40, 60, 90, 50, 70]
+            index[] = [0,  1,  2,  3,   4]
+
+
+
+[295] 10. Design an efficient data structure for given operations:
+    1) findMin() : Returns the minimum item.
+       Frequency: Most frequent
+
+    2) findMax() : Returns the maximum item.
+        Frequency: Most frequent
+
+    3) deleteMin() : Delete the minimum item.
+        Frequency: Moderate frequent
+
+    4) deleteMax() : Delete the maximum item.
+        Frequency: Moderate frequent
+
+    5) Insert() : Inserts an item.
+        Frequency: Least frequent
+
+    6) Delete() : Deletes an item.
+        Frequency: Least frequent.
+
+11 .Given an array of numbers find the Kth smallest number in the range from
+    index 'start' to 'end'.
+    arr[] = {3, 2, 5, 1, 8, 9}
+    Eg. start = 1, end = 4, k = 2
+        from index 1 to 4 has elements [2,5,1,8] and 2nd smallest among them
+        is 2
+
+    Eg. start = 0, end = 5, k = 4
+        Ans is: 5
+
+
+[296] 9.  Knapsack Problem
+
+
+
+[297] 77. Given an array of A of n integers and an array B of m integers find the Maximum Contiguous
+    Subarray Sum of array A such that any element of array B is not present in that subarray.
+
+    Input : A = {1, 7, -10, 6, 2}, B = {5, 6, 7, 1}
+    Output : 2
+    Explanation Since the Maximum Sum Subarray of A is not allowed to have any element that is
+    present in array B.
+    The Maximum Sum Subarray satisfying this is {2} as the only allowed subarrays are:{-10} and {2}.
+    The Maximum Sum Subarray being {2} which sums to 2
+
+    Input : A = {3, 4, 5, -4, 6}, B = {1, 8, 5}
+    Output : 7
+
+    Explanation
+    The Maximum Sum Subarray satisfying this is {3, 4} as the only allowed subarrays are
+    {3}, {4}, {3, 4}, {-4}, {6}, {-4, 6}. The Maximum Sum subarray being {3, 4} which sums to 7
+
+
+[298] 50. Given an an array, segregate odd and even numbers such that even numbers are at the beginning
+    and odd number towards the end.
+
+51*. Given an Array of Integers and an Integer value k, find out k sub-arrays(may be overlapping)
+    which have k maximum sums.
+    Input : arr = {4, -8, 9, -4, 1, -8, -1, 6}, k = 4
+    Output : 9 6 6 5
+    https://www.geeksforgeeks.org/k-maximum-sum-overlapping-contiguous-sub-arrays/
+
+
+[299] 53. Given a BT, replace a node by the sum of all the nodes in its left subtree.
+    https://www.geeksforgeeks.org/change-a-binary-tree-so-that-every-node-stores-
+    sum-of-all-nodes-in-left-subtree/
+
+
+[300] 28. Construct a tree from inorder and post-order traversals.
+    Inorder:    D B E A F C G
+    Postorder:  D E B F G C A
+
+
+[301] 31. Replace each node in binary tree with the sum of its inorder predecessor and
+    successor.
+
+
+[302] 5.  Sort millions of numbers.
+
+
+[303] 64. Given a positive integer L which represents the number of levels in a perfect binary
+    tree. Given that the leaf nodes in this perfect binary tree are numbered starting
+    from 1 to n, where n is the number of leaf nodes. And the parent node is the sum of
+    the two child nodes. Our task is to write a program to print the sum of all of the
+    nodes of this perfect binary tree.
+    https://www.geeksforgeeks.org/find-sum-nodes-given-perfect-binary-tree/
+
+
+[304] 7.  Choice of area.
+    Consider a game, in which you have two types of powers, A and B and there are 3 types of
+    Areas X, Y and Z. Every second you have to switch between these areas, each area has specific
+    properties by which your power A and power B increase or decrease. We need to keep choosing
+    areas in such a way that our survival time is maximized. Survival time ends when any of the
+    powers, A or B reaches less than 0.
+
+    Initial value of Power A = 20
+    Initial value of Power B = 8
+
+    Area X (3, 2) : If you step into Area X,
+                    A increases by 3,
+                    B increases by 2
+
+    Area Y (-5, -10) : If you step into Area Y,
+                       A decreases by 5,
+                       B decreases by 10
+
+    Area Z (-20, 5) : If you step into Area Z,
+                      A decreases by 20,
+                      B increases by 5
+
+    It is possible to choose any area in our first step.
+    We can survive at max 5 unit of time by following
+    these choice of areas :
+    X -> Z -> X -> Y -> X
+
+
+
+[305] 61. Given a perfect binary tree, print nodes of middle level without computing its
+    height. A perfect binary tree is a binary tree in which all interior nodes have two
+    children and all leaves have the same depth or same level.
+    https://www.geeksforgeeks.org/print-middle-level-perfect-binary-tree-without-finding-height/
+
+
+[306] 35. Reverse alternate levels of a perfect binary tree.
+    https://www.geeksforgeeks.org/reverse-alternate-levels-binary-tree/
+    Its not printing the alternate level but changing the tree structure.
+
+
+[307] 46. Give a tree, construct an ancestor matrix. Reverse of the above problem.
+    https://www.geeksforgeeks.org/construct-ancestor-matrix-from-a-given-binary-tree/
+
+
+[308] 3. Find a maximum and minimum element in a BST.
+
+
+[309] 2.  Longest Common Sub-Sequence.
+    A subsequence is a sequence that appears in the same relative order, but not necessarily
+    contiguous. For example, “abc”, “abg”, “bdf”, “aeg”, ”acefg”, .. etc are subsequences of
+    “abcdefg”. So a string of length n has 2^n different possible subsequences.
+
+    LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
+    LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
+    LCS for input Sequences “STONEY” and “LONGEST” is “ONE” of length 3.
+
+
+[310] 10. We have a linked list with two pointers. One of the pointer is a random pointer
+which points to NULL. We need to point this random pointer to HIGHEST element to its
+right.
+    Eg. 5 -> 10 -> 2 -> 3
+    5's rand should point to 10
+    10's rand should point to 3
+    2's rand should point to 3
+    3's rand should point to Null
+
+11*. We have a linked list with two pointers. One of the pointer is a random pointer
+    which points to NULL. We need to point this random pointer to NEXT highest element to its
+    right.
+    Eg. 5 -> 10 -> 2 -> 3
+    5's rand should point to 10
+    10's rand should point to NULL (as there are no elements higher than 10)
+    2's rand should point to 3
+    3's rand should point to Null
+
+    Eg. 4 -> 5 -> 2 -> 25
+    4's rand should point to 5
+    5's rand should point to 25
+    2's rand should point to 25
+    25's rand should point to N
+
+
+[311] 6.
+
+
+[312] 56. Minimum steps required to get a desired array.
     Consider an array with n elements and value of all the elements is zero. We can perform
     following operations on the array.
 
@@ -214,2213 +2527,15 @@
     Output: 22
 
 
-2.  Find the first repeating element in an array. Eg, arr[] = {3,2,1,2,2,3}. The first repeating
-    element is 3 and not 2.
-
-
-20. Given an array where all the numbers occurs even number of times except the one number which
-    occurs odd number of times. Find the number.
-
-
-15. Print all the root to leaf path of a Binary Tree.
-
-
-19. Why is Binary Heap preferred over BST for Priority Queue?
-
-
-31. Replace each node in binary tree with the sum of its inorder predecessor and
-    successor.
-
-
-13. Given only a pointer/reference to a node to be deleted in a singly linked list, how do you
-    delete it?
-
-
-5.  Find a size of Binary Tree (total no of nodes in a tree).
-
-
-3. Search an element in a LinkedList (by recursion).
-
-
-59. Given a Binary Tree, check whether the Binary tree contains a duplicate sub-tree of
-    size 2 or more.
-    https://www.geeksforgeeks.org/check-binary-tree-contains-duplicate-subtrees-size-2/
-
-
-16. Implement stack using Heap/Priority Queue.
-
-
-13. Given an input string and a dictionary of words, find out if the input string can be segmented
-    into a space-separated sequence of dictionary words. See following examples for more details.
-
-    Consider the following dictionary
-    { i, like, sam, sung, samsung, mobile, ice,
-      cream, icecream, man, go, mango}
-
-    Input:  ilike
-    Output: Yes
-    The string can be segmented as "i like".
-
-    Input:  ilikesamsung
-    Output: Yes
-    The string can be segmented as "i like samsung"
-    or "i like sam sung".
-
-
-
-10. Design an efficient data structure for given operations:
-    1) findMin() : Returns the minimum item.
-       Frequency: Most frequent
-
-    2) findMax() : Returns the maximum item.
-        Frequency: Most frequent
-
-    3) deleteMin() : Delete the minimum item.
-        Frequency: Moderate frequent
-
-    4) deleteMax() : Delete the maximum item.
-        Frequency: Moderate frequent
-
-    5) Insert() : Inserts an item.
-        Frequency: Least frequent
-
-    6) Delete() : Deletes an item.
-        Frequency: Least frequent.
-
-11 .Given an array of numbers find the Kth smallest number in the range from
-    index 'start' to 'end'.
-    arr[] = {3, 2, 5, 1, 8, 9}
-    Eg. start = 1, end = 4, k = 2
-        from index 1 to 4 has elements [2,5,1,8] and 2nd smallest among them
-        is 2
-
-    Eg. start = 0, end = 5, k = 4
-        Ans is: 5
-
-
-4.  SNAKE AND LADDER
-
-
-4.  There are 10,000 files and each file has 1 millions integers. Find the sum of all of them.
-
-
-13. Insertion sort for a linked list.
-
-
-21. Number of NGEs to the right.
-    Input : arr[] = {3, 4, 2, 7, 5, 8, 10, 6}
-    Given index = 0.
-
-    For index = 0, element = 3. We need to find how many elements are greater than 3 to
-    its right but these elements should be in an increasing order, eg: the elements
-    greater than 3 to its right are 4,7,5,8,10 and 6. But the elements which are in
-    increasing order are 4,7,8 and 10. So we consider only these elements hence the
-    output will be 4.
-
-    For index = 5, output = 1.
-
-
-2.  Convert an infix expression to postfix expression.
-
-
-19. Given an array, find the number of subarrays whose product is less than k.
-    VISA
-
-3.  How many AVL trees of different shapes can be generated for a height 6?
-
-
-3. Longest Increasing Sub-sequence.
-    The Longest Increasing Subsequence (LIS) problem is to find the length of the longest
-    subsequence of a given sequence such that all elements of the subsequence are sorted in
-    increasing order. For example, the length of LIS for {10, 22, 9, 33, 21, 50, 41, 60, 80} is 6
-    and LIS is {10, 22, 33, 50, 60, 80}.
-
-
-11. Given a sorted array, convert it into BST.
-
-
-24. Find vertical sum of a Binary Tree.
-
-
-7.  Printing the level order data in reverse order. Meaning for a standard tree, the output
-    should be 4567231. Can we do this without using extra space?
-
-
-41. Given a binary tree. Modify it in such a way that after modification you can
-    have a preorder traversal of it using only the right pointers. During
-    modification, you can use right pointer as well as left pointers.
-
-
-8.  Given a fence with n posts and k colors, find out the number of ways of painting the fence
-    such that at most 2 adjacent posts have the same color.
-
-    Input : n = 2 k = 4
-    Output : 16
-    We have 4 colors and 2 posts.
-    Ways when both posts have same color : 4
-    Ways when both posts have diff color :
-    4*(choices for 1st post) * 3(choices for
-    2nd post) = 12
-
-    Input : n = 3 k = 2
-    Output : 6
-
-
-49. Given a ternary tree (left, mid and right pointers), create a doubly linked list such
-    that the left pointer should act as a prev pointer, right pointer should act as next
-    pointer and mid should point to null.
-    https://www.geeksforgeeks.org/create-doubly-linked-list-ternary-ree/
-
-
-33. For a full binary tree, print the level order traversal as:
-    1 2 3 4 7 5 6 8 15 9 14 10 13 11 12
-    https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal/
-    Hint: The tree is a perfect binary tree (full binary tree).
-
-
-6.
-
-
-31. Given an array of with 0s and 1s. Put all 0s in the beginning and 1s at the end.
-
-32*. Given an array of elements of length N, ranging from 0 to N – 1. All elements may not be present
-    in the array. If element is not present then there will be -1 present in the array. Rearrange
-    the array such that A[i] = i and if i is not present, display -1 at that place.
-    https://www.geeksforgeeks.org/rearrange-array-arri/
-    Input :  {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1}
-    Output : [-1, 1, 2, 3, 4, -1, 6, -1, -1, 9]
-
-
-7. Find LCA between two nodes in a BST.
-
-
-47. Given Inorder Traversal of a Special Binary Tree in which key of every node is
-    greater than keys in left and right children, construct the Binary Tree and return
-    root. https://www.geeksforgeeks.org/construct-binary-tree-from-inorder-traversal/
-
-
-Standard Binary Tree
-        |-------1-------|
-    |---2---|       |---3---|
-    4       5       6       7
-
-
-
-4.  Friends pair problem.
-    Given n friends, each one can remain single or can be paired up with some other friend. Each
-    friend can be paired only once. Find out the total number of ways in which friends can remain
-    single or can be paired up.
-
-    Input  : n = 3
-    Output : 4
-
-    Explanation
-    {1}, {2}, {3} : all single
-    {1}, {2, 3} : 2 and 3 paired but 1 is single.
-    {1, 2}, {3} : 1 and 2 are paired but 3 is single.
-    {1, 3}, {2} : 1 and 3 are paired but 2 is single.
-    Note that {1, 2} and {2, 1} are considered same.
-    https://www.geeksforgeeks.org/friends-pairing-problem/
-
-
-The pattern tree we shall consider is the tree present GenericTree class in getTree method.
-
-
-3. a. Create max and min heap with seven elements such that pre-order traversal of it
-      gives the elements in sorted order.
-
-   b. Create max and min heap with seven elements such that in-order traversal of it
-      gives the elements in sorted order.
-
-   c. Create max and min heap with seven elements such that post-order traversal
-   of it gives the elements in sorted order.
-
-   d. What is the minimum and maximum number of elements in a heap of height h.
-
-   e. Delete an arbitrary element from min heap. (or deleting ith indexed element)
-
-
-5. Sort linked list of 0s,1s and 2s.
-
-
-1.  Find the nth Catalan number. The first few Catalan numbers for n = 0, 1, 2, 3, … are 1, 1, 2, 5,
-    14, 42, 132, 429, 1430, 4862, …
-
-
-11. Find number of leaves, full nodes, half nodes in a Binary Tree.
-
-
-24. Given an nxn array where the elements are in ascending order in each row as well as in column.
-    Search an element.
-    {2,5,8,20},
-    {6,7,10,25},
-    {9,11,15,30},
-    {13,14,16,31}
-
-
-74. Given a pair-sum array and size of the original array (n), construct the original array.
-    A pair-sum array for an array is the array that contains sum of all pairs in ordered form.
-    For example pair-sum array for arr[] = {6, 8, 3, 4} is {14, 9, 10, 11, 12, 7}
-
-
-63. Print the longest leaf to leaf path in a Binary tree.
-
-
-20. Given two travel sequences, can we construct a binary tree.
-
-
-1.  Perform bubble sort, selection sort and insertion sort.Compare them.
-
-38. Print the boundary of a tree. For our standard tree, the output should be
-    1,2,4,5,6,7,3
-
-
-23. Traverse a Binary Tree in zig-zag fashion. Our standard Binary Tree should be printed as
-    1 3 2 4 5 6 7
-    Can this be done without using extra space?
-
-
-2. Processing all the elements of 2D array in a complexity lesser than O(n2).
-
-    Lets say we have a 2D array as follows:
-        1 2 3 4
-        5 6 7 8
-        2 3 4 5
-        1 3 4 5
-    And we want to process (or traverse) all the elements (say we want to find the sum of all
-    the elements). Then the normal traversing will take O(n2). But we can also do it in O(nlogn).
-
-    This question could also be framed for LL, single array etc.
-
-65. Given a binary tree, a complete path is defined as a path from root to a leaf. The
-    sum of all nodes on that path is defined as the sum of that path. Given a number K,
-    you have to remove (prune the tree) all nodes which don’t lie in any path with sum>=k.
-    https://www.geeksforgeeks.org/remove-all-nodes-which-lie-on-a-path-having-sum-less-than-k/
-
-
-29. Construct a tree from inorder and level-order traverals.
-
-
-16. Minimum difference between two subsets.
-    Given a set of integers, the task is to divide it into two sets S1 and S2 such that the absolute
-    difference between their sums is minimum.
-    If there is a set S with n elements, then if we assume Subset1 has m elements, Subset2 must have
-    n-m elements and the value of abs(sum(Subset1) – sum(Subset2)) should be minimum.
-
-    Input:  arr[] = {1, 6, 11, 5}
-    Output: 1
-    Explanation:
-    Subset1 = {1, 5, 6}, sum of Subset1 = 12
-    Subset2 = {11}, sum of Subset2 = 11
-
-25. Consider an array of distinct numbers sorted in increasing order. The array has been rotated
-    (clockwise) k number of times. Given such an array, find the value of k.
-    Eg, [4, 1, 2, 3] is rotated 1.
-        [1, 2, 3, 4] is rotated 0.
-
-
-7. Reverse a stack.
-
-
-2.  Design a cache such that it keeps data of past three hours.
-
-
-47. Shuffle an array. (My generic :))
-
-
-27. Find the minimum element in a sorted and rotated array.
-
-
-14. Multiply two numbers represented by linked list. The result should be a number and
-    not a linked list.
-    Eg: Input: 9 -> 4 -> 6 and 8 -> 4
-        Output: 79464
-
-15*. Merge K sorted list. We are given k number of linked list, we need to sort them
-    and merge them into one.
-    eg:
-        Input: k = 3, n =  4
-        list1 = 1->3->5->7->NULL
-        list2 = 2->4->6->8->NULL
-        list3 = 0->9->10->11->NULL
-
-        Output:
-        0->1->2->3->4->5->6->7->8->9->10->11->NULL
-
-
-18. Given a square matrix of size N*N, where each cell is associated with a specific cost. A path
-    is defined as a specific sequence of cells which starts from top left cell move only right or
-    down and ends on bottom right cell. We want to find a path with maximum average over all
-    existing paths. Average is computed as total cost divided by number of cells visited in path
-
-    Input : Matrix = [1, 2, 3
-                      4, 5, 6
-                      7, 8, 9]
-    Output : 5.8
-    Path with maximum average is, 1 -> 4 -> 7 -> 8 -> 9
-    Sum of the path is 29 and average is 29/5 = 5.8
-
-
-12. Given an array of numbers, find the maximum product formed by multiplying numbers of an
-    increasing subsequence of that array.
-
-    Input : arr[] = { 3, 100, 4, 5, 150, 6 }
-    Output : 45000
-    Maximum product is 45000 formed by the
-    increasing subsequence 3, 100, 150. Note
-    that the longest increasing subsequence
-    is different {3, 4, 5, 6}
-
-    Input : arr[] = { 10, 22, 9, 33, 21, 50, 41, 60 }
-    Output : 21780000
-    Maximum product is 21780000 formed by the
-    increasing subsequence 10, 22, 33, 50, 60.
-
-
-4.  Given an array of positive and negative integers, find the pair which is closest to 0.
-
-
-14. Given a rope of length n meters, cut the rope in different parts of integer lengths in a way
-    that maximizes product of lengths of all parts. You must make at least one cut. Assume that
-    the length of rope is more than 2 meters.
-
-    Input: n = 2
-    Output: 1 (Maximum obtainable product is 1*1)
-
-    Input: n = 3
-    Output: 2 (Maximum obtainable product is 1*2)
-
-    Input: n = 4
-    Output: 4 (Maximum obtainable product is 2*2)
-
-    Input: n = 5
-    Output: 6 (Maximum obtainable product is 2*3)
-
-    Input: n = 10
-    Output: 36 (Maximum obtainable product is 3*3*4)
-
-
-
-16. Find the number of Islands
-    Given a boolean 2D matrix, find the number of islands. A group of connected 1s forms an
-    island. For example, the below matrix contains 5 islands.
-
-    {1, 1, 0, 0, 0},
-    {0, 1, 0, 0, 1},
-    {1, 0, 0, 1, 1},
-    {0, 0, 0, 0, 0},
-    {1, 0, 1, 0, 1}
-
-
-7.  Design whisper-sync feature.
-
-build tic tac toe application
-
-Tree 1 has one billion nodes and tree 2 has thousand of nodes. How will you find tree 2 is a subtree of tree1
-
-add very large numbers.
-
-https://www.geeksforgeeks.org/a-data-structure-question/
-
-https://www.geeksforgeeks.org/design-a-data-structure-for-lru-cache/
-
-https://javarevisited.blogspot.com/2017/03/2-practical-data-structure-algorithm-interview-questions-java.html
-
-https://softwareengineering.stackexchange.com/questions/tagged/data-structures
-
-https://stackoverflow.com/questions/25221544/efficient-data-structure-for-leaderboard-i-e-a-list-of-records-name-points
-
- To clear the bar raiser do refer the 14 leadership principles of Amazon.
-
-Design an online book reader system
-Design S3
-Design a distributed Cache
-Design tiny url
-Design bookmyshow
-Design Google Drive
-How will you built a query service for all the stakeholders responsible for delivery of product.
-Design payment system for cab services like Uber Ola etc.
- sort a million Person records according to their age.
-Low Level Design for stock quota aggregation system
-Design a distributed chess playing system.
-Design snake and ladder game. The solution should be extendable for other games. They asked me to give a HLD and then LLD. Interviewer was very helpful.
-Bus Booking System
-Distributed chess
-
-14. Find the floor and ceiling value for a given node in BST.
-
-
-9. Rearrange the linked list such that
-    1-2-3-4-5 is 1-5-2-4-3
-    1-2-3-4 is 1-4-2-3
-
-
-9. Convert BST to Circular DLL with space complexity as O(1).
-
-
-7.  Subset Sum Problem.
-    Given a set of non-negative integers, and a value sum, determine if there is a subset of the
-    given set with sum equal to given sum.
-    Example:
-
-    Input:  set[] = {3, 34, 4, 12, 5, 2}, sum = 9
-    Output:  True  //There is a subset (4, 5) with sum 9.
-    if sum = 18, output is true where subset is 2,12,4
-
-
-7.  a. In an undirected graph, what is the maximum number of edges? Self loops are not allowed.
-    b. Which graph representation is best to determine if a vertex is isolated.
-    c. How many directed asyclic graphs are possible for n vertices.
-    d. How can we find a maximum spanning tree?
-
-
-16. Max subsequence sum with no two adjacent elements.
-    Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
-    that no 2 numbers in the sequence should be adjacent in the array.
-
-    Input : arr[] = {5, 5, 10, 100, 10, 5}
-    Output : 110
-
-    Input : arr[] = {20, 1, 2, 3}
-    Output : 23
-
-
-17. Given an array where each element represents a size of each group. How many new groups can be
-formed from this existing group given a size of a new group.
-
-    Eg: [10,11,5], k=3
-        We can form 5 new groups where every new group will be of size 3 and have members from
-        each old group.
-    WALLMART
-
-
-12. Given two trees, check if they are 1.identical 2.mirrors. 3.isomorphic 4.
-    quasi-isomorphic
-
-
-5.  PARKING LOT
-
-
-29. Merge two linked lists that are sorted to give a final linked list that is in descending
-    order.
-
-
-9.  Number of subsequences of the form a^i b^j c^k.
-    Given a string, count number of subsequences of the form aibjck, i.e., it consists of i ’a’
-    characters, followed by j ’b’ characters, followed by k ’c’ characters where i >= 1, j >=1 and
-    k >= 1.
-
-    Note: Two subsequences are considered different if the set of array indexes picked for the 2
-    subsequences are different.
-
-    Expected Time Complexity : O(n)
-
-    Input  : abbc
-    Output : 3
-    Subsequences are abc, abc and abbc
-
-    Input  : abcabc
-    Output : 7
-    Subsequences are abc, abc, abbc, aabc
-    abcc, abc and abc
-
-
-12. Count all possible paths from top left to bottom right of a [m x n] matrix.
-    We can either move only to right or down.
-
-
-1. Fibonacci series.
-
-
-12. Given a sorted Singly Linked List, convert it into BST.
-
-
-34. For a full binary tree, print the level order traversal in bottom up approach as:
-    8 15 9 14 10 13 11 12 4 7 5 6 2 3 1
-    https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal-set-2/
-    Asked in Amazon.
-
-
-2.  Find the inorder successor for a given node in an inorder threaded binary tree.
-
-
-56. Given a Binary Tree, find if there exist edge whose removal creates two trees of
-    equal size.
-    https://www.geeksforgeeks.org/check-if-removing-an-edge-can-divide-a-binary-tree-in-two-halves/
-
-
-12. Given a linked list that is alternately increasing and decreasing. Sort the linked list.
-    Eg. Input List:   10->40->53->30->67->12->89->NULL
-        Output List:  10->12->30->43->53->67->89->NULL
-
-
-4. Find the inorder predecessor and successor in a BST.
-
-
-18. Convert BST to Min Heap. Given a BST, we need to modify this bst such that
-    this modified tree is a min heap where left substree is less than right
-    subtree for all nodes.
-    https://www.geeksforgeeks.org/convert-bst-min-heap/
-
-
-58. Check if a binary tree is subtree of another binary tree
-
-
-17. Find pair for given sum in a sorted singly linked without extra space
-    Given a sorted singly linked list and a value x, the task is to find pair whose sum is
-    equal to x. We are not allowed to use any extra space and expected time complexity is
-    O(n).
-
-    Examples:
-
-    Input : head = 3-->6-->7-->8-->9-->10-->11 , x=17
-    Output: (6, 11), (7, 10), (8, 9)
-
-
-61. Find the largest subarray in a binary array with equal number of 0s and 1s.
-
-
-14. Given two strings str1 and str2, find the shortest string that has both str1 and str2 as
-    sub-sequences. The simpler version of this question is to find the length of above string.
-    Lets consider two strings, ravi and avishek. We need to find a shortest string which has both
-    the above two strings as subsequence. There can be many possible results, we can find one.
-
-
-10. Rod Cutting.
-    Given a rod of length n and a table which shows the price of rod based on
-    its length. How can we cut the rod so that we get the maximum return.
-    Eg, price char = 1(5), 2(5), 3(8), 4(9), 5(10), 6(17), 7(17), 8(20), 9(24), 10(30)
-    Rod of length 1 costs 5.
-    Rod of length 2 costs 5.
-    Rod of length 3 costs 8. and so on.
-
-    If a rod of length 4 is given then the max revenue would be obtained by cutting the rod in two
-    halves of size 2 where the revenue would be 2(5) + 2(5) = 10.
-
-    If a rod of length 3 is given the max revenue would be obtained by not cutting the rod.
-
-
-22. Given a sorted array with duplicates, find the number of occurrences of a given number at
-    minimum time complexity.
-
-
-14. Given two four digit prime numbers, suppose 1033 and 8179, we need to find the shortest path
-    from 1033 to 8179 by altering only single digit at a time such that every number that we get
-    after changing a digit is prime. For example a solution is 1033, 1733, 3733, 3739, 3779,
-    8779, 8179
-
-    https://www.geeksforgeeks.org/shortest-path-reach-one-prime-changing-single-digit-time/
-
-
-13. Find the diameter(width) of a Binary Tree. Diameter of a tree is the distance between
-    the two farthest leaves. To get the more details of the width of a tree,
-    check https://www.geeksforgeeks.org/diameter-of-a-binary-tree/
-
-
-1.  Perform a Bread First and Depth First traversal on a graph.
-
-
-3.  Evaluate postfix expression.
-
-
-6.  Longest Path in a Matrix
-    Given a n*n matrix where all numbers are distinct, find the maximum length path
-    (starting from any cell) such that all cells along the path are in increasing order with a
-    difference of 1.
-
-    We can move in 4 directions from a given cell (i, j), i.e., we can move to (i+1, j) or
-    (i, j+1) or (i-1, j) or (i, j-1) with the condition that the adjacent cells have a difference
-    of 1.
-
-    Input:  mat[][] = {{1, 2, 9}
-                       {5, 3, 8}
-                       {4, 6, 7}}
-    Output: 4
-    The longest path is 6-7-8-9.
-
-
-15. Given n dice each with m faces, numbered from 1 to m, find the number of ways to get sum X. X
-    is the summation of values on each face when all the dice are thrown.
-
-
-9. Implement stack using two queues.
-
-
-1. Insert element into BST using recursion and iteration.
-
-
-13. Find kth smallest element in a BST.
-
-
-5. Delete an element from a BST.
-
-
-8. Implement queue using two stacks.
-
-
-11. Maximum length of Snake sequence.
-    Given a grid of numbers, find maximum length Snake sequence and print it. If multiple snake
-    sequences exists with the maximum length, print any one of them.
-
-    A snake sequence is made up of adjacent numbers in the grid such that for each number, the
-    number on the right or the number below it is +1 or -1 its value. For example, if you are
-    at location (x, y) in the grid, you can either move right i.e. (x, y+1) if that number is
-    ± 1 or move down i.e. (x+1, y) if that number is ± 1.
-
-    For example,
-
-    9, 6, 5, 2
-    8, 7, 6, 5
-    7, 3, 1, 6
-    1, 1, 1, 7
-
-    In above grid, the longest snake sequence is: (9, 8, 7, 6, 5, 6, 7)
-
-
-2.  Perform a topological sorting on a Directed Asyclic Graph.
-
-
-12. Find the max area in a histogram.
-
-13*.Sort a stack. (Both recursion and iteration)
-
-
-43. Create a Full Tree from preorder and postorder traversal.
-
-
-6.  We need to sort a nearly sorted array. Given an unsorted array and a value k,
-    every element will be k places before or after the current position when sorted.
-    Eg, say k = 2 and the element is at index 5, then when the array is sorted, this
-    element at index 5 will be in one of the following positions: 3,4,5,6,7.
-    Eg: arr[] = {6, 5, 3, 2, 8, 10, 9}, k = 3
-        arr[] = {10, 9, 8, 7, 4, 70, 60, 50} k = 4
-
-    These two array are nearly sorted.
-    https://www.geeksforgeeks.org/nearly-sorted-algorithm/
-
-
-10. Delete an element from a Binary Tree.
-
-
-4.  Given a Binary Tree, check whether its an AVL tree or not.
-
-
-7.  Given two integers n and k, return all possible combinations of k numbers chosen from the range [1, n].
-    https://leetcode.com/problems/combinations/
-
-
-6.  Design ATM
-
-
-42. Given an array of elements, construct a binary tree in level order fashion.
-    Eg, arr[] = 1,2,3,4,5,6 then BT should be constructed such that its level
-    order is also the same.
-
-
-19. Given an array of 0s,1s and 2s, sort them. Dutch Flag Problem.
-
-
-26. Given a tree where leaves are represented by 0 and internal nodes by 1, assuming that
-    each node has either 0 or 2 children, create a tree given its pre-order traversal.
-    Eg: 10100 should create a tree as follows.
-             1
-         0      1
-               0 0
-
-
-33. Given an array of n elements. Our task is to write a program to rearrange the array such that
-    elements at odd positions are greater than all elements before it and elements at even positions
-    are less than all elements before it.
-    Input : arr[] = {3,1,5,6,2,7,4}
-    Output : 4 5 3 6 2 7 1
-
-    Input : arr[] = {1, 2, 1, 4, 5, 6, 8, 8}
-    Output : 4 5 2 6 1 8 1 8
-
-
-55. Given an array of integers and a number x, find the smallest subarray with sum greater than the
-    given value.
-
-    arr[] = {1, 4, 45, 6, 0, 19}
-       x  =  51
-    Output: 3
-    Minimum length subarray is {4, 45, 6}
-
-    arr[] = {1, 10, 5, 2, 7}
-       x  = 9
-    Output: 1
-    Minimum length subarray is {10}
-
-    arr[] = {1, 11, 100, 1, 0, 200, 3, 2, 1, 250}
-        x = 280
-    Output: 4
-    Minimum length subarray is {100, 1, 0, 200}
-
-    arr[] = {1, 2, 4}
-        x = 8
-    Output : Not Possible
-    Whole array sum is smaller than 8.
-
-
-
-4.  Find the sum of all the subsets of an array.
-
-
-49.  Given two equally sized arrays (A, B) and N (size of both arrays).
-    A sum combination is made by adding one element from array A and another element of array B.
-    Display the maximum K valid sum combinations from all the possible sum combinations.
-
-    Input :  A[] : {3, 2}
-             B[] : {1, 4}
-             K : 2 [Number of maximum sum
-                   combinations to be printed]
-    Output : 7    // (A : 3) + (B : 4)
-             6    // (A : 2) + (B : 4)
-
-    Input :  A[] : {4, 2, 5, 1}
-             B[] : {8, 0, 3, 5}
-             K : 3
-    Output : 13   // (A : 5) + (B : 8)
-             12   // (A : 4) + (B :  8)
-             10   // (A : 2) + (B : 8)
-
-
-15. Find the maximum path sum between two leaves of a binary tree. (Microsoft).
-    https://www.geeksforgeeks.org/find-maximum-path-sum-two-leaves-binary-tree/
-
-
-4.* Given a singly linked list, remove all the nodes which have a greater value on right side.
-    12->15->10->11->5->6->2->3->NULL should be changed to 15->11->6->3->NULL
-    10->20->30->40->50->60->NULL should be changed to 60->NULL
-    60->50->40->30->20->10->NULL should not be changed.
-
-
-28. Merge two linked lists that are sorted to give a final linked list that is also sorted.
-
-
-5.  Perform shortest path for weighted graphs with negative edges. (Bellman-Ford algo)
-
-
-26. Reverse every K elements of a linked list.
-    Input: 1-2-3-4-5-6-7-8-9 k=3
-    Output: 3-2-1-6-5-4-9-8-7
-
-    Input: 1-2-3-4-5-6-7-8
-    Output:3-2-1-6-5-4-7-8
-
-
-7.  Given an array of elements, find if any duplicate element occurs. How can we optimize if all the
-    elements are in the range 0 to n-1.
-
-
-8.  Find a height of a binary tree.
-
-
-76. Search an element in an infinite sorted array. (Amazon)
-
-
-3.  For a 4-ary tree what is the minimum height with n nodes.
-
-
-17. Given an array of n numbers and a positive integer k. The problem is to
-    find k numbers with most occurrences, i.e., the top k numbers having the
-    maximum frequency. If two numbers have same frequency then the larger
-    number should be given preference. The numbers should be displayed in
-    decreasing order of their frequencies.
-    https://www.geeksforgeeks.org/find-k-numbers-occurrences-given-array/
-
-
-13. Given a non negative array, find the number of subsequences having product smaller than K.
-    Input : [1, 2, 3, 4]
-            k = 10
-    Output :11
-    The subsequences are {1}, {2}, {3}, {4},
-    {1, 2}, {1, 3}, {1, 4}, {2, 3}, {2, 4},
-    {1, 2, 3}, {1, 2, 4}
-
-    Input  : [4, 8, 7, 2]
-             k = 50
-    Output : 9
-
-
-4.  Search an element in a Binary Tree.
-
-
-36. Perform post order traversal using only one stack.
-
-
-14. Given a integer as a input and replace all the ‘0’ with ‘5’ in the integer.
-    102 -> 152
-    1020 -> 1525
-    Use of array to store all digits is not allowed. (Amazon SDET)
-
-
-21. Given a matrix that is filled with ‘O’, ‘G’, and ‘W’ where ‘O’ represents open space, ‘G’
-    represents guards and ‘W’ represents walls in a Bank. Replace all of the O’s in the matrix
-    with their shortest distance from a guard, without being able to go through any walls.
-    Also, replace the guards with 0 and walls with -1 in output matrix.
-
-    Expected Time complexity is O(MN) for a M x N matrix.
-    O ==> Open Space
-    G ==> Guard
-    W ==> Wall
-
-    Input:
-      O  O  O  O  G
-      O  W  W  O  O
-      O  O  O  W  O
-      G  W  W  W  O
-      O  O  O  O  G
-
-    Output:
-      3  3  2  1  0
-      2 -1 -1  2  1
-      1  2  3 -1  2
-      0 -1 -1 -1  1
-      1  2  2  1  0
-
-    https://www.geeksforgeeks.org/find-shortest-distance-guard-bank/
-
-62. You are given an array of n-elements you have to find k smallest elements from the array but
-    they must be in the same order as they are in given array and we are allowed to use only O(1)
-    extra space.
-     Eg. arr[] = {5,7,4,2,6,1,9} and k = 3
-     output = 4,2,1
-
-
-8. Check if a given tree is BST or not.
-
-
-23. Convert postfix to infix.
-
-
-78. Given an array arr[]. Find maximum value of prefix sum which is also suffix sum for index i
-    in arr[].
-
-    Input : arr[] = {-1, 2, 3, 0, 3, 2, -1}
-    Output : 4
-    Prefix sum of arr[0..3] =
-                Suffix sum of arr[3..6]
-
-    Input : arr[] = {-2, 5, 3, 1, 2, 6, -4, 2}
-    Output : 7
-    Prefix sum of arr[0..3] =
-                  Suffix sum of arr[3..7]
-
-
-
-4.  Evaluate infix expression.
-
-
-24. Convert infix to prefix.
-
-
-1.  Check balancing of symbols i.e. for a given mathematical expression, we need to check if
-    the expression is valid or not.
-    Eg 1.
-        (a+b)+(c+d) is valid
-        ((a+b)+(c+d) is invalid
-        ((a+b)+(c-d)} is invalid
-
-
-66. A binary tree and a number k are given. Print every path in the tree with sum of the
-    nodes in the path as k. A path can start from any node and end at any node and must be
-    downward only, i.e. they need not be root node and leaf node; and negative numbers can
-    also be there in the tree.
-    https://www.geeksforgeeks.org/print-k-sum-paths-binary-tree/
-
-
-6.  Largest divisible pairs subset
-    Given an array of n distinct elements, find length of the largest subset such that every pair
-    in the subset is such that the larger element of the pair is divisible by smaller element.
-
-    Input : arr[] = {10, 5, 3, 15, 20}
-    Output : 3
-    Explanation: The largest subset is 10, 5, 20.
-    10 is divisible by 5, and 20 is divisible by 10.
-
-    Input : arr[] = {18, 1, 3, 6, 13, 17}
-    Output : 4
-    Explanation: The largest subset is 18, 1, 3, 6,
-    In the subsequence, 3 is divisible by 1,
-    6 by 3 and 18 by 6.
-
-    https://www.geeksforgeeks.org/largest-divisible-pairs-subset/
-
-
-5.  Perform pre-order traversal in an inorder threaded binary tree.
-
-10. We have a linked list with two pointers. One of the pointer is a random pointer
-which points to NULL. We need to point this random pointer to HIGHEST element to its
-right.
-    Eg. 5 -> 10 -> 2 -> 3
-    5's rand should point to 10
-    10's rand should point to 3
-    2's rand should point to 3
-    3's rand should point to Null
-
-11*. We have a linked list with two pointers. One of the pointer is a random pointer
-    which points to NULL. We need to point this random pointer to NEXT highest element to its
-    right.
-    Eg. 5 -> 10 -> 2 -> 3
-    5's rand should point to 10
-    10's rand should point to NULL (as there are no elements higher than 10)
-    2's rand should point to 3
-    3's rand should point to Null
-
-    Eg. 4 -> 5 -> 2 -> 25
-    4's rand should point to 5
-    5's rand should point to 25
-    2's rand should point to 25
-    25's rand should point to N
-
-
-1.  Give a paragraph of words, find the word that appears max number of times. If the paragraph is
+[313] 1.  Give a paragraph of words, find the word that appears max number of times. If the paragraph is
     scrolled down then some words may disappear from first frame, some words will still appear
     and some are new words. We still have to give the maximum word occurrence.
 
 
-5.  Given a positive number n, find all combinations of 2×n elements such that every element from 1 to n appears exactly
-    twice and the distance between its two appearances is exactly equal to the value of the element.
+[314] 4.  Given a big file containing billions of numbers, find the ten maximum numbers.
 
-    Input: n = 3
-    Output:
-    3 1 2 1 3 2
-    2 3 1 2 1 3
 
-    Input: n = 4
-    Output:
-    4 1 3 1 2 4 3 2
-    2 3 4 2 1 3 1 4
-
-    Input: n = 7
-    Output:
-    1 7 1 2 5 6 2 3 4 7 5 3 6 4
-    5 1 7 1 6 2 5 4 2 3 7 6 4 3
-    4 1 7 1 6 4 2 5 3 2 7 6 3 5
-    …
-    …
-    Total 52 configurations possible.
-
-    Note that no combination of elements is possible for some values of n like 2, 5, 6, etc.
-
-
-
-66. Sort the array in wave form. Given an unsorted array of integers, sort the array into a wave
-    like array. An array ‘arr[0..n-1]’ is sorted in wave form if arr[0] >= arr[1] <= arr[2] >=
-    arr[3] <= arr[4] >= ….
-
-     Input:  arr[] = {10, 5, 6, 3, 2, 20, 100, 80}
-     Output: arr[] = {10, 5, 6, 2, 20, 3, 100, 80} OR
-                     {20, 5, 10, 2, 80, 6, 100, 3} OR
-                     any other array that is in wave form
-
-     Input:  arr[] = {20, 10, 8, 6, 4, 2}
-     Output: arr[] = {20, 8, 10, 4, 6, 2} OR
-                     {10, 8, 20, 2, 6, 4} OR
-                     any other array that is in wave form
-
-
-44. Create Full Tree from pre-order traversal of a tree and pre-order traversal of a
-    mirror of the tree.
-
-
-57. Check if given Preorder, Inorder and Postorder traversals are of same tree.
-
-
-8.  Find four elements a, b, c and d in an array such that a+b = c+d.
-    Input:   {3, 4, 7, 1, 2, 9, 8}
-    Output:  (3, 8) and (4, 7)
-    Explanation: 3+8 = 4+7
-
-    Input:   {3, 4, 7, 1, 12, 9};
-    Output:  (4, 12) and (7, 9)
-    Explanation: 4+12 = 7+9
-
-    Input:  {65, 30, 7, 90, 1, 9, 8};
-    Output:  No pairs found
-
-    Input: {1, 2, 3, 4, 100, 200, 300, 400}
-    Output: 1+4 = 2+3
-
-
-6.  Delete a binary tree.
-
-
-4.  Find a pre-order successor of a given node in an inorder threaded binary tree.
-
-
-2. Search an element in a BST.
-
-
-8.  Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
-    https://leetcode.com/problems/permutations/
-
-
-17. Find a pair whose sum equals to K in a rotated array.
-    Input: arr[] = {11, 15, 6, 8, 9, 10}, x = 16
-    Output: true
-    There is a pair (6, 10) with sum 16
-
-    Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 35
-    Output: true
-    There is a pair (26, 9) with sum 35
-
-    Input: arr[] = {11, 15, 26, 38, 9, 10}, x = 45
-    Output: false
-    There is no pair with sum 45.
-
-
-7.  Choice of area.
-    Consider a game, in which you have two types of powers, A and B and there are 3 types of
-    Areas X, Y and Z. Every second you have to switch between these areas, each area has specific
-    properties by which your power A and power B increase or decrease. We need to keep choosing
-    areas in such a way that our survival time is maximized. Survival time ends when any of the
-    powers, A or B reaches less than 0.
-
-    Initial value of Power A = 20
-    Initial value of Power B = 8
-
-    Area X (3, 2) : If you step into Area X,
-                    A increases by 3,
-                    B increases by 2
-
-    Area Y (-5, -10) : If you step into Area Y,
-                       A decreases by 5,
-                       B decreases by 10
-
-    Area Z (-20, 5) : If you step into Area Z,
-                      A decreases by 20,
-                      B increases by 5
-
-    It is possible to choose any area in our first step.
-    We can survive at max 5 unit of time by following
-    these choice of areas :
-    X -> Z -> X -> Y -> X
-
-
-
-17. Find sum of all the elements of a Binary Tree.
-
-
-3.  Find the longest palindrome between two strings.
-
-
-12. Find the smallest derangement. Lets say k = 2, then the seq is as 0,1,2.
-    The derangement of this seq is a permutation such that no elements are at
-    the original position. Eg for this seq, the derangement are [1,2,0] & [2,0,1]
-    but the smallest is [1,2,0].
-
-    For k = 4, seq = [0,1,2,3,4] and the smallest derangement is: [1,0,3,4,2]
-    We can also try for largest derangement.
-
-13*. Maximum sum combination from two array.
-    Two array of equal sizes are given. We need to find the k number of max
-    sum of the elements of two array. Eg.
-    A = [1,4,5,2]
-    B = [3,0,9,7]
-
-    There can be many sum combinations like: 1+3=4, 1+9=10,5+7=12 etc etc.
-    But we need to find k number of max sums. If k = 2, then the max sums are
-    9 + 5 = 14 and
-    9 + 4 = 13
-    https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-array/
-
-
-34. An array of size n contains element from range 1 to n and all the elements are repeating thrice
-    except one element. Find that element.
-
-
-22. Find a Lowest Common Ancestor of two given nodes in Binary Tree.
-
-
-17. Check if two given BSTs has same elements (same content and same size).
-
-
-14. How to implement a stack which will support following operations in O(1) time complexity?
-    1) push() which adds an element to the top of stack.
-    2) pop() which removes an element from top of stack.
-    3) findMiddle() which will return middle element of the stack.
-    4) deleteMiddle() which will delete the middle element.
-    Push and pop are standard stack operations.
-
-15*. Implement stack using single queue.
-
-
-11. Given a binary string, count number of substrings that start and end with 1.
-    For example, if the input string is “00100101”, then there are three substrings “1001”,
-    “100101” and “101”, so the answer is 3.
-
-
-11. Ways to cover a distance.
-    Given a distance ‘dist, count total number of ways to cover the distance with 1, 2 and 3 steps.
-    Input:  n = 3
-    Output: 4
-    Below are the four ways
-     1 step + 1 step + 1 step
-     1 step + 2 step
-     2 step + 1 step
-     3 step
-
-    Input:  n = 4
-    Output: 7
-
-
-6.  Create a Minimal Spanning Tree using Prim's algorithm.
-
-
-37. Given a Binary Tree, print all diagonal elements in a binary tree belonging to
-    same line.
-    https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/
-
-
-28. Construct a tree from inorder and post-order traversals.
-    Inorder:    D B E A F C G
-    Postorder:  D E B F G C A
-
-
-4.  Given a word, find the next word in a dictionary.
-
-
-1.  Given a height h, create a HB(0).
-
-
-43. Given an array of numbers, arrange them in a way that yields the largest value. For example,
-    if the given numbers are {54, 546, 548, 60}, the arrangement 6054854654 gives the largest value.
-    And if the given numbers are {1, 34, 3, 98, 9, 76, 45, 4}, then the arrangement 998764543431
-    gives the largest value.
-
-44*. Given an array of size n where all elements are distinct and in range from 0 to n-1, change
-    contents of arr[] so that arr[i] = j is changed to arr[j] = i.
-
-    Input: arr[]  = {1, 3, 0, 2};
-    Output: arr[] = {2, 0, 3, 1};
-    Explanation for the above output.
-    Since arr[0] is 1, arr[1] is changed to 0
-    Since arr[1] is 3, arr[3] is changed to 1
-    Since arr[2] is 0, arr[0] is changed to 2
-    Since arr[3] is 2, arr[2] is changed to 3
-
-    Input: arr[]  = {2, 0, 1, 4, 5, 3};
-    Output: arr[] = {1, 2, 0, 5, 3, 4};
-
-45*. You have been given an array and you have to make a program to convert that array such that
-    positive elements occur at even numbered places in the array and negative elements occur at
-    odd numbered places in the array. We have to do it in place.
-    There can be unequal number of positive and negative values and the extra values have to be left
-    as it is.
-
-    Input : arr[] = {1, -3, 5, 6, -3, 6, 7, -4, 9, 10}
-    Output : arr[] = {1, -3, 5, -3, 6, 6, 7, -4, 9, 10}
-
-    Input : arr[] = {-1, 3, -5, 6, 3, 6, -7, -4, -9, 10}
-    Output : arr[] = {3, -1, 6, -5, 3, -7, 6, -4, 10, -9}
-
-
-75. Given an array where difference between adjacent elements is 1, write an efficient algorithm to
-    search for an element in the array and return the position of the element (return the
-    first occurrence).
-
-    Input: arr[] = {8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3}
-           x = 3
-    Output: Element 3 found at index 7
-
-    We can enhance this question where every element differs by k and search an element x.
-
-    Input : arr[] = {20, 40, 50, 70, 70, 60}
-              k = 20
-              x = 60
-    Output : 5
-    The index of 60 is 5
-
-
-
-11.*Finding a Span. Span is basically used for financial analysis. If we are given a stock
-    value of an item per day, then span for each day is the number of days before this day
-    where the stock value was less than or equal to this day.
-
-    Lets assume that the array index represents the order of days.
-
-    Eg: arr[] = {6,3,4,5,2}. At 0th day, the value of stock is 6 and so on.
-    Now the span = {1,1,2,3,1}
-     6 -> No days where stock value was less than or equal to 6 on/before 0th day hence
-     its 1
-     3 -> No days where stock value was less than or equal to 3 on/before 1st day hence
-     its 1
-     4 -> On 1st and 2nd day, the value of stock was less than or equal to 4 hence its 2.
-
-    Eg: arr[] = {100, 80, 60, 70, 60, 75, 85};
-    Span =      {1,    1, 1,   2,  1,  4,  6}
-
-
-61. Given a perfect binary tree, print nodes of middle level without computing its
-    height. A perfect binary tree is a binary tree in which all interior nodes have two
-    children and all leaves have the same depth or same level.
-    https://www.geeksforgeeks.org/print-middle-level-perfect-binary-tree-without-finding-height/
-
-
-50. Given an an array, segregate odd and even numbers such that even numbers are at the beginning
-    and odd number towards the end.
-
-51*. Given an Array of Integers and an Integer value k, find out k sub-arrays(may be overlapping)
-    which have k maximum sums.
-    Input : arr = {4, -8, 9, -4, 1, -8, -1, 6}, k = 4
-    Output : 9 6 6 5
-    https://www.geeksforgeeks.org/k-maximum-sum-overlapping-contiguous-sub-arrays/
-
-
-5.  Sort millions of numbers.
-
-
-2. Length of a linked list by recursion.
-
-
-20. A min heap array is given, we have to convert it into max heap in O(n).
-
-
-46. Given an array of integers, update every element with multiplication of previous and next
-    elements with following exceptions.
-    a) First element is replaced by multiplication of first and second.
-    b) Last element is replaced by multiplication of last and second last.
-
-    Input: arr[] = {2, 3, 4, 5, 6}
-    Output: arr[] = {6, 8, 15, 24, 30}
-
-    // We get the above output using following
-    // arr[] = {2*3, 2*4, 3*5, 4*6, 5*6}
-
-
-18. Given a pre-order traversal, create a BST.
-
-
-26. Given a value k, rotate the array (sorted) to its left (anti-clockwise rotation).
-    arr[] = {1,2,3,4,5}, k=2, output = {3,4,5,1,2}
-
-
-2.  A string S is provided whose length is more than t. A set of valid words W, each of size t is provided. Find the all
-    possible combination of t letter valid words that can be formed from S. Eg, S="ABCDE", W = ["DEF", "CAB", "BED"], t=3,
-    the answer should be "CAB", "BED".
-
-
-5. Find the permutations and combinations of a string.
-
-8.  Optimal Strategy for a Game.
-    Consider a row of n coins of values v1 . . . vn, where n is even. We play a
-    game against an opponent by alternating turns. In each turn, a player selects either the first
-    or last coin from the row, removes it from the row permanently, and receives the value of the
-    coin. Determine the maximum possible amount of money we can definitely win if we move first.
-
-    Note: The opponent is as clever as the user.
-
-
-
-1.  Find the sum of all elements of a Generic Tree.
-
-
-5.  Implement a stack where getMinimum() gives us the minimum element of stack at constant
-    time O(1).
-
-6*. Implement a stack where getMinimum() gives us the minimum element of stack at constant
-    time O(1) without any extra space.
-
-
-1.  Covert Binary Tree to full threaded inorder tree.
-
-
-7.  Check if a given Binary Tree is a heap.
-
-
-4.  Given an MxN matrix where each element can either be 0 or 1. We need to find the path between a given
-    source cell to a destination cell. The path can only be created out of a cell if its value is 1. If the path
-    does not exists, then return -1.
-
-    a. Find the distance of the shortest path.
-    b. Find the distance of the longest path.
-    c. Find the distance of the shortest path along with the path.
-    d. Find the total number of unique paths from source to destination.
-
-
-0.  Design LRU Cache
-
-
-17. Given an 'n' pair of numbers where each pair (a,b) is such that a < b. Let the pairs be
-    (a1,b1),(a2,b2),(a3,b3) ... These pairs are said to form a chain if b of one pair is less than
-    a of another pair. We need to find the longest chain.
-
-    For example, if the given pairs are {{5, 24}, {39, 60}, {15, 28}, {27, 40}, {50, 90} }, then
-    the longest chain that can be formed is of length 3, and the chain is {{5, 24}, {27, 40},
-    {50, 90}}
-
-
-13. Given a N X N matrix (M) filled with 1 , 0 , 2 , 3 . Find the minimum numbers of moves needed
-    to move from source to destination (sink) while traversing through blank cells only.
-    You can traverse up, down, right and left.
-    A value of cell 1 means Source.
-    A value of cell 2 means Destination.
-    A value of cell 3 means Blank cell.
-    A value of cell 0 means Blank Wall.
-    Note : there is only single source and single destination and there may be more than one path
-    from source to destination(sink). Each move in matrix we consider as ‘1’
-
-    Eg. Input : M[3][3] = {{ 0 , 3 , 2 },
-                           { 3 , 3 , 0 },
-                           { 1 , 3 , 0 }};
-        Output : 4
-        Exp: Source is at (2,0) -> (2,1) -> (1,1,) -> (0,1) -> (0,2)
-
-        Input : M[4][4] = {{ 3 , 3 , 1 , 0 },
-                           { 3 , 0 , 3 , 3 },
-                           { 2 , 3 , 0 , 3 },
-                           { 0 , 3 , 3 , 3 }};
-        Output : 4
-    https://www.geeksforgeeks.org/find-minimum-numbers-moves-needed-move-one-cell-matrix-another/
-
-
-4.  Edit Distance.
-    Given two strings str1 and str2 and below operations that can performed on str1.
-    Find minimum number of edits (operations) required to convert ‘str1’ into ‘str2’.
-
-        Insert
-        Remove
-        Replace
-    All of the above operations are of equal cost.
-    Input:   str1 = "geek", str2 = "gesek"
-    Output:  1
-    We can convert str1 into str2 by inserting a 's'.
-
-    Input:   str1 = "cat", str2 = "cut"
-    Output:  1
-    We can convert str1 into str2 by replacing 'a' with 'u'.
-
-    Input:   str1 = "sunday", str2 = "saturday"
-    Output:  3
-    Last three and first characters are same.  We basically
-    need to convert "un" to "atur".  This can be done using
-    below three operations.
-    Replace 'n' with 'r', insert t, insert a
-
-
-65. Given an array of n distinct elements and a number x, arrange array elements according to the
-    absolute difference with x, i. e., element having minimum difference comes first and so on.
-    Note : If two or more elements are at equal distance arrange them in same sequence as in the
-    given array.
-
-    Input : arr[] : x = 7, arr[] = {10, 5, 3, 9, 2}
-    Output : arr[] = {5, 9, 10, 3, 2}
-    Explanation:
-    7 - 10 = 3(abs)
-    7 - 5 = 2
-    7 - 3 = 4
-    7 - 9 = 2(abs)
-    7 - 2 = 5
-    So according to the difference with X,
-    elements are arranged as 5, 9, 10, 3, 2.
-
-
-5.  Given a positive integer n, count the total number of set bits in binary representation of all
-    numbers from 1 to n. Set bit is the number of 1s in a binary number. Unset bit is 0.
-    Input: n = 3
-    Output:  4
-    Reason: set-bit of 1 is 1, set bit of 2 is 1 and set bit of 3 is 2 (has two 1s). So total
-    set-bit till 3 is 1+1+2 = 4.
-
-    Input: n = 6
-    Output: 9
-
-    Input: n = 7
-    Output: 12
-
-    Input: n = 8
-    Output: 13
-
-
-2.  Construct a minimum AVL Trees of height 0,1,2,3,4 and 5. What is the number of nodes
-    in a minimal AVL tree of height 6?
-
-
-52. Given a sorted array of n distinct integers where each integer is in the range from 0 to m-1
-    and m > n. Find the smallest number that is missing from the array.
-
-    Examples
-    Input: {0, 1, 2, 6, 9}, n = 5, m = 10
-    Output: 3
-
-    Input: {4, 5, 10, 11}, n = 4, m = 12
-    Output: 0
-
-    Input: {0, 1, 2, 3}, n = 4, m = 5
-    Output: 4
-
-    Input: {0, 1, 2, 3, 4, 5, 6, 7, 10}, n = 9, m = 11
-    Output: 8
-
-53*. Given an array of positive numbers, find the maximum sum of a subsequence with the constraint
-    that no 2 numbers in the sequence should be adjacent in the array.
-    Input : arr[] = {5, 5, 10, 100, 10, 5}
-    Output : 110
-
-    Input : arr[] = {1, 2, 3}
-    Output : 4
-
-    Input : arr[] = {1, 20, 3}
-    Output : 20
-
-    Input : arr[] = {3, 2, 7, 10}
-    Output : 13
-
-54*. Given heights of n towers and a value k. We need to either increase or decrease height of every
-    tower by k (only once) where k > 0. The task is to minimize the difference between the heights
-    of the longest and the shortest tower after modifications, and output this difference.
-
-    Input  : arr[] = {1, 15, 10}, k = 6
-    Output :  Maximum difference is 5.
-    Explanation : We change 1 to 6, 15 to
-    9 and 10 to 4. Maximum difference is 5
-    (between 4 and 9). We can't get a lower
-    difference.
-
-    Input : arr[] = {4, 6} k = 10
-    Output : Maximum difference is 2
-    arr[] = {14, 16} OR {-6, -4}
-
-
-5.  Given a node in a Generic Tree, count the number of siblings and number of children.
-
-
-1. Given a linked list and a key to be deleted. Delete last occurrence of key from list.
-The list may have duplicates.
-
-Input:   1->2->3->5->2->10, key = 2
-Output:  1->2->3->5->10
-
-
-5.  Given a height h, create a minimal AVL tree.
-
-
-
-20. We are given a matrix of nxn where each cell has some positive integers. These numbers
-    represent the cost. Given a position A[i][j], we have to find the path to reach this position
-    at minimum cost from (0,0). We can traverse in top, bottom, left and right.
-    https://www.geeksforgeeks.org/minimum-cost-path-left-right-bottom-moves-allowed/
-
-
-14. Find a level that has maximum sum in a Binary Tree.
-
-
-9.  Given a sorted array with duplicates, find the index of first occurrence of a number in O(logn).
-    arr[] = {1,1,2,2,2,3,3}, if a number is 2 then return 2 (index of first occ of 2). We can
-    practice for last occurrence as well.
-
-10*. We have an array of size n where one element occurs more than n/2. We need to find that element.
-    We can assume that all the element occurs only once. In the below example, 2 is the req element.
-    [2,1,2,2], [2,1,2,3,2],[1,2,2,3,2] etc.
-
-11*. Find the subarray with largest sum. (Kadane's algo).
-    Eg arr[] = {1,-3,2,1,-1}, max = 3. Also find the starting and ending of subarray.
-
-12*. Given a 2D array of 0s and 1s where each in row 1s are followed by 0s. Find the row with maximum
-    0. Do the vice versa as well, find the row with max no of 1s.
-    Eg, {1,1,0,0,0},
-        {1,1,1,1,0},
-        {1,0,0,0,0},
-        {1,1,1,0,0}
-    row with max 0 is 2 with max zero as 4.
-
-13*. Find the subarray with sum equal to S. All the elements in an array are positive.
-    Eg, arr = [1, 2, 3, 4, 4] and S = 7, Ans is [3,4]
-
-14*. Find all the subarrays with sum equal to 0.
-    Eg. [2,-1,-1,2]. There are two subarrays from 0 to 2 and 1 to 3.
-
-
-18. Convert Binary Tree to its mirror.
-
-     Eg: Inorder: D B E A F C
-        Preorder: A B D E C F
-
-
-64. Find the k maximum sum of a contiguous array.
-    a. The sub-array could be overlapping.
-        Eg. arr = {4, -8, 9, -4, 1, -8, -1, 6}, k = 4
-            output: 9 6 6 5
-
-    b. The sub-array should not overlap
-        Eg. arr = {4, 1, 1, -1, -3, -5, 6, 2, -6, -2}, k = 3
-            output: 8, 6, -1
-
-
-45. Construct a tree from ancestor matrix.
-    Given matrix:
-        0 1 1
-        0 0 0
-        0 0 0
-
-    The tree can be:
-         0   or   0
-       1   2     2   1
-
-    Any answer is fine.
-    https://www.geeksforgeeks.org/construct-tree-from-ancestor-matrix/
-
-
-1*. Implement Max Heap.
-
-2*. Implement Min Heap.
-
-
-
-
-3.  Given an array, find a pair of elements whose sum is k.
-
-
-10. Implement N number of stacks in one array.
-    Sub: Implement two/three stack in an array.
-
-
-8.  Check if a given array represents a heap.
-
-
-7.  Find a pair with maximum product in an array.
-    Input: arr[] = {1, 4, 3, 6, 7, 0}
-    Output: {6,7}
-
-    Input: arr[] = {-1, -3, -4, 2, 0, -5}
-    Output: {-4,-5}
-
-
-6. Find shortest path between two nodes in a BST.
-
-
-30. Alternately reverse a linked list.
-    Input: 1-2-3-4-5-6
-    Output: 2-1-4-3-6-5
-
-    Input: 1-2-3-4-5
-    Output: 2-1-4-3-5
-
-16. Consider a matrix with rows and columns, where each cell contains either a ‘0’ or a ‘1’ and
-    any cell containing 1 is called a filled cell. Two cells are said to be connected if they
-    are adjacent to each other horizontally, vertically, or diagonally .If one or more filled
-    cells are connected, they form a region. find the length of the largest region.
-
-    Input : M[][5] = { 0 0 1 1 0
-                       1 0 1 1 0
-                       0 1 0 0 0
-                       0 0 0 0 1 }
-    Output : 6
-    Ex: in the following example, there are 2 regions one with length 1 and the other as 6.
-        so largest region : 6
-    https://www.geeksforgeeks.org/find-length-largest-region-boolean-matrix/
-
-
-16. Union and Intersection of two linked list.
-    Input:
-       List1: 10->15->4->20
-       List2:  8->4->2->10
-    Output:
-       Intersection List: 4->10
-       Union List: 2->8->20->4->15->10
-
-
-5.  Miscellaneous questions:
-    a. Merge two sorted arrays of size n and n+m (where only m elements are filled) into second arr.
-    b. Sort an array which contains values from 1 to n.
-
-
-6.  Given an array contain numbers of 0's and 1's such that 1's occur before 0. Find the index of
-    1st 0 element. The number are in millions.
-
-
-16. Rotate an array by k elements without using any extra space. Eg, input=[1, 2, 3, 4, 5, 6, 7]
-    k = 2, output = [3, 4, 5, 6, 7, 1, 2]
-
-
-14. Given an array which can contain duplicate elements. We are given a value
-    k. We need to remove k number of elements from the array such that we get
-    the maximum non-repeating elements.
-    Eg. arr[] = {5, 7, 5, 5, 1, 1, 2, 2, 5}, k = 3
-    Here, if we remove three 5s, then distinct element left in array will be 2 (5,7)
-    But if we remove, one 1, one 2, one 5(will not make any difference though)
-    then the distinct elements will be 3 (7,1,2)
-    https://www.geeksforgeeks
-    .org/maximum-distinct-elements-removing-k-elements/
-
-
-3.  For a given array of integers, find all the possible sub-arrays.
-
-
-59. Given an array of positive integers. We need to make the given array a ‘Palindrome’. Only
-    allowed operation on array is merge. Merging two adjacent elements means replacing them with
-    their sum. The task is to find minimum number of merge operations required to make given array
-    a ‘Palindrome’.
-
-    To make an array a palindromic we can simply apply merging operations n-1 times where n is the
-    size of array (Note a single element array is always palindrome similar to single character in
-    string). In that case, size of array will be reduced to 1. But in this problem we are asked to
-    do it in minimum number of operations.
-
-    Input : arr[] = {15, 4, 15}
-    Output : 0
-    Array is already a palindrome. So we
-    do not need any merge operation.
-
-    Input : arr[] = {1, 4, 5, 1}
-    Output : 1
-    We can make given array palindrome with
-    minimum one merging (merging 4 and 5 to
-    make 9)
-
-    Input : arr[] = {11, 14, 15, 99}
-    Output : 3
-    We need to merge all elements to make
-    a palindrome.
-
-    Input : arr[] = {3, 5, 1, 1, 1}
-    Output: 2
-
-
-35. How many trailing zeros are there in a factorial of a given number.
-
-
-41.*Given an array of elements find the max difference between two elements such that the larger
-    element appears after the smaller element.
-    Eg, arr[]={2,3,10,6,4,8,1}. Max diff is 8 (between 2 and 10).
-    arr[] = {7,9,5,6,3,2}. Max diff is 2 (between 9 and 7)
-
-42*. Given two integer arrays of same size, “arr[]” and “index[]”, reorder elements in “arr[]”
-    according to given index array. It is not allowed to given array arr’s length.
-
-    Input:  arr[]   = [10, 11, 12];
-            index[] = [1, 0, 2];
-    Output: arr[]   = [11, 10, 12]
-            index[] = [0,  1,  2]
-
-    Input:  arr[]   = [50, 40, 70, 60, 90]
-            index[] = [3,  0,  4,  1,  2]
-    Output: arr[]   = [40, 60, 90, 50, 70]
-            index[] = [0,  1,  2,  3,   4]
-
-
-
-2.  Given arrival and departure time of trains in an array. What is the minimum number of platforms
-    required to build.
-    Input:  arr[]  = {9:00,  9:40, 9:50,  11:00, 15:00, 18:00}
-            dep[]  = {9:10, 12:00, 11:20, 11:30, 19:00, 20:00}
-    Output: 3
-
-
-19. Flattening a Linked List. Given a linked list which has two pointers.
-    One is a usual next pointer and the other is a 'down' pointer as given below.
-    We need to flatten the linked list and sort them. The linked list is sorted
-    in both the direction.
-
-    Eg.
-    5 - 10 - 19 - 28
-    |   |    |    |
-    7   20   22   35
-    |        |    |
-    8        50   40
-    |             |
-    30            45
-
-
-5.  Find the kth smallest element in a unsorted array.
-
-
-19. Given an array, print the Next Greater Element (NGE) for every element. The Next
-    Greater Element for an element x is the first greater element on the right side of x
-    in array. Elements for which no greater element exist, consider next greater element
-    as -1.
-
-    Eg: arr = {4, 5, 2, 25}
-        4 -> 5
-        5 -> 25
-        2 -> 25
-        25 -> -1
-
-
-9.  Find a deepest node of a binary tree.
-
-
-16. Multiplication of largest triplet. An integer is being read from a
-    continuous stream, for every insertion we need to find a multiplication of
-    largest 3 numbers that has been received so far.
-
-
-52. Replace a node by sum of its left and right subtrees but the node has to be replaced as
-    explained.
-    https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/
-
-
-16. Given two element x and y, print all the elements that lies in the within the range
-    of x and y.
-    Alt: Given a root of a BST, trim the tree so that all the elements are in the range
-    x and y.
-
-
-25. Count the number of rotations in Rotated Linked List. We assume that the linked list was
-    first sorted and then made k rotations. We need to find the value of k.
-
-    Eg: Original list: 5-8-11-12-15-18
-    After 2 rotations: 15-18-5-8-11-12
-    The input give will be 15-18-5-8-11-12, we need to give the output as 2.
-
-
-9.  There are given n ropes of different lengths, we need to connect these ropes into one
-    rope. The cost to connect two ropes is equal to sum of their lengths. We need to
-    connect the ropes with minimum cost.
-
-    For example if we are given 4 ropes of lengths 4, 3, 2 and 6. We can connect the
-    ropes in following ways.
-    1) First connect ropes of lengths 2 and 3. Now we have three ropes of lengths 4, 6
-    and 5.
-    2) Now connect ropes of lengths 4 and 5. Now we have two ropes of lengths 6 and 9.
-    3) Finally connect the two ropes and all ropes have connected.
-
-    Total cost for connecting all ropes is 5 + 9 + 15 = 29. This is the optimized cost
-    for connecting ropes. Other ways of connecting ropes would always have same or more
-    cost. For example, if we connect 4 and 6 first (we get three strings of 3, 2 and 10),
-    then connect 10 and 3 (we get two strings of 13 and 2). Finally we connect 13 and 2.
-    Total cost in this way is 10 + 13 + 15 = 38.
-    https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
-
-
-6.  Letter combination of a phone number.
-    https://leetcode.com/problems/letter-combinations-of-a-phone-number/
-
-
-
-10. Highest power of 2 less than or equal to given number.
-    Input : n = 10
-    Output : 8
-
-    Input : n = 19
-    Output : 16
-
-    Input : n = 32
-    Output : 32
-
-
-7. Given a singly linked list, rotate the linked list counter-clockwise by k nodes.
-Where k is a given positive integer. For example, if the given linked list is
-10->20->30->40->50->60 and k is 4, the list should be modified to 50->60->10->20->30->40.
-Try using minimum pointer too.
-
-
-22. Celebrity problem. In a party there are N number of people. Among them one is a
-    celebrity. The condition being:
-        a. Every body knows a celebrity
-        b. Celebrity does not know anybody.
-    How would you identify the celebrity by calling the below function minimum number of
-    times. We can assume that there is function called 'knows(A,B)' which would return
-    true if A knows B else false.
-
-    NOTE: A celebrity might not be present as well.
-
-
-29. Rotate two dimensional matrix by 90 degree to its right(or left). This can be extended to rotating the array by
-    n no of times. If n=2, then we are rotating by 180, n=3 then 270 and so on.
-
-
-3.  Perform shortest path for non-weighted graphs.
-
-
-27. Reverse a Linked List (Recursion and Iteration).
-
-
-18. Given an integer k and an array. Find if the sum or difference of the elements sums up to k.
-    Eg [1,1,1]. This array's element can be summed and differ as follows:
-    1 + 1 + 1 = 3
-    1 - 1 - 1 = -1
-    1 + 1 - 1 = 1
-    1 - 1 + 1 = 1
-
-    Here, k=3 is true. k = 1 is also true. But k=2 is false since no combination sums upto 2.
-    EXTENDED: Run it in a multi-threaded environment.
-    WALLMART
-
-
-9.  Knapsack Problem
-
-
-
-48. Given an array that represents a tree in such a way that array indexes are values in
-    tree nodes and array values give the parent node of that particular index (or node).
-    The value of the root node index would always be -1 as there is no parent for root.
-    Construct the standard linked representation of given Binary Tree
-    https://www.geeksforgeeks.org/construct-a-binary-tree-from-parent-array-representation/
-
-
-11. Find the articulation points in a graph.
-
-
-12. Coin Change
-    A set of denomination of coins are given and a value N is provided.
-
-    1.  Find the total number of ways in which we can make a change.
-        For example, for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}
-        So output should be 4.
-
-    2.  Find the minimum number of coins needed to make a value N.
-        Example, N = 10 and coins = [2, 3, 5], then minumum no of coins needed is [5,5] hence the answer is 2.
-
-    Given a value N, if we want to make change for N cents, and we have infinite supply of each of
-    S = { S1, S2, .. , Sm} valued coins, how many ways can we make the change? The order of coins
-    does not matter.
-
-    For example, for N = 4 and S = {1,2,3}, there are four solutions: {1,1,1,1},{1,1,2},{2,2},{1,3}
-    So output should be 4. For N = 10 and S = {2, 5, 3, 6}, there are five solutions: {2,2,2,2,2},
-    {2,2,3,3}, {2,2,6}, {2,3,5} and {5,5}. So the output should be 5.
-
-
-67. Given an array A of size N consisting of elements 1 to N. A boolean array B consisting of N-1
-    elements indicates that if B[i] is 1, then A[i] can be swapped with A[i+1].
-    Find out if A can be sorted by swapping elements.
-
-    Input : A[] = {1, 2, 5, 3, 4, 6}
-            B[] = {0, 1, 1, 1, 0}
-    Output : A can be sorted
-    We can swap a[3] with a[4] and then a[4] with a[5].
-
-    Input : A[] = {2, 3, 1, 4, 5, 6}
-            B[] = {0, 1, 1, 1, 1}
-    Output : A can not be sorted
-    We can not sort A by swapping elements
-
-
-68*. Print the elements of an array in the decreasing frequency if 2 numbers have same frequency
-    then print the one which came first.
-
-    Input:  arr[] = {2, 5, 2, 8, 5, 6, 8, 8}
-    Output: arr[] = {8, 8, 8, 2, 2, 5, 5, 6}
-
-    Input: arr[] = {2, 5, 2, 6, -1, 9999999, 5, 8, 8, 8}
-    Output: arr[] = {8, 8, 8, 2, 2, 5, 5, 6, -1, 9999999}
-
-69*. Given an array of n distinct elements, find the minimum number of swaps required to sort the
-    array.
-
-    Input : {4, 3, 2, 1}
-    Output : 2
-    Explanation : Swap index 0 with 3 and 1 with 2 to form the sorted array {1, 2, 3, 4}.
-
-    Input : {1, 5, 4, 3, 2}
-    Output : 2
-
-
-17. Create a customized data structure such that it has functions :-
-    GetLastElement();
-    RemoveLastElement();
-    AddElement()
-    GetMin()
-
-
-18. Implement Stack and Queue using Deque.
-
-
-3.  N queen problem.
-
-
-40. We have a building of with n floors and we have many eggs with us. When an egg is thrown from a
-    floor higher than F then egg breaks else it will not. Devise a strategy to identify the F floor
-    by throwing minimum number of eggs.
-
-
-16. Check existence of a path with given sum. Meaning given a sum, there should exits a path
-    from root to any leaf such that the sum of their nodes must be equal to the given sum.
-
-
-4.  Given a big file containing billions of numbers, find the ten maximum numbers.
-
-
-1.  There is a continuous stream of strings. We need to store these strings such that we do not have
-    any repeating strings. Eg,
-    "sam" -> store it
-    "ram" -> store it
-    "jack" -> store it
-    "ram" -> "ram" has already appeared so we need to remove it.
-    "ram" -> since there is no "ram" store it.
-
-
-50. Convert a binary tree to Doubly Linked List such that the left pointer acts as a prev
-    and right pointer acts as next. The order of nodes in DLL must be same as Inorder of
-    the given Binary Tree.
-    https://www.geeksforgeeks.org/in-place-convert-a-given-binary-tree-to-doubly-linked-list/
-
-
-1.  There is a stream where the words keep coming. We need to store them. If any word already
-    exists then we need to remove them.
-
-
-19. Give a pre-order traversal, create a post order traversal.
-
-9.  Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations
-    of candidates where the chosen numbers sum to target. You may return the combinations in any order.
-    https://leetcode.com/problems/combination-sum/
-
-
-36. An array contains both positive and negative numbers in random order. Rearrange the array
-    elements so that positive and negative numbers are placed alternatively. Number of positive
-    and negative numbers need not be equal. If there are more positive numbers they appear at the
-    end of the array. If there are more negative numbers, they too appear in the end of the array.
-
-    For example, if the input array is [-1, 2, -3, 4, 5, 6, -7, 8, 9], then the output should be
-    [9, -7, 8, -3, 5, -1, 2, 4, 6]
-
-37*.Given an array of n positive integers and a number k. Find the minimum number of swaps required
-    to bring all the numbers less than or equal to k together.
-    Input:  arr[] = {2, 1, 5, 6, 3}, k = 3
-    If we replace 3 with 5 then all the numbers [2,1,3] will be together. Hence only 1 swap.
-    Output: 1
-
-    Input:  arr[] = {5,6,3,7,1,2,9,10}, k = 3
-    Output: 1
-
-38*. Rearrange array such that:
-    A[i] >= A[i-1]  , if i is even.
-    A[i] <= A[i-1]  , if i is odd.
-
-39*. Given an array of integers of size n. Assume ‘0’ as invalid number and all other as valid
-    number. Convert the array in such a way that if next valid number is same as current number,
-    double its value and replace the next number with 0. After the modification, rearrange the
-    array such that all 0’s are shifted to the end.
-
-    Input : arr[] = {2, 2, 0, 4, 0, 8}
-    Output : 4 4 8 0 0 0
-
-    Input : arr[] = {0, 2, 2, 2, 0, 6, 6, 0, 0, 8}
-    Output :  4 2 12 8 0 0 0 0 0 0
-    (Asked in Microsoft)
-
-
-60. Given a binary tree and an array, the task is to find if the given array sequence is
-    present as a root to leaf path in given tree.
-    https://www.geeksforgeeks.org/check-root-leaf-path-given-sequence/
-
-
-4.  For a given array A, where A[i] is the parent of the ith node (assume that the
-    parent of root node is -1), find the height of a tree.
-
-    Ex. arr= [-1,0,1,6,6,0,0,2,7]
-
-
-77. Given an array of A of n integers and an array B of m integers find the Maximum Contiguous
-    Subarray Sum of array A such that any element of array B is not present in that subarray.
-
-    Input : A = {1, 7, -10, 6, 2}, B = {5, 6, 7, 1}
-    Output : 2
-    Explanation Since the Maximum Sum Subarray of A is not allowed to have any element that is
-    present in array B.
-    The Maximum Sum Subarray satisfying this is {2} as the only allowed subarrays are:{-10} and {2}.
-    The Maximum Sum Subarray being {2} which sums to 2
-
-    Input : A = {3, 4, 5, -4, 6}, B = {1, 8, 5}
-    Output : 7
-
-    Explanation
-    The Maximum Sum Subarray satisfying this is {3, 4} as the only allowed subarrays are
-    {3}, {4}, {3, 4}, {-4}, {6}, {-4, 6}. The Maximum Sum subarray being {3, 4} which sums to 7
-
-
-55. Check if two nodes are cousins. Two nodes are cousins if they are in the same level
-    but have different parents.
-
-
-1.  Finding of spans or finding of next highest element in a list.
-    This algo basically solves finding next highest element (which is greater than the current
-    element) in a list. The list can be array, linkedlist etc.
-
-    For all elements, we need to  find another element to its right which is higher than the
-    element. If there are multiple elements higher than the current one then we choose the
-    first element.
-
-    Ex 1
-        arr = {4,5,3,7,8,5,1,2}
-        4 -> 5
-        5 -> 7
-        3 -> 7
-        7 -> 8
-        8 -> NA
-        5 -> NA
-        1 -> 2
-        2 -> NA
-    There are several questions modified to use this algo. Eg, a linkedlist's random pointer
-    should point to next higher element, finding span in stocks etc.
-
-    Calculate the time complexity.
-
-
-
-1.  Find the permutation and combination  of a given string "ABC".
-
-
-60. Longest Span with same Sum in two Binary arrays. Given two binary arrays, we need to find the
-    longest subarray such that this subarray is common to both and has the maximum sum.
-
-    In other words, given two binary arrays arr1[] and arr2[] of same size n. Find length of the
-    longest common span (i, j) where j >= i such that arr1[i] + arr1[i+1] + …. + arr1[j] = arr2[i]
-    + arr2[i+1] + …. + arr2[j].
-
-    Input: arr1[] = {0, 1, 0, 0, 0, 0};
-           arr2[] = {1, 0, 1, 0, 0, 1};
-    Output: 4
-    The longest span with same sum is from index 1 to 4.
-
-    Input: arr1[] = {0, 1, 0, 1, 1, 1, 1};
-           arr2[] = {1, 1, 1, 1, 1, 0, 1};
-    Output: 6
-    The longest span with same sum is from index 1 to 6.
-
-    Input: arr1[] = {0, 0, 0};
-           arr2[] = {1, 1, 1};
-    Output: 0
-
-    Input: arr1[] = {0, 0, 1, 0};
-           arr2[] = {1, 1, 1, 1};
-    Output: 1
-
-
-8.  Given a sorted array of n integers which has been rotated unknown number of times. Find logn
-    algo to find an element in the array.
-    Eg, arr[] = {15,16,19,20,25,1,3,4,5,7,10,14}. Search 5, output = 8 (which is an index of 5)
-
-
-10. Golomb Sequence
-    In mathematics, the Golomb sequence is a non-decreasing integer sequence where n-th term is
-     equal to number of times n appears in the sequence.
-
-    The first few values are
-    1, 2, 2, 3, 3, 4, 4, 4, 5, 5, 5, ……
-
-    Explanation of few terms:
-    Third term is 2, note that three appears 2 times.
-    Second term is 2, note that two appears 2 times.
-    Fourth term is 3, note that four appears 3 times.
-
-    Given a positive integer n. The task is to find the first n terms of Golomb sequence.
-    Input : n = 4
-    Output : 1 2 2 3
-
-    Input : n = 6
-    Output : 1 2 2 3 3 4
-
-
-30. Given an array of size n+2 where the elements are in the range 1 to n so two elements are
-    occurring twice. Find these two elements.
-
-
-62. Given a binary tree and a node, print all cousins of given node. Note that siblings
-    should not be printed.
-
-
-10. Given a sorted DLL, convert it into BST.
-
-
-21. Given a level order traversal of a Binary Tree, check if its a min heap.
-
-
-18. Given an array, only rotation operation is allowed on array. We can rotate the array as many
-    times as we want. Return the maximum possible of summation of i*arr[i].
-    Input: arr[] = {1, 20, 2, 10}
-    Output: 72
-    We get 72 by rotating array twice.
-    {2, 10, 1, 20}
-    20*3 + 1*2 + 10*1 + 2*0 = 72
-
-    Input: arr[] = {10, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    Output: 330
-    We can 330 by rotating array 9 times.
-    {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    0*1 + 1*2 + 2*3 ... 9*10 = 330
-    https://www.geeksforgeeks.org/find-maximum-value-of-sum-iarri-with-only-rotations-on-given
-    -array-allowed/
-
-
-3.  Leader board problem.
-    There is a game going on whose score is shown on the board. The board shows all players. Each
-    player has a userid, score and rank. Higher the score, lower is the rank. We are given two
-    methods which has to be implemented.
-
-    getRank(userId) => Takes userId and returns player's rank.
-
-    updateRank(userId, score) => Update the rank such that the player should be placed at correct
-    location. Also, the other players location should be changed accordingly.
-
-    display() => This method should give us all the players sorted based on their rank.
-
-    The leader board should show the players sorted according to their rank.
-
-
-21. For a given node, print all the ancestors of a node in a Binary Tree.
-
-
-72. Find total number of triangles.
-    https://www.geeksforgeeks.org/find-number-of-triangles-possible/
-
-
-12. Check if the given Graph is bipartite.
-
-
-1.  There is large array which contains a list of votes received by the leaders. We need to find out
-    the winner. Eg, arr[] = {4,1,1,2,4,5,3,2,3,4,5,1,2,1,2,3,4,5,4,4,3,3,2,2,1,3,1,3,5,4,2,3}. There
-    are five leaders 1,2,3,4 and 5. Find the efficient solution.
-
-
-15. Find the union and intersection of BSTs.
-
-
-51. Given a simple Binary Tree, modify it such that a node holds the sum of its two child.
-
-
-2.  Find the longest substring between two strings.
-
-
-9.  Assembly Line Scheduling.
-    https://www.geeksforgeeks.org/assembly-line-scheduling-dp-34/
-
-
-17. Given an array A of integers. Index i of A is said to be connected to index j if j = (i +
-    A[i]) % n + 1 (Assume 1-based indexing). Start traversing array from index i and jump to
-    its next connected index. If on traversing array in the described order, index i is again
-    visited then index i is a magical index. Count the number of magical indexes in the array.
-    Assume that array A consists of non-negative integers.
-
-    Input : A = {1, 1, 1, 1}
-    Output : 4
-    Possible traversals:
-    1 -> 3 -> 1
-    2 -> 4 -> 2
-    3 -> 1 -> 3
-    4 -> 2 -> 4
-    Clearly all the indices are magical
-
-    Input : A = {0, 0, 0, 2}
-    Output : 2
-    Possible traversals:
-    1 -> 2 -> 3 -> 4 -> 3...
-    2 -> 3 -> 4 -> 3...
-    3 -> 4 -> 3
-    4 -> 3 ->4
-    Magical indices = 3, 4
-    https://www.geeksforgeeks.org/magical-indices-array/
-
-18*. Given a sorted dictionary (array of words) of an alien language, find order of characters
-    in the language.
-    Input:  words[] = {"baa", "abcd", "abca", "cab", "cad"}
-    Output: Order of characters is 'b', 'd', 'a', 'c'
-    The words are sorted. So b comes before a and a comes before c.
-    b -> a, a -> c
-    Take the words, abcd and abca, so d comes before a. d -> a
-    Take the words, cab and cad, so b comes before d. b -> d
-    Hence b -> d -> a -> c
-
-    Input:  words[] = {"caa", "aaa", "aab"}
-    Output: Order of characters is 'c', 'a', 'b'
-
-    https://www.geeksforgeeks.org/given-sorted-dictionary-find-precedence-characters/
-
-
-3.  Gold Mining.
+[315] 3.  Gold Mining.
     Given a gold mine of n*m dimensions. Each field in this mine contains a positive integer which
     is the amount of gold in tons. Initially the miner is at first column but can be at any row.
     He can move only (right->,right up /,right down\) that is from a given cell, the miner can
@@ -2449,206 +2564,91 @@ Try using minimum pointer too.
     https://www.geeksforgeeks.org/gold-mine-problem/
 
 
-15. There is a m*n rectangular matrix whose top-left(start) location is (1, 1) and bottom-right
-    (end) location is (m*n). There are k circles each with radius r. Find if there is any path
-    from start to end without touching any circle.
-
-    The input contains values of m, n, k, r and two array of integers X and Y, each of length k.
-    (X[i], Y[i]) is the centre of ith circle.
+[316] 4.  There are 10,000 files and each file has 1 millions integers. Find the sum of all of them.
 
-    Input1 : m = 5, n = 5, k = 2, r = 1,
-             X = {1, 3}, Y = {3, 3}
-    Output1 : Possible
 
-    Input2 : m = 5, n = 5, k = 2, r = 1,
-             X = {1, 1}, Y = {2, 3}.
-    Output2 : Not Possible
+[317] 7. Given a singly linked list, rotate the linked list counter-clockwise by k nodes.
+Where k is a given positive integer. For example, if the given linked list is
+10->20->30->40->50->60 and k is 4, the list should be modified to 50->60->10->20->30->40.
+Try using minimum pointer too.
 
-    https://www.geeksforgeeks.org/path-rectangle-containing-circles/
-    Asked in Directi.
 
+[318] 25. How many different Binary Trees are possible with 'n' nodes.
 
-40. Given a pre-order traversal of a full binary tree where 0 denotes leaf and 1
-    denotes node. Find the height.
-    Eg: 10100 = 2 and 1011000 = 3
 
+[319] 24. Sort linked list which is already sorted on absolute values.
+    Input :  1 -> -10
+    output: -10 -> 1
 
-21. Given an array of size n where the elements range from 0 to n-1. Find the element that occurs
-    maximum number of times.
+    Input : 1 -> -2 -> -3 -> 4 -> -5
+    output: -5 -> -3 -> -2 -> 1 -> 4
 
+    Input : -5 -> -10
+    Output: -10 -> -5
 
-35. Reverse alternate levels of a perfect binary tree.
-    https://www.geeksforgeeks.org/reverse-alternate-levels-binary-tree/
-    Its not printing the alternate level but changing the tree structure.
+    Input : 5 -> 10
+    output: 5 -> 10
 
+    The inputs are sorted without considering - sign. But we need to sort them considering -
+    sign.
 
-8.* Sort a LinkedList (MergeSort method)
 
+[320] 11. Given a binary string, count number of substrings that start and end with 1.
+    For example, if the input string is “00100101”, then there are three substrings “1001”,
+    “100101” and “101”, so the answer is 3.
 
-20. Find a triplet from three linked lists with sum equal to a given number.
-    Given three linked lists, say a, b and c, find one node from each list
-    such that the sum of the values of the nodes is equal to a given number.
-    For example, if the three linked lists are 12->6->29, 23->5->8 and
-    90->20->59, and the given number is 101, the output should be triplet
-     “6 5 90”.
 
-21*. Find the length of a largest palindrome in a linked list without using
-    any extra space.
-    Input  : List = 2->3->7->3->2->12->24
-    Output : 5
-    The longest palindrome list is 2->3->7->3->2
+[321] 1.  There is large array which contains a list of votes received by the leaders. We need to find out
+    the winner. Eg, arr[] = {4,1,1,2,4,5,3,2,3,4,5,1,2,1,2,3,4,5,4,4,3,3,2,2,1,3,1,3,5,4,2,3}. There
+    are five leaders 1,2,3,4 and 5. Find the efficient solution.
 
-    Input  : List = 12->4->4->3->14
-    Output : 2
-    The longest palindrome list is 4->4
 
-22*. Subtract two numbers represented by two different linked list, giving
-     an output as another linked list.
+[322] 2.  A string S is provided whose length is more than t. A set of valid words W, each of size t is provided. Find the all
+    possible combination of t letter valid words that can be formed from S. Eg, S="ABCDE", W = ["DEF", "CAB", "BED"], t=3,
+    the answer should be "CAB", "BED".
 
-23*. Add two numbers represented by two different linked list, giving an
-     out as another linked list.
 
+[323] 22. Given a sorted array with duplicates, find the number of occurrences of a given number at
+    minimum time complexity.
 
-20. Next Greater Frequency Element.
-    Given an array, for each element find the value of nearest element to the right which
-    is having frequency greater than as that of current element. If there does not exist
-    an answer for a position, then make the value ‘-1’.
 
-    Input : a[] = [ 1,  1, 2, 3, 4, 2,  1]
-    Output :      [-1, -1, 1, 2, 2, 1, -1]
-    Explanation:
-    Given array a[] =            [1, 1, 2, 3, 4, 2, 1]
-    Frequency of each element is: 3, 3, 2, 1, 1, 2, 3
-    Lets calls Next Greater Frequency element as NGF
-    1. For element a[0] = 1 which has a frequency = 3,
-       As it has frequency of 3 and no other next element
-       has frequency more than 3 so  '-1'
-    2. For element a[1] = 1 it will be -1 same logic
-       like a[0]
-    3. For element a[2] = 2 which has frequency = 2,
-       NGF element is 1 at position = 6  with frequency
-       of 3 > 2
-    4. For element a[3] = 3 which has frequency = 1,
-       NGF element is 2 at position = 5 with frequency
-       of 2 > 1
-    5. For element a[4] = 4 which has frequency = 1,
-       NGF element is 2 at position = 5 with frequency
-       of 2 > 1
-    6. For element a[5] = 2 which has frequency = 2,
-       NGF element is 1 at position = 6 with frequency
-       of 3 > 2
-    7. For element a[6] = 1 there is no element to its
-       right, hence -1
+[324] 8.  Check if a given array represents a heap.
 
-    Input : a[] = [1, 1, 1, 2, 2, 2, 2, 11, 3, 3]
-    Output : [2, 2, 2, -1, -1, -1, -1, 3, -1, -1]
 
+[325] 15. Given n dice each with m faces, numbered from 1 to m, find the number of ways to get sum X. X
+    is the summation of values on each face when all the dice are thrown.
 
-15. Median of Stream of Running Integers. An integer is being read from a
-    continuous stream, we need to find a median of all the elements read so
-    far. A median is an integer that divides the sorted list into two. For
-    odd number of integers, median is the middle element. For even number of
-    integers, median is an average to two middle numbers.
-    https://www.geeksforgeeks.org/median-of-stream-of-running-integers-using
-    -stl/
 
+[326] 19. Flattening a Linked List. Given a linked list which has two pointers.
+    One is a usual next pointer and the other is a 'down' pointer as given below.
+    We need to flatten the linked list and sort them. The linked list is sorted
+    in both the direction.
 
-9.  Check if there exists a path from source s to destination d in a graph.
+    Eg.
+    5 - 10 - 19 - 28
+    |   |    |    |
+    7   20   22   35
+    |        |    |
+    8        50   40
+    |             |
+    30            45
 
 
-30. Print Postorder traversal from given Inorder and Preorder traversals
+[327] 5. Delete an element from a BST.
 
 
-27. Given a Binary Tree with three pointers: left, right and nextSibling. Point nextSibling
-     standard tree, the next sibling pointer would be as follows:
+[328] 4.  For a given array A, where A[i] is the parent of the ith node (assume that the
+    parent of root node is -1), find the height of a tree.
 
-    1 -> N
-    2 -> 3
-    3 -> N
-    4 -> 5
-    5 -> 6
-    6 -> 7
-    7 -> N
+    Ex. arr= [-1,0,1,6,6,0,0,2,7]
 
 
-46. Give a tree, construct an ancestor matrix. Reverse of the above problem.
-    https://www.geeksforgeeks.org/construct-ancestor-matrix-from-a-given-binary-tree/
-
-
-6.  Level order traversal of pattern tree.
-
-
-71. Given an array find the minimum subarray which when sorted makes the whole array sorted.
-    1) If the input array is [10, 12, 28, 30, 25, 40, 32, 31, 35, 50, 60], your program should
-     be able to find that the subarray lies between the indexes 3 and 8.
-
-    2) If the input array is [0, 1, 15, 25, 6, 7, 30, 40, 50], your program should be able to
-     find that the subarray lies between the indexes 2 and 5.
-
-
-18. What is XOR Linked List? Give the logic and can we implement in Java?
-
-
-32. Given a binary tree and a node, we need to write a program to find inorder successor
-    of this node.
-
-
-23. Given an array of 2n + 1 elements where all elements appear twice except one element which lies
-    deep inside. Find this single occurring element.
-
-
-19. There are n cities and there are roads in between some of the cities. Somehow all the roads
-    are damaged simultaneously. We have to repair the roads to connect the cities again. There
-    is a fixed cost to repair a particular road. Find out the minimum cost to connect all the
-    cities by repairing roads. Input is in matrix(city) form, if city[i][j] = 0 then there is
-    not any road between city i and city j, if city[i][j] = a > 0 then the cost to rebuild the
-    path between city i and city j is a. Print out the minimum cost to connect all the cities.
-    It is sure that all the cities were connected before the roads were damaged.
-
-    Input : {{0, 1, 2, 3, 4},
-             {1, 0, 5, 0, 7},
-             {2, 5, 0, 6, 0},
-             {3, 0, 6, 0, 0},
-             {4, 7, 0, 0, 0}};
-    Output : 10
-    https://www.geeksforgeeks.org/minimum-cost-connect-cities/
-
-
-1.  Perform preorder, inorder, postorder traversal of a Binary Tree by using recursion and
-    iteration.
-
-2*. Perform a breadth first traversal of a Binary Tree using and without using extra space.
-
-
-6.  Design elevator control system.
-
-
-15. Given an array of size (n-1) where the integers are in the range 1 to n. There are no duplicates
-    in the list. One of the integer is missing, find the missing integer.
-
-
-28. Print left rotation of an array in O(n) without rotating the array.
-
-
-25. How many different Binary Trees are possible with 'n' nodes.
-
-
-10. Count the number of paths from source to destination.
-
-
-73. We are given two sorted array. We need to merge these two arrays such that the initial
-    numbers (after complete sorting) are in the first array and the remaining numbers are in
-    the second array. Extra space allowed in O(1).
-    (Asked in several big companies)
-
-    Input: ar1[] = {10};
-           ar2[] = {2, 3};
-    Output: ar1[] = {2}
-            ar2[] = {3, 10}
-
-    Input: ar1[] = {1, 5, 9, 10, 15, 20};
-           ar2[] = {2, 3, 8, 13};
-    Output: ar1[] = {1, 2, 3, 5, 8, 9}
-            ar2[] = {10, 13, 15, 20}
+[329] 1.  There is a continuous stream of strings. We need to store these strings such that we do not have
+    any repeating strings. Eg,
+    "sam" -> store it
+    "ram" -> store it
+    "jack" -> store it
+    "ram" -> "ram" has already appeared so we need to remove it.
+    "ram" -> since there is no "ram" store it.
 
 

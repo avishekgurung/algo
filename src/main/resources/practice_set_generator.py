@@ -40,11 +40,12 @@ random.shuffle(question_bank)
 print("Number of questions: " + str(len(question_bank)))
 
 # Writing to new file
+counter = 1
 output_file = open(OUTPUT_FILE, "w")
 for question in question_bank:
-    output_file.write(question)
+    output_file.write("[{}] {}".format(counter, question))
     output_file.write("\n")
+    counter+= 1
 output_file.close()
 print("Output file: " + OUTPUT_FILE)
-
 
