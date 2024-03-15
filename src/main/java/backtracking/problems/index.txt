@@ -4,7 +4,8 @@
     possible combination of t letter valid words that can be formed from S. Eg, S="ABCDE", W = ["DEF", "CAB", "BED"], t=3,
     the answer should be "CAB", "BED".
 
-3.  For a given array of integers, find all the possible sub-arrays.
+3.  For a given array of integers, find all the possible sub-arrays. (Ext: Given an array, find all the sum of all
+    possible arrays).
 
 4.  Given an MxN matrix where each element can either be 0 or 1. We need to find the path between a given
     source cell to a destination cell. The path can only be created out of a cell if its value is 1. If the path

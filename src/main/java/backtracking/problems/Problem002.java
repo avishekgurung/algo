@@ -57,7 +57,8 @@ public class Problem002 {
         List<String> result = _instance.validWords(lookup, str, 3);
         System.out.println(result);*/
 
-        _instance.validWordsUtil(str, lookup, 3);
+        //_instance.validWordsUtil(str, lookup, 3);
+        _instance.validWordsUtil1(str, lookup, 3);
 
     }
 
@@ -95,6 +96,64 @@ public class Problem002 {
             tSizedWords(str, result + str.charAt(i), i+1, t, list);
         }
 
+    }
+
+
+    /**
+     * We can optimize further. In the above solution, we have identified all the potential words (which are t sized words)
+     * and then we are taking the permutation of these words. The second step of permutation can be completely cut off.
+     *
+     * For a given string we will sort this string. Sorting this string will be helpful later when we do the comparison.
+     * Now we will generate a set of three digit words with different combination. The set generated will also be of
+     * sorted words. (Check general combination logic)
+     *
+     * So if a string is ADECB, we will have [ABC, ACD, ADE, BCD, BDE, ABD, ACE, ABE, BCE, CDE]
+     *
+     * Now iterate the words collection and for each word, sort them and check them in the set.
+     *
+     */
+
+
+    private String sort(String str) {
+        char arr[] = str.toCharArray();
+
+        for(int i=0; i < arr.length-1; i++) {
+            for(int j=i+1; j< arr.length; j++) {
+                if(arr[i] > arr[j]) {
+                    char temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        return new String(arr);
+    }
+
+
+    private void combination(String prefix, String str, int t, Set<String> set) {
+        if(prefix.length() == t) {
+            set.add(prefix);
+        }
+        if(str.length() == 0) return;
+
+        for(int i=0; i < str.length(); i++) {
+            combination(prefix + str.charAt(i), str.substring(i+1, str.length()), t, set);
+        }
+
+    }
+
+    private void validWordsUtil1(String str, Set<String> words, int t) {
+        str = sort(str);
+
+        Set<String> set = new HashSet<>();
+        combination("", str, t, set);
+
+        for(String word: words) {
+            String sortedWord = sort(word);
+            if(set.contains(sortedWord)) {
+                System.out.println(word);
+            }
+        }
     }
 
 }
