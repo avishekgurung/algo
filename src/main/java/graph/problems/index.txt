@@ -6,7 +6,7 @@
 
 4.  Perform shortest path for weighted graphs with non-negative edges. (Dijkstra's algo)
 
-5.  Perform shortest path for weighted graphs with negative edges. (Bellman-Ford algo)
+5.  Perform shortest path for weighted graphs with negative edges. (Bellman-Ford algo) (Do Comparison)
 
 6.  Create a Minimal Spanning Tree using Prim's algorithm.
 
@@ -76,7 +76,7 @@
 16. Consider a matrix with rows and columns, where each cell contains either a ‘0’ or a ‘1’ and
     any cell containing 1 is called a filled cell. Two cells are said to be connected if they
     are adjacent to each other horizontally, vertically, or diagonally .If one or more filled
-    cells are connected, they form a region. find the length of the largest region.
+    cells are connected, they form a region. find the size of the largest region.
 
     Input : M[][5] = { 0 0 1 1 0
                        1 0 1 1 0

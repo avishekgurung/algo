@@ -1,0 +1,40 @@
+Reqs
+- We used be able to put a rate limiter to the number of executions.
+- The rate limitting should be based on client or tenant based.
+
+
+Solution
+
+
+RateModel
+- String ClientName
+- Integer limit (per second/minute)
+- Integer usage
+
+RateStorage
+- ConcurrentHashMap<ClientName, RateInfo> usage
+- RateModel get(ClientName)
+- set(RateModel)
+
+RateLimiter
+- ConcurrentHashMap<ClientName, RateInfo> usage
+- register(RateMode)
+- boolean verify(ClientName)
+    - synchronized(clientName) // since this will not block the entire method for all the threads but only for the
+    //specific client.
+    - There are two ways to implement the ratelimiting algo
+        1.  Constant refresh interval.
+            Here, we will run a event loop, that will refresh the usage of all the clients after every 1 minute.
+            But this is easier to implement but has major fallback. Eg, if we want 10 requests per min. A fresh set
+            of 5 request comes at 00:00:45 second. At 00:01:00, the refresh happens and if 10 set of requests comes
+            between 00:01:00 to 00:00:15 then it allows to process the request. But this is wrong, since from 00:00:45 to 00:01:15,
+            (within 30 seconds) we fired 15 requests that exceeds the limit 10.
+
+        2.  Moving refresh interval
+            Here, we will store the next expiry time. So everytime a new request comes we will take its epoch time
+            and compare it with our map. If the map does not contain this data then we will store it as
+            clientName : currentEpoch + threshold (=expiry time)
+
+            If the map contains the clientName, then we will check if the expiry time > currentTime
+            If yes, then drop the request
+            else update the map with new expiry time and let the request execute.

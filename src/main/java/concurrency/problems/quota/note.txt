@@ -1,0 +1,8 @@
+Req
+- In this system, we want to introduce a rate limit not based on the time but based on the number of requests. This is
+more like a quota system where based on the tenant or client, we allow only X number of concurrent requests to process.
+We are not concerned about the time taken by these request.
+
+- If the number of requests increases the quota then they should be in the queue for processing and should not be
+dropped.
+

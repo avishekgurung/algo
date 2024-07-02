@@ -4,17 +4,16 @@
     possible combination of t letter valid words that can be formed from S. Eg, S="ABCDE", W = ["DEF", "CAB", "BED"], t=3,
     the answer should be "CAB", "BED".
 
-3.  For a given array of integers, find all the possible sub-arrays. (Ext: Given an array, find all the sum of all
+3.  For a given array of integers, find all the possible sub-arrays. (Ext: Given an array, find sum of all
     possible arrays).
 
 4.  Given an MxN matrix where each element can either be 0 or 1. We need to find the path between a given
     source cell to a destination cell. The path can only be created out of a cell if its value is 1. If the path
     does not exists, then return -1.
 
-    a. Find the distance of the shortest path.
-    b. Find the distance of the longest path.
-    c. Find the distance of the shortest path along with the path.
-    d. Find the total number of unique paths from source to destination.
+    a. Find the shortest path (distance & path).
+    b. Find the longest path (distance & path).
+    c. Find the total number of unique paths from source to destination.
 
 5.  Given a positive number n, find all combinations of 2×n elements such that every element from 1 to n appears exactly
     twice and the distance between its two appearances is exactly equal to the value of the element.
@@ -51,9 +50,13 @@
 8.  Given an array nums of distinct integers, return all the possible permutations. You can return the answer in any order.
     https://leetcode.com/problems/permutations/
 
-9.  Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations
+9.  Given an array of distinct integers candidates and a target integer, return a list of all unique combinations
     of candidates where the chosen numbers sum to target. You may return the combinations in any order.
     https://leetcode.com/problems/combination-sum/
 
 10. Word search
     https://leetcode.com/problems/word-search/?envType=study-plan-v2&envId=top-interview-150
+
+11. Given an array of integers and target, check we can reach the target by taking the sum and difference of each
+    elements of the array. Eg, arr = {3,4,5} and target=-6 is true because we can get the target by 3-4-5 = -6. Likewise
+    the we should get for targets like 12 (3+4+5), 2 (3+4-5) etc.

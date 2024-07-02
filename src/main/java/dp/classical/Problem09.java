@@ -1,34 +1,60 @@
 package dp.classical;
 
+import java.util.*;
+
 public class Problem09 {
 
-  public static void knapsack(int weights[], int values[], int W) {
-    int n = weights.length;
-    int dp[][] = new int[n + 1][W + 1];
+  public static void main(String[] args) {
+    new Problem09().driver();
+  }
 
-    for(int i=0; i < n + 1; i++) dp[i][0] = 0;
-    for(int i=0; i < W + 1; i++) dp[0][i] = 0;
+  private void driver() {
+    PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+    priorityQueue.remove(1);
 
-    for(int item = 1; item <= n; item++) {
-      for(int capacity = 1; capacity <= W; capacity++) {
+  }
 
-        int valWithoutCurr = dp[item-1][capacity];
-        int valWithCurr = 0;
-        int currWeight = weights[item - 1];
+  public List<Integer> findSubstring(String s, String[] words) {
+    int ws = words[0].length();
+    List<String> list = new ArrayList();
+    int i=0;
+    while(i < s.length()) {
+      String aux = s.substring(i, i+ws);
+      list.add(aux);
+      i = i + ws;
+    }
+    System.out.println(list);
 
-        if(currWeight <= capacity) {
-          valWithCurr = values[item - 1];
-          int remainingCapacity = capacity - currWeight;
-          valWithCurr = valWithCurr + dp[item - 1][remainingCapacity];
-        }
-        dp[item][capacity] = Math.max(valWithCurr, valWithoutCurr);
+    List<Integer> indices = new ArrayList();
+    for(i=0; i < list.size() - words.length; i++) {
+      List<String> ls = Arrays.asList(words);
+      for(int j=i; j < i + words.length; j++) {
+        String wrd = list.get(j);
+        ls.remove(wrd);
+      }
+      if(ls.isEmpty()) {
+        indices.add(i * ws);
       }
     }
 
-    System.out.println(dp[n][W]);
+
+    System.out.println(indices);
+    return indices;
   }
 
-  public static void main(String[] args) {
-    knapsack(new int[]{1,2,3}, new int[]{6,10,12}, 5);
+
+
+  private int knapsackBounded(int weight[], int profit[], int index, int weightSum, int profitSum, int W) {
+    if(weightSum == W) return profitSum;
+    if(weightSum > W ) {
+      if(index > 0) return profitSum - profit[index-1];
+      else return 0;
+    }
+    if(index >= weight.length) return 0;
+    int result = -1;
+    for(int i=index; i < weight.length; i++) {
+      result = Math.max(result, knapsackBounded(weight, profit, i+1, weightSum + weight[i], profitSum+profit[i], W));
+    }
+    return result;
   }
 }

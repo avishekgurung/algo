@@ -1,0 +1,19 @@
+01. https://leetcode.com/problems/print-in-order/description/
+
+02. Write a program to print numbers alternatively by two threads. Irrespective of whichever thread you start first, the
+program should work.
+
+03. Given a number n, the program should generate n threads and each thread should print number in consecutive order.
+Eg if n=3, then
+    Thread-1 = 1
+    Thread-2 = 2
+    Thread-3 = 3
+    Thread-1 = 4
+    Thread-2 = 5
+    Thread-3 = 6
+    ..... and so on.
+
+
+ 04. Implement a task schedular.
+
+ 05. Implement a rate limiter.

@@ -1,69 +1,86 @@
 package dp.classical;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * Ref: https://www.youtube.com/watch?v=CE2b_-XfVDk&t=147s
  */
 public class Problem03 {
 
-  public static void longestIncreasingSubSequence(int arr[]) {
-    System.out.println(Arrays.toString(arr));
-    int n = arr.length;
-    int[] lcs = new int[n]; //stores the longest increasing subsequence till i
+/*  private static int lis(int arr[], int index, Map<Integer, Integer> lookup) {
+    if(index >= arr.length) return 0;
+    if(index > 0 && arr[index-1] > arr[index]) return 0;
+    if(lookup.containsKey(index)) return lookup.get(index);
+    int result = Integer.MIN_VALUE;
 
-    //For every element, the minimum increasing subsequence is 1
-    for(int i=0; i < n; i++) lcs[i] = 1;
+    for(int i=index; i < arr.length; i++) {
+      result = Math.max(result, lis(arr, i + 1, lookup));
+    }
+    lookup.put(index, result + 1);
+    return result + 1;
+  }*/
 
-    for(int i=1; i < n; i++) {
-      for(int j=0; j < i; j++) {
-        if(arr[j] < arr[i]) {
-          int lcs_at_j = lcs[j];
-          lcs[i] = Math.max(lcs_at_j + 1, lcs[i]);
-        }
-      }
+  private static int lis(int arr[], int index, Integer prev) {
+    if(index >= arr.length) {
+      return 0;
+    }
+    int current = arr[index];
+    /*if(prev >= arr[index]) {
+      return 0;
+    }*/
+    int result = 0;
+    for(int i=index; i < arr.length; i++) {
+      result = Math.max(result, lis(arr, i+1, arr[index]));
+    }
+    if(prev != null && prev < arr[index]) result++;
+    //result = result + 1;
+    return result;
+  }
+
+
+  private static int maxResult = 0;
+  private static void lis1(int arr[], int index, Integer prev, int result, Map<String, Integer> map) {
+    if(index >= arr.length) return;
+    if(prev != null && prev >= arr[index]) {
+      result = 0;
+    }
+    if(map.containsKey(index)) return;
+    maxResult = Math.max(maxResult, result);
+
+    for(int i=index; i < arr.length; i++) {
+      lis1(arr, i+1, arr[index], result + 1, map);
+    }
+  }
+
+  private static int test(int[] arr, int index, Integer prev, int carry) {
+    if(index >= arr.length) return carry;
+    int result = carry;
+    if(prev != null && prev > arr[index]) {
+      result = 0;
     }
 
-    //result computation
-    int largest_element_index = 0;
-    List<Integer> lcs_elements = new ArrayList<Integer>();
-
-    //Just find the maximum element
-    for(int i=1; i < n; i++) {
-      if(lcs[i] > lcs[largest_element_index]) {
-        largest_element_index = i;
-      }
+    for(int i=index; i < arr.length; i++) {
+      result = Math.max(result, test(arr, i+1, arr[index], carry+1));
     }
 
-    //find all the elements which form the lcs
-    int largest = lcs[largest_element_index];
-
-    for(int j=largest_element_index; j >=0; j--) {
-      if(lcs[j] == largest) {
-        lcs_elements.add(arr[j]);
-        largest--;
-      }
-    }
-
-
-
-    Collections.reverse(lcs_elements);
-
-    System.out.println("The longest increasing subsequence has length " +
-        lcs[largest_element_index]);
-    System.out.println("The subsequence is " + lcs_elements);
-    System.out.println();
+    return Math.max(carry, result) + 1;
   }
 
 
   public static void main(String[] args) {
-    longestIncreasingSubSequence(new int[]{4,3,6,4,8,6,7});
-    longestIncreasingSubSequence(new int[]{5,2,3,1,6});
-    longestIncreasingSubSequence(new int[]{2,8,5,6,3,7,4});
-    longestIncreasingSubSequence(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80});
+    //System.out.println(lis(new int[]{4,3,6,4,8,6,7}, 0, new HashMap<>()));;
+    //System.out.println(lis(new int[]{6,7,1,3}, 0, new HashMap<>()));
+    //System.out.println(lis(new int[]{20,100,10,12,5,13}, 0, new HashMap<>()));
+    //System.out.println(lis(new int[]{6,7,1,2}, 0, new HashMap<>()));;
+    //System.out.println(lis(new int[]{10, 22, 9, 33, 21, 50, 41, 60, 80}, 0, new HashMap<>()));;
+    //System.out.println(lis(new int[]{4,5,1,2}, 0, null));
+
+    lis1(new int[]{7,7,7,7,7,7,7}, 0, null, 0, new HashMap<>());
+    //lis1(new int[]{20,100,10,12,5,13}, 0, null, 0);
+    System.out.println(maxResult+1);
+
+    //System.out.println(test(new int[]{20,100,10,12,5,13}, 0, null, 0));
+
   }
 
 }

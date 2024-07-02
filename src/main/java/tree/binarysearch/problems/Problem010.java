@@ -3,8 +3,6 @@ package tree.binarysearch.problems;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import dll.util.DoublyLinkedList;
-import dll.util.Node;
 
 public class Problem010 {
 
@@ -16,7 +14,7 @@ public class Problem010 {
     return root;
   }*/
 
-  public static Node convert(Node node) {
+/*  public static Node convert(Node node) {
     if(node == null) return null;
     Node mid = getMid(node);
     if(mid.prev == null && mid.next == null) return mid;
@@ -74,7 +72,7 @@ public class Problem010 {
     DoublyLinkedList.display(node);
     Node root = convert(node);
     display(root);
-  }
+  }*/
 
   /**
    * The first simple solution would be to simply create left skew tree or right skew tree as follows:

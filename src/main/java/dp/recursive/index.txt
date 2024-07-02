@@ -1,0 +1,14 @@
+1.  Write a program to generate nth Fibinocci number.
+
+2.  Ways to cover a distance.
+    Given a distance n, count total number of ways to cover the distance with 1, 2 and 3 steps.
+    Input:  n = 3
+    Output: 4
+    Below are the four ways
+    1 step + 1 step + 1 step
+    1 step + 2 step
+    2 step + 1 step
+    3 step
+
+    Input:  n = 4
+    Output: 7

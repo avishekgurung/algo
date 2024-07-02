@@ -1,0 +1,6 @@
+Reqs
+- Process request asynchronously return the response immediately.
+- Once the async request gets completed, execute the callback which can be some method call or some API call.
+
+This system is more like a Job Scheduling system where insert the Task into the Queue and then process these task
+by multiple threads or workers.

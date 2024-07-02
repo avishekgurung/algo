@@ -7,6 +7,11 @@ import graph.utils.GraphInt;
 
 public class Problem015 {
 
+  /**
+   * If the centre is (2,3) and R = 2, then one easy way to create a circle would,
+   * Find two coordinates by adding and subtracting R, ie (0,1) and (4,5). Now all the points that lies between
+   * these two coordinates will be touched by the circle.
+   */
   private static int[][] labelMatrix(int arr[][], int[][] circles, int radius) {
     int size = arr.length;
     for(int i=0; i < circles.length; i++) {
@@ -145,5 +150,17 @@ public class Problem015 {
     util(5, 5,2, 1, new int[][]{{1,1},{2,3}});
 
   }
+
+  /**
+   * A simple approach for filling the cells with walls can be used as follows:
+   *
+   * A radius is of 2 and the centre is 4,5
+   * Maintain two lists l1 and l2.
+   * Fill l1 with 2,3,4,5,6
+   * Fill l2 with 3,4,5,6,7
+   *
+   * Iterate and fill the cells with 2,3 | 2,4 and so on.
+   *
+   */
 
 }

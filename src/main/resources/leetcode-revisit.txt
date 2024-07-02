@@ -1,0 +1,3 @@
+https://leetcode.com/problems/reverse-integer/description/
+https://leetcode.com/problems/maximum-distance-in-arrays/submissions/1254511655/
+https://leetcode.com/problems/finding-the-number-of-visible-mountains/solutions/2335616/java-one-pass-no-extra-space/

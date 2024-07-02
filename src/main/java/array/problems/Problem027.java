@@ -34,6 +34,7 @@ public class Problem027 {
     minElement(new int[]{6,1,2,3,4,5});
     minElement(new int[]{2,3,4,5,6,1});
     minElement(new int[]{1,2,3,4,5,6});
+    minElement(new int[]{7,8,1,2,3,4});
   }
 
 

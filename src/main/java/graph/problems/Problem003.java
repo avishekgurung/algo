@@ -132,11 +132,17 @@ public class Problem003 {
   private void run() {
     char vertices[] = {'A', 'B', 'C', 'D', 'E', 'F'};
     Graph graph = new Graph(vertices);
-    graph.addEdge('A', 'B');
+    /*graph.addEdge('A', 'B');
     graph.addEdge('B', 'C');
     graph.addEdge('A', 'D');
     graph.addEdge('B', 'F');
-    graph.addEdge('F', 'E');
+    graph.addEdge('F', 'E');*/
+
+    graph.addEdge('A', 'B');
+    graph.addEdge('A', 'C');
+    graph.addEdge('B', 'E');
+    graph.addEdge('C', 'D');
+    graph.addEdge('D', 'E');
 
     shortestPathNonWeightedWithAdjMat(graph, 'A');
     System.out.println("\n\n");

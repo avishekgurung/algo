@@ -1,0 +1,76 @@
+https://leetcode.com/problems/single-number/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/leaf-similar-trees/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/container-with-most-water/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/kth-largest-element-in-an-array/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/reverse-vowels-of-a-string/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/maximum-depth-of-binary-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/maximum-average-subarray-i/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/path-sum-iii/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/find-pivot-index/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/max-consecutive-ones-iii/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/count-good-nodes-in-binary-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/move-zeroes/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+* https://leetcode.com/problems/removing-stars-from-a-string/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/greatest-common-divisor-of-strings/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/binary-tree-right-side-view/editorial/?envType=study-plan-v2&envId=leetcode-75
+* https://leetcode.com/problems/evaluate-division/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/keys-and-rooms/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/search-suggestions-system/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/delete-node-in-a-bst/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/edit-distance/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/find-peak-element/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/daily-temperatures/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/find-the-difference-of-two-arrays/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/rotting-oranges/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/letter-combinations-of-a-phone-number/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/implement-trie-prefix-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/koko-eating-bananas/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/merge-strings-alternately/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/decode-string/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/max-number-of-k-sum-pairs/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/domino-and-tromino-tiling/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/combination-sum-iii/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/dota2-senate/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/guess-number-higher-or-lower/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/reverse-words-in-a-string/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/can-place-flowers/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/equal-row-and-column-pairs/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/increasing-triplet-subsequence/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/is-subsequence/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/min-cost-climbing-stairs/editorial/?envType=study-plan-v2&envId=leetcode-75
+
+N https://leetcode.com/problems/counting-bits/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/nearest-exit-from-entrance-in-maze/editorial/?envType=study-plan-v2&envId=leetcode-75
+N https://leetcode.com/problems/successful-pairs-of-spells-and-potions/editorial/?envType=study-plan-v2&envId=leetcode-75
+* https://leetcode.com/problems/total-cost-to-hire-k-workers/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/reverse-linked-list/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/string-compression/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/search-in-a-binary-search-tree/editorial/?envType=study-plan-v2&envId=leetcode-75
+
+https://leetcode.com/problems/determine-if-two-strings-are-close/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/number-of-recent-calls/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/longest-common-subsequence/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/unique-number-of-occurrences/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/smallest-number-in-infinite-set/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/unique-paths/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/odd-even-linked-list/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/number-of-provinces/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/find-the-highest-altitude/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/non-overlapping-intervals/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/product-of-array-except-self/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/online-stock-span/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/n-th-tribonacci-number/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/asteroid-collision/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/house-robber/editorial/?envType=study-plan-v2&envId=leetcode-75
+https://leetcode.com/problems/maximum-subsequence-score/editorial/?envType=study-plan-v2&envId=leetcode-75

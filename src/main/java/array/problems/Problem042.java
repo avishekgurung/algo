@@ -23,7 +23,7 @@ public class Problem042 {
   }
 
   public static void main(String[] args) {
-    rearrangeTwoArray(new int[]{50, 40, 70, 60, 90}, new int[]{3,  0,  4,  1,  2});
+    rearrangeTwoArray(new int[]{10, 11, 12}, new int[]{1, 0, 2});
   }
 
 }

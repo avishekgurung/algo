@@ -11,6 +11,12 @@ public class Problem005 {
    * b. Count from 1 to n and replace all the elements from 1 to n.
    *    OR Replace every element by its index + 1.
    *    This soln will not hold true if the elements are repeated.
+   *    If we want to do it in O(n), we can count the freq of elements and store it in a map
+   *    2:3
+   *    1:2
+   *    3:2
+   *    We know that the elements are from 1 to n, so we run a loop from 1 to n and find the freq of these
+   *    elements and keep filling the array.
    *
    */
 

@@ -48,7 +48,7 @@ public class Problem001 {
   }
 
   private void run() {
-    char vertices[] = {'A', 'B', 'C', 'D', 'E', 'F'};
+    /*char vertices[] = {'A', 'B', 'C', 'D', 'E', 'F'};
     Graph graph = new Graph(vertices);
     graph.addEdge('A', 'B');
     graph.addEdge('B', 'C');
@@ -68,7 +68,9 @@ public class Problem001 {
 
     bfsAdjMat(graph, 'A');
     System.out.println();
-    bfsAdjList(graph, 'A');
+    bfsAdjList(graph, 'A');*/
+
+    dfsUtilSimple();
   }
 
 
@@ -176,6 +178,49 @@ public class Problem001 {
           if(!visited.contains(adjVertex)) {
             queue.add(adjVertex);
           }
+        }
+      }
+    }
+  }
+
+
+  private void dfsUtilSimple() {
+    Map<Character, List<Character>> adjList = new HashMap<>();
+    adjList.put('A', Arrays.asList('B', 'C'));
+    adjList.put('B', Arrays.asList('A', 'E'));
+    adjList.put('C', Arrays.asList('A', 'D'));
+    adjList.put('D', Arrays.asList('C', 'E'));
+    adjList.put('E', Arrays.asList('B', 'D'));
+    //This much info is enough to represent Graph. If the Graph is directed, then keep the list accordingly.
+
+    dfs('A', new HashSet<>(), adjList);
+    System.out.println();
+    bfs('A', adjList);
+  }
+
+  private void dfs(Character vertex, Set<Character> visited, Map<Character, List<Character>> adjList) {
+    if(visited.contains(vertex)) return;
+    visited.add(vertex);
+    System.out.print(vertex + " -> ");
+    List<Character> neighbors = adjList.get(vertex);
+    for(Character neighbor : neighbors) {
+      dfs(neighbor, visited, adjList);
+    }
+  }
+
+  private void bfs(Character vertex, Map<Character, List<Character>> adjList) {
+    Set<Character> visited = new HashSet<>();
+    Queue<Character> queue = new LinkedList<>();
+    queue.add(vertex);
+
+    while(!queue.isEmpty()) {
+      vertex = queue.remove();
+      if(!visited.contains(vertex)) {
+        visited.add(vertex);
+        System.out.print(vertex + " -> ");
+        List<Character> neighbors = adjList.get(vertex);
+        for(Character neighbor : neighbors) {
+          queue.add(neighbor);
         }
       }
     }

@@ -1,156 +1,87 @@
 package graph.problems;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
+/**
+ * This problem cannot be solved by using Depth First which we usually use for solving the 2D problems like
+ * no of islands, largest island, total paths from source to destination etc.
+ *
+ * This is a simple shortest path algorithm, just that we would need a little tweaking for implementation.
+ */
 public class Problem013 {
 
-  private class Graph {
-    private int vertices[];
-    private int visited[];
-    private int adj[][];
+  class Node {
+    int i;
+    int j;
 
-    Graph(int[] vertices) {
-      int size = vertices.length;
-      this.vertices = vertices;
-      this.visited = new int[size];
-      this.adj = new int[size][size];
+    Node(int i, int j) {
+      this.i = i;
+      this.j = j;
     }
-
-    public void setEdge(int x, int y) {
-      this.adj[x][y] = 1;
-      this.adj[y][x] = 1;
+    public String key() {
+      return i+":"+j;
     }
   }
-
-  public void shortestPath(int[][] matrix) {
-    int src = 0, dest = 0;
-    int counter = 0;
-    int size = matrix.length;
-    for(int i=0; i < size; i++) {
-      for(int j=0; j < size; j++) {
-        if(matrix[i][j] == 1) src = counter;
-        if(matrix[i][j] == 2) dest = counter;
-        counter++;
-      }
-    }
-
-    Graph graph = createGraph(matrix);
-    Queue<Integer> queue = new LinkedList<Integer>();
-    int dist[] = new int[size * size];
-    String path[] = new String[size * size];
-    for(int i=0; i < size * size; i++) dist[i] = -1;
-    dist[src] = 0;
-    path[src] = src + "";
-    queue.add(src);
+  private void shortestPath(int arr[][], Node source, Node target) {
+    Set<String> visited = new HashSet<>();
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(source);
+    Map<String, Integer> distance = new HashMap<>();
+    Map<String, String> path = new HashMap<>();
+    distance.put(source.key(), 0);
+    path.put(source.key(), source.key());
 
     while(!queue.isEmpty()) {
+      Node node = queue.remove();
+      if(!visited.contains(node.key())) {
+        visited.add(node.key());
+        int i = node.i;
+        int j = node.j;
 
-      src = queue.remove();
+        List<Node> neighbors = new ArrayList<>();
+        if(i-1 >=0 && arr[i-1][j] != 0) neighbors.add(new Node(i-1, j));
+        if(i+1 < arr.length && arr[i+1][j] != 0) neighbors.add(new Node(i+1, j));
+        if(j-1 >=0 && arr[i][j-1] != 0) neighbors.add(new Node(i, j-1));
+        if(j+1 < arr[0].length && arr[i][j+1] != 0) neighbors.add(new Node(i, j+1));
 
-      for(int i=0; i < size * size; i++) {
-        if(graph.adj[src][i] == 1 && dist[i] == -1) {
-          dist[i] = dist[src] + 1;
-          path[i] = path[src] + " --> " + i;
-          queue.add(i);
+        for(Node neighbor : neighbors) {
+          //Neighbor is seen for the first time. We need to compute distance and add neighbor for processing.
+          if(!visited.contains(neighbor.key())) {
+            int oldDistance = distance.containsKey(neighbor.key()) ? distance.get(neighbor.key()) : Integer.MAX_VALUE;
+            int newDistance = distance.get(node.key()) + 1;
+            if(newDistance < oldDistance) {
+              distance.put(neighbor.key(), newDistance);
+              path.put(neighbor.key(), path.get(node.key()) + " -> " + neighbor.key());
+              queue.add(neighbor);
+            }
+          }
         }
       }
     }
 
-    System.out.println("Shortest distance: " + dist[dest]);
-    System.out.println("Path: " + path[dest]);
-
+    System.out.println("Shortest distance is: " + distance.get(target.key()));
+    System.out.println("Path: " + path.get(target.key()));
   }
 
-  private Graph createGraph(int[][] matrix) {
-    int size = matrix.length;
-    int counter = 0;
-    int vertices[] = new int[size * size];
-    for(int i=0; i < (size * size); i++) {
-      vertices[i] = counter++;
-    }
-    Graph graph = new Graph(vertices);
-
-    counter = 0;
-    for(int i=0; i < size; i++) {
-      for(int j=0; j < size; j++) {
-
-        if(matrix[i][j] != 0) {
-          if(i + 1 < size && matrix[i+1][j] != 0) {
-            graph.adj[counter][counter+size] = 1;
-          }
-
-          if(i - 1 > -1 && matrix[i-1][j] != 0) {
-            graph.adj[counter][counter - size] = 1;
-          }
-
-          if(j+1 < size && matrix[i][j+1] != 0) {
-            graph.setEdge(counter, counter+1);
-          }
-
-          if(j-1 > -1 && matrix[i][j-1] != 0) {
-            graph.adj[counter][counter-1] = 1;
-          }
-        }
-        counter++;
-      }
-    }
-    return graph;
-  }
-
-
-  /**
-   * Used this simple trick of recursion.
-   */
-  private int shortPathIn2DMatrix(int arr[][], Set<String> visited, int i, int j) {
-    /**
-     * Return any largest value if the condition is not sufficing since we want to find the minimal value.
-     * Do not use Integer.MAX_VALUE since it will become negative on adding any value to to.
-     *
-     * In order to avoid traversing the same path again, we use set to check the visited nodes. We create a key to store
-     * in that set.
-     *
-     */
-    if(i >= arr.length || i < 0 || j >= arr.length || j < 0) return (arr.length * 2);
-    if(arr[i][j] == 0) return (arr.length * 2);
-
-    String key = i + " : " + j;
-    if(visited.contains(key)) return (arr.length * 2);
-
-    if(arr[i][j] == 2) return 0;
-
-    visited.add(key);
-
-    int leftResult = shortPathIn2DMatrix(arr, visited, i-1, j);
-    int rightResult = shortPathIn2DMatrix(arr, visited, i+1, j);
-    int topResult = shortPathIn2DMatrix(arr, visited, i, j + 1);
-    int bottomResult = shortPathIn2DMatrix(arr, visited, i, j - 1);
-    visited.remove(key);
-    return Math.min(Math.min(Math.min(leftResult, rightResult), topResult), bottomResult) + 1;
-  }
 
   public static void main(String[] args) {
-    int matrix[][] = new int[][]{{0,3,2},{3,3,0},{1,3,0}};
-    Problem013 obj = new Problem013();
-    obj.shortestPath(matrix);
+  new Problem013().driver();
+  }
 
-    System.out.println("--------------------------");
-    matrix = new int[][]
-        {{ 3 , 3 , 1 , 0 },
-        { 3 , 0 , 3 , 3 },
-        { 2 , 3 , 0 , 3 },
-        { 0 , 3 , 3 , 3 }};
-    obj = new Problem013();
-    obj.shortestPath(matrix);
+  public void driver() {
+    int[][] matrix = new int[][]
+      {{ 3 , 3 , 1 , 0 },
+      { 3 , 0 , 3 , 3 },
+      { 2 , 3 , 0 , 3 },
+      { 0 , 3 , 3 , 3 }};
+
+    Node source = new Node(0,2);
+    Node target = new Node(2,0);
+    shortestPath(matrix, source, target);
+
   }
 
 }
-
-/**
- * Another simple way is to use DP and solve it (recursion). No too much code on
- * creating a graph.
- */
 
 
 

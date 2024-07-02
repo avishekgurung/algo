@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Problem038 {
 
   /**
-   * Sort the array and swap the element and its next element. Thats all.
+   * Sort the array and swap the element and its next element. That's all.
    * Complexity = nlogn for sorting
    * @param arr
    */
@@ -22,7 +22,10 @@ public class Problem038 {
   }
 
   public static void main(String[] args) {
-    rearrangeOddAndEven(new int[]{1,2,3,4,5,6,7});
+
+    rearrange2(new int[]{1,2,3,4,5,6,7});
+    rearrange2(new int[]{3,13,4,5,2,5,6,1,3,15});
+    rearrange2(new int[]{9,2,4,2,-3,4,-4,-5,3,1,9});
   }
 
 
@@ -38,6 +41,7 @@ public class Problem038 {
    *  always be smaller than its sides. It does not need sorting as well.
    */
   private static void rearrange2(int arr[]) {
+    System.out.println(Arrays.toString(arr));
     for(int i=1; i < arr.length; i+=2) {
       if(arr[i] < arr[i-1]) {
         swap(arr, i, i-1);
@@ -48,6 +52,8 @@ public class Problem038 {
         swap(arr, i, i+1);
       }
     }
+    System.out.println(Arrays.toString(arr));
+    System.out.println();
   }
 
   private static void swap(int arr[], int i, int j) {

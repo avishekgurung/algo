@@ -83,12 +83,12 @@ public class Problem048 {
 
   public static void main(String[] args) {
     int arr[] = new int[]{1, 5, 5, 2, 2, -1, 3};
-    Node node = createTree(arr);
+    Node node = createTreeSimplified(arr);
     BinaryTree.display(node);
     System.out.println();
 
     arr = new int[]{-1, 0, 0, 1, 1, 3, 5};
-    node = createTree(arr);
+    node = createTreeSimplified(arr);
     BinaryTree.display(node);
   }
 

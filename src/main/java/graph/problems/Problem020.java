@@ -1,9 +1,6 @@
 package graph.problems;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 
 public class Problem020 {
 
@@ -126,6 +123,88 @@ public class Problem020 {
         {1,5,3}
     };
     object.shortestPathUtil(arr, 8);
+  }
+
+
+  /**
+   * The above process needs to create a whole Graph. But we can do it by just using adj Matrix. We will
+   * assume that the provided 2D matrix as adjMatrix and solve it as follows.
+   */
+
+  class Node {
+    int i;
+    int j;
+
+    Node(int i, int j) {
+      this.i = i;
+      this.j = j;
+    }
+
+    @Override
+    public int hashCode() {
+      return (i + " " + j).hashCode();
+    }
+
+    @Override
+    public String toString() {
+      return this.i + ":" + this.j;
+    }
+  }
+  private void driver() {
+    int arr[][] = {
+            {1, 1, 1, 1, 0, 0},
+            {1, 0, 0, 1, 0, 0},
+            {1, 0, 1, 1, 0, 0},
+            {1, 0, 1, 0, 0, 0},
+            {1, 1, 1, 0, 0, 0},
+    };
+
+    Set<String> visited = new HashSet<>();
+    Map<String, Integer> distance = new HashMap<>();
+    Map<String, String> path = new HashMap<>();
+
+    Node origin = new Node(0, 0);
+
+    path.put(origin.toString(), origin.toString());
+    distance.put(origin.toString(), 0);
+
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(origin);
+
+    Node destination = new Node(2,2);
+    boolean foundDest = false;
+
+    while (!queue.isEmpty()) {
+      Node node = queue.remove();
+      if (!visited.contains(node.toString())) {
+        visited.add(node.toString());
+        int i = node.i;
+        int j = node.j;
+        List<Node> neighbors = new ArrayList<>();
+        if (j - 1 >= 0 && arr[i][j - 1] == 1)
+          neighbors.add(new Node(i, j - 1));
+        if (i - 1 >= 0 && arr[i - 1][j] == 1)
+          neighbors.add(new Node(i - 1, j));
+        if (j + 1 < arr[0].length && arr[i][j + 1] == 1)
+          neighbors.add(new Node(i, j + 1));
+        if (i + 1 < arr.length && arr[i + 1][j] == 1)
+          neighbors.add(new Node(i + 1, j));
+
+        for (Node neighbor : neighbors) {
+          if (!visited.contains(neighbor.toString())) {
+            int newDistance = distance.get(node.toString()) + 1;
+            distance.put(neighbor.toString(), newDistance);
+            path.put(neighbor.toString(), path.get(node.toString()) + " -> " + neighbor);
+            queue.add(neighbor);
+            if (neighbor.toString().equals(destination.toString())) {
+              break;
+            }
+          }
+        }
+      }
+      if(foundDest) break;
+    }
+    System.out.println(distance.get(destination.toString()) + " : " + path.get(destination.toString()));
   }
 
 }

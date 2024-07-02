@@ -124,17 +124,18 @@ public class Problem10 {
    * should be on finding the sub-arrays whose sum is equal to the length of the rod. The price is just for computation.
    *
    */
-  private void recur(int index, int sum, int profit, int target, int arr[], int price[]) {
-    if(sum == target) {
-      maxProfit = Math.max(maxProfit, profit);
-      return;
+  private int rodCut(int rod[], int price[], int index, int rodSum, int priceSum, int LENGTH) {
+    if(rodSum == LENGTH) return priceSum;
+    if(rodSum > LENGTH) {
+      return 0;
     }
 
-    if(sum > target) return;
+    int result = -1;
 
-    for(int i=index; i < arr.length; i++) {
-      recur(i, sum + arr[i], profit + price[i], target, arr, price);
+    for(int i=index; i < rod.length; i++) {
+      result = Math.max(result, rodCut(rod, price, i, rodSum + rod[i], priceSum + price[i], LENGTH));
     }
+    return result;
   }
 
   /**

@@ -102,4 +102,11 @@ public class Problem045 {
     rearrangePositiveAndNegativeElementsSimpler(new int[]{1, -3, 5, 6, -3, 6, 7, -4, 9, 10});
     rearrangePositiveAndNegativeElementsSimpler(new int[]{-1, 3, -5, 6, 3, 6, -7, -4, -9, 10});
   }
+
+  /**
+   * Another simpler logic would be to traverse the array and whenever we find wrong element, then replace the
+   * element by next element.
+   * Eg, if we find negative element in even position then we will find next positive element and replace it.
+   * Likewise for positive element at wrong location.
+   */
 }

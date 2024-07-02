@@ -77,7 +77,7 @@
     Size of set i.e., n <= 1000000, m <= 1000
 
     Examples:
-    Input : arr[] = {3, 1, 7, 5};
+    Input : arr[] = { h=-09  aq };
             m = 6;
     Output : YES
 

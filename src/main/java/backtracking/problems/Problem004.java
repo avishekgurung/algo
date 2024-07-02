@@ -1,215 +1,129 @@
 package backtracking.problems;
 
-import java.util.Arrays;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import java.util.*;
 
 /**
  * @author ~ Avishek Gurung
  */
 public class Problem004 {
-    private static boolean pathExists = false;
-
-
-    private int longestPath(int i, int j, int endX, int endY, int arr[][]) {
-        if(i < 0 || j < 0 || i >= arr.length || j >= arr[i].length) return 0;
-        if(arr[i][j] == 1 && i == endX && j == endY) {
-            pathExists = true;
-            return 1;
-        }
-        if(arr[i][j] == 2 || arr[i][j] == 0) return 0;
-        arr[i][j] = 2;
-
-        int top = longestPath(i - 1, j, endX, endY, arr);
-        int bottom = longestPath(i + 1, j, endX, endY, arr);
-        int right = longestPath(i, j + 1, endX, endY, arr);
-        int left = longestPath(i, j - 1, endX, endY, arr);
-
-        int distances[] = new int[]{top, bottom, left, right};
-        int maxDistance = 0;
-
-        for(int k=0; k < distances.length; k++) {
-            maxDistance = Math.max(maxDistance, distances[k]);
-        }
-
-        return maxDistance + 1;
+    public static void main(String[] args) {
+        new Problem004().driver();
     }
 
-    private int shortestPath(int i, int j, int endX, int endY, int arr[][]) {
-        if(i < 0 || j < 0 || i >= arr.length || j >= arr[i].length) return 0;
-        if(arr[i][j] == 1 && i == endX && j == endY) {
-            pathExists = true;
-            return 1;
-        }
-        if(arr[i][j] == 2 || arr[i][j] == 0) return 0;
+    private void driver() {
+        int arr[][] = {
+            {1,1,1,1,1},
+            {0,1,1,0,1},
+            {0,1,1,1,1},
+            {0,0,0,0,0},
+            {0,0,0,0,0},
+        };
+        Node source = new Node(0,0);
+        Node target = new Node(2,1);
+        shortestPath(arr, source, target);
 
-        arr[i][j] = 2;
-        //System.out.println(i + " " + j);
+        //System.out.println("Longest path: " + longestPath(arr, source, target));
 
-        int top = shortestPath(i - 1, j, endX, endY, arr);
-        int bottom = shortestPath(i + 1, j, endX, endY, arr);
-        int right = shortestPath(i, j + 1, endX, endY, arr);
-        int left = shortestPath(i, j - 1, endX, endY, arr);
+        System.out.println("Unique path: " + uniquePaths(arr, source, target, new HashMap<>()));
 
-        int distances[] = new int[]{top, bottom, left, right};
-        int minDistance = Integer.MAX_VALUE;
-
-        for(int k=0; k < distances.length; k++) {
-            if(distances[k] > 0) minDistance = Math.min(minDistance, distances[k]);
-        }
-
-        if(minDistance == Integer.MAX_VALUE) minDistance = 0;
-        return minDistance + 1;
     }
 
-    private class Distance {
-        String path;
-        int distance;
-        Distance(String path, int distance) {
-            this.path = path;
-            this.distance = distance;
-        }
+
+    @Data
+    @EqualsAndHashCode
+    @AllArgsConstructor
+    class Node {
+        int i;
+        int j;
 
         @Override
         public String toString() {
-            return "Distance: " + distance + ", Path: " + path;
+            return "("+i+","+j+")";
         }
     }
 
-    private Distance shortestPathWithPath(int i, int j, int endX, int endY, int arr[][], Distance distance) {
-        if(i < 0 || j < 0 || i >= arr.length || j >= arr[i].length) return null;
-        if(arr[i][j] == 1 && i == endX && j == endY) {
-            pathExists = true;
-            return new Distance("("+i+","+j+")", 1);
-        }
-        if(arr[i][j] == 2 || arr[i][j] == 0) return null;
+    /**
+     * The shortest path has to be solved by BFS of Graph alone and we cannot use depth search as we have used in
+     * longest distance.
+     */
+    private void shortestPath(int arr[][], Node source, Node target) {
+        Map<Node, Integer> distance = new HashMap<>();
+        Map<Node, String> path = new HashMap<>();
+        distance.put(source, 0);
+        path.put(source, source.toString());
+        Set<Node> visited = new HashSet<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(source);
 
-        arr[i][j] = 2;
-        //System.out.println(i + " " + j);
+        while(!queue.isEmpty()) {
+            Node node = queue.remove();
+            if(node == target) break;
+            if(!visited.contains(node)) {
+                visited.add(node);
+                List<Node> neighbors = new ArrayList<>();
+                int i = node.i;
+                int j = node.j;
+                if(i-1 >= 0 && arr[i-1][j] == 1) neighbors.add(new Node(i-1, j));
+                if(i+1 < arr.length && arr[i+1][j] == 1) neighbors.add(new Node(i+1, j));
+                if(j-1 >=0 && arr[i][j-1] == 1) neighbors.add(new Node(i,j-1));
+                if(j+1 < arr.length && arr[i][j+1] == 1) neighbors.add(new Node(i, j+1));
 
-        Distance top = shortestPathWithPath(i - 1, j, endX, endY, arr, distance);
-        Distance bottom = shortestPathWithPath(i + 1, j, endX, endY, arr, distance);
-        Distance right = shortestPathWithPath(i, j + 1, endX, endY, arr, distance);
-        Distance left = shortestPathWithPath(i, j - 1, endX, endY, arr, distance);
-
-        Distance distances[] = new Distance[]{top, bottom, left, right};
-        int minDistance = Integer.MAX_VALUE;
-        String minPath = "";
-
-        for(int k=0; k < distances.length; k++) {
-            if(distances[k] != null && minDistance < distances[k].distance) {
-                minDistance = distances[k].distance;
-                minPath = distances[k].path;
+                for(Node neighbor : neighbors) {
+                    if(!visited.contains(neighbor)) {
+                        Integer newDistance = distance.get(node) + 1;
+                        Integer oldDistance = distance.get(neighbor);
+                        if(oldDistance == null || newDistance < oldDistance) {
+                            distance.put(neighbor, newDistance);
+                            path.put(neighbor, path.get(node) + " -> " + neighbor);
+                            queue.add(neighbor);
+                        }
+                    }
+                }
             }
         }
-
-        if(minDistance == Integer.MAX_VALUE) {
-            minDistance = 0;
-            minPath = "";
-        }
-        distance.path = minPath + " - " + distance.path;
-        distance.distance = minDistance + 1;
-        return distance;
+        System.out.println("Shortest Path: " + distance.get(target) + " : " + path.get(target));
     }
 
-    public static void main(String[] args) {
 
-        Problem004 _instance = new Problem004();
-        int arr[][] = {
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 1, 1, 1, 1, 1, 0, 0 },
-                {1, 0, 0, 0, 0, 1, 0, 0 },
-                {1, 0, 0, 0, 0, 1, 0, 0 },
-                {1, 1, 1, 1, 1, 1, 0, 0 }};
+    /**
+     * We cannot modify the shortest path problem here but we need to use depth first approach.
+     */
+    private int longestPath(int arr[][], Node source, Node target) {
+        if(source == target) return 0;
+        int i = source.i;
+        int j = source.j;
+        if(i < 0 || j < 0 || i >= arr.length || j >= arr[0].length) return 0;
+        if(arr[i][j] == 0 || arr[i][j] == 2) return 0;
+        arr[i][j] = 2;
 
-        int sx = 0;
-        int sy = 0;
-        int ex = 3;
-        int ey = 2;
-
-        /*int minDistance = _instance.shortestPath(sx, sy, ex, ey, arr);
-        if(pathExists) {
-            System.out.println("Minimum distance = " + (minDistance - 1));
-        } else {
-            minDistance = -1;
-            System.out.println("Minimum distance = " + (minDistance));
-        }*/
-
-        /*
-        int maxDistance = _instance.longestPath(sx, sy, ex, ey, arr);
-        if(pathExists) {
-            System.out.println("Maximum distance: " + (maxDistance - 1));
-        } else {
-            maxDistance = -1;
-            System.out.println("Maximum distance: " + maxDistance);
-        }*/
-
-
-        //_instance.util();
-        _instance.uniquePathsUtil();
-
-
+        int top = longestPath(arr, new Node(i-1, j), target);
+        int down = longestPath(arr, new Node(i+1, j), target);
+        int left = longestPath(arr, new Node(i, j-1), target);
+        int right = longestPath(arr, new Node(i, j+1), target);
+        return top + left + right + down + 1;
     }
 
-    private int uniquePaths(int i, int j, int iEnd, int jEnd, int arr[][]) {
-        if(i < 0 || j < 0 || i >= arr.length || j >= arr[i].length) return 0;
+    private int uniquePaths(int arr[][], Node source, Node target, Map<String, Integer> map) {
+        if(source.equals(target)) return 1;
+        if(map.containsKey(source.toString())) return map.get(source.toString());
+        int i = source.i;
+        int j = source.j;
+        if(i < 0 || j < 0 || i >= arr.length || j >= arr[0].length) return 0;
+        if(arr[i][j] == 0 || arr[i][j] == 2) return 0;
+        arr[i][j] = 2;
 
-        // If the path is blocked with 0 or 2 (cell marker)
-        if(arr[i][j] != 1) return 0;
-
-        //We reached the destination and it should not be marked as visited for other paths.
-        if(i == iEnd && j == jEnd) return 1;
-
-        arr[i][j] = 2; // Marking the visited cell.
-
-        int top     = uniquePaths(i-1, j, iEnd, jEnd, arr);
-        int right   = uniquePaths(i, j+1, iEnd, jEnd, arr);
-        int bottom  = uniquePaths(i+1, j, iEnd, jEnd, arr);
-        int left    = uniquePaths(i, j-1, iEnd, jEnd, arr);
-
-        return top + right + bottom + left;
-    }
-
-    private void uniquePathsUtil() {
-        Problem004 _instance = new Problem004();
-        int arr[][] = {
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 1, 1, 1, 1, 1, 0, 0 },
-                {1, 0, 0, 0, 0, 1, 0, 0 },
-                {1, 0, 0, 0, 0, 1, 0, 0 },
-                {1, 1, 1, 1, 1, 1, 0, 0 }};
-        int sx = 0;
-        int sy = 0;
-        int ex = 3;
-        int ey = 2;
-
-        int uniquePaths = _instance.uniquePaths(sx, sy, ex, ey, arr);
-        System.out.println("The number of unique paths are: " + uniquePaths);
-
-    }
-
-    private void util() {
-
-        Problem004 _instance = new Problem004();
-        int arr[][] = {
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 0, 0, 0, 0, 0, 0, 0 },
-                {1, 1, 1, 1, 1, 1, 0, 0 },
-                {1, 0, 0, 0, 0, 1, 0, 0 },
-                {1, 0, 0, 0, 0, 1, 0, 0 },
-                {1, 1, 1, 1, 1, 1, 0, 0 }};
-
-        int sx = 0;
-        int sy = 0;
-        int ex = 1;
-        int ey = 1;
-
-        Distance distance = _instance.shortestPathWithPath(sx, sy, ex, ey, arr, new Distance("", 0));
-        System.out.println(distance);
-
+        int top = uniquePaths(arr, new Node(i-1, j), target, map);
+        int down = uniquePaths(arr, new Node(i+1, j), target, map);
+        int left = uniquePaths(arr, new Node(i, j-1), target, map);
+        int right = uniquePaths(arr, new Node(i, j+1), target, map);
+        int path = top + left + right + down;
+        map.put(source.toString(), path);
+        return path;
     }
 
 }

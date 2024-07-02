@@ -67,6 +67,14 @@ public class Problem055 {
         n4, n6));
     System.out.println("Cousin " + root.data + " " + n3.data + " ? " + recursionUtil
         (root, root, n3));
+
+    System.out.println();
+    System.out.println("Cousin " + n2.data + " " + n3.data + " ? " + isCousinSimple(root,
+            n2, n3));
+    System.out.println("Cousin " + n4.data + " " + n6.data + " ? " + isCousinSimple(root,
+            n4, n6));
+    System.out.println("Cousin " + root.data + " " + n3.data + " ? " + isCousinSimple
+            (root, root, n3));
   }
 
 
@@ -95,4 +103,43 @@ public class Problem055 {
     recursion(root.right, root, x, y, xInfo, yInfo, distance);
   }
 
+  /**
+   * An expectation of cousin is
+   * 1. The two nodes should belong to same level.
+   * 2. The two nodes should not have same parent.
+   *
+   * Perform a level order traversal and store these to information and check the condition.
+   */
+
+  private static boolean isCousinSimple(Node root, Node x, Node y) {
+    int xLevel = -1;
+    int yLevel = -2;
+    Node xParent = null;
+    Node yParent = null;
+    int level = 0;
+
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+    queue.add(null);
+
+    while(!queue.isEmpty()) {
+      Node node = queue.remove();
+      if (node == null) {
+        if (queue.isEmpty()) break;
+        queue.add(null);
+        level++;
+      } else {
+        if (node == x) xLevel = level;
+        if (node == y) yLevel = level;
+
+        if (node.left == x || node.right == x) xParent = node;
+        if (node.left == y || node.right == y) yParent = node;
+        if (node.left != null) {
+          queue.add(node.left);
+          if (node.right != null) queue.add(node.right);
+        }
+      }
+    }
+    return xLevel == yLevel && xParent != yParent;
+  }
 }

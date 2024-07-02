@@ -9,8 +9,8 @@ public class Problem07 {
 
   public static void main(String[] args) {
 
-    int arr[] = {3, 34, 4, 12, 5, 2};
-    int targets[] = {36, 9, 13, 1, 6, 11, 15, 25};
+    int arr[] = {1,2,3};
+    int targets[] = {6};
     System.out.println(Arrays.toString(arr));
 
     System.out.println("Result from recursion");

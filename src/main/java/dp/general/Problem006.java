@@ -1,56 +1,49 @@
 package dp.general;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Problem006 {
 
   /**
-   * The logic is simple. If we sort the array, we can fix this problem in O(n2).
-   * We can use dp table for optimization as shown below.
-   *
-   * The worse case would be when all the numbers are prime, where the time complexity will be O(n2)
+   * First solve the problem by recursion and then add memoization.
+   * Also the recursion complexity is 2^N which is NP complete problem which do not have know polynomial time solution.
+   * @param args
    */
-  public static void largestDivisibleSubset(int arr[]) {
-    Arrays.sort(arr);
-
-    int dp[] = new int[arr.length];
-
-    for(int i=1; i < arr.length; i++) {
-      int item = arr[i];
-      for(int j = i-1; j >=0; j--) {
-        if(item % arr[j] == 0) {
-          dp[i] = dp[j] + 1;
-          break;
-        }
-      }
-    }
-
-    //manipulating result of dp table
-    int index = 0;
-    int largest = Integer.MIN_VALUE;
-    for(int i = arr.length - 1; i >= 0; i--) {
-      if(dp[i] > largest) {
-        largest = dp[i];
-        index = i;
-      }
-    }
-
-    System.out.println("The size of the subset is " + (largest + 1) +" and the subset is ");
-
-    int largestItem = arr[index];
-    while(index >= 0) {
-      if(largestItem % arr[index] == 0) {
-        System.out.print(arr[index] + " ");
-        largestItem = arr[index];
-      }
-      index--;
-    }
-
-    System.out.println("\n");
-  }
-
   public static void main(String[] args) {
-    largestDivisibleSubset(new int[]{10, 5, 3, 15, 20});
-    largestDivisibleSubset(new int[]{18, 1, 3, 6, 13, 17});
+    largestDivisiblePairUtil(new int[]{10, 5, 3, 15, 20});
+
+    largestDivisiblePairUtil(new int[]{18, 1, 3, 6, 13, 17});
+
+    largestDivisiblePairUtil(new int[]{3,6,12});
+
+    largestDivisiblePairUtil(new int[]{5,2,3});
+
   }
+
+  private static void largestDivisiblePairUtil(int arr[]) {
+    System.out.println(Arrays.toString(arr));
+    Arrays.sort(arr);
+    int result = largestDivisiblePair(arr, 0, 0, new HashMap<>());
+    result = result + 1;
+    /**
+     *  One is appended in the result which will mark true for all cases because there can never be 0 answer.
+     */
+    System.out.println(result);
+    System.out.println();
+  }
+  private static int largestDivisiblePair(int arr[], int index, int prev, Map<String, Integer> lookup) {
+    if(index >= arr.length) return 0;
+    if(lookup.containsKey(index+":"+prev)) return lookup.get(index+":"+prev);
+
+    int result = 0;
+    for(int i=index; i < arr.length; i++) {
+      result = Math.max(result, largestDivisiblePair(arr, i+1, arr[index], lookup));
+    }
+    if(prev != 0 && arr[index] % prev == 0) result++;
+    lookup.put(index+":"+prev, result);
+    return result;
+  }
+
 }

@@ -1,0 +1,63 @@
+Requirements
+    - We should be able to schedule a one time task or a reoccurring task.
+    - We should be able to add task or remove an already existing task.
+
+
+Solution
+
+TaskType
+- RE_OCCURING
+- ONE_TIME
+
+interface Task
+- private void execute()
+
+class OneTimeTask implements Task
+- Long executionTime
+- TaskType taskType
+- execute()
+
+class ReOccurringTask implements Task
+- Long executionTime
+- int interval
+- TaskType taskType
+- execute()
+- Long getNextExecutionTime()
+
+
+We will store all the tasks in a min heap so that we just have to see the top element of the heap to check which is the
+next task to execute.
+
+class TaskStore
+- PriorityBlockingQueue<Task>
+- Task get() // gives the task
+- Task peek() // top element for checking
+- boolean remove(Task)
+
+This class will be a single threaded class that keeps looking at the top of the heap to check if there are any tasks
+to be executed at the moment. If a task is found then we can execute them in two ways:
+1. The thread itself will execute it (Simpler and not scalable)
+2. The thread puts it into the queue and we have a list of consumers who would be reading from the queue and executing
+the task (Complex and scalable)
+
+EventLoop
+- TaskStore
+- TaskQueue
+- loop()
+    - A thread that keeps watching over the heap and sends the task to the queue (TaskQueue)
+
+TaskQueue
+- LinkedBlockQueue
+- add(Task)
+- Task remove()
+
+Worker implements Runnable
+- Worker (Task)
+- run
+    - executes the task
+
+Executioner
+- ExecutorService (Thread pool)
+- run
+    - Run an infinite loop and whenever the task is availble provide it to the pool of threads
+    - execute(Worker)

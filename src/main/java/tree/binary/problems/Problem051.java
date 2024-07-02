@@ -15,11 +15,22 @@ public class Problem051 {
     return node;
   }
 
+  private static int modifySimple(Node node) {
+    if(node == null) return 0;
+    int left = modifySimple(node.left);
+    int right = modifySimple(node.right);
+    int data = node.data;
+    node.data = left + right;
+    return data;
+  }
+
+
   public static void main(String[] args) {
 
     Node node = BinaryTree.getTree();
     BinaryTree.display(node);
-    modify(node);
+    modifySimple(node);
+    //modify(node);
     System.out.println();
     BinaryTree.display(node);
 

@@ -46,6 +46,7 @@ Standard Binary Tree
 
 18. Convert Binary Tree to its mirror.
 
+19. Create a binary tree from inorder and preorder traversals.
      Eg: Inorder: D B E A F C
         Preorder: A B D E C F
 

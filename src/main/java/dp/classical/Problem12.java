@@ -25,6 +25,9 @@ public class Problem12 {
   /**
    * Memoization technique does not work here. We are not identifying min or max values. But we are trying out all
    * possible combinations.
+   *
+   * The complexity of this algorithm is S*N where S is the amount and N is the denomination count.
+   *
    */
   private int noOfWaysDp(int index, int sum, int target, int arr[], Map<String, Integer> dp) {
     if(sum == target) {

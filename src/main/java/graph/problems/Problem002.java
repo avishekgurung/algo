@@ -1,7 +1,6 @@
 package graph.problems;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 import graph.utils.Graph;
 
@@ -75,6 +74,52 @@ public class Problem002 {
 
     topologicalSort(graph);
 
+    new Problem002().topologicalSortWithAdjList();
+
+
+  }
+
+  private void topologicalSortWithAdjList() {
+    Map<Character, List<Character>> adjList = new HashMap<>();
+    adjList.put('A', Arrays.asList('D', 'E'));
+    adjList.put('B', Arrays.asList('D'));
+    adjList.put('C', Arrays.asList('E', 'H'));
+    adjList.put('D', Arrays.asList('F', 'G'));
+    adjList.put('E', Arrays.asList('G'));
+
+    topologicalSort(adjList);
+
+  }
+
+  private void topologicalSort(Map<Character, List<Character>> adjList) {
+    Map<Character, Integer> indegree = new HashMap<>();
+
+    for(Character vertex : adjList.keySet()) {
+      if(!indegree.containsKey(vertex)) indegree.put(vertex, 0);
+      List<Character> neighbors = adjList.get(vertex);
+      for(Character neighbor : neighbors) {
+        if(indegree.containsKey(neighbor)) indegree.put(neighbor, indegree.get(neighbor) + 1);
+        else indegree.put(neighbor, 1);
+      }
+    }
+
+    Queue<Character> queue = new LinkedList<>();
+    for(Character vertex : indegree.keySet()) {
+      if(indegree.get(vertex) == 0) queue.add(vertex);
+    }
+
+    while(!queue.isEmpty()) {
+      Character vertex = queue.remove();
+      System.out.print(vertex + " -> ");
+      List<Character> neighbors = adjList.get(vertex);
+      if(neighbors == null) continue;
+      for(Character neighbor : neighbors) {
+        int degree = indegree.get(neighbor);
+        degree--;
+        if(degree == 0) queue.add(neighbor);
+        else indegree.put(neighbor, degree);
+      }
+    }
   }
 
 }

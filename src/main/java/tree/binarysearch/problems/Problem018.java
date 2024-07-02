@@ -11,7 +11,7 @@ public class Problem018 {
    *
    * The efficient way to solve it in O(n) is below.
    *
-   * If a pre-order traversal of a BST is give, then remember to solve that problem by
+   * If a pre-order traversal of a BST is given, then remember to solve that problem by
    * considering the range.
    */
 

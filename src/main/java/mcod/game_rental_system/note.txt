@@ -1,0 +1,39 @@
+A platform where you can rent games. There are different stores which provides you the same game at different prices.
+Implement the following API
+1. search(game)
+	- returns the 5 stores that provides cheapest price that are available.
+
+2. rent(game, store)
+	- rent a game and reduce the inventory of that store.
+
+3.	return(game, store)
+	- update the inventory
+
+
+
+
+
+
+Game
+- id
+- name
+
+Store
+- id
+- name
+- location (if needed)
+
+StoreInventory
+- id
+- storeId
+- gameId
+- availability
+- price
+
+Map<Game, PriorityQueue<StoreInventory>> gameToStoreInventories
+Map<String(gameId + storeId), StoreInventory> gameStoreToStoreInventory
+
+Map
+
+
+

@@ -5,115 +5,75 @@ import linkedlist.util.LinkedList.Node;
 
 public class Problem022 {
 
-  private static Node[] appendZeroes(Node x, Node y) {
-    int l1 = length(x);
-    int l2 = length(y);
-    int diff = Math.abs(l1 - l2);
-    if(diff == 0) return new Node[]{x,y};
-    Node temp = new Node(0, null);
-    diff--;
-    Node head = temp;
-    while(diff != 0) {
-      Node temp1 = new Node(0,null);
-      temp.next = temp1;
-      temp = temp1;
-      diff--;
-    }
-    if(l1 > l2) {
-      temp.next = y;
-      y = head;
-    }
-    else {
-      temp.next = x;
-      x = head;
-    }
-    return new Node[]{x,y};
+  private int getSize(Node node) {
+    if(node == null) return 0;
+    return getSize(node.next) + 1;
   }
 
-  private static Node[] compare(Node x, Node y) {
-    Node head1 = x;
-    Node head2 = y;
-    while(x.data == y.data) {
-      x = x.next;
-      y = y.next;
-      if(x == null || y == null) return new Node[]{head1, head2};
+  private Node addExtraNode(Node node, int extra) {
+    if(extra == 0) return node;
+    Node head = new Node(0, null);
+    Node body = head;
+    while(extra > 1) {
+      Node aux = new Node(0, null);
+      body.next = aux;
+      body = body.next;
+      extra--;
     }
-    Node[] result;
-    if(x.data > y.data) result = new Node[]{head1, head2};
-    else result = new Node[]{head2, head1};
-    return result;
-  }
-
-  private static boolean borrow = false;
-  public static Node subtract(Node node1, Node node2) {
-    Node result[] = appendZeroes(node1, node2);
-    result = compare(result[0], result[1]);
-    Node large = result[0];
-    Node small = result[1];
-    Node head = helper(large, small);
+    body.next = node;
     return head;
   }
 
-  private static Node helper(Node x, Node y) {
-    if(x == null || y == null) return null;
-    Node result = helper(x.next, y.next);
-    int val1 = x.data;
-    int val2 = y.data;
 
-    if(borrow) {
-      val1 = val1 - 1;
-      borrow = false;
+  private boolean borrow = false;
+  private void subUtil(Node node1, Node node2) {
+    int s1 = getSize(node1);
+    int s2 = getSize(node2);
+
+    if(s1 < s2) {
+      Node temp = node1;
+      node1 = node2;
+      node2 = temp;
     }
 
-    if(val1 < val2) {
-      val1 = val1 + 10;
-      borrow = true;
-    }
-
-    int val = val1 - val2;
-    Node temp = new Node(val, null);
-    temp.next = result;
-    result = temp;
-    return result;
+    int diff = Math.abs(s1 - s2);
+    node2 = addExtraNode(node2, diff);
+    Node result = subtract(node1, node2);
+    LinkedListUtil.display(node1);
+    LinkedListUtil.display(node2);
+    System.out.println("------------------------");
+    LinkedListUtil.display(result);
+    System.out.println("\n");
   }
 
-  private static int length(Node node) {
-    int len = 0;
-    while (node != null) {
-      len++;
-      node = node.next;
+  private Node subtract(Node node1, Node node2) {
+    if(node1 == null) return null;
+    Node result = subtract(node1.next, node2.next);
+    int data1 = node1.data;
+    int data2 = node2.data;
+
+    if(borrow) data1--;
+    if(data1 < data2) {
+      data1 = data1 + 10;
+      borrow = true;
     }
-    return len;
+    int diff = data1 - data2;
+    Node node = new Node(diff, result);
+    return node;
   }
 
   public static void main(String[] args) {
     Node x = LinkedListUtil.customBulkInsert(new int []{4,3});
     Node y = LinkedListUtil.customBulkInsert(new int []{1,2});
-    LinkedListUtil.display(x);
-    LinkedListUtil.display(y);
-    Node result = subtract(x,y);
-    System.out.println("-------------");
-    LinkedListUtil.display(result);
-    System.out.println("***********************\n");
+    new Problem022().subUtil(x, y);
 
     x = LinkedListUtil.customBulkInsert(new int []{1,0,0,0});
     y = LinkedListUtil.customBulkInsert(new int []{1,2});
-    LinkedListUtil.display(x);
-    LinkedListUtil.display(y);
-    result = subtract(x,y);
-    System.out.println("-------------");
-    LinkedListUtil.display(result);
-    System.out.println("***********************\n");
+    new Problem022().subUtil(x, y);
 
     x = LinkedListUtil.customBulkInsert(new int []{1,2});
     y = LinkedListUtil.customBulkInsert(new int []{1,2});
-    LinkedListUtil.display(x);
-    LinkedListUtil.display(y);
-    result = subtract(x,y);
-    System.out.println("-------------");
-    LinkedListUtil.display(result);
-    System.out.println("***********************\n");
-
+    new Problem022().subUtil(x, y);
   }
 
 }

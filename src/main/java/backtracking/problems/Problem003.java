@@ -12,13 +12,6 @@ import java.util.List;
  */
 public class Problem003 {
 
-
-    /**
-     * The time complexity of this method is O(n2).
-     * This method is just an extension of String combination logic.
-     * We are following the same logic but since we are passing prefix as a collection, so a reference is passed. Hence,
-     * we need to be aware of these methods.
-     */
     private void subArray(List<Integer> prefix, int pivot, int arr[]) {
         if(prefix.size() > 0) System.out.println(prefix);
         if(pivot >= arr.length) return;

@@ -18,9 +18,10 @@ public class Problem027 {
     if(head == null) {
       return prev;
     }
-    Node res = reverse(head.next, head);
+
+    Node next = head.next;
     head.next = prev;
-    return res;
+    return reverse(next, head);
   }
 
 }

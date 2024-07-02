@@ -1,0 +1,4 @@
+
+tags = document.querySelectorAll('.cursor-pointer a')
+for(i=0; i < tags.length; i++) {console.log(tags[i].getAttribute('href'));}
+cat q.txt | xargs -I '{}' echo 'https://leetcode.com'{}

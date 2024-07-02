@@ -37,7 +37,7 @@ public class Problem001 {
 
     public static void main(String[] args) {
         Problem001 instance = new Problem001();
-        String s1 = "1234";
+        String s1 = "AECDB";
         List<String> result = new ArrayList<>();
         instance.permutations("", s1, result);
         System.out.println(result);

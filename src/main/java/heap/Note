@@ -1,0 +1,9 @@
+The time complexities of heap are:
+
+1. Insertion of single element: logn
+2. Deletetion of single element: logn
+
+The heap stores the elements in an array internally. For each element,
+1. Its left child is present in the location (2*i + 1)
+2. Its right child is present in the location (2*i + 2)
+3. Its parent is present in (i - 1)/2

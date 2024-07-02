@@ -145,7 +145,7 @@
 
 35. How many trailing zeros are there in a factorial of a given number.
 
-36. An array contains both positive and negative numbers in random order. Rearrange the array
+36*. An array contains both positive and negative numbers in random order. Rearrange the array
     elements so that positive and negative numbers are placed alternatively. Number of positive
     and negative numbers need not be equal. If there are more positive numbers they appear at the
     end of the array. If there are more negative numbers, they too appear in the end of the array.
@@ -185,7 +185,7 @@
 41.*Given an array of elements find the max difference between two elements such that the larger
     element appears after the smaller element.
     Eg, arr[]={2,3,10,6,4,8,1}. Max diff is 8 (between 2 and 10).
-    arr[] = {7,9,5,6,3,2}. Max diff is 2 (between 9 and 7)
+    arr[] = {7,9,5,6,3,2}. Max diff is 2 (between 7 and 9)
 
 42*. Given two integer arrays of same size, “arr[]” and “index[]”, reorder elements in “arr[]”
     according to given index array. It is not allowed to given array arr’s length.
