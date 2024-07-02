@@ -1,8 +1,8 @@
 1.  There is a continuous stream of strings. We need to store these strings such that we do not have
     any repeating strings. Eg,
-    "sam" -> store it
-    "ram" -> store it
-    "jack" -> store it
+    "sam" -> store it.
+    "ram" -> store it.
+    "jack" -> store it.
     "ram" -> "ram" has already appeared so we need to remove it.
     "ram" -> since there is no "ram" store it.
 
